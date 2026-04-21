@@ -28,7 +28,8 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function completaOrdine(ordine) {
     let tempoCompletamento = Math.floor(Math.random() * 10) + 1;
     document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
-    è in fase di completamento...`;
+    è in fase di completamento... (${tempoCompletamento}s)`;
+    document.querySelector("#risultato").style.color = "#FF8C00";
 
     if (ordine.riuscita <= tempoCompletamento)
         ordine.riuscita = tempoCompletamento;
@@ -53,7 +54,8 @@ async function completaOrdine(ordine) {
 async function preparaOrdine(ordine) {
     const tempoPreparazione = Math.floor(Math.random() * 10) + 1;
     document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
-    è in fase di preparazione...`;
+    è in fase di preparazione... (${tempoPreparazione}s)`;
+    document.querySelector("#risultato").style.color = "purple";
 
     await sleep(tempoPreparazione * 1000);
     ordine.stato = "In preparazione";
@@ -63,7 +65,8 @@ async function preparaOrdine(ordine) {
 async function inviaOrdine(ordine) {
     const tempoInvio = Math.floor(Math.random() * 5) + 1;
     document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
-    è in fase di invio...`;
+    è in fase di invio... (${tempoInvio}s)`;
+    document.querySelector("#risultato").style.color = "#2980b9";
 
     await sleep(tempoInvio * 1000);
     ordine.stato = "Inviato";
@@ -94,9 +97,11 @@ async function exec(event, ordine) {
             if (ordine.rinvii < 4)
                 ordine.riuscita++;
             ordine.rinvii++;
-            exec(event, ordine);
+            return exec(event, ordine);
         });
     }
+
+    return;
 }
 
 async function main(event) {
@@ -146,10 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // Seleziona un piatto e mostra l'immagine corrispondente
 let imgEl = '';
 document.addEventListener("change", (event) => {
-    if (imgEl)
-        imgEl.hidden = true;
     if (event.target.id === "piatto") {
+        if (imgEl)
+            imgEl.hidden = true;
         const targetId = event.target.value;
+        console.log(targetId);
         if (targetId) {
             imgEl = document.querySelector(`#${targetId}`);
             if (imgEl) {
