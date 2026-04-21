@@ -1,0 +1,134 @@
+/* Reset di base per coerenza tra i browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+main {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #7f8c8d;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Spazio tra i campi */
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #34495e;
+    margin-bottom: -10px;
+    /* Avvicina la label all'input */
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+img {
+    max-width: 386px;
+    max-height: 386px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#btnInvia {
+    background-color: gray;
+}
+
+#btnInvia:hover {
+    background-color: darkgray;
+}
+
+#btnReset {
+    background-color: #e74c3c;
+}
+
+#btnReset:hover {
+    background-color: #c0392b;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Messaggio di Risultato */
+#risultato {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-height: 1.5em;
+    /* Evita che il box salti quando appare il testo */
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive per schermi piccoli */
+@media (max-width: 480px) {
+    main {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}

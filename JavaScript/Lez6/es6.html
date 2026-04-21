@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Selettore piatto">
+    <title>Selettore piatto</title>
+    <link rel="stylesheet" href="es6.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Seleziona un piatto</h1><br>
+    </header>
+    <main>
+        <h3>Inserisci il tuo nome e scegli un piatto</h3><br>
+        <form id="piattoForm">
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome" required>
+
+            <label for="cognome">Cognome:</label>
+            <input id="cognome" name="cognome" required>
+
+            <label for="piatto">Piatto:</label>
+            <select id="piatto" name="piatto" required>
+                <option value="" image="">Scegli un piatto</option>
+                <option value="pasta">Pasta</option>
+                <option value="pizza">Pizza</option>
+                <option value="lasagna">Lasagna</option>
+                <option value="risotto">Risotto</option>
+                <option value="sushi">Sushi</option>
+            </select>
+            <img id="pasta"
+                src="https://static01.nyt.com/images/2021/08/10/dining/as-tomato-butter-pasta/merlin_192901398_930895d7-0ff3-4422-b8e4-41cde49d7937-mediumSquareAt3X.jpg"
+                alt="Pasta" hidden>
+            <img id="pizza"
+                src="https://media.istockphoto.com/id/1275135250/photo/big-square-italian-food-pizza-with-melted-mozzarella-cheese-and-tomatoes.jpg?s=612x612&w=0&k=20&c=rYvcnvqVMlUOq3qwAEvJsCvQZqoEIp1LezNssza0i0A="
+                alt="Pizza" hidden>
+            <img id="lasagna" src="https://foodyschmoodyblog.com/wp-content/uploads/2021/02/classic-lasagna-square.jpg"
+                alt="Lasagna" hidden>
+            <img id="risotto"
+                src="https://www.kitchensanctuary.com/wp-content/uploads/2025/11/Ham-and-pea-risotto-Square-FS.jpg"
+                alt="Risotto" hidden>
+            <img id="sushi" src="https://www.thinktasty.com/wp-content/uploads/2015/01/sushi-squares-400x400.jpg"
+                alt="Sushi" hidden>
+
+            <button type="submit" id="btnInvia">Invia</button>
+            <button type="reset" id="btnReset">Reset</button>
+        </form>
+        <p id="risultato"></p>
+        <button type="button" id="btnRipeti" hidden>Invia di nuovo</button>
+    </main>
+    <script src="es6.js"></script>
+</body>
+
+</html>
