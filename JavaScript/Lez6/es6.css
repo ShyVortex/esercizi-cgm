@@ -173,16 +173,49 @@ button:active {
     transform: scale(0.98);
 }
 
-/* Messaggio di Risultato */
-#risultato {
-    margin-top: 25px;
+/* Contenitore Ordini */
+.ordini-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Card del singolo ordine */
+.ordine-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.ordine-card:hover {
+    transform: translateY(-2px);
+}
+
+.ordine-card .risultato {
+    margin: 10px 0;
     font-weight: bold;
     font-size: 1.1rem;
     min-height: 1.5em;
-    /* Evita che il box salti quando appare il testo */
-    padding: 10px;
-    border-radius: 6px;
     transition: all 0.3s ease;
+}
+
+.ordine-card .btnRipeti {
+    margin-top: 10px;
+    background-color: rgba(231, 76, 60, 0.85);
+    font-size: 1rem;
+    padding: 8px 16px;
+}
+
+.ordine-card .btnRipeti:hover {
+    background-color: rgba(192, 57, 43, 0.95);
 }
 
 /* Responsive per schermi piccoli */

@@ -27,9 +27,9 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function completaOrdine(ordine) {
     let tempoCompletamento = Math.floor(Math.random() * 10) + 1;
-    document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
+    ordine.element.querySelector(".risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
     è in fase di completamento... (${tempoCompletamento}s)`;
-    document.querySelector("#risultato").style.color = "#FF8C00";
+    ordine.element.querySelector(".risultato").style.color = "#FF8C00";
 
     if (ordine.riuscita <= tempoCompletamento)
         ordine.riuscita = tempoCompletamento;
@@ -53,9 +53,9 @@ async function completaOrdine(ordine) {
 
 async function preparaOrdine(ordine) {
     const tempoPreparazione = Math.floor(Math.random() * 10) + 1;
-    document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
+    ordine.element.querySelector(".risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
     è in fase di preparazione... (${tempoPreparazione}s)`;
-    document.querySelector("#risultato").style.color = "purple";
+    ordine.element.querySelector(".risultato").style.color = "purple";
 
     await sleep(tempoPreparazione * 1000);
     ordine.stato = "In preparazione";
@@ -64,9 +64,9 @@ async function preparaOrdine(ordine) {
 
 async function inviaOrdine(ordine) {
     const tempoInvio = Math.floor(Math.random() * 5) + 1;
-    document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
+    ordine.element.querySelector(".risultato").textContent = `L'ordine di ${ordine.cliente} per ${ordine.piatto}
     è in fase di invio... (${tempoInvio}s)`;
-    document.querySelector("#risultato").style.color = "#2980b9";
+    ordine.element.querySelector(".risultato").style.color = "#2980b9";
 
     await sleep(tempoInvio * 1000);
     ordine.stato = "Inviato";
@@ -75,30 +75,30 @@ async function inviaOrdine(ordine) {
 }
 
 async function exec(event, ordine) {
-    document.querySelector("#risultato").style.fontWeight = "bold";
-    document.querySelector("#risultato").style.fontSize = "20px";
-    document.querySelector("#risultato").style.color = "black";
+    ordine.element.querySelector(".risultato").style.fontWeight = "bold";
+    ordine.element.querySelector(".risultato").style.fontSize = "20px";
+    ordine.element.querySelector(".risultato").style.color = "black";
 
     ordine = await inviaOrdine(ordine);
     console.log(ordine);
 
     if (ordine.stato === "Pronto") {
-        document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente}
+        ordine.element.querySelector(".risultato").textContent = `L'ordine di ${ordine.cliente}
         per ${ordine.piatto} è pronto.`;
-        document.querySelector("#risultato").style.color = "darkgreen";
+        ordine.element.querySelector(".risultato").style.color = "darkgreen";
     }
     else if (ordine.stato === "Fallito") {
-        document.querySelector("#risultato").textContent = `L'ordine di ${ordine.cliente}
+        ordine.element.querySelector(".risultato").textContent = `L'ordine di ${ordine.cliente}
         per ${ordine.piatto} è fallito.` + '\nRiprovare?';
-        document.querySelector("#risultato").style.color = "darkred";
-        document.querySelector("#btnRipeti").hidden = false;
-        document.querySelector("#btnRipeti").addEventListener("click", async () => {
-            document.querySelector("#btnRipeti").hidden = true;
+        ordine.element.querySelector(".risultato").style.color = "darkred";
+        ordine.element.querySelector(".btnRipeti").hidden = false;
+        ordine.element.querySelector(".btnRipeti").addEventListener("click", async () => {
+            ordine.element.querySelector(".btnRipeti").hidden = true;
             if (ordine.rinvii < 4)
                 ordine.riuscita++;
             ordine.rinvii++;
             return exec(event, ordine);
-        });
+        }, { once: true });
     }
 
     return;
@@ -110,14 +110,32 @@ async function main(event) {
     const nome = document.querySelector("#nome").value;
     const cognome = document.querySelector("#cognome").value;
     const piatto = document.querySelector("#piatto").value;
-    const risultato = document.querySelector("#risultato");
 
     if (!nome || !cognome || !piatto) {
-        risultato.textContent = "Per favore, compila tutti i campi.";
+        alert("Per favore, compila tutti i campi.");
         return;
     }
 
     const cliente = `${nome} ${cognome}`;
+
+    const listaOrdini = document.querySelector("#listaOrdini");
+    const ordineDiv = document.createElement("div");
+    ordineDiv.className = "ordine-card";
+
+    const risultatoP = document.createElement("p");
+    risultatoP.className = "risultato";
+
+    const btnRipeti = document.createElement("button");
+    btnRipeti.type = "button";
+    btnRipeti.className = "btnRipeti";
+    btnRipeti.textContent = "Invia di nuovo";
+    btnRipeti.hidden = true;
+
+    ordineDiv.appendChild(risultatoP);
+    ordineDiv.appendChild(btnRipeti);
+
+    // Aggiungi il nuovo ordine in cima alla lista
+    listaOrdini.prepend(ordineDiv);
 
     let ordine = {
         piatto,
@@ -125,6 +143,7 @@ async function main(event) {
         stato: "Creato",
         riuscita: 0,
         rinvii: 0,
+        element: ordineDiv
     };
     console.log(ordine);
 
@@ -141,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector("#nome").value = "";
             document.querySelector("#cognome").value = "";
             document.querySelector("#piatto").value = "";
-            document.querySelector("#risultato").textContent = "";
             if (imgEl)
                 imgEl.hidden = true;
         });
