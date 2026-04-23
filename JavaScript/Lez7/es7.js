@@ -23,8 +23,6 @@ const postsContainer = document.getElementById('postsContainer');
 const userFilter = document.getElementById('userFilter');
 const pageSizeSelect = document.getElementById('pageSize');
 const paginationControls = document.getElementById('paginationControls');
-const postModal = document.getElementById('postModal');
-const modalContent = document.getElementById('modalContent');
 
 // Inizializzazione
 async function init() {
@@ -37,7 +35,7 @@ async function init() {
         const posts = await postsRes.json();
         const users = await usersRes.json();
 
-        // Mappa gli utenti per un accesso rapido via ID
+        // Mappa gli utenti
         users.forEach(u => {
             allUsers[u.id] = u.name;
             const opt = document.createElement('option');
@@ -51,11 +49,11 @@ async function init() {
         render();
 
     } catch (error) {
-        postsContainer.innerHTML = `<p class="text-red-500">Errore nel caricamento dei dati.</p>`;
+        postsContainer.innerHTML = `<p class="text-red-500 text-center py-4">Errore nel caricamento dei dati iniziali.</p>`;
     }
 }
 
-// Funzione di rendering principale
+// Rendering lista
 function render() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -67,15 +65,24 @@ function render() {
 
 function renderPosts(posts) {
     if (posts.length === 0) {
-        postsContainer.innerHTML = '<p class="text-center py-10">Nessun post trovato.</p>';
+        postsContainer.innerHTML = '<p class="text-center py-10 text-gray-500">Nessun post trovato.</p>';
         return;
     }
 
     postsContainer.innerHTML = posts.map(post => `
-                <div onclick="showDetail(${post.id})" class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-blue-500">
-                    <h2 class="text-xl font-semibold text-gray-800">${post.title}</h2>
-                    <p class="text-sm text-blue-600 font-medium mb-2">Autore: ${allUsers[post.userId]}</p>
-                    <p class="text-gray-600 italic">"${post.body.substring(0, 20)}..."</p>
+                <div id="post-${post.id}" onclick="toggleDetail(${post.id})" class="bg-white p-5 rounded-lg shadow hover:shadow-md transition-all cursor-pointer border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-800">${post.title}</h2>
+                            <p class="text-sm text-blue-600 font-medium mb-2">Autore: ${allUsers[post.userId]}</p>
+                        </div>
+                        <span class="text-gray-400 text-sm">&#9660;</span>
+                    </div>
+                    
+                    <p class="excerpt text-gray-600 italic">"${post.body.substring(0, 20)}..."</p>
+                    
+                    <div id="detail-${post.id}" data-loaded="false" class="hidden mt-4 pt-4 border-t border-gray-100">
+                        </div>
                 </div>
             `).join('');
 }
@@ -86,7 +93,7 @@ function renderPagination() {
 
     for (let i = 1; i <= totalPages; i++) {
         html += `
-                    <button onclick="goToPage(${i})" class="px-3 py-1 rounded ${currentPage === i ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}">
+                    <button onclick="goToPage(${i})" class="px-3 py-1 rounded transition-colors ${currentPage === i ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'}">
                         ${i}
                     </button>
                 `;
@@ -94,10 +101,22 @@ function renderPagination() {
     paginationControls.innerHTML = html;
 }
 
-// Gestione Dettaglio e Commenti
-async function showDetail(postId) {
-    modalContent.innerHTML = '<div class="flex justify-center"><div class="loader rounded-full border-4 border-t-4 border-gray-200 h-8 w-8"></div></div>';
-    postModal.classList.remove('hidden');
+// Espansione Card e Caricamento Dettagli
+async function toggleDetail(postId) {
+    const detailContainer = document.getElementById(`detail-${postId}`);
+    const excerpt = document.querySelector(`#post-${postId} .excerpt`);
+
+    // Se i dati sono già stati caricati in precedenza, fai solo il toggle della visibilità
+    if (detailContainer.dataset.loaded === "true") {
+        detailContainer.classList.toggle('hidden');
+        excerpt.classList.toggle('hidden');
+        return;
+    }
+
+    // Primo click: nascondi l'anteprima, mostra il loader ed esegui la fetch
+    excerpt.classList.add('hidden');
+    detailContainer.classList.remove('hidden');
+    detailContainer.innerHTML = '<div class="flex justify-center py-4"><div class="loader rounded-full border-4 border-t-4 border-gray-200 h-6 w-6"></div></div>';
 
     try {
         const [postRes, commRes] = await Promise.all([
@@ -108,28 +127,32 @@ async function showDetail(postId) {
         const post = await postRes.json();
         const comments = await commRes.json();
 
-        modalContent.innerHTML = `
-                    <h2 class="text-2xl font-bold mb-2">${post.title}</h2>
-                    <p class="text-blue-600 mb-4 font-semibold">Autore: ${allUsers[post.userId]}</p>
-                    <div class="bg-gray-50 p-4 rounded mb-6 text-gray-700 leading-relaxed">
+        // Inserisci i dati completi
+        detailContainer.innerHTML = `
+                    <div class="text-gray-700 leading-relaxed mb-6 bg-gray-50 p-4 rounded-md">
                         ${post.body}
                     </div>
-                    <h3 class="text-lg font-bold mb-4 border-b pb-2">Commenti (${comments.length})</h3>
-                    <div class="space-y-4">
+                    <h3 class="text-md font-bold mb-3 text-gray-800 border-b pb-1">Commenti (${comments.length})</h3>
+                    <div class="space-y-3">
                         ${comments.map(c => `
-                            <div class="border-b border-gray-100 pb-3">
+                            <div class="bg-white border border-gray-200 p-3 rounded-md shadow-sm">
                                 <p class="text-sm font-bold text-gray-800">${c.email}</p>
-                                <p class="text-sm text-gray-600">${c.body}</p>
+                                <p class="text-sm text-gray-600 mt-1">${c.body}</p>
                             </div>
                         `).join('')}
                     </div>
                 `;
+
+        // Segna come caricato per evitare chiamate API duplicate ai click successivi
+        detailContainer.dataset.loaded = "true";
+
     } catch (error) {
-        modalContent.innerHTML = '<p class="text-red-500">Errore nel caricamento del dettaglio.</p>';
+        detailContainer.innerHTML = '<p class="text-red-500 text-sm">Errore nel caricamento dei dettagli.</p>';
+        excerpt.classList.remove('hidden'); // Ripristina l'anteprima se fallisce
     }
 }
 
-// Event Listeners
+// Event Listeners per filtri e paginazione
 userFilter.addEventListener('change', (e) => {
     const userId = e.target.value;
     filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
@@ -147,15 +170,6 @@ function goToPage(page) {
     currentPage = page;
     render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function closeModal() {
-    postModal.classList.add('hidden');
-}
-
-// Chiudi modal cliccando fuori
-window.onclick = (event) => {
-    if (event.target == postModal) closeModal();
 }
 
 init();
