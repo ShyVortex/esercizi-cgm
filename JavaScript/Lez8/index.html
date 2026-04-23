@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSONPlaceholder Post Explorer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="es7.css">
+    <link rel="stylesheet" href="es8.css">
 </head>
 
 <body class="bg-gray-100 min-h-screen p-4 md:p-8">
@@ -33,6 +33,19 @@
                         <option value="25">25</option>
                     </select>
                 </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Cerca per titolo:</label>
+                    <input type="text" id="titleInput"
+                        class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <label id="titleLengthError" class="block text-sm" style="display: none;">Almeno tre caratteri</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Cerca per corpo:</label>
+                    <input type="text" id="bodyInput"
+                        class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <label id="bodyLengthError" class="block text-sm" style="display: none;">Almeno tre caratteri</p>
+                </div>
+                <button type="button" id="searchButton">Cerca</button>
             </div>
             <div id="paginationControls" class="flex gap-2 flex-wrap">
             </div>
@@ -45,7 +58,7 @@
         </div>
     </div>
 
-    <script src="es7.js"></script>
+    <script src="es8.js"></script>
 </body>
 
 </html>
