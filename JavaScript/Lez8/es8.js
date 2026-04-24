@@ -16,13 +16,26 @@ let currentPage = 1;
 let itemsPerPage = 10;
 let userId;
 
+// Elementi principali
 const postsContainer = document.getElementById('postsContainer');
 const userFilter = document.getElementById('userFilter');
 const pageSizeSelect = document.getElementById('pageSize');
+
+// Elementi della paginazione
 const paginationControls = document.getElementById('paginationControls');
-const titleInput = document.getElementById('titleInput');
-const bodyInput = document.getElementById('bodyInput');
-const inputs = document.querySelectorAll('#titleInput, #bodyInput');
+const btnFirstPage = document.getElementById('btnFirstPage');
+const btnPrevTen = document.getElementById('btnPrevTen');
+const btnPrev = document.getElementById('btnPrev');
+const currentPageInput = document.getElementById('currentPage');
+const ofTotLab = document.getElementById('ofTotLab');
+const btnNext = document.getElementById('btnNext');
+const btnNextTen = document.getElementById('btnNextTen');
+const btnLastPage = document.getElementById('btnLastPage');
+
+// Elementi di ricerca
+const tbInput = document.getElementById('tbInput');
+const searchButton = document.getElementById('searchButton');
+const resetButton = document.getElementById('resetButton');
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -61,6 +74,9 @@ function render() {
     const endIndex = startIndex + itemsPerPage;
     const paginatedItems = filteredPosts.slice(startIndex, endIndex);
 
+    // Ri-mostriamo la paginazione solo se ci sono risultati
+    paginationControls.style.display = filteredPosts.length > 0 ? 'flex' : 'none';
+
     renderPosts(paginatedItems);
     renderPagination();
 }
@@ -71,19 +87,35 @@ function renderLoading() {
             <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
         </div>
     `;
-    paginationControls.innerHTML = '';
+
+    paginationControls.style.display = 'none';
 }
 
-function renderServerError(titleQuery, bodyQuery) {
+async function renderWithLoading() {
+    renderLoading();
+
+    const delay = Math.floor(Math.random() * 3000) + 1000;
+    await sleep(delay);
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedItems = filteredPosts.slice(startIndex, endIndex);
+
+    renderPosts(paginatedItems);
+    renderPagination();
+}
+
+function renderServerError(query) {
     postsContainer.innerHTML = `
         <div class="text-center py-10">
             <p class="text-red-600 text-lg font-semibold mb-4">Errore temporaneo del server.</p>
-            <button onclick="triggerSearch('${titleQuery}', '${bodyQuery}')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            <button onclick="triggerSearch('${query}')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
                 Riprova
             </button>
         </div>
     `;
-    paginationControls.innerHTML = '';
+
+    paginationControls.style.display = 'none';
 }
 
 function renderPosts(posts) {
@@ -114,15 +146,65 @@ function renderPagination() {
     const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
     let html = '';
 
-    for (let i = 1; i <= totalPages; i++) {
-        html += `
-                    <button onclick="goToPage(${i})" class="px-3 py-1 rounded transition-colors ${currentPage === i ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'}">
-                        ${i}
-                    </button>
-                `;
-    }
-    paginationControls.innerHTML = html;
+    // Aggiorniamo i testi e gli input
+    currentPageInput.value = currentPage;
+    ofTotLab.textContent = `di ${totalPages}`;
+    btnLastPage.textContent = totalPages;
+
+    const toggleButton = (btn, isDisabled) => {
+        btn.disabled = isDisabled;
+        if (isDisabled) {
+            btn.classList.add('opacity-40', 'cursor-not-allowed', 'bg-gray-100');
+            btn.classList.remove('hover:bg-gray-200');
+        } else {
+            btn.classList.remove('opacity-40', 'cursor-not-allowed', 'bg-gray-100');
+            btn.classList.add('hover:bg-gray-200');
+        }
+    };
+
+    // Logica di abilitazione/disabilitazione
+    toggleButton(btnFirstPage, currentPage === 1);
+    toggleButton(btnPrev, currentPage === 1);
+    toggleButton(btnPrevTen, currentPage <= 10);
+
+    toggleButton(btnNext, currentPage === totalPages);
+    toggleButton(btnNextTen, currentPage > totalPages - 10);
+    toggleButton(btnLastPage, currentPage === totalPages);
 }
+
+// Event Listeners per i pulsanti della paginazione
+btnFirstPage.addEventListener('click', () => goToPage(1));
+
+btnPrev.addEventListener('click', () => goToPage(currentPage - 1));
+
+btnPrevTen.addEventListener('click', () => goToPage(Math.max(1, currentPage - 10)));
+
+btnNext.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    if (currentPage < totalPages) goToPage(currentPage + 1);
+});
+
+btnNextTen.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    goToPage(Math.min(totalPages, currentPage + 10));
+});
+
+btnLastPage.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    goToPage(totalPages);
+});
+
+// Listener per la casella di input in cui l'utente può digitare la pagina
+currentPageInput.addEventListener('change', (e) => {
+    let val = parseInt(e.target.value);
+    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+
+    // Controllo per evitare numeri invalidi
+    if (isNaN(val) || val < 1) val = 1;
+    if (val > totalPages) val = totalPages;
+
+    goToPage(val);
+});
 
 // Espansione Card e Caricamento Dettagli
 async function toggleDetail(postId) {
@@ -175,7 +257,7 @@ async function toggleDetail(postId) {
     }
 }
 
-async function triggerSearch(titleQuery, bodyQuery) {
+async function triggerSearch(query) {
     renderLoading();
 
     const delay = Math.floor(Math.random() * 3000) + 1000;
@@ -185,7 +267,7 @@ async function triggerSearch(titleQuery, bodyQuery) {
     console.log(isError);
 
     if (isError) {
-        renderServerError(titleQuery, bodyQuery);
+        renderServerError(query);
         return;
     }
 
@@ -194,31 +276,18 @@ async function triggerSearch(titleQuery, bodyQuery) {
         let matchesBody = true;
         let matchesUser = true;
 
-        if (titleQuery)
-            matchesTitle = p.title.toLowerCase().includes(titleQuery.toLowerCase());
-        if (bodyQuery)
-            matchesBody = p.body.toLowerCase().includes(bodyQuery.toLowerCase());
-        if (userId) {
-            matchesUser = p.userId == userId;
+        if (query) {
+            matchesTitle = p.title.toLowerCase().includes(query.toLowerCase());
+            matchesBody = p.body.toLowerCase().includes(query.toLowerCase());
         }
+        if (userId)
+            matchesUser = p.userId == userId;
 
-        return matchesTitle && matchesBody && matchesUser;
+        return (matchesTitle || matchesBody) && matchesUser;
     });
 
     currentPage = 1;
     render();
-}
-
-function debounce(func, delay) {
-    let timeoutId;
-    return function (...args) {
-        // Se c'era già un timer in corso, lo cancella
-        clearTimeout(timeoutId);
-        // Ne fa partire uno nuovo
-        timeoutId = setTimeout(() => {
-            func.apply(this, args);
-        }, delay);
-    };
 }
 
 // Event Listeners per filtri e paginazione
@@ -226,19 +295,14 @@ userFilter.addEventListener('change', (e) => {
     userId = e.target.value;
 
     // Recupero i valori correnti della barra di ricerca (se ci sono)
-    const tVal = document.getElementById('titleInput').value.trim();
-    const bVal = document.getElementById('bodyInput').value.trim();
+    const qVal = tbInput.value.trim();
 
-    // Se i campi testo sono vuoti, posso fare un reset rapido lato client
-    // senza chiamare il finto server, per un'esperienza migliore.
-    if (tVal === '' && bVal === '') {
+    if (qVal === '' || qVal.length < 3) {
         filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
         currentPage = 1;
         render();
     } else {
-        // Se c'era già un testo cercato, ri-eseguo la ricerca sul server simulato
-        // affinché applichi entrambi i filtri (testo + nuovo utente)
-        triggerSearch(tVal, bVal);
+        triggerSearch(qVal);
     }
 });
 
@@ -248,51 +312,45 @@ pageSizeSelect.addEventListener('change', (e) => {
     render();
 });
 
-inputs.forEach(input => {
-    // Usiamo 'input' invece di 'change' e impostiamo un ritardo di 500ms
-    input.addEventListener('input', debounce((e) => {
-        // 1. Estrai e pulisci i valori
-        const tVal = titleInput.value.trim();
-        const bVal = bodyInput.value.trim();
+searchButton.addEventListener('click', () => {
+    // 1. Estrai e pulisci i valori
+    const qVal = tbInput.value.trim();
+    const tbLengthError = document.getElementById('tbLengthError');
 
-        const titleLengthError = document.getElementById('titleLengthError');
-        const bodyLengthError = document.getElementById('bodyLengthError');
+    // 2. Resetta gli errori visivi
+    tbLengthError.style.display = 'none';
 
-        // 2. Resetta gli errori visivi
-        titleLengthError.style.display = 'none';
-        bodyLengthError.style.display = 'none';
+    let isValid = true;
 
-        let isValid = true;
+    // 3. Valida il campo
+    if (qVal.length >= 0 && qVal.length < 3) {
+        tbLengthError.style.display = 'block';
+        tbLengthError.style.color = 'darkred';
+        isValid = false;
+    }
 
-        // 3. Valida il Titolo
-        if (tVal.length > 0 && tVal.length < 3) {
-            titleLengthError.style.display = 'block';
-            titleLengthError.style.color = 'darkred';
-            isValid = false;
-        }
+    // Se c'è un errore di validazione, fermati qui
+    if (!isValid) return;
 
-        // 4. Valida il Corpo
-        if (bVal.length > 0 && bVal.length < 3) {
-            bodyLengthError.style.display = 'block';
-            bodyLengthError.style.color = 'darkred';
-            isValid = false;
-        }
+    resetButton.hidden = false;
 
-        // Se c'è un errore di validazione, fermati qui
-        if (!isValid) return;
-
-        // 5. Caso di Reset (entrambi i campi vuoti)
-        if (tVal.length === 0 && bVal.length === 0) {
-            filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
-            currentPage = 1;
-            render();
-            return;
-        }
-
-        // 6. Esegui la ricerca con i valori validati
-        triggerSearch(tVal, bVal);
-    }, 500)); // <-- 500 millisecondi di attesa prima di far partire la ricerca
+    // 4. Esegui la ricerca con i valori validati
+    triggerSearch(qVal);
 });
+
+resetButton.addEventListener('click', () => {
+    const qVal = tbInput.value.trim();
+    const tbLengthError = document.getElementById('tbLengthError');
+    tbLengthError.style.display = 'none';
+
+    tbInput.value = '';
+    resetButton.hidden = true;
+
+    filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
+    currentPage = 1;
+    render();
+    return;
+})
 
 function goToPage(page) {
     currentPage = page;

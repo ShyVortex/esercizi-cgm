@@ -34,19 +34,34 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-600">Cerca per titolo:</label>
-                    <input type="text" id="titleInput"
+                    <label class="block text-sm font-medium text-gray-600">Cerca per titolo o per corpo:</label>
+                    <input type="text" id="tbInput"
                         class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    <label id="titleLengthError" class="block text-sm" style="display: none;">Almeno tre caratteri</p>
+                    <label id="tbLengthError" class="block text-sm" style="display: none;">Almeno tre caratteri
+                        richiesti.</p>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-600">Cerca per corpo:</label>
-                    <input type="text" id="bodyInput"
-                        class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    <label id="bodyLengthError" class="block text-sm" style="display: none;">Almeno tre caratteri</p>
-                </div>
+                <button type="button" id="searchButton">Cerca</button>
+                <button type="button" id="resetButton" hidden>Reset</button>
             </div>
             <div id="paginationControls" class="flex gap-2 flex-wrap">
+                <button type="button" id="btnFirstPage"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">1</button>
+                <button type="button" id="btnPrevTen"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&lt;&lt;</button>
+                <button type="button" id="btnPrev"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&lt;</button>
+
+                <div class="flex items-center gap-2 border px-2 py-1 rounded bg-white shadow-sm">
+                    <input type="number" id="currentPage" class="w-12 text-center outline-none bg-transparent">
+                    <span id="ofTotLab" class="text-gray-700"></span>
+                </div>
+
+                <button type="button" id="btnNext"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&gt;</button>
+                <button type="button" id="btnNextTen"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&gt;&gt;</button>
+                <button type="button" id="btnLastPage"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors"></button>
             </div>
         </div>
 
