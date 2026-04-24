@@ -14,11 +14,14 @@ let allUsers = {};
 let filteredPosts = [];
 let currentPage = 1;
 let itemsPerPage = 10;
+let userId;
 
 const postsContainer = document.getElementById('postsContainer');
 const userFilter = document.getElementById('userFilter');
 const pageSizeSelect = document.getElementById('pageSize');
 const paginationControls = document.getElementById('paginationControls');
+const titleInput = document.getElementById('titleInput');
+const bodyInput = document.getElementById('bodyInput');
 const inputs = document.querySelectorAll('#titleInput, #bodyInput');
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -189,13 +192,17 @@ async function triggerSearch(titleQuery, bodyQuery) {
     filteredPosts = allPosts.filter(p => {
         let matchesTitle = true;
         let matchesBody = true;
+        let matchesUser = true;
 
         if (titleQuery)
             matchesTitle = p.title.toLowerCase().includes(titleQuery.toLowerCase());
         if (bodyQuery)
             matchesBody = p.body.toLowerCase().includes(bodyQuery.toLowerCase());
+        if (userId) {
+            matchesUser = p.userId == userId;
+        }
 
-        return matchesTitle && matchesBody;
+        return matchesTitle && matchesBody && matchesUser;
     });
 
     currentPage = 1;
@@ -216,10 +223,23 @@ function debounce(func, delay) {
 
 // Event Listeners per filtri e paginazione
 userFilter.addEventListener('change', (e) => {
-    const userId = e.target.value;
-    filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
-    currentPage = 1;
-    render();
+    userId = e.target.value;
+
+    // Recupero i valori correnti della barra di ricerca (se ci sono)
+    const tVal = document.getElementById('titleInput').value.trim();
+    const bVal = document.getElementById('bodyInput').value.trim();
+
+    // Se i campi testo sono vuoti, posso fare un reset rapido lato client
+    // senza chiamare il finto server, per un'esperienza migliore.
+    if (tVal === '' && bVal === '') {
+        filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
+        currentPage = 1;
+        render();
+    } else {
+        // Se c'era già un testo cercato, ri-eseguo la ricerca sul server simulato
+        // affinché applichi entrambi i filtri (testo + nuovo utente)
+        triggerSearch(tVal, bVal);
+    }
 });
 
 pageSizeSelect.addEventListener('change', (e) => {
@@ -263,7 +283,7 @@ inputs.forEach(input => {
 
         // 5. Caso di Reset (entrambi i campi vuoti)
         if (tVal.length === 0 && bVal.length === 0) {
-            filteredPosts = [...allPosts];
+            filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
             currentPage = 1;
             render();
             return;
