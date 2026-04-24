@@ -19,9 +19,7 @@ const postsContainer = document.getElementById('postsContainer');
 const userFilter = document.getElementById('userFilter');
 const pageSizeSelect = document.getElementById('pageSize');
 const paginationControls = document.getElementById('paginationControls');
-const titleInput = document.getElementById('titleInput');
-const bodyInput = document.getElementById('bodyInput');
-const searchButton = document.getElementById('searchButton');
+const inputs = document.querySelectorAll('#titleInput, #bodyInput');
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -181,6 +179,7 @@ async function triggerSearch(titleQuery, bodyQuery) {
     await sleep(delay);
 
     const isError = Math.floor(Math.random() * 10) + 1 === 1;
+    console.log(isError);
 
     if (isError) {
         renderServerError(titleQuery, bodyQuery);
@@ -203,6 +202,18 @@ async function triggerSearch(titleQuery, bodyQuery) {
     render();
 }
 
+function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+        // Se c'era già un timer in corso, lo cancella
+        clearTimeout(timeoutId);
+        // Ne fa partire uno nuovo
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+
 // Event Listeners per filtri e paginazione
 userFilter.addEventListener('change', (e) => {
     const userId = e.target.value;
@@ -217,47 +228,50 @@ pageSizeSelect.addEventListener('change', (e) => {
     render();
 });
 
-searchButton.addEventListener('click', () => {
-    // 1. Estrai e pulisci i valori
-    const tVal = titleInput.value.trim();
-    const bVal = bodyInput.value.trim();
+inputs.forEach(input => {
+    // Usiamo 'input' invece di 'change' e impostiamo un ritardo di 500ms
+    input.addEventListener('input', debounce((e) => {
+        // 1. Estrai e pulisci i valori
+        const tVal = titleInput.value.trim();
+        const bVal = bodyInput.value.trim();
 
-    const titleLengthError = document.getElementById('titleLengthError');
-    const bodyLengthError = document.getElementById('bodyLengthError');
+        const titleLengthError = document.getElementById('titleLengthError');
+        const bodyLengthError = document.getElementById('bodyLengthError');
 
-    // 2. Resetta gli errori visivi
-    titleLengthError.style.display = 'none';
-    bodyLengthError.style.display = 'none';
+        // 2. Resetta gli errori visivi
+        titleLengthError.style.display = 'none';
+        bodyLengthError.style.display = 'none';
 
-    let isValid = true;
+        let isValid = true;
 
-    // 3. Valida il Titolo (se è stato inserito qualcosa)
-    if (tVal.length > 0 && tVal.length < 3) {
-        titleLengthError.style.display = 'block';
-        titleLengthError.style.color = 'darkred';
-        isValid = false;
-    }
+        // 3. Valida il Titolo
+        if (tVal.length > 0 && tVal.length < 3) {
+            titleLengthError.style.display = 'block';
+            titleLengthError.style.color = 'darkred';
+            isValid = false;
+        }
 
-    // 4. Valida il Corpo (se è stato inserito qualcosa)
-    if (bVal.length > 0 && bVal.length < 3) {
-        bodyLengthError.style.display = 'block';
-        bodyLengthError.style.color = 'darkred';
-        isValid = false;
-    }
+        // 4. Valida il Corpo
+        if (bVal.length > 0 && bVal.length < 3) {
+            bodyLengthError.style.display = 'block';
+            bodyLengthError.style.color = 'darkred';
+            isValid = false;
+        }
 
-    // Se c'è un errore di validazione, fermati qui
-    if (!isValid) return;
+        // Se c'è un errore di validazione, fermati qui
+        if (!isValid) return;
 
-    // 5. Caso di Reset (entrambi i campi vuoti)
-    if (tVal.length === 0 && bVal.length === 0) {
-        filteredPosts = [...allPosts];
-        currentPage = 1;
-        render();
-        return;
-    }
+        // 5. Caso di Reset (entrambi i campi vuoti)
+        if (tVal.length === 0 && bVal.length === 0) {
+            filteredPosts = [...allPosts];
+            currentPage = 1;
+            render();
+            return;
+        }
 
-    // 6. Esegui la ricerca con i valori validati
-    triggerSearch(tVal, bVal);
+        // 6. Esegui la ricerca con i valori validati
+        triggerSearch(tVal, bVal);
+    }, 500)); // <-- 500 millisecondi di attesa prima di far partire la ricerca
 });
 
 function goToPage(page) {
