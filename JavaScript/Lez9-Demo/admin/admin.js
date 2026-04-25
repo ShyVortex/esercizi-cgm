@@ -29,7 +29,12 @@ const btnSearch = document.getElementById('btnSearch');
 // Mappa dei campi richiesti per ogni risorsa
 const resourceFields = {
     posts: ['title', 'body', 'userId'],
-    users: ['name', 'username', 'email', 'phone'],
+    users: [
+        'name', 'username', 'email', 'phone', 'website',
+        'address.city', 'address.street', 'address.suite',
+        'address.zipcode', 'company.name', 'company.catchPhrase',
+        'company.bs'
+    ],
     comments: ['name', 'email', 'body', 'postId'],
     roles: ['name']
 };
@@ -105,13 +110,7 @@ async function fetchData() {
 // 3. Rendering Dinamico della Tabella
 function renderTable(data) {
     tableBody.innerHTML = '';
-    if (data.length === 0) {
-        tableState.innerHTML = "Nessun risultato trovato.";
-        tableState.classList.remove('hidden');
-        return;
-    }
 
-    // Controllo di sicurezza: verifichiamo che data sia un array e che abbia elementi
     if (!Array.isArray(data) || data.length === 0) {
         tableState.innerHTML = "Nessun risultato trovato.";
         tableState.classList.remove('hidden');
@@ -120,12 +119,31 @@ function renderTable(data) {
 
     tableState.classList.add('hidden');
 
-    // Genera intestazione in base alla prima riga dei dati
-    const keys = Object.keys(data[0]).filter(k => k !== 'isActive');
+    // --- Formattiamo gli oggetti annidati ---
+    const formattedData = data.map(item => {
+        // Creiamo una copia dell'elemento per non mutare direttamente i dati originali
+        const formattedItem = { ...item };
+
+        // Se esiste address ed è un oggetto, lo trasformiamo in stringa
+        if (formattedItem.address && typeof formattedItem.address === 'object') {
+            formattedItem.address = `${formattedItem.address.city}, ${formattedItem.address.street}, ${formattedItem.address.suite}`;
+        }
+
+        // Se esiste company ed è un oggetto, lo trasformiamo in stringa
+        if (formattedItem.company && typeof formattedItem.company === 'object') {
+            formattedItem.company = formattedItem.company.name;
+        }
+
+        return formattedItem;
+    });
+    // ------------------------------------------------------
+
+    // Ora usiamo "formattedData" al posto di "data" per generare le colonne!
+    const keys = Object.keys(formattedData[0]).filter(k => k !== 'isActive');
     tableHead.innerHTML = keys.map(k => `<th class="p-4 border-b uppercase text-xs text-gray-400 font-bold">${k}</th>`).join('') + '<th class="p-4 border-b text-right">Azioni</th>';
 
-    // Genera righe
-    tableBody.innerHTML = data.map(item => `
+    // Usiamo "formattedData" anche qui per generare le righe
+    tableBody.innerHTML = formattedData.map(item => `
         <tr class="hover:bg-gray-50 border-b last:border-0">
             ${keys.map(k => `<td class="p-4 text-sm text-gray-600">${item[k]}</td>`).join('')}
             <td class="p-4 text-right space-x-2">
@@ -166,16 +184,23 @@ async function restoreItem(id) {
     } catch (err) { alert("Errore durante il ripristino."); }
 }
 
+function getNestedValue(obj, path) {
+    // "Naviga" nell'oggetto seguendo i punti. Se non trova nulla, restituisce stringa vuota.
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj) || '';
+}
+
 function openCreateModal() {
     currentEditId = null;
-    modalTitle.innerText = `Nuovo ${state.resource}`; // Es: "Nuovo posts"
+    modalTitle.innerText = `Nuovo ${state.resource.slice(0, -1)}`; // Es: "Nuovo post"
 
     const fields = resourceFields[state.resource] || ['name'];
 
     // Genera campi vuoti
     formFields.innerHTML = fields.map(field => `
         <div>
-            <label class="block text-sm font-medium text-gray-700 capitalize">${field}</label>
+            <label class="block text-sm font-medium text-gray-700 capitalize">
+                ${field.replace(/\./g, ' ')}
+            </label>
             <input type="text" name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>
         </div>
     `).join('');
@@ -185,7 +210,7 @@ function openCreateModal() {
 
 async function editItem(id) {
     currentEditId = id;
-    modalTitle.innerText = `Modifica ${state.resource}`;
+    modalTitle.innerText = `Modifica ${state.resource.slice(0, -1)}`;
 
     try {
         // Recupera i dati specifici di questo elemento
@@ -197,8 +222,8 @@ async function editItem(id) {
         // Genera campi e li popola con i valori esistenti
         formFields.innerHTML = fields.map(field => `
             <div>
-                <label class="block text-sm font-medium text-gray-700 capitalize">${field}</label>
-                <input type="text" name="${field}" value="${item[field] || ''}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>
+                <label class="block text-sm font-medium text-gray-700 capitalize">${field.replace('.', ' ')}</label>
+                <input type="text" name="${field}" value="${getNestedValue(item, field)}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>
             </div>
         `).join('');
 
@@ -218,9 +243,37 @@ function closeModal() {
 crudForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Raccoglie in automatico tutti i dati inseriti negli input del form
+    // Definisce i dati inseriti negli input
     const formData = new FormData(crudForm);
-    const dataObj = Object.fromEntries(formData.entries());
+    const dataObj = {};
+
+    // Invece di Object.fromEntries che li raccoglierebbe in automatico, costruiamo noi l'oggetto
+    // Questo serve a risolvere il problema dell'impossibilità di modifica degli oggetti parametrici
+    for (let [key, value] of formData.entries()) {
+        const parts = key.split('.'); // Es: ["address", "city"] o ["name"]
+
+        if (parts.length === 1) {
+            // Campo normale (es. "name" o "title")
+            dataObj[key] = value;
+        } else {
+            // Campo annidato (es. "address.city")
+            const parent = parts[0]; // "address"
+            const child = parts[1];  // "city"
+
+            // Se l'oggetto genitore non esiste ancora, lo creiamo
+            if (!dataObj[parent]) dataObj[parent] = {};
+
+            dataObj[parent][child] = value;
+        }
+    }
+
+    // Convertiamo in numero i campi che originariamente erano numeri
+    if (dataObj.postId) {
+        dataObj.postId = parseInt(dataObj.postId, 10);
+    }
+    if (dataObj.userId) {
+        dataObj.userId = parseInt(dataObj.userId, 10);
+    }
 
     // Se stiamo creando un nuovo record, aggiungiamo il flag isActive = true di default
     if (!currentEditId) {

@@ -4,7 +4,7 @@ Usando JSON-Server per simulare il back-end, crea una dashboard amministratore c
 ricerca e filtri dei campi. Crea anche un menù per passare da una sezione all’altra.
 
 Extra: crea un campo “isActive” su tutte le risorse per la cancellazione logica, se il valore è false non si deve vedere
-ma ci deve essere una pagina “cestino” per ognuna dove si può recupera un elemento cancellato.
+ma ci deve essere una pagina “cestino” per ognuna dove si può recuperare un elemento cancellato.
 
 Mantienere la logica degli stati della UI vista nelle lezioni precedenti, perciò mostrare all’utente messaggi di
 caricamento, errori, risultati vuoti e successo. Durante il caricamento disabilitare il pulsante per impedire all’utente
@@ -233,12 +233,16 @@ async function toggleDetail(postId) {
 
     try {
         const [postRes, commRes] = await Promise.all([
-            fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`),
-            fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
+            fetch(`http://localhost:3000/posts/${postId}`),
+            fetch(`http://localhost:3000/comments`)
         ]);
 
         const post = await postRes.json();
-        const comments = await commRes.json();
+        let comments = await commRes.json();
+        console.log(comments);
+
+        comments = comments.filter(c => c.postId === postId);
+        console.log(comments);
 
         // Inserisci i dati completi
         detailContainer.innerHTML = `
@@ -262,6 +266,7 @@ async function toggleDetail(postId) {
     } catch (error) {
         detailContainer.innerHTML = '<p class="text-red-500 text-sm">Errore nel caricamento dei dettagli.</p>';
         excerpt.classList.remove('hidden'); // Ripristina l'anteprima se fallisce
+        console.error(error);
     }
 }
 
