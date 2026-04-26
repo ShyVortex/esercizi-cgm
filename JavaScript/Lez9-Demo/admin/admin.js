@@ -148,7 +148,8 @@ function renderTable(data) {
             ${keys.map(k => `<td class="p-4 text-sm text-gray-600">${item[k]}</td>`).join('')}
             <td class="p-4 text-right space-x-2">
                 ${state.isBin
-            ? `<button onclick="restoreItem('${item.id}')" class="text-blue-500 font-bold">Ripristina</button>`
+            ? `<button onclick="physicalDelete('${item.id}')" class="text-red-500 font-bold">Cancella</button>
+               <button onclick="restoreItem('${item.id}')" class="text-blue-500 font-bold">Ripristina</button>`
             : `<button onclick="editItem('${item.id}')" class="text-yellow-600">Modifica</button>
                        <button onclick="logicalDelete('${item.id}')" class="text-red-500">Elimina</button>`
         }
@@ -168,6 +169,21 @@ async function logicalDelete(id) {
             body: JSON.stringify({ isActive: false })
         });
         alert("Elemento rimosso.");
+        fetchData();
+    } catch (err) { alert("Errore durante l'eliminazione."); }
+}
+
+async function physicalDelete(id) {
+    if (!confirm("Sei sicuro di voler eliminare definitivamente questo elemento?" + "\n"
+        + "Non sarà possibile tornare indietro."))
+        return;
+
+    try {
+        await fetch(`${BASE_URL}/${state.resource}/${id}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        alert("Elemento rimosso definitivamente.");
         fetchData();
     } catch (err) { alert("Errore durante l'eliminazione."); }
 }

@@ -68,7 +68,7 @@ async function init() {
         });
 
         allPosts = posts;
-        filteredPosts = [...allPosts];
+        filteredPosts = posts.filter(p => p.isActive === true);
         render();
 
     } catch (error) {

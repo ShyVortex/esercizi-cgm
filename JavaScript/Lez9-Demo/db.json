@@ -699,20 +699,6 @@
       "title": "at nam consequatur ea labore ea harum",
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut",
       "isActive": true
-    },
-    {
-      "title": "je suis petit joulie",
-      "body": "libertè egalitè lo mett ngul a tè",
-      "userId": "1",
-      "isActive": false,
-      "id": "oAjQnNX4ukw"
-    },
-    {
-      "title": "aaa",
-      "body": "aaa",
-      "userId": "1",
-      "isActive": false,
-      "id": "WMfO2YkAePg"
     }
   ],
   "users": [
@@ -951,14 +937,6 @@
         "bs": "target end-to-end models"
       },
       "isActive": true
-    },
-    {
-      "name": "Angelo Trotta",
-      "username": "ShyVortex",
-      "email": "checazztnfreg@gmail.com",
-      "phone": "+39 3927750987",
-      "isActive": false,
-      "id": "iJahdQNfi6E"
     },
     {
       "name": "Giancarlo Toppo",
