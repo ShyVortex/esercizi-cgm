@@ -296,6 +296,20 @@ crudForm.addEventListener('submit', async (e) => {
         dataObj.isActive = true;
     }
 
+    // Controllo errori campi lato JS
+    for (const key in dataObj) {
+        const value = dataObj[key];
+
+        if (value === null || value === undefined || (typeof value === 'string' && value.trim() === '')) {
+            console.error(`Errore di validazione sul campo: ${key}`);
+
+            // Usiamo alert per far apparire l'errore SOPRA il modale
+            alert(`Attenzione: non hai compilato il campo "${key.replace(/\./g, ' ')}". Riprova.`);
+
+            return;
+        }
+    }
+
     // Se c'è un ID facciamo PATCH (modifica), altrimenti POST (crea)
     const method = currentEditId ? 'PATCH' : 'POST';
     const url = currentEditId ? `${BASE_URL}/${state.resource}/${currentEditId}` : `${BASE_URL}/${state.resource}`;
