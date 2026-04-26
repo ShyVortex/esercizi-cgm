@@ -46,13 +46,14 @@ const resetButton = document.getElementById('resetButton');
 
 // Elementi per json-server
 const localDb = 'db.json';
+const BASE_URL = 'http://localhost:3000';
 
 // Inizializzazione
 async function init() {
     try {
         const [postsRes, usersRes] = await Promise.all([
-            fetch('http://localhost:3000/posts'),
-            fetch('http://localhost:3000/users')
+            fetch(`${BASE_URL}/posts`),
+            fetch(`${BASE_URL}/users`)
         ]);
 
         const posts = await postsRes.json();
@@ -233,8 +234,8 @@ async function toggleDetail(postId) {
 
     try {
         const [postRes, commRes] = await Promise.all([
-            fetch(`http://localhost:3000/posts/${postId}`),
-            fetch(`http://localhost:3000/comments`)
+            fetch(`${BASE_URL}/posts/${postId}`),
+            fetch(`${BASE_URL}/comments`)
         ]);
 
         const post = await postRes.json();
