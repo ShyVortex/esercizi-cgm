@@ -1,18 +1,12 @@
 {
-  "name": "lez9-(demo)",
+  "name": "esercizio-5-dashboard",
   "version": "1.0.0",
-  "description": "",
-  "main": "es9.js",
+  "description": "Admin Dashboard with JSON Server on Vercel",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server --watch db.json --port 3000"
+    "start": "node api/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@faker-js/faker": "^10.4.0",
-    "json-server": "^1.0.0-beta.15"
+    "json-server": "^1.0.0-beta.15",
+    "cors": "^2.8.5"
   }
 }

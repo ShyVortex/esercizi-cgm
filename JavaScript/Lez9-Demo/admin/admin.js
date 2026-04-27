@@ -8,7 +8,8 @@ let state = {
     isAuthenticated: false
 };
 
-const BASE_URL = 'http://localhost:3000';
+let isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const BASE_URL = isLocal ? "http://localhost:3000" : "/api";
 
 // Elementi DOM
 const loginSection = document.getElementById('loginSection');
@@ -93,7 +94,7 @@ async function fetchData() {
         const data = responseObj.data || [];
         const totalPages = responseObj.pages || 1;
 
-        console.log(response);
+        console.log(responseObj);
         console.log(data);
         console.log(totalPages);
 

@@ -1,14 +1,39 @@
 {
-    "functions": {
-        "api/server.js": {
-            "memory": 1024,
-            "includeFiles": "db.json"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/server.js",
+      "use": "@vercel/node"
     },
-    "rewrites": [
-        {
-            "source": "/api/(.*)",
-            "destination": "/api/server.js"
-        }
-    ]
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "admin/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "es9.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "es9.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "admin/admin.js",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }

@@ -46,7 +46,8 @@ const resetButton = document.getElementById('resetButton');
 
 // Elementi per json-server
 const localDb = 'db.json';
-const BASE_URL = 'http://localhost:3000';
+let isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const BASE_URL = isLocal ? "http://localhost:3000" : "/api";
 
 // Inizializzazione
 async function init() {
