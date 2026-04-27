@@ -276,15 +276,34 @@ function openCreateModal() {
 
     const fields = resourceFields[state.resource] || ['name'];
 
-    // Genera campi vuoti
-    formFields.innerHTML = fields.map(field => `
-        <div>
-            <label class="block text-sm font-medium text-gray-700 capitalize">
-                ${field.replace(/\./g, ' ')}
-            </label>
-            <input type="text" name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>
-        </div>
-    `).join('');
+    formFields.innerHTML = fields.map(field => {
+        let inputElement = '';
+
+        if (field === 'userId') {
+            // 1. Costruiamo le opzioni leggendo dall'oggetto allUsers
+            let options = '<option value="">Seleziona un utente...</option>';
+            for (const id in allUsers) {
+                options += `<option value="${id}">${allUsers[id]}</option>`;
+            }
+
+            // 2. Creiamo la select
+            inputElement = `<select name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>${options}</select>`;
+        } else {
+            // Comportamento standard per tutti gli altri campi
+            inputElement = `<input type="text" name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>`;
+        }
+
+        const labelText = field === 'userId' ? 'User' : field.replace(/\./g, ' ');
+
+        return `
+            <div>
+                <label class="block text-sm font-medium text-gray-700 capitalize">
+                    ${labelText}
+                </label>
+                ${inputElement}
+            </div>
+        `;
+    }).join('');
 
     crudModal.classList.remove('hidden');
 }
@@ -300,13 +319,37 @@ async function editItem(id) {
 
         const fields = resourceFields[state.resource] || ['name'];
 
-        // Genera campi e li popola con i valori esistenti
-        formFields.innerHTML = fields.map(field => `
-            <div>
-                <label class="block text-sm font-medium text-gray-700 capitalize">${field.replace('.', ' ')}</label>
-                <input type="text" name="${field}" value="${getNestedValue(item, field)}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>
-            </div>
-        `).join('');
+        formFields.innerHTML = fields.map(field => {
+            const value = getNestedValue(item, field);
+            let inputElement = '';
+
+            if (field === 'userId') {
+                // 1. Costruiamo le opzioni selezionando automaticamente l'autore attuale
+                let options = '<option value="">Seleziona un utente...</option>';
+                for (const uId in allUsers) {
+                    // Usiamo == (invece di ===) perché uId è una stringa (chiave dell'oggetto) e value potrebbe essere un numero intero
+                    const isSelected = (uId == value) ? 'selected' : '';
+                    options += `<option value="${uId}" ${isSelected}>${allUsers[uId]}</option>`;
+                }
+
+                // 2. Creiamo la select
+                inputElement = `<select name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>${options}</select>`;
+            } else {
+                // Comportamento standard per gli input di testo pre-compilati
+                inputElement = `<input type="text" name="${field}" value="${value}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>`;
+            }
+
+            const labelText = field === 'userId' ? 'User' : field.replace(/\./g, ' ');
+
+            return `
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 capitalize">
+                        ${labelText}
+                    </label>
+                    ${inputElement}
+                </div>
+            `;
+        }).join('');
 
         crudModal.classList.remove('hidden');
     } catch (err) {
