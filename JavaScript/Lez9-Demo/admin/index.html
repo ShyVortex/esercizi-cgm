@@ -80,6 +80,23 @@
                     <input type="text" id="adminSearch" placeholder="Cerca..."
                         class="w-full border-b p-2 outline-none focus:border-blue-500">
                 </div>
+                <div id="pageSizeSection">
+                    <label class="block text-sm font-medium text-gray-600">Elementi per pagina:</label>
+                    <select id="pageSize" class="mt-1 block w-full p-2 border rounded-md shadow-sm">
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                    </select>
+                </div>
+                <div id="userFilterSection">
+                    <label class="block text-sm font-medium text-gray-600">Utente:</label>
+                    <select id="userFilter"
+                        class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Tutti gli utenti</option>
+                    </select>
+                </div>
                 <button onclick="fetchData()" id="btnSearch"
                     class="bg-blue-600 text-white px-6 py-2 rounded">Cerca</button>
             </div>
@@ -94,10 +111,25 @@
                 <div id="tableState" class="p-10 text-center text-gray-500 hidden"></div>
             </div>
 
-            <div id="paginationControls" class="flex items-center justify-center gap-4 mt-8">
-                <button id="btnPrev" class="px-4 py-2 border rounded bg-white">Precedente</button>
-                <span id="pageInfo" class="font-bold"></span>
-                <button id="btnNext" class="px-4 py-2 border rounded bg-white">Successivo</button>
+            <div id="paginationControls" class="flex gap-2 flex-wrap mt-4">
+                <button type="button" id="btnFirstPage"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">1</button>
+                <button type="button" id="btnPrevTen"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&lt;&lt;</button>
+                <button type="button" id="btnPrev"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&lt;</button>
+
+                <div class="flex items-center gap-2 border px-2 py-1 rounded bg-white shadow-sm">
+                    <input type="number" id="currentPage" class="w-12 text-center outline-none bg-transparent">
+                    <span id="ofTotLab" class="text-gray-700"></span>
+                </div>
+
+                <button type="button" id="btnNext"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&gt;</button>
+                <button type="button" id="btnNextTen"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors">&gt;&gt;</button>
+                <button type="button" id="btnLastPage"
+                    class="px-3 py-1 border rounded bg-white text-gray-700 transition-colors"></button>
             </div>
         </main>
     </div>

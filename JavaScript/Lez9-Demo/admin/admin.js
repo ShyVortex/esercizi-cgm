@@ -7,6 +7,8 @@ let state = {
     isBin: false,
     isAuthenticated: false
 };
+let allUsers = {};
+let userId;
 
 let isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
 const BASE_URL = isLocal ? "http://localhost:3000" : "/api";
@@ -17,6 +19,10 @@ const dashboardSection = document.getElementById('dashboardSection');
 const tableBody = document.getElementById('tableBody');
 const tableHead = document.getElementById('tableHead');
 const tableState = document.getElementById('tableState');
+const pageSizeSection = document.getElementById('pageSizeSection');
+const pageSizeSelect = document.getElementById('pageSize');
+const userFilterSection = document.getElementById('userFilterSection');
+const userFilter = document.getElementById('userFilter');
 
 // Sezione elementi CRUD
 let currentEditId = null; // Memorizza l'ID se stiamo modificando, altrimenti null se stiamo creando
@@ -26,6 +32,18 @@ const formFields = document.getElementById('formFields');
 const modalTitle = document.getElementById('modalTitle');
 const searchInput = document.getElementById('adminSearch');
 const btnSearch = document.getElementById('btnSearch');
+
+// Elementi paginazione
+let totalPages = 0;
+const paginationControls = document.getElementById('paginationControls');
+const btnFirstPage = document.getElementById('btnFirstPage');
+const btnPrevTen = document.getElementById('btnPrevTen');
+const btnPrev = document.getElementById('btnPrev');
+const currentPageInput = document.getElementById('currentPage');
+const ofTotLab = document.getElementById('ofTotLab');
+const btnNext = document.getElementById('btnNext');
+const btnNextTen = document.getElementById('btnNextTen');
+const btnLastPage = document.getElementById('btnLastPage');
 
 // Mappa dei campi richiesti per ogni risorsa
 const resourceFields = {
@@ -63,43 +81,90 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
 async function fetchData() {
     showLoading(true);
 
-    // Costruzione query: Filtra per isActive in base al Cestino
-    // json-server supporta: ?q=search & _page=X & _per_page=Y & isActive=true
-    let url = `${BASE_URL}/${state.resource}?_page=${state.page}&_per_page=${state.per_page}&isActive=${!state.isBin}`;
-
-    const query = document.getElementById('adminSearch').value.trim();
-
-    if (query) {
-        switch (state.resource) {
-            case 'posts':
-                url += `&title:contains=${query}`;
-                break;
-            case 'users':
-            case 'roles':
-                url += `&name:contains=${query}`;
-                break;
-            case 'comments':
-                url += `&body:contains=${query}`;
-                break;
+    // --- 1. GESTIONE UI FILTRO UTENTI ---
+    if (state.resource !== 'posts') {
+        userFilterSection.classList.add('hidden');
+    } else {
+        userFilterSection.classList.remove('hidden');
+        if (userFilter.options.length <= 1) {
+            try {
+                const usersRes = await fetch(`${BASE_URL}/users`);
+                const usersData = await usersRes.json();
+                const usersList = usersData.data || usersData;
+                usersList.forEach(u => {
+                    allUsers[u.id] = u.name;
+                    const opt = document.createElement('option');
+                    opt.value = u.id;
+                    opt.textContent = u.name;
+                    userFilter.appendChild(opt);
+                });
+            } catch (e) { console.error("Errore caricamento utenti", e); }
         }
     }
 
+    // --- 2. COSTRUZIONE DELLA QUERY AL SERVER ---
+    const query = document.getElementById('adminSearch').value.trim().toLowerCase();
+
+    // Partiamo dall'URL base con il filtro del cestino
+    let url = `${BASE_URL}/${state.resource}?isActive=${!state.isBin}`;
+
+    // Passiamo il filtro per utente al server
+    if (userId && state.resource === 'posts') {
+        url += `&userId=${userId}`;
+    }
+
+    // SE NON C'È RICERCA, chiediamo al server di fare la paginazione al posto nostro
+    if (!query) {
+        // Gestione automatica della differenza tra locale (v1) e Vercel (v0.17)
+        if (isLocal) {
+            url += `&_page=${state.page}&_per_page=${state.per_page}`;
+        } else {
+            url += `&_page=${state.page}&_limit=${state.per_page}`;
+        }
+    }
+
+    // --- 3. ESECUZIONE E RENDERING ---
     try {
         const response = await fetch(url);
-
-        // Questo è l'intero oggetto JSON restituito dal server
         const responseObj = await response.json();
 
-        // Estraiamo l'array dei record e il numero totale di pagine
-        const data = responseObj.data || [];
-        const totalPages = responseObj.pages || 1;
+        // Estrazione dati per compatibilità con entrambe le versioni di json-server
+        let data = responseObj.data || responseObj;
 
-        console.log(responseObj);
-        console.log(data);
-        console.log(totalPages);
+        if (!query) {
+            // Se non c'è ricerca, calcoliamo le pagine usando i dati restituiti dal server
+            totalPages = responseObj.pages || Math.ceil(response.headers.get('X-Total-Count') / state.per_page) || 1;
+        } else {
+            // --- 4. FILTRO "OR" LATO JAVASCRIPT ---
+            // Se c'è una query, json-server ci ha inviato tutti gli elementi: li filtriamo noi
+            data = data.filter(item => {
+                if (state.resource === 'posts') {
+                    // Cerca nel titolo OPPURE nel body
+                    const inTitle = item.title && item.title.toLowerCase().includes(query);
+                    const inBody = item.body && item.body.toLowerCase().includes(query);
+                    return inTitle || inBody;
+                } else if (state.resource === 'comments') {
+                    // Cerca nel body OPPURE nell'email
+                    const inBody = item.body && item.body.toLowerCase().includes(query);
+                    const inEmail = item.email && item.email.toLowerCase().includes(query);
+                    return inBody || inEmail;
+                } else {
+                    // Per utenti e ruoli cerca nel nome
+                    return item.name && item.name.toLowerCase().includes(query);
+                }
+            });
+
+            // Calcoliamo le pagine totali in base a quanti risultati ha trovato il nostro filtro
+            totalPages = Math.ceil(data.length / state.per_page) || 1;
+
+            // Tagliamo l'array per inviare alla tabella solo i risultati della pagina corrente
+            const startIndex = (state.page - 1) * state.per_page;
+            data = data.slice(startIndex, startIndex + state.per_page);
+        }
 
         renderTable(data);
-        renderPagination(totalPages);
+        renderPagination();
+
     } catch (err) {
         showError("Errore nel caricamento dei dati.");
         console.error(err);
@@ -137,9 +202,8 @@ function renderTable(data) {
 
         return formattedItem;
     });
-    // ------------------------------------------------------
 
-    // Ora usiamo "formattedData" al posto di "data" per generare le colonne!
+    // Ora usiamo "formattedData" al posto di "data" per generare le colonne
     const keys = Object.keys(formattedData[0]).filter(k => k !== 'isActive');
     tableHead.innerHTML = keys.map(k => `<th class="p-4 border-b uppercase text-xs text-gray-400 font-bold">${k}</th>`).join('') + '<th class="p-4 border-b text-right">Azioni</th>';
 
@@ -384,15 +448,60 @@ function showError(message) {
     tableState.classList.remove('hidden');
 }
 
-function renderPagination(totalPages) {
-    document.getElementById('pageInfo').innerText = `Pagina ${state.page} di ${totalPages}`;
+function renderPagination() {
+    // Aggiorniamo i testi e gli input
+    currentPageInput.value = state.page;
+    ofTotLab.textContent = `di ${totalPages}`;
+    btnLastPage.textContent = totalPages;
 
-    document.getElementById('btnPrev').disabled = state.page === 1;
-    document.getElementById('btnNext').disabled = state.page >= totalPages || totalPages === 0;
+    const toggleButton = (btn, isDisabled) => {
+        btn.disabled = isDisabled;
+        if (isDisabled) {
+            btn.classList.add('opacity-40', 'cursor-not-allowed', 'bg-gray-100');
+            btn.classList.remove('hover:bg-gray-200');
+        } else {
+            btn.classList.remove('opacity-40', 'cursor-not-allowed', 'bg-gray-100');
+            btn.classList.add('hover:bg-gray-200');
+        }
+    };
+
+    // Logica di abilitazione/disabilitazione
+    toggleButton(btnFirstPage, state.page === 1);
+    toggleButton(btnPrev, state.page === 1);
+    toggleButton(btnPrevTen, state.page <= 10);
+
+    toggleButton(btnNext, state.page === totalPages);
+    toggleButton(btnNextTen, state.page > totalPages - 10);
+    toggleButton(btnLastPage, state.page === totalPages);
 }
 
-document.getElementById('btnPrev').addEventListener('click', () => { if (state.page > 1) { state.page--; fetchData(); } });
-document.getElementById('btnNext').addEventListener('click', () => { state.page++; fetchData(); });
+// Event Listeners per filtri e paginazione
+userFilter.addEventListener('change', (e) => {
+    userId = e.target.value ? parseInt(e.target.value, 10) : undefined;
+
+    // Recupero i valori correnti della barra di ricerca (se ci sono)
+    const qVal = adminSearch.value.trim();
+
+    triggerAdminSearch(qVal);
+});
+
+btnFirstPage.addEventListener('click', () => { state.page = 1; fetchData(); });
+
+btnPrev.addEventListener('click', () => { if (state.page > 1) { state.page--; fetchData(); } });
+
+btnPrevTen.addEventListener('click', () => { state.page = Math.max(1, state.page - 10); fetchData(); });
+
+btnNext.addEventListener('click', () => { state.page++; fetchData(); });
+
+btnNextTen.addEventListener('click', () => { state.page = Math.min(totalPages, state.page + 10); fetchData(); });
+
+btnLastPage.addEventListener('click', () => { state.page = totalPages; fetchData(); });
+
+pageSizeSelect.addEventListener('change', (e) => {
+    state.per_page = parseInt(e.target.value);
+    state.page = 1;
+    fetchData();
+});
 
 function logout() {
     window.location.reload();
