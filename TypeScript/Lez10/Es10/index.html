@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Calcolatrice">
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" href="es10.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Calcolatrice</h1><br>
+    </header>
+    <main>
+        <h3>Inserisci due numeri e l'operazione da effettuare</h3><br>
+        <form id="calcForm">
+            <label for="pNum">Primo numero:</label>
+            <input type="number" id="pNum" name="pNum" required>
+
+            <label for="sNum">Secondo numero:</label>
+            <input type="number" id="sNum" name="sNum" required>
+
+            <label for="operazione">Operazione:</label>
+            <select id="operazione" class="mt-1 block w-full p-2 border rounded-md shadow-sm">
+                <option value="default" selected>Scegli un'operazione...</option>
+                <option value="addizione">Addizione</option>
+                <option value="sottrazione">Sottrazione</option>
+                <option value="moltiplicazione">Moltiplicazione</option>
+                <option value="divisione">Divisione</option>
+            </select>
+
+            <button type="submit" id="btnInvia">Invia</button>
+            <button type="reset" id="btnReset">Reset</button>
+        </form>
+        <p id="risultato"></p>
+    </main>
+    <script src="es10.js"></script>
+</body>
+
+</html>
