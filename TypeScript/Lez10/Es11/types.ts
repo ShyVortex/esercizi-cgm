@@ -34,7 +34,7 @@ export type User = {
 // ------------------------------------------------- //
 
 // ---------------------- COMMENT ---------------------- //
-export type PHComment = {
+export type Comment = {
     postId: number;
     id: string;
     name: string;

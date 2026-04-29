@@ -8,7 +8,7 @@ simula il caricamento del back-end, l’errore in caso di validazione oppure err
 riprovare e il caso di ritorno di un array di risultati vuoto.
 */
 
-import { Post, User, PHComment } from './types';
+import { Post, User, Comment } from './types';
 
 // Stato dell'applicazione
 let allPosts: Post[] = [];
@@ -42,7 +42,7 @@ const resetButton = document.getElementById('resetButton') as HTMLButtonElement;
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // Inizializzazione
-async function init() {
+async function init(): Promise<void> {
     try {
         const [postsRes, usersRes] = await Promise.all([
             fetch('https://jsonplaceholder.typicode.com/posts'),
@@ -71,10 +71,10 @@ async function init() {
 }
 
 // Rendering lista
-function render() {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const paginatedItems = filteredPosts.slice(startIndex, endIndex);
+function render(): void {
+    const startIndex: number = (currentPage - 1) * itemsPerPage;
+    const endIndex: number = startIndex + itemsPerPage;
+    const paginatedItems: Post[] = filteredPosts.slice(startIndex, endIndex);
 
     // Ri-mostriamo la paginazione solo se ci sono risultati
     paginationControls.style.display = filteredPosts.length > 0 ? 'flex' : 'none';
@@ -83,7 +83,7 @@ function render() {
     renderPagination();
 }
 
-function renderLoading() {
+function renderLoading(): void {
     postsContainer.innerHTML = `
         <div class="flex justify-center py-10">
             <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
@@ -93,21 +93,21 @@ function renderLoading() {
     paginationControls.style.display = 'none';
 }
 
-async function renderWithLoading() {
+async function renderWithLoading(): Promise<void> {
     renderLoading();
 
-    const delay = Math.floor(Math.random() * 3000) + 1000;
+    const delay: number = Math.floor(Math.random() * 3000) + 1000;
     await sleep(delay);
 
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const paginatedItems = filteredPosts.slice(startIndex, endIndex);
+    const startIndex: number = (currentPage - 1) * itemsPerPage;
+    const endIndex: number = startIndex + itemsPerPage;
+    const paginatedItems: Post[] = filteredPosts.slice(startIndex, endIndex);
 
     renderPosts(paginatedItems);
     renderPagination();
 }
 
-function renderServerError(query: string) {
+function renderServerError(query: string): void {
     postsContainer.innerHTML = `
         <div class="text-center py-10">
             <p class="text-red-600 text-lg font-semibold mb-4">Errore temporaneo del server.</p>
@@ -120,7 +120,7 @@ function renderServerError(query: string) {
     paginationControls.style.display = 'none';
 }
 
-function renderPosts(posts: Post[]) {
+function renderPosts(posts: Post[]): void {
     if (posts.length === 0) {
         postsContainer.innerHTML = '<p class="text-center py-10 text-gray-500 text-lg">Nessun risultato trovato.</p>';
         return;
@@ -144,9 +144,8 @@ function renderPosts(posts: Post[]) {
             `).join('');
 }
 
-function renderPagination() {
-    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
-    let html = '';
+function renderPagination(): void {
+    const totalPages: number = Math.ceil(filteredPosts.length / itemsPerPage);
 
     // Aggiorniamo i testi e gli input
     currentPageInput.value = currentPage.toString();
@@ -182,24 +181,24 @@ btnPrev.addEventListener('click', () => goToPage(currentPage - 1));
 btnPrevTen.addEventListener('click', () => goToPage(Math.max(1, currentPage - 10)));
 
 btnNext.addEventListener('click', () => {
-    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    const totalPages: number = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
     if (currentPage < totalPages) goToPage(currentPage + 1);
 });
 
 btnNextTen.addEventListener('click', () => {
-    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    const totalPages: number = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
     goToPage(Math.min(totalPages, currentPage + 10));
 });
 
 btnLastPage.addEventListener('click', () => {
-    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    const totalPages: number = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
     goToPage(totalPages);
 });
 
 // Listener per la casella di input in cui l'utente può digitare la pagina
 currentPageInput.addEventListener('change', (e: Event) => {
-    let val = parseInt((e.target as HTMLInputElement).value);
-    const totalPages = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
+    let val: number = parseInt((e.target as HTMLInputElement).value);
+    const totalPages: number = Math.ceil(filteredPosts.length / itemsPerPage) || 1;
 
     // Controllo per evitare numeri invalidi
     if (isNaN(val) || val < 1) val = 1;
@@ -209,7 +208,7 @@ currentPageInput.addEventListener('change', (e: Event) => {
 });
 
 // Espansione Card e Caricamento Dettagli
-async function toggleDetail(postId: number) {
+async function toggleDetail(postId: number): Promise<void> {
     const detailContainer = document.getElementById(`detail-${postId}`) as HTMLElement;
     const excerpt = document.querySelector(`#post-${postId} .excerpt`) as Element;
 
@@ -232,7 +231,7 @@ async function toggleDetail(postId: number) {
         ]);
 
         const post: Post = await postRes.json();
-        const comments: PHComment[] = await commRes.json();
+        const comments: Comment[] = await commRes.json();
 
         // Inserisci i dati completi
         detailContainer.innerHTML = `
@@ -262,10 +261,10 @@ async function toggleDetail(postId: number) {
 async function triggerSearch(query: string) {
     renderLoading();
 
-    const delay = Math.floor(Math.random() * 3000) + 1000;
+    const delay: number = Math.floor(Math.random() * 3000) + 1000;
     await sleep(delay);
 
-    const isError = Math.floor(Math.random() * 10) + 1 === 1;
+    const isError: boolean = Math.floor(Math.random() * 10) + 1 === 1;
     console.log(isError);
 
     if (isError) {
@@ -274,16 +273,17 @@ async function triggerSearch(query: string) {
     }
 
     filteredPosts = allPosts.filter(p => {
-        let matchesTitle = true;
-        let matchesBody = true;
-        let matchesUser = true;
+        let matchesTitle: boolean = true;
+        let matchesBody: boolean = true;
+        let matchesUser: boolean = true;
 
         if (query) {
             matchesTitle = p.title.toLowerCase().includes(query.toLowerCase());
             matchesBody = p.body.toLowerCase().includes(query.toLowerCase());
         }
-        if (userId)
+        if (userId) {
             matchesUser = p.userId == userId;
+        }
 
         return (matchesTitle || matchesBody) && matchesUser;
     });
@@ -297,7 +297,7 @@ userFilter.addEventListener('change', (e: Event) => {
     userId = parseInt((e.target as HTMLSelectElement).value);
 
     // Recupero i valori correnti della barra di ricerca (se ci sono)
-    const qVal = tbInput.value.trim();
+    const qVal: string = tbInput.value.trim();
 
     if (qVal === '' || qVal.length < 3) {
         filteredPosts = userId ? allPosts.filter(p => p.userId == userId) : [...allPosts];
@@ -317,13 +317,13 @@ pageSizeSelect.addEventListener('change', (e: Event) => {
 tbInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         // 1. Estrai e pulisci i valori
-        const qVal = tbInput.value.trim();
+        const qVal: string = tbInput.value.trim();
         const tbLengthError = document.getElementById('tbLengthError') as HTMLLabelElement;
 
         // 2. Resetta gli errori visivi
         tbLengthError.style.display = 'none';
 
-        let isValid = true;
+        let isValid: boolean = true;
 
         // 3. Valida il campo
         if (qVal.length >= 0 && qVal.length < 3) {
@@ -343,12 +343,12 @@ tbInput.addEventListener('keypress', (e) => {
 });
 
 searchButton.addEventListener('click', () => {
-    const qVal = tbInput.value.trim();
+    const qVal: string = tbInput.value.trim();
     const tbLengthError = document.getElementById('tbLengthError') as HTMLLabelElement;
 
     tbLengthError.style.display = 'none';
 
-    let isValid = true;
+    let isValid: boolean = true;
 
     if (qVal.length >= 0 && qVal.length < 3) {
         tbLengthError.style.display = 'block';
@@ -364,7 +364,7 @@ searchButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-    const qVal = tbInput.value.trim();
+    const qVal: string = tbInput.value.trim();
     const tbLengthError = document.getElementById('tbLengthError') as HTMLLabelElement;
     tbLengthError.style.display = 'none';
 
