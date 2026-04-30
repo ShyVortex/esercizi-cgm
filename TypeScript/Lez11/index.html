@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Selettore piatto">
+    <title>Selettore piatto</title>
+    <link rel="stylesheet" href="es12.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Ristorante</h1><br>
+    </header>
+    <main>
+        <h3 id="h3Form">Riempi il form e scegli un piatto</h3>
+        <div id="gruppoBtnCliente" class="button-group">
+            <button id="btnPersona" class="btn active">Persona</button>
+            <button id="btnAzienda" class="btn">Azienda</button>
+        </div>
+        <form id="piattoForm">
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome" required>
+
+            <label id="cognomeLabel" for="cognome">Cognome:</label>
+            <input id="cognome" name="cognome">
+
+            <label id="formaSocietariaLabel" for="formaSocietaria" hidden>Forma Societaria:</label>
+            <select id="formaSocietaria" hidden name="formaSocietaria">
+                <option value="SaS">SaS</option>
+                <option value="Srl">Srl</option>
+                <option value="SpA">SpA</option>
+            </select>
+
+            <label for="tipoPiatto">Piatto:</label>
+            <select id="tipoPiatto" name="tipoPiatto" required>
+                <option value="" image="">Cosa vuoi ordinare?</option>
+                <option value="antipasto">Antipasto</option>
+                <option value="primo">Primo</option>
+                <option value="secondo">Secondo</option>
+                <option value="dessert">Dessert</option>
+                <option value="bevanda">Bevanda</option>
+            </select>
+            <select id="selectAntipasto" name="selectAntipasto" hidden>
+                <option value="">Scegli un antipasto</option>
+                <option value="insalataMare">Insalata di mare</option>
+                <option value="pizza">Pizza</option>
+                <option value="caprese">Caprese</option>
+                <option value="salmone">Salmone marinato</option>
+                <option value="tartine">Tartine miste</option>
+            </select>
+            <select id="selectPrimo" name="selectPrimo" hidden>
+                <option value="">Scegli un primo</option>
+                <option value="pastaPomodoro">Pasta al pomodoro</option>
+                <option value="risotto">Risotto alla cantonese</option>
+                <option value="spaghetti">Spaghetti alle vongole</option>
+                <option value="gnocchi">Gnocchi al pesto</option>
+                <option value="lasagne">Lasagne ripiene</option>
+            </select>
+            <select id="selectSecondo" name="selectSecondo" hidden>
+                <option value="">Scegli un secondo</option>
+                <option value="scaloppina">Scaloppina al limone</option>
+                <option value="pollo">Pollo al curry</option>
+                <option value="frittata">Frittata con verdure</option>
+                <option value="polpette">Polpette al sugo</option>
+                <option value="merluzzo">Merluzzo con patate</option>
+            </select>
+            <select id="selectDessert" name="selectDessert" hidden>
+                <option value="">Scegli un dessert</option>
+                <option value="sorbetto">Sorbetto al limone</option>
+                <option value="gelato">Gelato al pistacchio</option>
+                <option value="tiramisu">Tiramisù classico</option>
+                <option value="ciambellone">Ciambellone al cacao</option>
+                <option value="crostata">Crostata di marmellata</option>
+            </select>
+            <select id="selectBevanda" name="selectBevanda" hidden>
+                <option value="">Scegli una bevanda</option>
+                <option value="acquaNat">Acqua naturale</option>
+                <option value="acquaFrizz">Acqua frizzante</option>
+                <option value="fanta">Aranciata Fanta</option>
+                <option value="coca-cola">Coca-Cola Zero</option>
+                <option value="birra">Birra Peroni</option>
+            </select>
+
+            <button type="submit" id="btnInvia">Invia</button>
+            <button type="reset" id="btnReset">Reset</button>
+        </form>
+        <div id="listaOrdini" class="ordini-container"></div>
+    </main>
+    <script type="module" src="es12.js"></script>
+</body>
+
+</html>
