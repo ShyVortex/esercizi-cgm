@@ -166,7 +166,8 @@
                 </select>
                 <br>
                 <button type="button" id="btnSalvaModifica">Salva Modifiche e Riavvia</button>
-                <button type="button" onclick="document.getElementById('modificaModal').close()">Annulla</button>
+                <button type="button" id="btnAnnullaModifica"
+                    onclick="document.getElementById('modificaModal').close()">Annulla</button>
             </form>
         </dialog>
 
@@ -175,8 +176,9 @@
             <h3>Cancella Ordine</h3>
             <p>Inserisci il motivo della cancellazione:</p>
             <input type="text" id="motivoCancellazione" required><br><br>
-            <button type="button" id="btnConfermaCancellazione" style="color:red;">Conferma Cancellazione</button>
-            <button type="button" onclick="document.getElementById('cancellaModal').close()">Annulla</button>
+            <button type="button" id="btnConfermaCancellazione">Conferma Cancellazione</button>
+            <button type="button" id="btnAnnullaCancellazione"
+                onclick="document.getElementById('cancellaModal').close()">Annulla</button>
         </dialog>
     </main>
     <script type="module" src="es13.js"></script>

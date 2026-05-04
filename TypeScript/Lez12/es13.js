@@ -15,10 +15,38 @@ Gestire tutto in un apposito servizio.
 */
 import { OrdineService } from "./OrdineService.js";
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+async function attendiConPausa(ms, piatto, token, msgBase, color, tempoSec) {
+    const step = 500; // Controlliamo lo stato ogni mezzo secondo
+    let elapsed = 0;
+    let inPausa = false;
+    while (elapsed < ms) {
+        // Se c'è stato un riavvio o una cancellazione (token cambiato), esce subito e uccide il ciclo
+        if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token) {
+            return;
+        }
+        // Se l'ID dell'ordine in esecuzione corrisponde al modale attualmente aperto, metti in pausa
+        if (ordineSelezionatoId === piatto.id) {
+            if (!inPausa) {
+                mostraStatoOrdine(piatto, `${msgBase} [IN PAUSA]`, 'orange');
+                inPausa = true;
+            }
+            await sleep(step); // Aspetta, ma non fa avanzare il timer 'elapsed'
+        }
+        else {
+            // Se riprende dall'essere in pausa, ripristiniamo il testo originale
+            if (inPausa) {
+                mostraStatoOrdine(piatto, msgBase, color, tempoSec);
+                inPausa = false;
+            }
+            await sleep(step);
+            elapsed += step; // L'ordine avanza normalmente
+        }
+    }
+}
 // Variabile globale per tenere traccia dell'ordine da modificare/cancellare
 let ordineSelezionatoId = null;
 let ordineSelezionatoClienteTipo = null;
-// NUOVO: Registro per tracciare qual è il ciclo "ufficiale" attualmente attivo per ogni ordine
+// Registro per tracciare qual è il ciclo "ufficiale" attualmente attivo per ogni ordine
 const esecuzioniAttive = new Map();
 function mostraStatoOrdine(piatto, msg, color, tempo) {
     const risultato = piatto.element.querySelector(".risultato");
@@ -35,17 +63,15 @@ function mostraStatoOrdine(piatto, msg, color, tempo) {
     risultato.style.color = color;
 }
 async function completaOrdine(piatto, token) {
-    // Controllo sicurezza immediato
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token)
         return piatto;
     let tempoCompletamento = Math.floor(Math.random() * 10) + 1;
-    mostraStatoOrdine(piatto, 'in fase di completamento', '#FF8C00', tempoCompletamento);
     if (piatto.riuscita <= tempoCompletamento)
         piatto.riuscita = tempoCompletamento;
     else
         tempoCompletamento = piatto.riuscita;
-    await sleep(tempoCompletamento * 1000);
-    // Doppio controllo post-risveglio dal delay
+    mostraStatoOrdine(piatto, 'in fase di completamento', '#FF8C00', tempoCompletamento);
+    await attendiConPausa(tempoCompletamento * 1000, piatto, token, 'in fase di completamento', '#FF8C00', tempoCompletamento);
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token)
         return piatto;
     if (piatto.riuscita >= 10) {
@@ -64,8 +90,7 @@ async function preparaOrdine(piatto, token) {
     piatto.stato = "in preparazione";
     const tempoPreparazione = Math.floor(Math.random() * 10) + 1;
     mostraStatoOrdine(piatto, 'in fase di preparazione', 'purple', tempoPreparazione);
-    await sleep(tempoPreparazione * 1000);
-    // Controllo post-risveglio
+    await attendiConPausa(tempoPreparazione * 1000, piatto, token, 'in fase di preparazione', 'purple', tempoPreparazione);
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token)
         return piatto;
     return completaOrdine(piatto, token);
@@ -75,14 +100,12 @@ async function inviaOrdine(piatto, token) {
         return piatto;
     const tempoInvio = Math.floor(Math.random() * 5) + 1;
     mostraStatoOrdine(piatto, 'in fase di invio', '#2980b9', tempoInvio);
-    await sleep(tempoInvio * 1000);
-    // Controllo post-risveglio
+    await attendiConPausa(tempoInvio * 1000, piatto, token, 'in fase di invio', '#2980b9', tempoInvio);
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token)
         return piatto;
     piatto.stato = "inviato";
     return preparaOrdine(piatto, token);
 }
-// Funzioni per l'apertura dei modali
 function apriModaleModifica(piatto) {
     ordineSelezionatoId = piatto.id;
     ordineSelezionatoClienteTipo = piatto.cliente.tipo;
@@ -132,8 +155,8 @@ function apriModaleCancellazione(id) {
     modale.showModal();
 }
 async function exec(event, piatto, tokenCorrente) {
-    // Se la funzione parte senza token (es. nuovo ordine o utente preme Modifica), 
-    // generiamo un nuovo token e lo eleggiamo a "ufficiale" nella Mappa.
+    /* Se la funzione parte senza token (es. nuovo ordine o utente preme Modifica),
+       generiamo un nuovo token e lo settiamo come attivo nella mappa. */
     if (!tokenCorrente) {
         tokenCorrente = Date.now() + Math.random();
         esecuzioniAttive.set(piatto.id, tokenCorrente);
@@ -167,9 +190,9 @@ async function exec(event, piatto, tokenCorrente) {
     btnModifica.hidden = false;
     btnCancella.hidden = false;
     btnRipeti.hidden = true;
-    // Passiamo il token alla catena di funzioni!
+    // Passiamo il token alla catena di funzioni
     piatto = await inviaOrdine(piatto, tokenCorrente);
-    // SE IL MIO TOKEN NON È PIÙ QUELLO ATTIVO, TERMINO SUBITO L'ESECUZIONE!
+    // Se il token del piatto non è più attivo, termina l'esecuzione
     if (esecuzioniAttive.get(piatto.id) !== tokenCorrente) {
         return;
     }
@@ -193,7 +216,7 @@ async function exec(event, piatto, tokenCorrente) {
                 piatto.riuscita++;
             piatto.rinvii++;
             piatto.stato = "creato";
-            // Richiamiamo exec() senza token: ne genererà uno nuovo sovrascrivendo la mappa!
+            // Richiamiamo exec() senza token: ne genererà uno nuovo sovrascrivendo la mappa
             return exec(event, piatto);
         }, { once: true });
     }
@@ -338,7 +361,7 @@ async function main(event) {
     ordineDiv.appendChild(risultatoP);
     ordineDiv.appendChild(btnRipeti);
     listaOrdini.prepend(ordineDiv);
-    // Preparazione dei dati da inviare al Servizio (senza id e isActive)
+    // Preparazione dei dati da inviare al servizio (senza id e isActive)
     const nuovoPiattoBase = {
         tipo: tipoPiatto.value,
         nome: nomePiatto,
@@ -352,7 +375,7 @@ async function main(event) {
     btnInvia.disabled = true;
     btnInvia.textContent = "Inviando al server...";
     try {
-        // CHIAMATA API (Simulata)
+        // Chiamata API simulata
         const piattoCreato = await OrdineService.creaOrdine(nuovoPiattoBase);
         ordineDiv.dataset.id = piattoCreato.id.toString();
         exec(event, piattoCreato);
@@ -495,7 +518,7 @@ function gestisciFormPiattoModifica(tipoPiatto) {
     const selects = ['modSelectAntipasto', 'modSelectPrimo', 'modSelectSecondo', 'modSelectDessert', 'modSelectBevanda'];
     // Nascondiamo tutto di default
     selects.forEach(id => document.getElementById(id).hidden = true);
-    // Mostriamo solo quella corretta
+    // Mostriamo solo le opzioni della categoria selezionata
     if (tipoPiatto === 'antipasto')
         document.getElementById('modSelectAntipasto').hidden = false;
     else if (tipoPiatto === 'primo')
@@ -553,15 +576,13 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(gestisciInvia, 0);
         });
     }
-    // === GESTIONE EVENTI MODALI ===
-    // 1. Aggiungi questo per far cambiare i menu a tendina nel modale
+    // === Gestione Eventi Modali ===
     const modTipoPiatto = document.getElementById("modTipoPiatto");
     if (modTipoPiatto) {
         modTipoPiatto.addEventListener('change', () => {
             gestisciFormPiattoModifica(modTipoPiatto.value);
         });
     }
-    // 2. Sostituisci per intero l'evento btnSalvaModifica.addEventListener con questo:
     const btnSalvaModifica = document.getElementById("btnSalvaModifica");
     if (btnSalvaModifica) {
         btnSalvaModifica.addEventListener("click", async () => {
@@ -587,7 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 else if (modTipo.value === 'bevanda')
                     activeSelect = document.getElementById('modSelectBevanda');
                 if (activeSelect && activeSelect.selectedIndex > 0) {
-                    // Prendi il nome pulendolo da "(Attuale)" nel caso ci siano errori
+                    // Prende il nome pulendolo da "(Attuale)" nel caso ci siano errori
                     nuovoNomePiatto = activeSelect.options[activeSelect.selectedIndex].text.toLowerCase().replace(' (attuale)', '');
                     nuovoTipoPiatto = modTipo.value;
                 }
@@ -605,7 +626,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     tipo: 'persona',
                     nome: nuovoNomeCliente,
                     cognome: modCognome,
-                    id: 0 // Ignorato dal backend, serve solo per far felice TypeScript
+                    id: 0 // (ignorato dal backend)
                 };
             }
             else if (ordineSelezionatoClienteTipo === 'azienda') {
@@ -618,7 +639,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             btnSalvaModifica.disabled = true;
             try {
+                // Aspetta il database mentre il modale è ancora aperto
                 const ordineAggiornato = await OrdineService.aggiornaOrdine(ordineSelezionatoId, updateData);
+                // Solo alla fine chiudi il modale
+                const modale = document.getElementById("modificaModal");
+                modale.close();
                 exec(new Event('modifica'), ordineAggiornato);
             }
             catch (error) {
@@ -643,12 +668,13 @@ document.addEventListener("DOMContentLoaded", () => {
             modale.close();
             btnConfermaCanc.disabled = true;
             try {
-                // Chiamata DELETE (Logica) simulata
                 const ordineCancellato = await OrdineService.cancellaOrdine(ordineSelezionatoId, motivo);
+                const modale = document.getElementById("cancellaModal");
+                modale.close();
                 // Aggiorniamo la UI forzando l'uscita dalla funzione exec attiva
                 mostraStatoOrdine(ordineCancellato, `cancellato (Motivo: ${ordineCancellato.reason})`, 'gray');
-                // Nascondiamo i bottoni dal DOM per la card cancellata
-                const cardCorrente = document.querySelector(`[data-id="${ordineSelezionatoId}"]`);
+                // Nascondiamo i pulsanti dal DOM per la card cancellata
+                const cardCorrente = ordineCancellato.element;
                 if (cardCorrente) {
                     cardCorrente.querySelector(".btnModifica").hidden = true;
                     cardCorrente.querySelector(".btnCancella").hidden = true;
@@ -663,6 +689,19 @@ document.addEventListener("DOMContentLoaded", () => {
             finally {
                 btnConfermaCanc.disabled = false;
             }
+        });
+    }
+    // Ascoltiamo l'evento nativo HTML di chiusura modale per "togliere la pausa" all'ordine
+    const modaleModifica = document.getElementById("modificaModal");
+    if (modaleModifica) {
+        modaleModifica.addEventListener("close", () => {
+            ordineSelezionatoId = null;
+        });
+    }
+    const modaleCancella = document.getElementById("cancellaModal");
+    if (modaleCancella) {
+        modaleCancella.addEventListener("close", () => {
+            ordineSelezionatoId = null;
         });
     }
 });

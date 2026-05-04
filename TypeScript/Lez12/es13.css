@@ -187,6 +187,38 @@ input[type="submit"]:disabled {
     background-color: rgba(192, 57, 43, 0.95);
 }
 
+#btnSalvaModifica {
+    background-color: green;
+}
+
+#btnSalvaModifica:hover {
+    background-color: darkgreen;
+}
+
+#btnAnnullaModifica {
+    background-color: rgba(231, 76, 60, 0.85);
+}
+
+#btnAnnullaModifica:hover {
+    background-color: rgba(192, 57, 43, 0.95);
+}
+
+#btnConfermaCancellazione {
+    background-color: rgba(231, 76, 60, 0.85);
+}
+
+#btnConfermaCancellazione:hover {
+    background-color: rgba(192, 57, 43, 0.95);
+}
+
+#btnAnnullaCancellazione {
+    background-color: rgba(115, 115, 115, 0.85);
+}
+
+#btnAnnullaCancellazione:hover {
+    background-color: rgba(100, 100, 100, 0.95);
+}
+
 button:hover {
     background-color: #2980b9;
 }

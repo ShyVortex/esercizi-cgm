@@ -19,6 +19,36 @@ import { OrdineService } from "./OrdineService.js";
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+async function attendiConPausa(ms: number, piatto: Piatto, token: number, msgBase: string, color: string, tempoSec: number): Promise<void> {
+    const step = 500; // Controlliamo lo stato ogni mezzo secondo
+    let elapsed = 0;
+    let inPausa = false;
+
+    while (elapsed < ms) {
+        // Se c'è stato un riavvio o una cancellazione (token cambiato), esce subito e uccide il ciclo
+        if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token) {
+            return;
+        }
+
+        // Se l'ID dell'ordine in esecuzione corrisponde al modale attualmente aperto, metti in pausa
+        if (ordineSelezionatoId === piatto.id) {
+            if (!inPausa) {
+                mostraStatoOrdine(piatto, `${msgBase} [IN PAUSA]`, 'orange');
+                inPausa = true;
+            }
+            await sleep(step); // Aspetta, ma non fa avanzare il timer 'elapsed'
+        } else {
+            // Se riprende dall'essere in pausa, ripristiniamo il testo originale
+            if (inPausa) {
+                mostraStatoOrdine(piatto, msgBase, color, tempoSec);
+                inPausa = false;
+            }
+            await sleep(step);
+            elapsed += step; // L'ordine avanza normalmente
+        }
+    }
+}
+
 // Variabile globale per tenere traccia dell'ordine da modificare/cancellare
 let ordineSelezionatoId: number | null = null;
 let ordineSelezionatoClienteTipo: 'persona' | 'azienda' | null = null;
@@ -44,21 +74,19 @@ function mostraStatoOrdine(piatto: Piatto, msg: string, color: string, tempo?: n
 }
 
 async function completaOrdine(piatto: Piatto, token: number): Promise<Piatto> {
-    // Controllo sicurezza immediato
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token) return piatto;
 
     let tempoCompletamento: number = Math.floor(Math.random() * 10) + 1;
-
-    mostraStatoOrdine(piatto, 'in fase di completamento', '#FF8C00', tempoCompletamento);
 
     if (piatto.riuscita <= tempoCompletamento)
         piatto.riuscita = tempoCompletamento;
     else
         tempoCompletamento = piatto.riuscita;
 
-    await sleep(tempoCompletamento * 1000);
+    mostraStatoOrdine(piatto, 'in fase di completamento', '#FF8C00', tempoCompletamento);
 
-    // Doppio controllo post-risveglio dal delay
+    await attendiConPausa(tempoCompletamento * 1000, piatto, token, 'in fase di completamento', '#FF8C00', tempoCompletamento);
+
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token) return piatto;
 
     if (piatto.riuscita >= 10) {
@@ -82,9 +110,8 @@ async function preparaOrdine(piatto: Piatto, token: number): Promise<Piatto> {
     const tempoPreparazione: number = Math.floor(Math.random() * 10) + 1;
     mostraStatoOrdine(piatto, 'in fase di preparazione', 'purple', tempoPreparazione);
 
-    await sleep(tempoPreparazione * 1000);
+    await attendiConPausa(tempoPreparazione * 1000, piatto, token, 'in fase di preparazione', 'purple', tempoPreparazione);
 
-    // Controllo post-risveglio
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token) return piatto;
 
     return completaOrdine(piatto, token);
@@ -96,9 +123,8 @@ async function inviaOrdine(piatto: Piatto, token: number): Promise<Piatto> {
     const tempoInvio: number = Math.floor(Math.random() * 5) + 1;
     mostraStatoOrdine(piatto, 'in fase di invio', '#2980b9', tempoInvio);
 
-    await sleep(tempoInvio * 1000);
+    await attendiConPausa(tempoInvio * 1000, piatto, token, 'in fase di invio', '#2980b9', tempoInvio);
 
-    // Controllo post-risveglio
     if (!piatto.isActive || esecuzioniAttive.get(piatto.id) !== token) return piatto;
 
     piatto.stato = "inviato";
@@ -706,7 +732,13 @@ document.addEventListener("DOMContentLoaded", () => {
             btnSalvaModifica.disabled = true;
 
             try {
+                // Aspetta il database mentre il modale è ancora aperto
                 const ordineAggiornato = await OrdineService.aggiornaOrdine(ordineSelezionatoId, updateData);
+
+                // Solo alla fine chiudi il modale
+                const modale = document.getElementById("modificaModal") as HTMLDialogElement;
+                modale.close();
+
                 exec(new Event('modifica'), ordineAggiornato);
             } catch (error) {
                 alert("Errore: " + error);
@@ -734,11 +766,14 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const ordineCancellato = await OrdineService.cancellaOrdine(ordineSelezionatoId, motivo);
 
+                const modale = document.getElementById("cancellaModal") as HTMLDialogElement;
+                modale.close();
+
                 // Aggiorniamo la UI forzando l'uscita dalla funzione exec attiva
                 mostraStatoOrdine(ordineCancellato, `cancellato (Motivo: ${ordineCancellato.reason})`, 'gray');
 
                 // Nascondiamo i pulsanti dal DOM per la card cancellata
-                const cardCorrente = document.querySelector(`[data-id="${ordineSelezionatoId}"]`);
+                const cardCorrente = ordineCancellato.element;
                 if (cardCorrente) {
                     (cardCorrente.querySelector(".btnModifica") as HTMLButtonElement).hidden = true;
                     (cardCorrente.querySelector(".btnCancella") as HTMLButtonElement).hidden = true;
@@ -751,6 +786,21 @@ document.addEventListener("DOMContentLoaded", () => {
             } finally {
                 btnConfermaCanc.disabled = false;
             }
+        });
+    }
+
+    // Ascoltiamo l'evento nativo HTML di chiusura modale per "togliere la pausa" all'ordine
+    const modaleModifica = document.getElementById("modificaModal") as HTMLDialogElement;
+    if (modaleModifica) {
+        modaleModifica.addEventListener("close", () => {
+            ordineSelezionatoId = null;
+        });
+    }
+
+    const modaleCancella = document.getElementById("cancellaModal") as HTMLDialogElement;
+    if (modaleCancella) {
+        modaleCancella.addEventListener("close", () => {
+            ordineSelezionatoId = null;
         });
     }
 });
