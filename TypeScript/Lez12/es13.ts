@@ -179,6 +179,7 @@ function apriModaleModifica(piatto: Piatto) {
     });
 
     modale.showModal();
+    gestisciSalvaModifiche();
 }
 
 function apriModaleCancellazione(id: number) {
@@ -519,6 +520,38 @@ function resetAzienda(): void {
     campoFormaSocietaria.selectedIndex = 0;
 }
 
+function gestisciSalvaModifiche(): void {
+    const btnSalvaModifica = document.getElementById('btnSalvaModifica') as HTMLButtonElement;
+    const modTipoPiatto = document.getElementById('modTipoPiatto') as HTMLSelectElement;
+
+    if (!btnSalvaModifica || !modTipoPiatto) return;
+
+    // Se l'utente ha scelto "Lascia invariato" (value è vuoto), il form è valido
+    // perché manterrà il piatto vecchio e modificherà magari solo il nome del cliente.
+    if (modTipoPiatto.value === "") {
+        btnSalvaModifica.disabled = false;
+        return;
+    }
+
+    let isPiattoValido = false;
+
+    // Controlliamo in base alla categoria attualmente selezionata a schermo
+    if (modTipoPiatto.value === 'antipasto') {
+        isPiattoValido = (document.getElementById('modSelectAntipasto') as HTMLSelectElement).selectedIndex > 0;
+    } else if (modTipoPiatto.value === 'primo') {
+        isPiattoValido = (document.getElementById('modSelectPrimo') as HTMLSelectElement).selectedIndex > 0;
+    } else if (modTipoPiatto.value === 'secondo') {
+        isPiattoValido = (document.getElementById('modSelectSecondo') as HTMLSelectElement).selectedIndex > 0;
+    } else if (modTipoPiatto.value === 'dessert') {
+        isPiattoValido = (document.getElementById('modSelectDessert') as HTMLSelectElement).selectedIndex > 0;
+    } else if (modTipoPiatto.value === 'bevanda') {
+        isPiattoValido = (document.getElementById('modSelectBevanda') as HTMLSelectElement).selectedIndex > 0;
+    }
+
+    // Abilita il bottone solo se il piatto è valido
+    btnSalvaModifica.disabled = !isPiattoValido;
+}
+
 function gestisciInvia(): void {
     const btnPersona = document.getElementById('btnPersona') as HTMLButtonElement;
     const btnAzienda = document.getElementById('btnAzienda') as HTMLButtonElement;
@@ -803,4 +836,22 @@ document.addEventListener("DOMContentLoaded", () => {
             ordineSelezionatoId = null;
         });
     }
+
+    // Array con gli ID di tutte le select del modale
+    const selectsModale = [
+        'modTipoPiatto',
+        'modSelectAntipasto',
+        'modSelectPrimo',
+        'modSelectSecondo',
+        'modSelectDessert',
+        'modSelectBevanda'
+    ];
+
+    // Agganciamo la nostra validazione in tempo reale a ogni cambiamento
+    selectsModale.forEach(id => {
+        const tendina = document.getElementById(id) as HTMLSelectElement;
+        if (tendina) {
+            tendina.addEventListener('change', gestisciSalvaModifiche);
+        }
+    });
 });

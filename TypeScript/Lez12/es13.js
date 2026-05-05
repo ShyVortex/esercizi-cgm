@@ -147,6 +147,7 @@ function apriModaleModifica(piatto) {
         });
     });
     modale.showModal();
+    gestisciSalvaModifiche();
 }
 function apriModaleCancellazione(id) {
     ordineSelezionatoId = id;
@@ -442,6 +443,37 @@ function resetAzienda() {
     labelFormaSocietaria.hidden = false;
     campoFormaSocietaria.selectedIndex = 0;
 }
+function gestisciSalvaModifiche() {
+    const btnSalvaModifica = document.getElementById('btnSalvaModifica');
+    const modTipoPiatto = document.getElementById('modTipoPiatto');
+    if (!btnSalvaModifica || !modTipoPiatto)
+        return;
+    // Se l'utente ha scelto "Lascia invariato" (value è vuoto), il form è valido
+    // perché manterrà il piatto vecchio e modificherà magari solo il nome del cliente.
+    if (modTipoPiatto.value === "") {
+        btnSalvaModifica.disabled = false;
+        return;
+    }
+    let isPiattoValido = false;
+    // Controlliamo in base alla categoria attualmente selezionata a schermo
+    if (modTipoPiatto.value === 'antipasto') {
+        isPiattoValido = document.getElementById('modSelectAntipasto').selectedIndex > 0;
+    }
+    else if (modTipoPiatto.value === 'primo') {
+        isPiattoValido = document.getElementById('modSelectPrimo').selectedIndex > 0;
+    }
+    else if (modTipoPiatto.value === 'secondo') {
+        isPiattoValido = document.getElementById('modSelectSecondo').selectedIndex > 0;
+    }
+    else if (modTipoPiatto.value === 'dessert') {
+        isPiattoValido = document.getElementById('modSelectDessert').selectedIndex > 0;
+    }
+    else if (modTipoPiatto.value === 'bevanda') {
+        isPiattoValido = document.getElementById('modSelectBevanda').selectedIndex > 0;
+    }
+    // Abilita il bottone solo se il piatto è valido
+    btnSalvaModifica.disabled = !isPiattoValido;
+}
 function gestisciInvia() {
     const btnPersona = document.getElementById('btnPersona');
     const btnAzienda = document.getElementById('btnAzienda');
@@ -704,4 +736,20 @@ document.addEventListener("DOMContentLoaded", () => {
             ordineSelezionatoId = null;
         });
     }
+    // Array con gli ID di tutte le select del modale
+    const selectsModale = [
+        'modTipoPiatto',
+        'modSelectAntipasto',
+        'modSelectPrimo',
+        'modSelectSecondo',
+        'modSelectDessert',
+        'modSelectBevanda'
+    ];
+    // Agganciamo la nostra validazione in tempo reale a ogni cambiamento
+    selectsModale.forEach(id => {
+        const tendina = document.getElementById(id);
+        if (tendina) {
+            tendina.addEventListener('change', gestisciSalvaModifiche);
+        }
+    });
 });
