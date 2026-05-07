@@ -1,4 +1,7 @@
-import { Post, User, Comment, Role } from "./types.js";
+import { Post } from "../types/post.js";
+import { User } from "../types/user.js";
+import { Comment } from "../types/comment.js";
+import { Role } from "../types/role.js";
 
 // ---- TYPE GUARDS ---- //
 

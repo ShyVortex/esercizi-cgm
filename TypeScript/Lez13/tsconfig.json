@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": ".",
+        "target": "ES2015",
+        "lib": [
+            "ES2015",
+            "DOM",
+            "DOM.Iterable"
+        ]
+    },
+    "include": [
+        "commons/**/*",
+        "helpers/**/*",
+        "pages/**/*",
+        "services/**/*",
+        "types/**/*",
+        "utilities/**/*"
+    ]
+}
