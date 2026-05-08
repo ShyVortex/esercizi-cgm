@@ -46,3 +46,20 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
+
+#adminButton {
+    margin-left: 25px;
+    background-color: darkgoldenrod;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-shadow: 0.5px 0.5px 0.5px black;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-display: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}

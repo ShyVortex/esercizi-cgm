@@ -9,6 +9,7 @@ import { Post } from "../../types/post.js";
 import { User } from "../../types/user.js";
 import { Comment } from "../../types/comment.js";
 import { sleep } from "../../helpers/sleep.js";
+import { WINDOW_URL } from "../../utilities/api.js";
 
 import { PostsService } from "../../services/posts.service.js";
 import { UsersService } from "../../services/users.service.js";
@@ -252,6 +253,11 @@ Elements.resetButton.addEventListener('click', () => {
     Globals.shared.currentPage = 1;
     render();
     return;
+})
+
+Elements.adminButton.addEventListener('click', () => {
+    const targetUrl = WINDOW_URL + "/pages/admin";
+    window.location.href = targetUrl;
 })
 
 function goToPage(page: number) {

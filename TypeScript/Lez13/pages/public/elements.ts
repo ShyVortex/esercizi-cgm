@@ -14,7 +14,8 @@ export const btnNext = document.getElementById('btnNext') as HTMLButtonElement;
 export const btnNextTen = document.getElementById('btnNextTen') as HTMLButtonElement;
 export const btnLastPage = document.getElementById('btnLastPage') as HTMLButtonElement;
 
-// Elementi di ricerca
+// Pulsanti
 export const tbInput = document.getElementById('tbInput') as HTMLInputElement;
 export const searchButton = document.getElementById('searchButton') as HTMLButtonElement;
 export const resetButton = document.getElementById('resetButton') as HTMLButtonElement;
+export const adminButton = document.getElementById('adminButton') as HTMLButtonElement;

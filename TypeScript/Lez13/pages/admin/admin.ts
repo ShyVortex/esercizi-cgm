@@ -3,7 +3,7 @@ import { Item } from "../../types/item.js";
 import { ResourceFields } from "../../types/resource-fields.js";
 import { ResponseJson } from "../../types/response-json.js";
 import { isComment, isPost, isRole, isUser } from "../../utilities/validator.js";
-import { BASE_URL, isLocal } from '../../utilities/api.js';
+import { BASE_URL, isLocal, WINDOW_URL } from '../../utilities/api.js';
 
 import { UsersService } from "../../services/users.service.js";
 import { ItemService } from "../../services/item.service.js";
@@ -379,7 +379,8 @@ Elements.currentPageInput.addEventListener('change', (e: Event) => {
 });
 
 function logout(): void {
-    window.location.reload();
+    const targetUrl = WINDOW_URL + "/pages/public";
+    window.location.href = targetUrl;
 }
 
 // Funzione helper per lanciare la ricerca
