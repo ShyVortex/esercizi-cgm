@@ -1,13 +1,12 @@
 import { Post } from "../types/post.js";
-import { ResponseJson } from "../types/response-json.js";
 import { BASE_URL } from "../utilities/api.js";
 
 export class PostsService {
     static async getAllPosts(): Promise<Post[]> {
-        const postsRes: Response = await fetch(`${BASE_URL}/posts`);
-        const posts: ResponseJson = await postsRes.json();
+        const postsRes: Response = await fetch(`${BASE_URL}/posts?isActive=true`);
+        const posts: Post[] = await postsRes.json();
 
-        return (posts.data || posts) as Post[];
+        return posts;
     }
 
     static async getPost(id: number): Promise<Post> {

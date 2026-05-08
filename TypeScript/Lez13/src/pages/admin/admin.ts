@@ -1,7 +1,7 @@
 import { User } from "../../types/user.js";
 import { Item } from "../../types/item.js";
 import { ResourceFields } from "../../types/resource-fields.js";
-import { ResponseJson } from "../../types/response-json.js";
+import { ResponseSearch } from "../../types/response.js";
 import { isComment, isItemArray, isPost, isResponseJson, isRole, isUser } from "../../utilities/validator.js";
 import { BASE_URL, isLocal, WINDOW_URL } from '../../utilities/api.js';
 
@@ -12,14 +12,12 @@ import * as Elements from "./elements.js";
 import * as Globals from "../globals.js";
 import { Renderer } from "../../commons/renderer.js";
 import { Paginator } from "../../commons/paginator.js";
-import { ResponseSearch } from "../../types/response-search.js";
 
 // 1. Gestione Autenticazione
 (document.getElementById('loginForm') as HTMLFormElement).addEventListener('submit', (e: Event) => {
     e.preventDefault();
     const user: string = (document.getElementById('username') as HTMLInputElement).value;
     const pass: string = (document.getElementById('password') as HTMLInputElement).value;
-    const btn = document.getElementById('btnLogin') as HTMLButtonElement;
     const error = document.getElementById('loginError') as HTMLParagraphElement;
 
     // Simulazione autenticazione
@@ -301,9 +299,6 @@ Elements.crudForm.addEventListener('submit', async (e: Event) => {
 
     // Se c'è un ID facciamo PATCH (modifica), altrimenti POST (crea)
     const method: string = Globals.shared.currentEditId ? 'PATCH' : 'POST';
-    const url: string = Globals.shared.currentEditId ?
-        `${BASE_URL}/${Globals.state.resource}/${Globals.shared.currentEditId}`
-        : `${BASE_URL}/${Globals.state.resource}`;
 
     try {
         // Disabilitiamo il pulsante salva durante il caricamento (per evitare doppi click)
@@ -311,11 +306,10 @@ Elements.crudForm.addEventListener('submit', async (e: Event) => {
         submitBtn.disabled = true;
         submitBtn.innerText = 'Salvataggio...';
 
-        await fetch(url, {
-            method: method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dataObj)
-        });
+        if (method === 'POST')
+            await ItemService.createItem(Globals.state.resource, dataObj);
+        else if (method === 'PATCH')
+            await ItemService.updateItem(Globals.state.resource, Globals.shared.currentEditId!, dataObj);
 
         closeModal();
         fetchData(); // Ricarica la tabella per mostrare le modifiche
@@ -382,7 +376,7 @@ Elements.currentPageInput.addEventListener('change', (e: Event) => {
 });
 
 function logout(): void {
-    const targetUrl = WINDOW_URL + "/pages/public";
+    const targetUrl = WINDOW_URL + "/src/pages/public";
     window.location.href = targetUrl;
 }
 

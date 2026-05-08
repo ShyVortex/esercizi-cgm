@@ -1,9 +1,8 @@
 import { Post } from "../types/post.js";
-import { User } from "../types/user.js";
+import { User, Role } from "../types/user.js";
 import { Comment } from "../types/comment.js";
-import { Role } from "../types/role.js";
 import { Item } from "../types/item.js";
-import { ResponseJson } from "../types/response-json.js";
+import { ResponseJson } from "../types/response.js";
 
 // ---- TYPE GUARDS ---- //
 
@@ -50,9 +49,9 @@ export function isItemArray(item: any): item is Item[] {
 
 export function isResponseJson(item: any): item is ResponseJson {
     return item && typeof item.first === 'number'
-        && typeof item.prev === 'number' || typeof item.prev === 'object'
-        && typeof item.next === 'number' || typeof item.next === 'object'
-        && typeof item.last === 'number' || typeof item.last === 'object'
+        && (typeof item.prev === 'number' || typeof item.prev === 'object')
+        && (typeof item.next === 'number' || typeof item.next === 'object')
+        && (typeof item.last === 'number' || typeof item.last === 'object')
         && typeof item.pages === 'number'
         && typeof item.items === 'number'
         && typeof item.data === 'object'

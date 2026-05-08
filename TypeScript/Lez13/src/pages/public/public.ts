@@ -256,7 +256,7 @@ Elements.resetButton.addEventListener('click', () => {
 })
 
 Elements.adminButton.addEventListener('click', () => {
-    const targetUrl = WINDOW_URL + "/pages/admin";
+    const targetUrl = WINDOW_URL + "/src/pages/admin";
     window.location.href = targetUrl;
 })
 

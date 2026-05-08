@@ -1,5 +1,5 @@
 import { Comment } from "../types/comment.js";
-import { ResponseJson } from "../types/response-json.js";
+import { ResponseJson } from "../types/response.js";
 import { BASE_URL } from "../utilities/api.js";
 
 export class CommentsService {

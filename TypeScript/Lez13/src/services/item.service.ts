@@ -9,6 +9,22 @@ export class ItemService {
         return item;
     }
 
+    static async createItem(resource: string, body: Record<string, any>): Promise<void> {
+        await fetch(`${BASE_URL}/${resource}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+    }
+
+    static async updateItem(resource: string, id: string, body: Record<string, any>): Promise<void> {
+        await fetch(`${BASE_URL}/${resource}/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+    }
+
     static async logicalDelete(resource: string, id: string): Promise<void> {
         if (!confirm("Spostare nel cestino?")) return;
 

@@ -1,4 +1,4 @@
-import { ResponseJson } from "../types/response-json.js";
+import { ResponseJson } from "../types/response.js";
 import { User } from "../types/user.js";
 import { BASE_URL } from "../utilities/api.js";
 

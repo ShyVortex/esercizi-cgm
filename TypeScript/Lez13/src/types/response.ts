@@ -9,3 +9,5 @@ export type ResponseJson = {
     items: number,
     data: Item[]
 }
+
+export type ResponseSearch = ResponseJson | Item[]
