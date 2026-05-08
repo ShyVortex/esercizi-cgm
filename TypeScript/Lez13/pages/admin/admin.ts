@@ -10,8 +10,8 @@ import { ItemService } from "../../services/item.service.js";
 
 import * as Elements from "./elements.js";
 import * as Globals from "../globals.js";
-import { AdminRender } from "../../commons/render.js";
-import { Pagination } from "../../commons/pagination.js";
+import { Renderer } from "../../commons/renderer.js";
+import { Paginator } from "../../commons/paginator.js";
 
 // 1. Gestione Autenticazione
 (document.getElementById('loginForm') as HTMLFormElement).addEventListener('submit', (e: Event) => {
@@ -34,7 +34,7 @@ import { Pagination } from "../../commons/pagination.js";
 
 // 2. Recupero Dati (Read)
 async function fetchData(): Promise<void> {
-    AdminRender.showLoading(true);
+    Renderer.showLoadingAdmin(true);
 
     // --- 1. GESTIONE UI FILTRO UTENTI ---
     if (Globals.state.resource !== 'posts') {
@@ -116,14 +116,14 @@ async function fetchData(): Promise<void> {
             data = data.slice(startIndex, startIndex + Globals.state.per_page);
         }
 
-        AdminRender.renderTable(data);
-        Pagination.adminPagination();
+        Renderer.renderTable(data);
+        Paginator.adminPagination();
 
     } catch (err) {
-        AdminRender.showError("Errore nel caricamento dei dati.");
+        Renderer.showError("Errore nel caricamento dei dati.");
         console.error(err);
     } finally {
-        AdminRender.showLoading(false);
+        Renderer.showLoadingAdmin(false);
     }
 }
 

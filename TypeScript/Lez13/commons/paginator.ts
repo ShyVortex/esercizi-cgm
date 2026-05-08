@@ -2,7 +2,7 @@ import * as PublicElements from "../pages/public/elements.js";
 import * as AdminElements from "../pages/admin/elements.js";
 import * as Globals from "../pages/globals.js";
 
-export class Pagination {
+export class Paginator {
     static publicPagination(): void {
         const totalPages: number = Math.ceil(Globals.shared.filteredPosts.length / Globals.shared.itemsPerPage);
 

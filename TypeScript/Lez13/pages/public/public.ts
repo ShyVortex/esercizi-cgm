@@ -16,8 +16,7 @@ import { CommentsService } from "../../services/comments.service.js";
 
 import * as Elements from "./elements.js";
 import * as Globals from "../globals.js";
-import { PublicRender } from "../../commons/render.js";
-import { Pagination } from "../../commons/pagination.js";
+import { Renderer } from "../../commons/renderer.js";
 
 // Inizializzazione
 async function init(): Promise<void> {
@@ -45,23 +44,15 @@ async function init(): Promise<void> {
 
 // Rendering lista
 function render(): void {
-    PublicRender.render();
+    Renderer.publicRender();
 }
 
 function renderLoading(): void {
-    PublicRender.renderLoading();
+    Renderer.showLoadingPublic();
 }
 
 function renderServerError(query: string): void {
-    PublicRender.renderServerError(query);
-}
-
-function renderPosts(posts: Post[]): void {
-    PublicRender.showPosts(posts);
-}
-
-function renderPagination(): void {
-    Pagination.publicPagination();
+    Renderer.renderServerError(query);
 }
 
 // Event Listeners per i pulsanti della paginazione
@@ -251,7 +242,6 @@ Elements.searchButton.addEventListener('click', () => {
 });
 
 Elements.resetButton.addEventListener('click', () => {
-    const qVal: string = Elements.tbInput.value.trim();
     const tbLengthError = document.getElementById('tbLengthError') as HTMLLabelElement;
     tbLengthError.style.display = 'none';
 

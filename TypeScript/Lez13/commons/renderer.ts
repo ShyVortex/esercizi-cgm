@@ -3,13 +3,13 @@ import * as PublicElements from "../pages/public/elements.js";
 import * as AdminElements from "../pages/admin/elements.js";
 import * as Globals from "../pages/globals.js";
 import { sleep } from "../helpers/sleep.js";
-import { Pagination } from "./pagination.js";
+import { Paginator } from "./paginator.js";
 import { Item } from "../types/item.js";
 import { isUser } from "../utilities/validator.js";
 
-export class PublicRender {
+export class Renderer {
     // Rendering schermata pubblica
-    static render(): void {
+    static publicRender(): void {
         const startIndex: number = (Globals.shared.currentPage - 1) * Globals.shared.itemsPerPage;
         const endIndex: number = startIndex + Globals.shared.itemsPerPage;
         const paginatedItems: Post[] = Globals.shared.filteredPosts.slice(startIndex, endIndex);
@@ -18,7 +18,7 @@ export class PublicRender {
         PublicElements.paginationControls.style.display = Globals.shared.filteredPosts.length > 0 ? 'flex' : 'none';
 
         this.showPosts(paginatedItems);
-        Pagination.publicPagination();
+        Paginator.publicPagination();
     }
 
     static showPosts(posts: Post[]): void {
@@ -45,7 +45,7 @@ export class PublicRender {
                 `).join('');
     }
 
-    static renderLoading(): void {
+    static showLoadingPublic(): void {
         PublicElements.postsContainer.innerHTML = `
             <div class="flex justify-center py-10">
                 <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
@@ -56,7 +56,7 @@ export class PublicRender {
     }
 
     static async renderWithLoading(): Promise<void> {
-        this.renderLoading();
+        this.showLoadingPublic();
 
         const delay: number = Math.floor(Math.random() * 3000) + 1000;
         await sleep(delay);
@@ -66,7 +66,7 @@ export class PublicRender {
         const paginatedItems: Post[] = Globals.shared.filteredPosts.slice(startIndex, endIndex);
 
         this.showPosts(paginatedItems);
-        Pagination.publicPagination();
+        Paginator.publicPagination();
     }
 
     static renderServerError(query: string): void {
@@ -81,9 +81,7 @@ export class PublicRender {
 
         PublicElements.paginationControls.style.display = 'none';
     }
-}
 
-export class AdminRender {
     static renderTable(data: Item[]): void {
         AdminElements.tableBody.innerHTML = '';
 
@@ -134,7 +132,7 @@ export class AdminRender {
         `).join('');
     }
 
-    static showLoading(isLoading: boolean): void {
+    static showLoadingAdmin(isLoading: boolean): void {
         const btn = document.getElementById('btnSearch') as HTMLButtonElement;
         btn.disabled = isLoading;
         if (isLoading) {
