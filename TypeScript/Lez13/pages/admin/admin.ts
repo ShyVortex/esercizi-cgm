@@ -2,7 +2,7 @@ import { User } from "../../types/user.js";
 import { Item } from "../../types/item.js";
 import { ResourceFields } from "../../types/resource-fields.js";
 import { ResponseJson } from "../../types/response-json.js";
-import { isComment, isPost, isRole, isUser } from "../../utilities/validator.js";
+import { isComment, isItemArray, isPost, isResponseJson, isRole, isUser } from "../../utilities/validator.js";
 import { BASE_URL, isLocal, WINDOW_URL } from '../../utilities/api.js';
 
 import { UsersService } from "../../services/users.service.js";
@@ -12,6 +12,7 @@ import * as Elements from "./elements.js";
 import * as Globals from "../globals.js";
 import { Renderer } from "../../commons/renderer.js";
 import { Paginator } from "../../commons/paginator.js";
+import { ResponseSearch } from "../../types/response-search.js";
 
 // 1. Gestione Autenticazione
 (document.getElementById('loginForm') as HTMLFormElement).addEventListener('submit', (e: Event) => {
@@ -79,19 +80,17 @@ async function fetchData(): Promise<void> {
     // --- 3. ESECUZIONE E RENDERING ---
     try {
         const response: Response = await fetch(url);
-        const responseObj: ResponseJson = await response.json();
+        let responseObj: ResponseSearch = await response.json();
 
-        let data: Item[] = responseObj.data;
-
-        if (!query) {
+        if (!query && isResponseJson(responseObj)) {
             // Se non c'è ricerca, calcoliamo le pagine usando i dati restituiti dal server
             const headers: Headers = response.headers;
             const totalCount: number = Math.ceil(Number(headers.get('X-Total-Count')) / Globals.state.per_page) || 1;
             Globals.shared.totalPages = responseObj.pages || totalCount;
-        } else {
+        } else if (isItemArray(responseObj)) {
             // --- 4. FILTRO "OR" LATO JAVASCRIPT ---
             // Se c'è una query, json-server ci ha inviato tutti gli elementi: li filtriamo noi
-            data = data.filter(item => {
+            responseObj = responseObj.filter(item => {
                 if (Globals.state.resource === 'posts' && isPost(item)) {
                     // Cerca nel titolo OPPURE nel body
                     const inTitle = item.title && item.title.toLowerCase().includes(query);
@@ -109,14 +108,18 @@ async function fetchData(): Promise<void> {
             });
 
             // Calcoliamo le pagine totali in base a quanti risultati ha trovato il nostro filtro
-            Globals.shared.totalPages = Math.ceil(data.length / Globals.state.per_page) || 1;
+            Globals.shared.totalPages = Math.ceil(responseObj.length / Globals.state.per_page) || 1;
 
             // Tagliamo l'array per inviare alla tabella solo i risultati della pagina corrente
             const startIndex: number = (Globals.state.page - 1) * Globals.state.per_page;
-            data = data.slice(startIndex, startIndex + Globals.state.per_page);
+            responseObj = responseObj.slice(startIndex, startIndex + Globals.state.per_page);
         }
 
-        Renderer.renderTable(data);
+        if (isItemArray(responseObj))
+            Renderer.renderTable(responseObj);
+        else if (isResponseJson(responseObj))
+            Renderer.renderTable(responseObj.data);
+
         Paginator.adminPagination();
 
     } catch (err) {
