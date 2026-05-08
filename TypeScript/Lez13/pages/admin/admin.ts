@@ -131,6 +131,7 @@ async function fetchData(): Promise<void> {
 async function logicalDelete(id: string): Promise<void> {
     await ItemService.logicalDelete(Globals.state.resource, id);
     fetchData();
+    Globals.state.page = 1;
 }
 
 async function physicalDelete(id: string): Promise<void> {

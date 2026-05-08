@@ -937,26 +937,6 @@
         "bs": "target end-to-end models"
       },
       "isActive": true
-    },
-    {
-      "name": "Giancarlo Toppo",
-      "username": "Gianzizzi",
-      "email": "tispiezzoindue@gmail.com",
-      "phone": "+39 282645896",
-      "website": "spacobotilia.com",
-      "address": {
-        "city": "Pietramontecorvino",
-        "street": "Via delle Mutande",
-        "suite": "12",
-        "zipcode": "71038"
-      },
-      "company": {
-        "name": "TrogloScopany",
-        "catchPhrase": "aa",
-        "bs": "bb"
-      },
-      "isActive": true,
-      "id": "djUajpLiPHs"
     }
   ],
   "comments": [
@@ -4959,14 +4939,6 @@
       "email": "Emma@joanny.ca",
       "body": "perspiciatis quis doloremque\nveniam nisi eos velit sed\nid totam inventore voluptatem laborum et eveniet\naut aut aut maxime quia temporibus ut omnis",
       "isActive": true
-    },
-    {
-      "name": "Giancarlo Toppo",
-      "email": "tispiezzoindue@gmail.com",
-      "body": "very good mannaggia kitemmurt",
-      "postId": 1,
-      "isActive": false,
-      "id": "iFZBiE9bKvg"
     }
   ],
   "roles": [
