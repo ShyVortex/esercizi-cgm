@@ -1,6 +1,6 @@
 import { Post } from "../types/post";
 import { ResourceFields } from "../types/resource-fields";
-import { State } from "../types/state";
+import { PerPage, State } from "../types/state";
 
 export let shared = {
     allPosts: [] as Post[],
@@ -17,7 +17,28 @@ export let shared = {
 export let state: State = {
     resource: 'posts',
     page: 1,
-    per_page: 5,
+    per_page: [
+        {
+            name: "posts",
+            length: 5
+        },
+        {
+            name: "users",
+            length: 5
+        },
+        {
+            name: "comments",
+            length: 5
+        },
+        {
+            name: "roles",
+            length: 5
+        },
+        {
+            name: "trash",
+            length: 5
+        }
+    ],
     search: '',
     isBin: false,
     isAuthenticated: false
@@ -35,3 +56,5 @@ export const resourceFields: ResourceFields = {
     comments: ['name', 'email', 'body', 'postId'],
     roles: ['name']
 };
+
+export const allowedSections: string[] = ['posts', 'users', 'comments', 'roles'];

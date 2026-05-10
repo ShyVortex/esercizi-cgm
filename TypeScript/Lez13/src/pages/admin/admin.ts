@@ -2,6 +2,7 @@ import { User } from "../../types/user.js";
 import { Item } from "../../types/item.js";
 import { ResourceFields } from "../../types/resource-fields.js";
 import { ResponseSearch } from "../../types/response.js";
+import { PerPage } from "../../types/state.js";
 import { isComment, isItemArray, isPost, isResponseJson, isRole, isUser } from "../../utilities/validator.js";
 import { BASE_URL, isLocal, WINDOW_URL } from '../../utilities/api.js';
 
@@ -68,10 +69,15 @@ async function fetchData(): Promise<void> {
     // SE NON C'È RICERCA, chiediamo al server di fare la paginazione al posto nostro
     if (!query) {
         // Gestione automatica della differenza tra locale (v1) e Vercel (v0.17)
+        let currentSection = getCurrentSection();
+        if (!Globals.allowedSections.includes(currentSection))
+            currentSection = 'trash';
+        const currentStateItem = Globals.state.per_page.find(value => value.name === currentSection);
+
         if (isLocal) {
-            url += `&_page=${Globals.state.page}&_per_page=${Globals.state.per_page}`;
+            url += `&_page=${Globals.state.page}&_per_page=${currentStateItem.length}`;
         } else {
-            url += `&_page=${Globals.state.page}&_limit=${Globals.state.per_page}`;
+            url += `&_page=${Globals.state.page}&_limit=${currentStateItem.length}`;
         }
     }
 
@@ -80,10 +86,18 @@ async function fetchData(): Promise<void> {
         const response: Response = await fetch(url);
         let responseObj: ResponseSearch = await response.json();
 
+        let currentSection: string = getCurrentSection();
+        if (!Globals.allowedSections.includes(currentSection))
+            currentSection = 'trash';
+
+        const currentStateItem: PerPage = Globals.state.per_page.find(
+            value => value.name === currentSection
+        ) as PerPage;
+
         if (!query && isResponseJson(responseObj)) {
             // Se non c'è ricerca, calcoliamo le pagine usando i dati restituiti dal server
             const headers: Headers = response.headers;
-            const totalCount: number = Math.ceil(Number(headers.get('X-Total-Count')) / Globals.state.per_page) || 1;
+            const totalCount: number = Math.ceil(Number(headers.get('X-Total-Count')) / currentStateItem.length) || 1;
             Globals.shared.totalPages = responseObj.pages || totalCount;
         } else if (isItemArray(responseObj)) {
             // --- 4. FILTRO "OR" LATO JAVASCRIPT ---
@@ -106,11 +120,11 @@ async function fetchData(): Promise<void> {
             });
 
             // Calcoliamo le pagine totali in base a quanti risultati ha trovato il nostro filtro
-            Globals.shared.totalPages = Math.ceil(responseObj.length / Globals.state.per_page) || 1;
+            Globals.shared.totalPages = Math.ceil(responseObj.length / currentStateItem.length) || 1;
 
             // Tagliamo l'array per inviare alla tabella solo i risultati della pagina corrente
-            const startIndex: number = (Globals.state.page - 1) * Globals.state.per_page;
-            responseObj = responseObj.slice(startIndex, startIndex + Globals.state.per_page);
+            const startIndex: number = (Globals.state.page - 1) * currentStateItem.length;
+            responseObj = responseObj.slice(startIndex, startIndex + currentStateItem.length);
         }
 
         if (isItemArray(responseObj))
@@ -324,10 +338,18 @@ Elements.crudForm.addEventListener('submit', async (e: Event) => {
 });
 
 // 5. Utility UI
+function getCurrentSection(): string {
+    return (document.getElementById('sectionTitle') as HTMLElement).innerText.toLowerCase();
+}
+
 function changeSection(res: string): void {
     Globals.state.resource = res;
     Globals.state.page = 1;
     Globals.state.isBin = false;
+
+    const newPerPageItem = Globals.state.per_page.find(value => value.name === res);
+    Elements.pageSizeSelect.value = newPerPageItem!.length.toString();
+
     (document.getElementById('sectionTitle') as HTMLElement).innerText = res;
     (document.getElementById('btnBin') as HTMLButtonElement).innerText = "Cestino";
     fetchData();
@@ -362,7 +384,16 @@ Elements.btnNextTen.addEventListener('click', () => { Globals.state.page = Math.
 Elements.btnLastPage.addEventListener('click', () => { Globals.state.page = Globals.shared.totalPages; fetchData(); });
 
 Elements.pageSizeSelect.addEventListener('change', (e: Event) => {
-    Globals.state.per_page = parseInt((e.target as HTMLSelectElement).value);
+    let currentSection = getCurrentSection();
+
+    if (!Globals.allowedSections.includes(currentSection))
+        currentSection = 'trash';
+
+    const perPageItem = Globals.state.per_page.find(value => value.name === currentSection);
+    if (perPageItem) {
+        perPageItem.length = parseInt((e.target as HTMLSelectElement).value);
+    }
+
     Globals.state.page = 1;
     fetchData();
 });
