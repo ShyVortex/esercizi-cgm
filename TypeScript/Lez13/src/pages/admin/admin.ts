@@ -1,441 +1,322 @@
-import { User } from "../../types/user.js";
-import { Item } from "../../types/item.js";
-import { ResourceFields } from "../../types/resource-fields.js";
-import { ResponseSearch } from "../../types/response.js";
-import { PerPage } from "../../types/state.js";
-import { isComment, isItemArray, isPost, isResponseJson, isRole, isUser } from "../../utilities/validator.js";
-import { BASE_URL, isLocal, WINDOW_URL } from '../../utilities/api.js';
-
-import { UsersService } from "../../services/users.service.js";
-import { ItemService } from "../../services/item.service.js";
-
+import { resourceService } from "../../api/resource.service.js";
+import { usersService } from "../../api/users.service.js";
+import { store } from "../../core/store.js";
+import { APP_CONFIG, BASE_URL, WINDOW_URL, IS_LOCAL } from "../../core/constants.js";
+import { PaginationComponent } from "../../components/pagination.component.js";
+import { ModalComponent } from "../../components/modal.component.js";
+import { TableComponent } from "../../components/table.component.js";
+import { isComment, isItemArray, isPost, isResponseJson, isRole, isUser } from "../../shared/utils/validator.js";
 import * as Elements from "./elements.js";
-import * as Globals from "../globals.js";
-import { Renderer } from "../../commons/renderer.js";
-import { Paginator } from "../../commons/paginator.js";
+import { ResponseSearch } from "../../shared/types/response.js";
 
-// 1. Gestione Autenticazione
-(document.getElementById('loginForm') as HTMLFormElement).addEventListener('submit', (e: Event) => {
-    e.preventDefault();
-    const user: string = (document.getElementById('username') as HTMLInputElement).value;
-    const pass: string = (document.getElementById('password') as HTMLInputElement).value;
-    const error = document.getElementById('loginError') as HTMLParagraphElement;
+class AdminPage {
+    private pagination: PaginationComponent;
+    private modal: ModalComponent;
+    private table: TableComponent;
 
-    // Simulazione autenticazione
-    if (user === 'admin' && pass === 'admin') {
-        Globals.state.isAuthenticated = true;
-        Elements.loginSection.classList.add('hidden');
-        Elements.dashboardSection.classList.remove('hidden');
-        fetchData();
-    } else {
-        error.classList.remove('hidden');
+    constructor() {
+        this.pagination = new PaginationComponent({
+            btnFirst: Elements.btnFirstPage,
+            btnPrev: Elements.btnPrev,
+            btnPrevTen: Elements.btnPrevTen,
+            btnNext: Elements.btnNext,
+            btnNextTen: Elements.btnNextTen,
+            btnLast: Elements.btnLastPage,
+            inputPage: Elements.currentPageInput,
+            lblTotal: Elements.ofTotLab
+        }, (page) => {
+            store.state.page = page;
+            this.fetchData();
+        });
+
+        this.modal = new ModalComponent(Elements.crudModal, Elements.crudForm);
+        
+        this.table = new TableComponent(Elements.tableHead, Elements.tableBody, Elements.tableState, {
+            onEdit: (id) => this.editItem(id),
+            onDelete: (id) => this.logicalDelete(id),
+            onPhysicalDelete: (id) => this.physicalDelete(id),
+            onRestore: (id) => this.restoreItem(id)
+        });
+
+        this.setupListeners();
     }
-});
 
-// 2. Recupero Dati (Read)
-async function fetchData(): Promise<void> {
-    Renderer.showLoadingAdmin(true);
-
-    // --- 1. GESTIONE UI FILTRO UTENTI ---
-    if (Globals.state.resource !== 'posts') {
-        Elements.userFilterSection.classList.add('hidden');
-    } else {
-        Elements.userFilterSection.classList.remove('hidden');
-        if (Elements.userFilter.options.length <= 1) {
-            try {
-                const usersList: User[] = await UsersService.getAllUsers();
-                usersList.forEach(u => {
-                    Globals.shared.allUsers[u.id] = u.name;
-                    const opt = document.createElement('option') as HTMLOptionElement;
-                    opt.value = u.id;
-                    opt.textContent = u.name;
-                    Elements.userFilter.appendChild(opt);
-                });
-            } catch (e) { console.error("Errore caricamento utenti", e); }
+    private setupListeners(): void {
+        const loginForm = document.getElementById('loginForm') as HTMLFormElement;
+        if (loginForm) {
+            loginForm.onsubmit = (e) => this.handleLogin(e);
         }
-    }
+        
+        Elements.crudForm.onsubmit = (e) => this.handleFormSubmit(e);
+        
+        Elements.userFilter.onchange = (e) => {
+            const val = (e.target as HTMLSelectElement).value;
+            store.shared.userId = val ? parseInt(val, 10) : undefined;
+            this.triggerSearch();
+        };
 
-    // --- 2. COSTRUZIONE DELLA QUERY AL SERVER ---
-    const query: string = (document.getElementById('adminSearch') as HTMLInputElement).value.trim().toLowerCase();
-
-    // Partiamo dall'URL base con il filtro del cestino
-    let url: string = `${BASE_URL}/${Globals.state.resource}?isActive=${!Globals.state.isBin}`;
-
-    // Passiamo il filtro per utente al server
-    if (Globals.shared.userId && Globals.state.resource === 'posts') {
-        url += `&userId=${Globals.shared.userId}`;
-    }
-
-    // SE NON C'È RICERCA, chiediamo al server di fare la paginazione al posto nostro
-    if (!query) {
-        // Gestione automatica della differenza tra locale (v1) e Vercel (v0.17)
-        let currentSection = getCurrentSection();
-        if (!Globals.allowedSections.includes(currentSection))
-            currentSection = 'trash';
-        const currentStateItem = Globals.state.per_page.find(value => value.name === currentSection);
-
-        if (isLocal) {
-            url += `&_page=${Globals.state.page}&_per_page=${currentStateItem.length}`;
-        } else {
-            url += `&_page=${Globals.state.page}&_limit=${currentStateItem.length}`;
-        }
-    }
-
-    // --- 3. ESECUZIONE E RENDERING ---
-    try {
-        const response: Response = await fetch(url);
-        let responseObj: ResponseSearch = await response.json();
-
-        let currentSection: string = getCurrentSection();
-        if (!Globals.allowedSections.includes(currentSection))
-            currentSection = 'trash';
-
-        const currentStateItem: PerPage = Globals.state.per_page.find(
-            value => value.name === currentSection
-        ) as PerPage;
-
-        if (!query && isResponseJson(responseObj)) {
-            // Se non c'è ricerca, calcoliamo le pagine usando i dati restituiti dal server
-            const headers: Headers = response.headers;
-            const totalCount: number = Math.ceil(Number(headers.get('X-Total-Count')) / currentStateItem.length) || 1;
-            Globals.shared.totalPages = responseObj.pages || totalCount;
-        } else if (isItemArray(responseObj)) {
-            // --- 4. FILTRO "OR" LATO JAVASCRIPT ---
-            // Se c'è una query, json-server ci ha inviato tutti gli elementi: li filtriamo noi
-            responseObj = responseObj.filter(item => {
-                if (Globals.state.resource === 'posts' && isPost(item)) {
-                    // Cerca nel titolo OPPURE nel body
-                    const inTitle = item.title && item.title.toLowerCase().includes(query);
-                    const inBody = item.body && item.body.toLowerCase().includes(query);
-                    return inTitle || inBody;
-                } else if (Globals.state.resource === 'comments' && isComment(item)) {
-                    // Cerca nel body OPPURE nell'email
-                    const inBody = item.body && item.body.toLowerCase().includes(query);
-                    const inEmail = item.email && item.email.toLowerCase().includes(query);
-                    return inBody || inEmail;
-                } else if (isUser(item) || isRole(item)) {
-                    // Per utenti e ruoli cerca nel nome
-                    return item.name && item.name.toLowerCase().includes(query);
-                }
-            });
-
-            // Calcoliamo le pagine totali in base a quanti risultati ha trovato il nostro filtro
-            Globals.shared.totalPages = Math.ceil(responseObj.length / currentStateItem.length) || 1;
-
-            // Tagliamo l'array per inviare alla tabella solo i risultati della pagina corrente
-            const startIndex: number = (Globals.state.page - 1) * currentStateItem.length;
-            responseObj = responseObj.slice(startIndex, startIndex + currentStateItem.length);
-        }
-
-        if (isItemArray(responseObj))
-            Renderer.renderTable(responseObj);
-        else if (isResponseJson(responseObj))
-            Renderer.renderTable(responseObj.data);
-
-        Paginator.adminPagination();
-
-    } catch (err) {
-        Renderer.showError("Errore nel caricamento dei dati.");
-        console.error(err);
-    } finally {
-        Renderer.showLoadingAdmin(false);
-    }
-}
-
-// 4. Operazioni CRUD (Delete Logico e Ripristino)
-async function logicalDelete(id: string): Promise<void> {
-    await ItemService.logicalDelete(Globals.state.resource, id);
-    fetchData();
-    Globals.state.page = 1;
-}
-
-async function physicalDelete(id: string): Promise<void> {
-    await ItemService.physicalDelete(Globals.state.resource, id);
-    fetchData();
-}
-
-async function restoreItem(id: string): Promise<void> {
-    await ItemService.restoreItem(Globals.state.resource, id);
-    fetchData();
-}
-
-function getNestedValue(obj: Item, path: string): string {
-    // "Naviga" nell'oggetto seguendo i punti. Se non trova nulla, restituisce stringa vuota.
-    return path.split('.').reduce((acc: any, part: string) => acc && acc[part], obj) || '';
-}
-
-function openCreateModal(): void {
-    Globals.shared.currentEditId = null;
-    Elements.modalTitle.innerText = `Nuovo ${Globals.state.resource.slice(0, -1)}`; // Es: "Nuovo post"
-
-    const fields: string[] = Globals.resourceFields[Globals.state.resource as keyof ResourceFields] || ['name'];
-
-    Elements.formFields.innerHTML = fields.map(field => {
-        let inputElement: string = '';
-
-        if (field === 'userId') {
-            // 1. Costruiamo le opzioni leggendo dall'oggetto allUsers
-            let options: string = '<option value="">Seleziona un utente...</option>';
-            for (const id in Globals.shared.allUsers) {
-                options += `<option value="${id}">${Globals.shared.allUsers[id]}</option>`;
+        Elements.pageSizeSelect.onchange = (e) => {
+            const section = this.getCurrentSection();
+            const perPageItem = store.state.per_page.find(v => v.name === section) 
+                             || store.state.per_page.find(v => v.name === 'trash');
+            if (perPageItem) {
+                perPageItem.length = parseInt((e.target as HTMLSelectElement).value);
             }
+            store.state.page = 1;
+            this.fetchData();
+        };
 
-            // 2. Creiamo la select
-            inputElement = `<select name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>${options}</select>`;
-        } else {
-            // Comportamento standard per tutti gli altri campi
-            inputElement = `<input type="text" name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>`;
-        }
-
-        const labelText: string = field === 'userId' ? 'User' : field.replace(/\./g, ' ');
-
-        return `
-            <div>
-                <label class="block text-sm font-medium text-gray-700 capitalize">
-                    ${labelText}
-                </label>
-                ${inputElement}
-            </div>
-        `;
-    }).join('');
-
-    Elements.crudModal.classList.remove('hidden');
-}
-
-async function editItem(id: string): Promise<void> {
-    Globals.shared.currentEditId = id;
-    Elements.modalTitle.innerText = `Modifica ${Globals.state.resource.slice(0, -1)}`;
-
-    try {
-        // Recupera i dati specifici di questo elemento
-        const item: Item = await ItemService.getItem(Globals.state.resource, id);
-
-        const fields: string[] = Globals.resourceFields[Globals.state.resource as keyof ResourceFields] || ['name'];
-
-        Elements.formFields.innerHTML = fields.map(field => {
-            const value: string = getNestedValue(item, field);
-            let inputElement: string = '';
-
-            if (field === 'userId') {
-                // 1. Costruiamo le opzioni selezionando automaticamente l'autore attuale
-                let options: string = '<option value="">Seleziona un utente...</option>';
-                for (const uId in Globals.shared.allUsers) {
-                    // Usiamo == (invece di ===) perché uId è una stringa (chiave dell'oggetto) e value potrebbe essere un numero intero
-                    const isSelected: string = (uId == value) ? 'selected' : '';
-                    options += `<option value="${uId}" ${isSelected}>${Globals.shared.allUsers[uId]}</option>`;
-                }
-
-                // 2. Creiamo la select
-                inputElement = `<select name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>${options}</select>`;
-            } else {
-                // Comportamento standard per gli input di testo pre-compilati
-                inputElement = `<input type="text" name="${field}" value="${value}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>`;
-            }
-
-            const labelText: string = field === 'userId' ? 'User' : field.replace(/\./g, ' ');
-
-            return `
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 capitalize">
-                        ${labelText}
-                    </label>
-                    ${inputElement}
-                </div>
-            `;
-        }).join('');
-
-        Elements.crudModal.classList.remove('hidden');
-    } catch (err) {
-        alert("Errore nel recupero dei dati per la modifica.");
-    }
-}
-
-// Chiude il modale e resetta il form
-function closeModal(): void {
-    Elements.crudModal.classList.add('hidden');
-    Elements.crudForm.reset();
-}
-
-// Intercetta il salvataggio del form (Create o Update)
-Elements.crudForm.addEventListener('submit', async (e: Event) => {
-    e.preventDefault();
-
-    // Definisce i dati inseriti negli input
-    const formData: FormData = new FormData(Elements.crudForm);
-    const dataObj: Record<string, any> = {};
-
-    // Invece di Object.fromEntries che li raccoglierebbe in automatico, costruiamo noi l'oggetto
-    // Questo serve a risolvere il problema dell'impossibilità di modifica degli oggetti parametrici
-    for (let [key, value] of formData.entries()) {
-        const parts: string[] = key.split('.'); // Es: ["address", "city"] o ["name"]
-
-        if (parts.length === 1) {
-            // Campo normale (es. "name" o "title")
-            dataObj[key] = value;
-        } else {
-            // Campo annidato (es. "address.city")
-            const parent = parts[0]; // "address"
-            const child = parts[1];  // "city"
-
-            // Se l'oggetto genitore non esiste ancora, lo creiamo
-            if (!dataObj[parent]) dataObj[parent] = {};
-
-            dataObj[parent][child] = value;
-        }
+        Elements.btnSearch.onclick = () => this.triggerSearch();
+        Elements.searchInput.onkeypress = (e) => {
+            if (e.key === 'Enter') { e.preventDefault(); this.triggerSearch(); }
+        };
     }
 
-    // Convertiamo in numero i campi che originariamente erano numeri
-    if (dataObj.postId) {
-        dataObj.postId = parseInt(dataObj.postId, 10);
-    }
-    if (dataObj.userId) {
-        dataObj.userId = parseInt(dataObj.userId, 10);
-    }
-
-    // Se stiamo creando un nuovo record, aggiungiamo il flag isActive = true di default
-    if (!Globals.shared.currentEditId) {
-        dataObj.isActive = true;
-    }
-
-    // Controllo errori campi lato JS
-    for (const key in dataObj) {
-        const value: string = dataObj[key];
-
-        if (value === null || value === undefined || (typeof value === 'string' && value.trim() === '')) {
-            console.error(`Errore di validazione sul campo: ${key}`);
-
-            // Usiamo alert per far apparire l'errore SOPRA il modale
-            alert(`Attenzione: non hai compilato il campo "${key.replace(/\./g, ' ')}". Riprova.`);
-
-            return;
-        }
-    }
-
-    // Se c'è un ID facciamo PATCH (modifica), altrimenti POST (crea)
-    const method: string = Globals.shared.currentEditId ? 'PATCH' : 'POST';
-
-    try {
-        // Disabilitiamo il pulsante salva durante il caricamento (per evitare doppi click)
-        const submitBtn = Elements.crudForm.querySelector('button[type="submit"]') as HTMLButtonElement;
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Salvataggio...';
-
-        if (method === 'POST')
-            await ItemService.createItem(Globals.state.resource, dataObj);
-        else if (method === 'PATCH')
-            await ItemService.updateItem(Globals.state.resource, Globals.shared.currentEditId!, dataObj);
-
-        closeModal();
-        fetchData(); // Ricarica la tabella per mostrare le modifiche
-
-        // Ripristina il pulsante
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'Salva';
-
-    } catch (err) {
-        alert("Errore durante il salvataggio.");
-    }
-});
-
-// 5. Utility UI
-function getCurrentSection(): string {
-    return (document.getElementById('sectionTitle') as HTMLElement).innerText.toLowerCase();
-}
-
-function changeSection(res: string): void {
-    Globals.state.resource = res;
-    Globals.state.page = 1;
-    Globals.state.isBin = false;
-
-    const newPerPageItem = Globals.state.per_page.find(value => value.name === res);
-    Elements.pageSizeSelect.value = newPerPageItem!.length.toString();
-
-    (document.getElementById('sectionTitle') as HTMLElement).innerText = res;
-    (document.getElementById('btnBin') as HTMLButtonElement).innerText = "Cestino";
-    fetchData();
-}
-
-function toggleBin(): void {
-    Globals.state.isBin = !Globals.state.isBin;
-    Globals.state.page = 1;
-    (document.getElementById('sectionTitle') as HTMLElement).innerText = Globals.state.isBin ? `Cestino ${Globals.state.resource}` : Globals.state.resource;
-    (document.getElementById('btnBin') as HTMLButtonElement).innerText = Globals.state.isBin ? "Torna alla Lista" : "Cestino";
-    fetchData();
-}
-
-// Event Listeners per filtri e paginazione
-Elements.userFilter.addEventListener('change', (e: Event) => {
-    const target = e.target as HTMLSelectElement;
-    Globals.shared.userId = target.value ? parseInt(target.value, 10) : undefined;
-
-    triggerAdminSearch();
-});
-
-Elements.btnFirstPage.addEventListener('click', () => { Globals.state.page = 1; fetchData(); });
-
-Elements.btnPrev.addEventListener('click', () => { if (Globals.state.page > 1) { Globals.state.page--; fetchData(); } });
-
-Elements.btnPrevTen.addEventListener('click', () => { Globals.state.page = Math.max(1, Globals.state.page - 10); fetchData(); });
-
-Elements.btnNext.addEventListener('click', () => { Globals.state.page++; fetchData(); });
-
-Elements.btnNextTen.addEventListener('click', () => { Globals.state.page = Math.min(Globals.shared.totalPages, Globals.state.page + 10); fetchData(); });
-
-Elements.btnLastPage.addEventListener('click', () => { Globals.state.page = Globals.shared.totalPages; fetchData(); });
-
-Elements.pageSizeSelect.addEventListener('change', (e: Event) => {
-    let currentSection = getCurrentSection();
-
-    if (!Globals.allowedSections.includes(currentSection))
-        currentSection = 'trash';
-
-    const perPageItem = Globals.state.per_page.find(value => value.name === currentSection);
-    if (perPageItem) {
-        perPageItem.length = parseInt((e.target as HTMLSelectElement).value);
-    }
-
-    Globals.state.page = 1;
-    fetchData();
-});
-
-Elements.currentPageInput.addEventListener('change', (e: Event) => {
-    let newPage = parseInt((e.target as HTMLInputElement).value);
-    if (isNaN(newPage) || newPage < 1) newPage = 1;
-    if (newPage > Globals.shared.totalPages) newPage = Globals.shared.totalPages;
-    Globals.state.page = newPage;
-    fetchData();
-});
-
-function logout(): void {
-    const targetUrl = WINDOW_URL + "/src/pages/public";
-    window.location.href = targetUrl;
-}
-
-// Funzione helper per lanciare la ricerca
-function triggerAdminSearch(): void {
-    Globals.state.page = 1;
-    fetchData();
-}
-
-// Click sul pulsante "Cerca"
-Elements.btnSearch.addEventListener('click', triggerAdminSearch);
-
-// Pressione del tasto "Invio" dentro l'input di ricerca
-Elements.searchInput.addEventListener('keypress', (e: KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    private handleLogin(e: Event): void {
         e.preventDefault();
-        triggerAdminSearch();
-    }
-});
+        const user = (document.getElementById('username') as HTMLInputElement).value;
+        const pass = (document.getElementById('password') as HTMLInputElement).value;
+        const error = document.getElementById('loginError') as HTMLElement;
 
-// Esportazione delle funzioni usate nell'HTML (inline handlers)
-(window as any).changeSection = changeSection;
-(window as any).toggleBin = toggleBin;
-(window as any).logout = logout;
-(window as any).openCreateModal = openCreateModal;
-(window as any).fetchData = fetchData;
-(window as any).physicalDelete = physicalDelete;
-(window as any).restoreItem = restoreItem;
-(window as any).editItem = editItem;
-(window as any).logicalDelete = logicalDelete;
-(window as any).closeModal = closeModal;
+        if (user === APP_CONFIG.LOGIN_USERNAME && pass === APP_CONFIG.LOGIN_PASSWORD) {
+            store.state.isAuthenticated = true;
+            Elements.loginSection.classList.add('hidden');
+            Elements.dashboardSection.classList.remove('hidden');
+            this.fetchData();
+        } else {
+            error.classList.remove('hidden');
+        }
+    }
+
+    public async fetchData(): Promise<void> {
+        this.table.showLoading();
+        
+        if (store.state.resource !== 'posts') {
+            Elements.userFilterSection.classList.add('hidden');
+        } else {
+            Elements.userFilterSection.classList.remove('hidden');
+            if (Elements.userFilter.options.length <= 1) {
+                await this.loadUsersForFilter();
+            }
+        }
+
+        const query = Elements.searchInput.value.trim().toLowerCase();
+        let params = `?isActive=${!store.state.isBin}`;
+
+        if (store.shared.userId && store.state.resource === 'posts') {
+            params += `&userId=${store.shared.userId}`;
+        }
+
+        const pageSize = store.getPerPageLength(this.getCurrentSection());
+
+        if (!query) {
+            if (IS_LOCAL) {
+                params += `&_page=${store.state.page}&_per_page=${pageSize}`;
+            } else {
+                params += `&_page=${store.state.page}&_limit=${pageSize}`;
+            }
+        }
+
+        try {
+            const response = await fetch(`${BASE_URL}/${store.state.resource}${params}`);
+            let data: ResponseSearch = await response.json();
+
+            if (!query && isResponseJson(data)) {
+                store.shared.totalPages = data.pages || 1;
+            } else if (isItemArray(data)) {
+                if (query) {
+                    data = data.filter(item => this.filterItem(item, query));
+                    store.shared.totalPages = Math.ceil(data.length / pageSize) || 1;
+                    const start = (store.state.page - 1) * pageSize;
+                    data = data.slice(start, start + pageSize);
+                } else {
+                    const totalCount = Math.ceil(Number(response.headers.get('X-Total-Count')) / pageSize) || 1;
+                    store.shared.totalPages = totalCount;
+                }
+            }
+
+            if (isItemArray(data)) {
+                this.table.render(data, store.state.isBin);
+            } else if (isResponseJson(data)) {
+                this.table.render(data.data, store.state.isBin);
+            }
+
+            this.pagination.render(store.state.page, store.shared.totalPages);
+        } catch (err) {
+            this.table.showError("Errore nel caricamento dei dati.");
+        }
+    }
+
+    private filterItem(item: any, query: string): boolean {
+        if (store.state.resource === 'posts' && isPost(item)) {
+            return (item.title?.toLowerCase().includes(query) || item.body?.toLowerCase().includes(query));
+        } else if (store.state.resource === 'comments' && isComment(item)) {
+            return (item.body?.toLowerCase().includes(query) || item.email?.toLowerCase().includes(query));
+        } else if (isUser(item) || isRole(item)) {
+            return item.name?.toLowerCase().includes(query);
+        }
+        return false;
+    }
+
+    private async loadUsersForFilter(): Promise<void> {
+        try {
+            const users = await usersService.getAll();
+            users.forEach(u => {
+                store.shared.allUsers[u.id] = u.name;
+                const opt = document.createElement('option');
+                opt.value = u.id;
+                opt.textContent = u.name;
+                Elements.userFilter.appendChild(opt);
+            });
+        } catch (e) { console.error("Errore caricamento utenti", e); }
+    }
+
+    public changeSection(res: string): void {
+        store.state.resource = res;
+        store.state.page = 1;
+        store.state.isBin = false;
+
+        const perPageItem = store.state.per_page.find(v => v.name === res);
+        Elements.pageSizeSelect.value = perPageItem?.length.toString() || "5";
+
+        document.getElementById('sectionTitle')!.innerText = res;
+        (document.getElementById('btnBin') as HTMLButtonElement).innerText = "Cestino";
+        this.fetchData();
+    }
+
+    public toggleBin(): void {
+        store.state.isBin = !store.state.isBin;
+        store.state.page = 1;
+        document.getElementById('sectionTitle')!.innerText = store.state.isBin ? `Cestino ${store.state.resource}` : store.state.resource;
+        (document.getElementById('btnBin') as HTMLButtonElement).innerText = store.state.isBin ? "Torna alla Lista" : "Cestino";
+        this.fetchData();
+    }
+
+    public async logicalDelete(id: string): Promise<void> {
+        if (!confirm("Spostare nel cestino?")) return;
+        try {
+            await resourceService.logicalDelete(store.state.resource, id);
+            this.fetchData();
+        } catch (err) { alert("Errore eliminazione"); }
+    }
+
+    public async physicalDelete(id: string): Promise<void> {
+        if (!confirm("Eliminare definitivamente?")) return;
+        try {
+            await resourceService.physicalDelete(store.state.resource, id);
+            this.fetchData();
+        } catch (err) { alert("Errore eliminazione"); }
+    }
+
+    public async restoreItem(id: string): Promise<void> {
+        try {
+            await resourceService.restoreItem(store.state.resource, id);
+            this.fetchData();
+        } catch (err) { alert("Errore ripristino"); }
+    }
+
+    public openCreateModal(): void {
+        store.shared.currentEditId = null;
+        this.renderModalForm(null);
+        this.modal.open(`Nuovo ${store.state.resource.slice(0, -1)}`, Elements.modalTitle);
+    }
+
+    public async editItem(id: string): Promise<void> {
+        store.shared.currentEditId = id;
+        try {
+            const item = await resourceService.getItem(store.state.resource, id);
+            this.renderModalForm(item);
+            this.modal.open(`Modifica ${store.state.resource.slice(0, -1)}`, Elements.modalTitle);
+        } catch (err) { alert("Errore caricamento dati"); }
+    }
+
+    private renderModalForm(item: any | null): void {
+        const fields = store.resourceFields[store.state.resource as keyof typeof store.resourceFields] || ['name'];
+        Elements.formFields.innerHTML = fields.map(field => {
+            const value = item ? this.getNestedValue(item, field) : '';
+            let input = '';
+            if (field === 'userId') {
+                let options = '<option value="">Seleziona...</option>';
+                for (const uId in store.shared.allUsers) {
+                    options += `<option value="${uId}" ${uId == value ? 'selected' : ''}>${store.shared.allUsers[uId]}</option>`;
+                }
+                input = `<select name="${field}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>${options}</select>`;
+            } else {
+                input = `<input type="text" name="${field}" value="${value}" class="mt-1 block w-full border p-2 rounded shadow-sm outline-none focus:ring-2 focus:ring-blue-500" required>`;
+            }
+            return `<div><label class="block text-sm font-medium text-gray-700 capitalize">${field.replace(/\./g, ' ')}</label>${input}</div>`;
+        }).join('');
+    }
+
+    private getNestedValue(obj: any, path: string): string {
+        return path.split('.').reduce((acc, part) => acc && acc[part], obj) || '';
+    }
+
+    private async handleFormSubmit(e: Event): Promise<void> {
+        e.preventDefault();
+        const formData = new FormData(Elements.crudForm);
+        const dataObj: Record<string, any> = {};
+
+        for (let [key, value] of formData.entries()) {
+            const parts = key.split('.');
+            if (parts.length === 1) dataObj[key] = value;
+            else {
+                if (!dataObj[parts[0]]) dataObj[parts[0]] = {};
+                dataObj[parts[0]][parts[1]] = value;
+            }
+        }
+
+        if (dataObj.postId) dataObj.postId = parseInt(dataObj.postId, 10);
+        if (dataObj.userId) dataObj.userId = parseInt(dataObj.userId, 10);
+        if (!store.shared.currentEditId) dataObj.isActive = true;
+
+        try {
+            const btn = Elements.crudForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+            btn.disabled = true;
+            btn.innerText = 'Salvataggio...';
+
+            if (store.shared.currentEditId) {
+                await resourceService.updateItem(store.state.resource, store.shared.currentEditId, dataObj);
+            } else {
+                await resourceService.createItem(store.state.resource, dataObj);
+            }
+
+            this.modal.close();
+            this.fetchData();
+            btn.disabled = false;
+            btn.innerText = 'Salva';
+        } catch (err) { alert("Errore salvataggio"); }
+    }
+
+    private getCurrentSection(): string {
+        const titleEl = document.getElementById('sectionTitle');
+        return titleEl ? titleEl.innerText.toLowerCase() : store.state.resource;
+    }
+
+    private triggerSearch(): void {
+        store.state.page = 1;
+        this.fetchData();
+    }
+
+    public logout(): void {
+        window.location.href = `${WINDOW_URL}/src/pages/public`;
+    }
+
+    public closeModal(): void {
+        this.modal.close();
+    }
+}
+
+const adminPage = new AdminPage();
+(window as any).adminPage = adminPage;
+// Exporting for inline handlers
+(window as any).changeSection = (res: string) => adminPage.changeSection(res);
+(window as any).toggleBin = () => adminPage.toggleBin();
+(window as any).logout = () => adminPage.logout();
+(window as any).openCreateModal = () => adminPage.openCreateModal();
+(window as any).closeModal = () => adminPage.closeModal();
+(window as any).fetchData = () => adminPage.fetchData();
+(window as any).editItem = (id: string) => adminPage.editItem(id);
+(window as any).logicalDelete = (id: string) => adminPage.logicalDelete(id);
+(window as any).physicalDelete = (id: string) => adminPage.physicalDelete(id);
+(window as any).restoreItem = (id: string) => adminPage.restoreItem(id);
