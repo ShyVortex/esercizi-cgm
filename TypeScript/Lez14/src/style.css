@@ -45,6 +45,11 @@
   --md-on-error: #000000;
 }
 
+/* Fix per la visibilità delle options nelle select in dark mode */
+[data-theme='dark'] option {
+  color: #2d2d2d; /* Colore scuro per visibilità su sfondo chiaro (comune in alcuni browser) */
+}
+
 .main-navbar {
   background-color: var(--md-primary);
   color: var(--md-on-primary);
