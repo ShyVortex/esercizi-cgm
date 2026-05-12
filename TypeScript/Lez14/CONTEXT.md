@@ -18,6 +18,12 @@ Creare un'applicazione Web responsive in puro TypeScript (senza framework UI) ch
 - Setup tramite Vite come bundler.
 - Routing basato su Hash (es. `/#/admin`).
 - Responsive design.
+- [x] Responsive layout with Material Design
+- [x] Modular architecture (Router, Services, Store)
+- [x] Dark Mode support
+- [x] **Authentication:** Login requirement for admin area (admin/admin)
+- [x] **Comment filtering:** Added filter by PostID in admin dashboard
+- [x] **Modal validation:** Added client-side validation for required fields with error feedback
 - UI/UX: Stile basato sul Material Design. Supporto a Light/Dark mode con toggle per l'utente (Default: Light).
 - Accessibilità e Comfort Visivo: Utilizzare palette di colori armoniose ed evitare neri troppo profondi (#000000) nella Dark Mode per non affaticare la vista. Le card e gli elementi UI devono essere ben distinguibili tramite contrasti morbidi o bordi sottili.
 - Gestione Operazioni CRUD: Tutte le operazioni di creazione e modifica devono avvenire tramite interfacce modali user-friendly.

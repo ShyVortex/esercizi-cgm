@@ -29,6 +29,9 @@ export class Modal {
         ${contentHtml}
       </div>
       <div class="modal-footer">
+        <div id="modal-error" class="error-message" style="display: none; margin-bottom: 0; margin-right: auto; padding: 0.5rem 1rem;">
+          Tutti i campi sono obbligatori.
+        </div>
         <button class="btn-secondary modal-cancel">${options.cancelText || 'Annulla'}</button>
         <button class="btn-primary modal-confirm">${options.confirmText || 'Conferma'}</button>
       </div>
@@ -48,14 +51,37 @@ export class Modal {
     });
     
     this.modal.querySelector('.modal-confirm')?.addEventListener('click', () => {
-      const formData = this.getFormData();
-      options.onConfirm?.(formData);
-      this.close();
+      if (this.validate()) {
+        const formData = this.getFormData();
+        options.onConfirm?.(formData);
+        this.close();
+      }
     });
 
     this.overlay.addEventListener('click', (e) => {
       if (e.target === this.overlay) this.close();
     });
+  }
+
+  private validate(): boolean {
+    const requiredInputs = this.modal.querySelectorAll('input[required], select[required], textarea[required]');
+    const errorMsg = this.modal.querySelector('#modal-error') as HTMLElement;
+    let isValid = true;
+
+    requiredInputs.forEach((input: any) => {
+      if (!input.value || input.value.toString().trim() === '') {
+        isValid = false;
+        input.style.borderColor = 'var(--md-error)';
+      } else {
+        input.style.borderColor = '';
+      }
+    });
+
+    if (errorMsg) {
+      errorMsg.style.display = isValid ? 'none' : 'block';
+    }
+
+    return isValid;
   }
 
   private getFormData(): any {

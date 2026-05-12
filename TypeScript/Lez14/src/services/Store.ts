@@ -8,6 +8,7 @@ class Store {
   public users: User[] = [];
   public posts: Post[] = [];
   public comments: Comment[] = [];
+  public isAuthenticated: boolean = sessionStorage.getItem('is_auth') === 'true';
   
   // Pagination State
   public publicPagination = {
@@ -41,6 +42,11 @@ class Store {
 
   public setComments(comments: Comment[]) {
     this.comments = comments;
+  }
+  
+  public setAuthenticated(value: boolean) {
+    this.isAuthenticated = value;
+    sessionStorage.setItem('is_auth', String(value));
   }
 }
 

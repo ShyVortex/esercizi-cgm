@@ -16,7 +16,7 @@ export async function renderAdminDashboard(container: HTMLElement) {
   const filters = {
     posts: { search: '', userId: '' },
     users: { search: '' },
-    comments: { search: '' }
+    comments: { search: '', postId: '' }
   };
 
   const render = () => {
@@ -40,6 +40,10 @@ export async function renderAdminDashboard(container: HTMLElement) {
             <button class="nav-item ${activeTab === 'trash' ? 'active' : ''}" data-tab="trash">
               <span class="material-icons">delete_outline</span> Cestino
             </button>
+            <hr class="sidebar-divider">
+            <button class="nav-item logout-item" id="admin-logout">
+              <span class="material-icons">logout</span> Logout
+            </button>
           </aside>
           
           <main id="admin-content" class="admin-main">
@@ -49,7 +53,7 @@ export async function renderAdminDashboard(container: HTMLElement) {
       </section>
     `;
 
-    container.querySelectorAll('.nav-item').forEach(btn => {
+    container.querySelectorAll('.nav-item:not(.logout-item)').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const tab = (e.currentTarget as HTMLElement).dataset.tab as AdminTab;
         if (activeTab === tab) return;
@@ -57,6 +61,13 @@ export async function renderAdminDashboard(container: HTMLElement) {
         render(); // Re-render shell
         updateTabContent(true);
       });
+    });
+
+    container.querySelector('#admin-logout')?.addEventListener('click', () => {
+      if (confirm('Vuoi uscire dall\'area amministrazione?')) {
+        store.setAuthenticated(false);
+        window.location.hash = '/';
+      }
     });
 
     updateTabContent(true);
@@ -90,7 +101,10 @@ export async function renderAdminDashboard(container: HTMLElement) {
       const users = await UserService.getAllUsers();
       if (filters.comments.search) {
         const query = filters.comments.search.toLowerCase();
-        comments = comments.filter(c => c.email.toLowerCase().includes(query) || c.body.toLowerCase().includes(query));
+        comments = comments.filter(c => c.email.toLowerCase().includes(query) || c.body.toLowerCase().includes(query) || c.name.toLowerCase().includes(query));
+      }
+      if (filters.comments.postId) {
+        comments = comments.filter(c => c.postId === Number(filters.comments.postId));
       }
       renderCommentsManager(contentArea, comments, posts, users, fullRender);
     } else if (activeTab === 'trash') {
@@ -335,7 +349,11 @@ export async function renderAdminDashboard(container: HTMLElement) {
         <div class="admin-filters">
           <div class="filter-group">
             <span class="material-icons">search</span>
-            <input type="text" id="comment-search" placeholder="Cerca per email o testo..." value="${filters.comments.search}">
+            <input type="text" id="comment-search" placeholder="Cerca per email, nome o testo..." value="${filters.comments.search}">
+          </div>
+          <div class="filter-group">
+            <span class="material-icons">tag</span>
+            <input type="number" id="comment-postid-filter" placeholder="Filtra per PostID..." value="${filters.comments.postId}">
           </div>
         </div>
         <div id="table-container"></div>
@@ -344,6 +362,11 @@ export async function renderAdminDashboard(container: HTMLElement) {
       
       area.querySelector('#comment-search')?.addEventListener('input', (e) => {
         filters.comments.search = (e.target as HTMLInputElement).value;
+        store.adminPagination.comments.currentPage = 1;
+        updateTabContent(false);
+      });
+      area.querySelector('#comment-postid-filter')?.addEventListener('input', (e) => {
+        filters.comments.postId = (e.target as HTMLInputElement).value;
         store.adminPagination.comments.currentPage = 1;
         updateTabContent(false);
       });

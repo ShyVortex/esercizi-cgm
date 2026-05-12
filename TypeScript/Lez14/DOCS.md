@@ -21,4 +21,10 @@ Il sistema supporta il cambio dinamico del numero di elementi per pagina (`[5, 1
 - `/users`: per recuperare gli autori.
 - `/comments` o `/posts/:id/comments`: per i commenti relativi ai post.
 
+## Area Admin e Autenticazione
+L'accesso all'area amministrativa (`/#/admin`) è protetto da un sistema di autenticazione fittizio. 
+- **Credenziali:** `admin` / `admin`.
+- **Persistenza:** Lo stato di autenticazione viene mantenuto durante la sessione tramite `sessionStorage`.
+- **Funzionalità:** Una volta autenticato, l'amministratore può gestire le entità del sistema tramite il pannello dashboard. È presente un pulsante di Logout nella barra laterale per terminare la sessione. Nella sezione Commenti è stato aggiunto un filtro per **PostID** per facilitare la ricerca dei commenti relativi a post specifici. Tutti i form all'interno dei modali includono ora una **validazione client-side** che evidenzia i campi mancanti e impedisce l'invio se non correttamente compilati.
+
 *Questa documentazione verrà espansa man mano che il progetto si evolve.*

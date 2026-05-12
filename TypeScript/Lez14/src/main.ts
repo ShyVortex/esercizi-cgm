@@ -4,6 +4,7 @@ import { ThemeManager } from './core/ThemeManager'
 import { renderNavbar } from './components/Navbar'
 import { PostService } from './services/PostService'
 import { UserService } from './services/UserService'
+import { store } from './services/Store'
 
 // Initialize core services
 ThemeManager.init();
@@ -47,7 +48,19 @@ async function initApp() {
     });
     
     router.addRoute('/admin', () => {
-      import('./pages/admin/AdminDashboard').then(m => m.renderAdminDashboard(content));
+      if (store.isAuthenticated) {
+        import('./pages/admin/AdminDashboard').then(m => m.renderAdminDashboard(content));
+      } else {
+        router.navigate('/login');
+      }
+    });
+
+    router.addRoute('/login', () => {
+      if (store.isAuthenticated) {
+        router.navigate('/admin');
+      } else {
+        import('./pages/admin/Login').then(m => m.renderLogin(content));
+      }
     });
 
     router.start();
