@@ -7,6 +7,7 @@ export default function TaskRow({ task }: { task: Task }) {
             <h2>Task {task.id}</h2>
             <h3>{task.description}</h3>
             <h4>Completed: {task.completed.toString()}</h4>
+            <div style={{marginBottom: '20px'}}></div>
         </div>
     )
 }

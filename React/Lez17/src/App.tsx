@@ -12,49 +12,53 @@
   quando viene aperta la pagina.
 */
 
-import jsonData from './resources/tasks.json';
+import React from 'react'
 import { useState } from 'react'
 import './App.css'
 import type { Task } from './types/Task'
 import TaskList from './components/TaskList'
-
-const LOCAL_STORAGE_KEY = 'app_tasks';
-
-function loadTasks(): Task[] {
-  // Controlla se i dati sono già presenti nel LocalStorage
-  const storedTasks = localStorage.getItem(LOCAL_STORAGE_KEY);
-
-  if (storedTasks) {
-    try {
-      // Se presenti, parsa la stringa JSON e restituisci l'array
-      return JSON.parse(storedTasks) as Task[];
-    } catch (error) {
-      console.error("Errore nel parsing dei task da LocalStorage, ricarico il JSON di default:", error);
-      // In caso di errore di parsing (es. dati corrotti), fa il fallback al JSON di base
-    }
-  }
-
-  // Al primo avvio (o se il storage era vuoto/corrotto):
-  // Salva il JSON iniziale nel LocalStorage convertito in stringa
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(jsonData));
-
-  // Ritorna i dati tipizzati dal JSON
-  return jsonData as Task[];
-}
+import { PaginationComponent } from "./components/Pagination.tsx";
+import {StorageService} from "./services/StorageService.tsx";
+import SizeSelector from "./components/SizeSelector.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [pageSize, setPageSize] = useState(10)
 
-  const tasks: Task[] = loadTasks();
+  const tasks: Task[] = StorageService.loadTasks();
 
   const style: React.CSSProperties = {
-    marginTop: '65px'
+    marginTop: '40px'
   }
+
+  // Logica di paginazione
+  const pages: number = Math.max(1, Math.ceil(tasks.length / pageSize));
+  const startIndex: number = (currentPage - 1) * pageSize;
+  const endIndex: number = startIndex + pageSize;
+
+  // Estraiamo solo i task che vanno da startIndex a endIndex
+  const paginatedTasks: Task[] = tasks.slice(startIndex, endIndex);
+
+  // Quando cambia il numero di elementi per pagina,
+  // si resetta la pagina corrente a 1 per evitare errori di out-of-bounds
+  const handlePageSizeChange = (newSize: number): void => {
+    setPageSize(newSize);
+    setCurrentPage(1);
+  };
 
   return (
     <>
+      <PaginationComponent
+          currentPage={currentPage}
+          totalPages={pages}
+          onPageChange={(page: number): void => setCurrentPage(page)}
+      />
+      <SizeSelector
+          value={pageSize}
+          onChange={handlePageSizeChange}
+      />
       <div style={style}>
-        <TaskList tasks={tasks} />
+        <TaskList tasks={paginatedTasks} />
       </div>
     </>
   )
