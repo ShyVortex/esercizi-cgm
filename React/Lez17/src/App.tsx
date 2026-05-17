@@ -17,7 +17,7 @@ import { useState } from 'react';
 import './App.css';
 import type { Task } from './types/Task';
 import TaskList from './components/TaskList';
-import { PaginationComponent } from "./components/Pagination.tsx";
+import PaginationComponent from "./components/Pagination.tsx";
 import { StorageService } from "./services/StorageService.tsx";
 import SizeSelector from "./components/SizeSelector.tsx";
 import StatusFilter from './components/StatusFilter.tsx';
@@ -66,6 +66,7 @@ function App() {
   // Se viene modificato un task, aggiorniamo la lista originale
   const handleTasksChange = (newTasks: Task[]): void => {
     setTasks(newTasks);
+    setCurrentPage(1);
   }
 
   return (

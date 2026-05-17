@@ -6,12 +6,12 @@ type Props = {
     onPageChange: (page: number) => void;
 }
 
-export const PaginationComponent: React.FC<Props> = (
-    {
-        currentPage,
-        totalPages,
-        onPageChange
-    }: Props) => {
+export default function PaginationComponent({
+    currentPage,
+    totalPages,
+    onPageChange
+}: Props): React.ReactElement {
+
     // Stato locale input: permette digitazione da parte dell'utente
     const [inputValue, setInputValue] = useState<string>(currentPage.toString());
 
