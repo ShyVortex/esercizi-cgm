@@ -12,32 +12,43 @@
   quando viene aperta la pagina.
 */
 
-import React from 'react'
-import { useState } from 'react'
-import './App.css'
-import type { Task } from './types/Task'
-import TaskList from './components/TaskList'
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import './App.css';
+import type { Task } from './types/Task';
+import TaskList from './components/TaskList';
 import { PaginationComponent } from "./components/Pagination.tsx";
-import {StorageService} from "./services/StorageService.tsx";
+import { StorageService } from "./services/StorageService.tsx";
 import SizeSelector from "./components/SizeSelector.tsx";
+import StatusFilter from './components/StatusFilter.tsx';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<number>(1)
-  const [pageSize, setPageSize] = useState(10)
-
-  const tasks: Task[] = StorageService.loadTasks();
+  const [tasks, setTasks] = useState<Task[]>(StorageService.loadTasks());
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(10);
+  const [filter, setFilter] = useState<string>('');
 
   const style: React.CSSProperties = {
     marginTop: '40px'
   }
 
-  // Logica di paginazione
-  const pages: number = Math.max(1, Math.ceil(tasks.length / pageSize));
-  const startIndex: number = (currentPage - 1) * pageSize;
-  const endIndex: number = startIndex + pageSize;
+  // Quando le attività vengono aggiornate, le salviamo in LocalStorage
+  useEffect(() => {
+    StorageService.saveTasks(tasks);
+  }, [tasks]);
 
-  // Estraiamo solo i task che vanno da startIndex a endIndex
-  const paginatedTasks: Task[] = tasks.slice(startIndex, endIndex);
+  const filteredTasks = tasks.filter(task => {
+    if (filter === 'true') return task.completed === true;
+    if (filter === 'false') return task.completed === false;
+
+    return true; // Se il filtro è vuoto, le teniamo tutte
+  });
+
+  const totalPages: number = Math.max(1, Math.ceil(filteredTasks.length / pageSize));
+
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const paginatedTasks = filteredTasks.slice(startIndex, endIndex);
 
   // Quando cambia il numero di elementi per pagina,
   // si resetta la pagina corrente a 1 per evitare errori di out-of-bounds
@@ -46,19 +57,39 @@ function App() {
     setCurrentPage(1);
   };
 
+  // Quando cambia il filtro, facciamo la stessa cosa
+  const handleFilterChange = (newChoice: string): void => {
+    setFilter(newChoice);
+    setCurrentPage(1);
+  }
+
+  // Se viene modificato un task, aggiorniamo la lista originale
+  const handleTasksChange = (newTasks: Task[]): void => {
+    setTasks(newTasks);
+  }
+
   return (
     <>
       <PaginationComponent
-          currentPage={currentPage}
-          totalPages={pages}
-          onPageChange={(page: number): void => setCurrentPage(page)}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={(page: number): void => setCurrentPage(page)}
       />
-      <SizeSelector
+      <div className="flex flex-wrap gap-4 justify-center items-center">
+        <SizeSelector
           value={pageSize}
           onChange={handlePageSizeChange}
-      />
+        />
+        <StatusFilter
+          choice={filter}
+          onChange={handleFilterChange}
+        />
+      </div>
       <div style={style}>
-        <TaskList tasks={paginatedTasks} />
+        <TaskList
+          tasks={paginatedTasks}
+          onChange={handleTasksChange}
+        />
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import type {Task} from "../types/Task.ts";
+import type { Task } from "../types/Task.ts";
 import jsonData from '../resources/tasks.json';
 
 export abstract class StorageService {
@@ -24,5 +24,9 @@ export abstract class StorageService {
 
         // Ritorna i dati tipizzati dal JSON
         return jsonData as Task[];
+    }
+
+    public static saveTasks(tasks: Task[]): void {
+        localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(tasks));
     }
 }

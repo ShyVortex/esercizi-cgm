@@ -8,12 +8,11 @@ type Props = {
 
 export const PaginationComponent: React.FC<Props> = (
     {
-       currentPage,
-       totalPages,
-       onPageChange
+        currentPage,
+        totalPages,
+        onPageChange
     }: Props) => {
-    // 2. Stato locale per l'input: permette all'utente di digitare liberamente
-    // prima che venga effettivamente lanciato l'evento onPageChange
+    // Stato locale input: permette digitazione da parte dell'utente
     const [inputValue, setInputValue] = useState<string>(currentPage.toString());
 
     // Sincronizza l'input se currentPage cambia dall'esterno
@@ -21,7 +20,7 @@ export const PaginationComponent: React.FC<Props> = (
         setInputValue(currentPage.toString());
     }, [currentPage]);
 
-    // 3. Logica di navigazione invariata
+    // Logica di navigazione
     const goToPage = (page: number) => {
         let targetPage = page;
         if (targetPage < 1) targetPage = 1;
@@ -35,7 +34,7 @@ export const PaginationComponent: React.FC<Props> = (
         }
     };
 
-    // 4. Gestione dell'input testuale
+    // Gestione dell'input testuale
     const handleInputBlur = () => {
         const val = parseInt(inputValue, 10);
         if (!isNaN(val)) {
@@ -49,7 +48,7 @@ export const PaginationComponent: React.FC<Props> = (
         if (e.key === 'Enter') handleInputBlur();
     };
 
-    // 5. Gestione dinamica delle classi Tailwind
+    // Gestione dinamica delle classi Tailwind
     const getButtonClasses = (isDisabled: boolean) => {
         const baseClasses = "px-3 py-1 border rounded transition-colors ";
         if (isDisabled) {

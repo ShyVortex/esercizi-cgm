@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import TaskRow from "./TaskRow";
-import type {Task} from "../types/Task.ts";
+import type { Task } from "../types/Task.ts";
 
-export default function TaskList({ tasks }: {tasks: Task[]}) {
+type Props = {
+    tasks: Task[];
+    onChange: (newTasks: Task[]) => void;
+}
+
+export default function TaskList({ tasks }: Props) {
     return (
         <div>
             {tasks.map(task => (
