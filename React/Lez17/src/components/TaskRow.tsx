@@ -6,25 +6,34 @@ type Props = {
 }
 
 export default function TaskRow({ task, onUpdate }: Props) {
-    const text: string = task.completed ? 'Annulla completamento' : 'Completa attività';
+    const statusText: string = task.completed ? 'Completato' : 'Non completato';
+    const actionText: string = task.completed ? 'Annulla' : 'Completa';
 
-    const buttonClass = "mt-1 px-2 text-black bg-gray-300 rounded-md shadow-sm border border-gray-300 transition-colors hover:bg-white";
+    const buttonClass: string = "p-2 w-20 text-sm bg-gray-400 hover:bg-gray-300 text-black font-medium rounded cursor-pointer";
+    let statusClass: string;
+
+    if (task.completed) {
+        statusClass = "p-2 text-sm text-green-700 rounded";
+    } else {
+        statusClass = "p-2 text-sm text-red-700 rounded";
+    }
 
     return (
-        <div>
-            <h2>Task {task.id}</h2>
-            <h3>{task.description}</h3>
-            <h4>Completed: {task.completed.toString()}</h4>
-            <button
-                className={buttonClass}
-                onClick={() => {
-                    const updatedTask: Task = { ...task, completed: !task.completed };
-                    onUpdate(updatedTask);
-                }}
-            >
-                {text}
-            </button>
-            <div style={{ marginBottom: '20px' }}></div>
-        </div>
+        <tr className="border-b last:border-0">
+            <td className="p-4 text-sm text-gray-300">{task.id}</td>
+            <td className="p-4 text-sm text-gray-300">{task.description}</td>
+            <td className={statusClass}>{statusText}</td>
+            <td className="p-4 text-right space-x-2">
+                <button
+                    className={buttonClass}
+                    onClick={() => {
+                        const updatedTask: Task = { ...task, completed: !task.completed };
+                        onUpdate(updatedTask);
+                    }}
+                >
+                    {actionText}
+                </button>
+            </td>
+        </tr>
     )
 }   

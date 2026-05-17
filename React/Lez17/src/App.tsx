@@ -76,7 +76,7 @@ function App() {
         totalPages={totalPages}
         onPageChange={(page: number): void => setCurrentPage(page)}
       />
-      <div className="flex flex-wrap gap-4 justify-center items-center">
+      <div className="flex flex-wrap flex-row gap-8 justify-center items-center">
         <SizeSelector
           value={pageSize}
           onChange={handlePageSizeChange}
