@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "title": "Comprare il latte",
+    "description": "Prendere due cartoni di latte parzialmente scremato al supermercato.",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Inviare report mensile",
+    "description": "Consolidare i dati di vendita di aprile e inviarli al manager.",
+    "completed": true
+  },
+  {
+    "id": 3,
+    "title": "Palestra - Allenamento Gambe",
+    "description": "Sessione di squat e affondi programmata per le 18:30.",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "title": "Chiamare il dentista",
+    "description": "Fissare l'appuntamento per la pulizia dei denti semestrale.",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "title": "Aggiornare CV",
+    "description": "Aggiungere l'ultima certificazione cloud ottenuta su LinkedIn e sul PDF.",
+    "completed": true
+  },
+  {
+    "id": 6,
+    "title": "Pagare bolletta luce",
+    "description": "Scadenza il 20 del mese. Importo: 85 euro.",
+    "completed": false
+  },
+  {
+    "id": 7,
+    "title": "Annaffiare le piante",
+    "description": "Dare acqua ai bonsai sul balcone e ai ficus in soggiorno.",
+    "completed": true
+  },
+  {
+    "id": 8,
+    "title": "Revisione codice PR #42",
+    "description": "Controllare i mutamenti alla logica di autenticazione del backend.",
+    "completed": false
+  },
+  {
+    "id": 9,
+    "title": "Prenotare hotel per weekend",
+    "description": "Trovare una stanza a Firenze vicino al centro per due notti.",
+    "completed": false
+  },
+  {
+    "id": 10,
+    "title": "Leggere capitolo 4",
+    "description": "Continuare il libro sul Clean Code, focus sui commenti efficaci.",
+    "completed": true
+  },
+  {
+    "id": 11,
+    "title": "Cambio olio auto",
+    "description": "Portare la macchina dal meccanico per il tagliando annuale.",
+    "completed": false
+  },
+  {
+    "id": 12,
+    "title": "Preparare pranzo per domani",
+    "description": "Cucinare il riso con pollo e verdure da portare in ufficio.",
+    "completed": true
+  },
+  {
+    "id": 13,
+    "title": "Pulizia backup server",
+    "description": "Eliminare i vecchi snapshot automatici per liberare spazio su disco.",
+    "completed": false
+  },
+  {
+    "id": 14,
+    "title": "Comprare regalo Marco",
+    "description": "Trovare un'idea originale per il suo trentesimo compleanno.",
+    "completed": false
+  },
+  {
+    "id": 15,
+    "title": "Configurare router nuovo",
+    "description": "Impostare la rete Wi-Fi mesh e cambiare la password di default.",
+    "completed": true
+  },
+  {
+    "id": 16,
+    "title": "Ritirare pacco in posta",
+    "description": "Prendere l'ordine Amazon consegnato al punto di ritiro.",
+    "completed": false
+  },
+  {
+    "id": 17,
+    "title": "Pianificare budget familiare",
+    "description": "Inserire le spese dell'ultimo mese nel foglio di calcolo.",
+    "completed": false
+  },
+  {
+    "id": 18,
+    "title": "Lavare i tappeti",
+    "description": "Portare in lavanderia i tappeti del salotto per il lavaggio a secco.",
+    "completed": true
+  },
+  {
+    "id": 19,
+    "title": "Studiare TypeScript Generics",
+    "description": "Approfondire l'uso dei vincoli nei tipi generici avanzati.",
+    "completed": false
+  },
+  {
+    "id": 20,
+    "title": "Organizzare scrivania",
+    "description": "Buttare le carte vecchie, ordinare i cavi e pulire i monitor.",
+    "completed": true
+  },
+  {
+    "id": 21,
+    "title": "Rinnovare abbonamento Spotify",
+    "description": "Aggiornare il metodo di pagamento scaduto sull'account family.",
+    "completed": false
+  },
+  {
+    "id": 22,
+    "title": "Controllare pressione pneumatici",
+    "description": "Verificare i bar delle gomme prima di partire per il viaggio.",
+    "completed": false
+  },
+  {
+    "id": 23,
+    "title": "Preparare slide presentazione",
+    "description": "Creare il deck per la demo del prodotto di venerdì mattina.",
+    "completed": true
+  },
+  {
+    "id": 24,
+    "title": "Comprare croccantini gatto",
+    "description": "Prendere la confezione da 5kg di cibo secco sterilizzato.",
+    "completed": false
+  },
+  {
+    "id": 25,
+    "title": "Disdire prova gratuita app",
+    "description": "Cancellare la sottoscrizione prima del rinnovo automatico a pagamento.",
+    "completed": true
+  },
+  {
+    "id": 26,
+    "title": "Fissare appuntamento commercialista",
+    "description": "Inviare i documenti per la dichiarazione dei redditi dell'anno scorso.",
+    "completed": false
+  },
+  {
+    "id": 27,
+    "title": "Pulire filtri condizionatore",
+    "description": "Smontare e lavare i filtri dell'aria condizionata in vista dell'estate.",
+    "completed": false
+  },
+  {
+    "id": 28,
+    "title": "Rispondere alle email arretrate",
+    "description": "Svuotare la casella di posta per raggiungere l'Inbox Zero.",
+    "completed": true
+  },
+  {
+    "id": 29,
+    "title": "Testare API di pagamento",
+    "description": "Eseguire test di sandbox per verificare la gestione degli errori webhooks.",
+    "completed": false
+  },
+  {
+    "id": 30,
+    "title": "Prenotare campo da padel",
+    "description": "Verificare disponibilità per mercoledì sera alle ore 20:00.",
+    "completed": true
+  },
+  {
+    "id": 31,
+    "title": "Lavare i vetri di casa",
+    "description": "Pulire le finestre della cucina e della camera da letto.",
+    "completed": false
+  },
+  {
+    "id": 32,
+    "title": "Acquistare biglietti concerto",
+    "description": "Accedere al sito di TicketOne alle ore 10:00 per la prevendita.",
+    "completed": false
+  },
+  {
+    "id": 33,
+    "title": "Aggiornare dipendenze progetto",
+    "description": "Eseguire npm update e controllare che non ci siano breaking changes.",
+    "completed": true
+  },
+  {
+    "id": 34,
+    "title": "Preparare valigia",
+    "description": "Fare i bagagli per il viaggio di lavoro a Milano.",
+    "completed": false
+  },
+  {
+    "id": 35,
+    "title": "Fare backup del PC",
+    "description": "Copiare i file importanti sull'hard disk esterno di sicurezza.",
+    "completed": true
+  },
+  {
+    "id": 36,
+    "title": "Cucinare cena per ospiti",
+    "description": "Preparare le lasagne vegetariane per la cena con i colleghi.",
+    "completed": false
+  },
+  {
+    "id": 37,
+    "title": "Cercare idraulico per perdita",
+    "description": "Riparare il gocciolio sotto il lavandino del bagno principale.",
+    "completed": false
+  },
+  {
+    "id": 38,
+    "title": "Scrivere articolo per il blog",
+    "description": "Redigere l'introduzione alla programmazione asincrona in JavaScript.",
+    "completed": true
+  },
+  {
+    "id": 39,
+    "title": "Acquistare integratori",
+    "description": "Ordinare Omega 3 e Vitamina D dallo store online.",
+    "completed": false
+  },
+  {
+    "id": 40,
+    "title": "Donare vestiti usati",
+    "description": "Selezionare i vecchi maglioni e portarli al centro di raccolta.",
+    "completed": true
+  },
+  {
+    "id": 41,
+    "title": "Rivedere la policy aziendale",
+    "description": "Leggere il nuovo documento sulle linee guida dello smart working.",
+    "completed": false
+  },
+  {
+    "id": 42,
+    "title": "Sostituire lampadina corridoio",
+    "description": "Mettere una nuova lampadina a LED a luce calda.",
+    "completed": false
+  },
+  {
+    "id": 43,
+    "title": "Configurare linter per React",
+    "description": "Aggiungere le regole di ESLint e Prettier nell'ambiente di sviluppo.",
+    "completed": true
+  },
+  {
+    "id": 44,
+    "title": "Chiamare la nonna",
+    "description": "Fare una telefonata per sapere come sta e salutarla.",
+    "completed": false
+  },
+  {
+    "id": 45,
+    "title": "Ordinare nuova sedia ufficio",
+    "description": "Scegliere un modello ergonomico per migliorare la postura.",
+    "completed": true
+  },
+  {
+    "id": 46,
+    "title": "Preparare tesi - Introduzione",
+    "description": "Scrivere i primi tre paragrafi del capitolo introduttivo.",
+    "completed": false
+  },
+  {
+    "id": 47,
+    "title": "Passeggiata serale",
+    "description": "Camminare per almeno 30 minuti per raggiungere l'obiettivo dei passi.",
+    "completed": true
+  },
+  {
+    "id": 48,
+    "title": "Ottimizzare query SQL",
+    "description": "Aggiungere indici sulla tabella degli ordini per velocizzare i report.",
+    "completed": false
+  },
+  {
+    "id": 49,
+    "title": "Rinnovare la patente",
+    "description": "Fare le foto tessera e prenotare la visita medica all'ACI.",
+    "completed": false
+  },
+  {
+    "id": 50,
+    "title": "Comprare caffè in capsule",
+    "description": "Prendere 100 capsule della miscela intensa sul sito ufficiale.",
+    "completed": true
+  },
+  {
+    "id": 51,
+    "title": "Fissare i quadri in salotto",
+    "description": "Usare i tasselli giusti per appendere le stampe acquistate.",
+    "completed": false
+  },
+  {
+    "id": 52,
+    "title": "Aggiornare firma email",
+    "description": "Inserire il nuovo numero di telefono interno e il logo aggiornato.",
+    "completed": true
+  },
+  {
+    "id": 53,
+    "title": "Scaricare estratto conto",
+    "description": "Ottenere il PDF del primo trimestre per l'archivio contabile.",
+    "completed": false
+  },
+  {
+    "id": 54,
+    "title": "Eseguire i test di integrazione",
+    "description": "Lanciare la suite di test Jest prima del rilascio in staging.",
+    "completed": true
+  },
+  {
+    "id": 55,
+    "title": "Lavare i piatti della cena",
+    "description": "Caricare la lavastoviglie e avviarla in modalità eco.",
+    "completed": false
+  },
+  {
+    "id": 56,
+    "title": "Prenotare taglio di capelli",
+    "description": "Appuntamento dal barbiere per sabato mattina alle 11.",
+    "completed": false
+  },
+  {
+    "id": 57,
+    "title": "Raccogliere feedback utenti",
+    "description": "Leggere le risposte al questionario inviato la scorsa settimana.",
+    "completed": true
+  },
+  {
+    "id": 58,
+    "title": "Comprare frutta e verdura",
+    "description": "Andare al mercato locale a prendere prodotti di stagione.",
+    "completed": false
+  },
+  {
+    "id": 59,
+    "title": "Imparare le basi di Docker",
+    "description": "Creare un Dockerfile semplice per un'applicazione Node.js.",
+    "completed": false
+  },
+  {
+    "id": 60,
+    "title": "Buttare la spazzatura indifferenziata",
+    "description": "Portare il sacco nei cassonetti fuori strada prima delle 22:00.",
+    "completed": true
+  },
+  {
+    "id": 61,
+    "title": "Verificare scadenze assicurazioni",
+    "description": "Controllare la data di rinnovo della polizza Rc Auto.",
+    "completed": false
+  },
+  {
+    "id": 62,
+    "title": "Compilare timesheet settimanale",
+    "description": "Registrare le ore lavorate sui vari progetti nel portale HR.",
+    "completed": true
+  },
+  {
+    "id": 63,
+    "title": "Pulire la macchina all'interno",
+    "description": "Aspirare i sedili e passare il panno sul cruscotto.",
+    "completed": false
+  },
+  {
+    "id": 64,
+    "title": "Aggiornare sistema operativo",
+    "description": "Installare le ultime patch di sicurezza su macOS/Windows.",
+    "completed": false
+  },
+  {
+    "id": 65,
+    "title": "Cercare tutorial su CSS Grid",
+    "description": "Capire meglio l'allineamento degli elementi complessi.",
+    "completed": true
+  },
+  {
+    "id": 66,
+    "title": "Fare stretching alla schiena",
+    "description": "15 minuti di esercizi mirati per ridurre la tensione lombare.",
+    "completed": false
+  },
+  {
+    "id": 67,
+    "title": "Comprare pane fresco",
+    "description": "Passare dal panificio artigianale prima che chiuda.",
+    "completed": true
+  },
+  {
+    "id": 68,
+    "title": "Rivedere wireframe UX",
+    "description": "Analizzare i flussi dell'applicazione mobile creati dal designer.",
+    "completed": false
+  },
+  {
+    "id": 69,
+    "title": "Controllare scadenze farmaci",
+    "description": "Svuotare la scatola dei medicinali e buttare quelli scaduti.",
+    "completed": false
+  },
+  {
+    "id": 70,
+    "title": "Pianificare menu settimanale",
+    "description": "Decidere i pasti da lunedì a venerdì per fare la spesa mirata.",
+    "completed": true
+  },
+  {
+    "id": 71,
+    "title": "Configurare SSH Keys",
+    "description": "Generare una nuova chiave ED25519 e aggiungerla a GitHub.",
+    "completed": false
+  },
+  {
+    "id": 72,
+    "title": "Lavare le lenzuola",
+    "description": "Mettere in lavatrice a 60 gradi il set del letto matrimoniale.",
+    "completed": false
+  },
+  {
+    "id": 73,
+    "title": "Ascoltare podcast tech",
+    "description": "Ascoltare l'ultimo episodio sulle novità di Next.js.",
+    "completed": true
+  },
+  {
+    "id": 74,
+    "title": "Stirare le camicie",
+    "description": "Stirare le 5 camicie per la settimana lavorativa.",
+    "completed": false
+  },
+  {
+    "id": 75,
+    "title": "Impostare obiettivi trimestrali",
+    "description": "Scrivere i propri OKR personali per lo sviluppo di carriera.",
+    "completed": true
+  },
+  {
+    "id": 76,
+    "title": "Comprare pile stilo AA",
+    "description": "Servono per il mouse wireless e il telecomando della TV.",
+    "completed": false
+  },
+  {
+    "id": 77,
+    "title": "Pulire la tastiera del PC",
+    "description": "Rimuovere la polvere con l'aria compressa e igienizzare i tasti.",
+    "completed": false
+  },
+  {
+    "id": 78,
+    "title": "Verificare metriche GA4",
+    "description": "Analizzare l'andamento delle visite sul sito nell'ultimo mese.",
+    "completed": true
+  },
+  {
+    "id": 79,
+    "title": "Preparare regalo di anniversario",
+    "description": "Scrivere la lettera e ritirare il pacchetto in gioielleria.",
+    "completed": false
+  },
+  {
+    "id": 80,
+    "title": "Ricaricare tessera trasporti",
+    "description": "Fare l'abbonamento mensile per la metropolitana ed i bus.",
+    "completed": true
+  },
+  {
+    "id": 81,
+    "title": "Definire i requisiti utente",
+    "description": "Scrivere le user story per la feature di esportazione PDF.",
+    "completed": false
+  },
+  {
+    "id": 82,
+    "title": "Pulire la macchina del caffè",
+    "description": "Fare il ciclo di decalcificazione con il liquido apposito.",
+    "completed": false
+  },
+  {
+    "id": 83,
+    "title": "Studiare architettura microservices",
+    "description": "Leggere la documentazione sui pattern di API Gateway.",
+    "completed": true
+  },
+  {
+    "id": 84,
+    "title": "Sbrinare il congelatore",
+    "description": "Togliere il ghiaccio in eccesso per ottimizzare i consumi energetici.",
+    "completed": false
+  },
+  {
+    "id": 85,
+    "title": "Comprare detersivo lavatrice",
+    "description": "Prendere l'ecoricarica liquida al profumo di lavanda.",
+    "completed": true
+  },
+  {
+    "id": 86,
+    "title": "Aggiornare plugin WordPress",
+    "description": "Eseguire il backup del sito e lanciare gli aggiornamenti dei temi.",
+    "completed": false
+  },
+  {
+    "id": 87,
+    "title": "Fissare cena con amici",
+    "description": "Inviare un messaggio nel gruppo per decidere la pizzeria.",
+    "completed": false
+  },
+  {
+    "id": 88,
+    "title": "Tradurre documentazione",
+    "description": "Tradurre la guida utente dall'inglese all'italiano.",
+    "completed": true
+  },
+  {
+    "id": 89,
+    "title": "Riparare cerniera zaino",
+    "description": "Portare lo zaino dal calzolaio per sistemare la zip rotta.",
+    "completed": false
+  },
+  {
+    "id": 90,
+    "title": "Controllare il livello dell'acqua",
+    "description": "Verificare lo stato della caldaia e alzare la pressione se sotto 1 bar.",
+    "completed": true
+  },
+  {
+    "id": 91,
+    "title": "Esportare contatti CRM",
+    "description": "Creare un file CSV con i lead qualificati dell'ultima campagna.",
+    "completed": false
+  },
+  {
+    "id": 92,
+    "title": "Ritagliare foto per passaporto",
+    "description": "Stampare e tagliare le foto secondo i formati standard richiesti.",
+    "completed": false
+  },
+  {
+    "id": 93,
+    "title": "Rivedere budget marketing",
+    "description": "Allocare i fondi residui sulle campagne Google Ads.",
+    "completed": true
+  },
+  {
+    "id": 94,
+    "title": "Comprare bagnoschiuma",
+    "description": "Prendere due flaconi di sapone neutro per pelli sensibili.",
+    "completed": false
+  },
+  {
+    "id": 95,
+    "title": "Configurare backup iCloud",
+    "description": "Assicurarsi che le foto sul telefono vengano salvate sul cloud.",
+    "completed": true
+  },
+  {
+    "id": 96,
+    "title": "Studiare pattern di design Go",
+    "description": "Approfondire l'uso delle interfacce e delle struct in Go.",
+    "completed": false
+  },
+  {
+    "id": 97,
+    "title": "Pulire la scarpiera",
+    "description": "Selezionare le scarpe da buttare e pulire i ripiani interni.",
+    "completed": false
+  },
+  {
+    "id": 98,
+    "title": "Organizzare cartella Download",
+    "description": "Spostare i file importanti nelle cartelle corrette e svuotare il resto.",
+    "completed": true
+  },
+  {
+    "id": 99,
+    "title": "Comprare lampadina smart",
+    "description": "Prendere una lampadina RGB compatibile con Alexa.",
+    "completed": false
+  },
+  {
+    "id": 100,
+    "title": "Fare test di velocità fibra",
+    "description": "Verificare che la velocità di download sia in linea con il contratto.",
+    "completed": true
+  },
+  {
+    "id": 101,
+    "title": "Scrivere post LinkedIn",
+    "description": "Condividere i risultati dell'ultimo progetto open-source rilasciato.",
+    "completed": false
+  },
+  {
+    "id": 102,
+    "title": "Inviare preventivo a cliente",
+    "description": "Inviare via mail il PDF con il dettaglio dei costi per lo sviluppo app.",
+    "completed": false
+  },
+  {
+    "id": 103,
+    "title": "Controllare filtri cappa",
+    "description": "Sostituire i filtri a carbone attivo della cappa della cucina.",
+    "completed": true
+  },
+  {
+    "id": 104,
+    "title": "Rinnovare hosting web",
+    "description": "Pagare la quota annuale per il dominio del portfolio personale.",
+    "completed": false
+  },
+  {
+    "id": 105,
+    "title": "Preparare script di deploy",
+    "description": "Scrivere un file Bash per automatizzare il rilascio su server VPS.",
+    "completed": true
+  },
+  {
+    "id": 106,
+    "title": "Prendere appunti meeting",
+    "description": "Inviare il riepilogo della riunione odierna a tutto il team.",
+    "completed": false
+  },
+  {
+    "id": 107,
+    "title": "Acquistare quaderno note",
+    "description": "Prendere un taccuino A5 a quadretti per gli schizzi di design.",
+    "completed": false
+  },
+  {
+    "id": 108,
+    "title": "Verificare tag SEO",
+    "description": "Migliorare meta description ed alt text delle immagini del sito.",
+    "completed": true
+  },
+  {
+    "id": 109,
+    "title": "Comprare concime piante",
+    "description": "Prendere il fertilizzante liquido specifico per piante verdi indoor.",
+    "completed": false
+  },
+  {
+    "id": 110,
+    "title": "Controllare estratto conto carta",
+    "description": "Verificare che non ci siano addebiti anomali o transazioni sconosciute.",
+    "completed": true
+  },
+  {
+    "id": 111,
+    "title": "Ottimizzare bundle JS",
+    "description": "Utilizzare il code splitting per ridurre la dimensione iniziale dell'app.",
+    "completed": false
+  },
+  {
+    "id": 112,
+    "title": "Lavare i piatti del pranzo",
+    "description": "Sciacquare pentole e posate usate prima di tornare al lavoro.",
+    "completed": false
+  },
+  {
+    "id": 113,
+    "title": "Cercare ricetta dolce",
+    "description": "Trovare una ricetta per una torta di mele senza burro.",
+    "completed": true
+  },
+  {
+    "id": 114,
+    "title": "Fissare specchio bagno",
+    "description": "Utilizzare il trapano per montare il nuovo specchio contenitore.",
+    "completed": false
+  },
+  {
+    "id": 115,
+    "title": "Rivedere foglio Excel tasse",
+    "description": "Calcolare gli acconti IVA trimestrali da versare tramite F24.",
+    "completed": true
+  },
+  {
+    "id": 116,
+    "title": "Configurare alias Git",
+    "description": "Aggiungere shortcut veloci nel file .gitconfig per status e commit.",
+    "completed": false
+  },
+  {
+    "id": 117,
+    "title": "Comprare spazzolino nuovo",
+    "description": "Prendere una testina di ricambio per lo spazzolino elettrico.",
+    "completed": false
+  },
+  {
+    "id": 118,
+    "title": "Cancellare file temporanei",
+    "description": "Svuotare la cache del browser e i file log di sistema.",
+    "completed": true
+  },
+  {
+    "id": 119,
+    "title": "Preparare valigia bimbo",
+    "description": "Mettere vestiti di ricambio e pannolini per il weekend dai nonni.",
+    "completed": false
+  },
+  {
+    "id": 120,
+    "title": "Verificare aggiornamenti TV",
+    "description": "Scaricare l'ultimo firmware per la Smart TV del salotto.",
+    "completed": true
+  },
+  {
+    "id": 121,
+    "title": "Studiare flexbox layout",
+    "description": "Fare pratica con i giochi interattivi online per memorizzare le proprietà.",
+    "completed": false
+  },
+  {
+    "id": 122,
+    "title": "Pulire il microonde",
+    "description": "Rimuovere le macchie di cibo dalle pareti interne usando acqua e limone.",
+    "completed": false
+  },
+  {
+    "id": 123,
+    "title": "Aggiornare policy cookie",
+    "description": "Inserire le modifiche legali obbligatorie sul banner del sito web.",
+    "completed": true
+  },
+  {
+    "id": 124,
+    "title": "Acquistare cuffie bluetooth",
+    "description": "Scegliere un modello con cancellazione attiva del rumore (ANC).",
+    "completed": false
+  },
+  {
+    "id": 125,
+    "title": "Configurare notifiche Slack",
+    "description": "Impostare la modalità non disturbare dopo le ore 19:00.",
+    "completed": true
+  },
+  {
+    "id": 126,
+    "title": "Scrivere test end-to-end",
+    "description": "Implementare un flusso completo di checkout utente con Cypress.",
+    "completed": false
+  },
+  {
+    "id": 127,
+    "title": "Pulire scarpe da ginnastica",
+    "description": "Mettere le scarpe da corsa in lavatrice con un programma delicato.",
+    "completed": false
+  },
+  {
+    "id": 128,
+    "title": "Monitorare log errori Sentry",
+    "description": "Controllare se ci sono crash bloccanti nella release di produzione.",
+    "completed": true
+  },
+  {
+    "id": 129,
+    "title": "Comprare sale per lavastoviglie",
+    "description": "Riempire il serbatoio del sale per evitare calcare sui bicchieri.",
+    "completed": false
+  },
+  {
+    "id": 130,
+    "title": "Rinnovare tessera biblioteca",
+    "description": "Passare in sede per timbrare il rinnovo annuale gratuito.",
+    "completed": true
+  },
+  {
+    "id": 131,
+    "title": "Creare icone per app",
+    "description": "Esportare gli asset grafici in varie risoluzioni per iOS e Android.",
+    "completed": false
+  },
+  {
+    "id": 132,
+    "title": "Sostituire tergicristalli auto",
+    "description": "Montare le spazzole nuove acquistate online sul parabrezza.",
+    "completed": false
+  },
+  {
+    "id": 133,
+    "title": "Configurare proxy inverso Nginx",
+    "description": "Gestire il reindirizzamento delle richieste HTTP sulla porta corretta.",
+    "completed": true
+  },
+  {
+    "id": 134,
+    "title": "Comprare carta igienica",
+    "description": "Prendere la confezione maxi scorta da 24 rotoli al supermercato.",
+    "completed": false
+  },
+  {
+    "id": 135,
+    "title": "Controllare spazio Google Drive",
+    "description": "Eliminare i vecchi video pesanti per evitare di saturare i 15GB gratuiti.",
+    "completed": true
+  },
+  {
+    "id": 136,
+    "title": "Preparare agenda workshop",
+    "description": "Strutturare le ore di lezione e i blocchi di esercitazione pratica.",
+    "completed": false
+  },
+  {
+    "id": 137,
+    "title": "Raccogliere ricevute taxi",
+    "description": "Inviare le note spese all'amministrazione per il rimborso del viaggio.",
+    "completed": false
+  },
+  {
+    "id": 138,
+    "title": "Aggiornare readme del progetto",
+    "description": "Scrivere istruzioni dettagliate su come avviare l'app in locale.",
+    "completed": true
+  },
+  {
+    "id": 139,
+    "title": "Comprare olio extravergine",
+    "description": "Ordinare una latta da 5 litri dal produttore pugliese di fiducia.",
+    "completed": false
+  },
+  {
+    "id": 140,
+    "title": "Verificare performance Lighthouse",
+    "description": "Eseguire l'audit della home page e tracciare le azioni correttive.",
+    "completed": true
+  },
+  {
+    "id": 141,
+    "title": "Migrare database a PostgreSQL",
+    "description": "Scrivere lo script di migrazione dei dati da SQLite alla produzione.",
+    "completed": false
+  },
+  {
+    "id": 142,
+    "title": "Pulire gabbia criceto",
+    "description": "Cambiare la segatura, lavare la ciotolina ed aggiungere acqua fresca.",
+    "completed": false
+  },
+  {
+    "id": 143,
+    "title": "Controllare notifiche INPS",
+    "description": "Accedere con lo SPID per verificare lo stato della domanda inoltrata.",
+    "completed": true
+  },
+  {
+    "id": 144,
+    "title": "Acquistare biglietto treno",
+    "description": "Prendere il Frecciarossa per Roma del prossimo venerdì pomeriggio.",
+    "completed": false
+  },
+  {
+    "id": 145,
+    "title": "Configurare autenticazione 2FA",
+    "description": "Abilitare l'autenticazione a due fattori su tutti i conti bancari online.",
+    "completed": true
+  },
+  {
+    "id": 146,
+    "title": "Scrivere script di scraping",
+    "description": "Estrarre l'elenco dei prezzi concorrenti da un sito ecommerce pubblico.",
+    "completed": false
+  },
+  {
+    "id": 147,
+    "title": "Cucire bottone giacca",
+    "description": "Rimettere il bottone nero sulla tasca della giacca elegante.",
+    "completed": false
+  },
+  {
+    "id": 148,
+    "title": "Ottimizzare immagini sito",
+    "description": "Convertire tutti i file PNG in formato WebP per ridurre i tempi di caricamento.",
+    "completed": true
+  },
+  {
+    "id": 149,
+    "title": "Comprare sacchetti aspirapolvere",
+    "description": "Verificare il codice del modello esatto e acquistarli in negozio.",
+    "completed": false
+  },
+  {
+    "id": 150,
+    "title": "Rivedere obiettivi dell'anno",
+    "description": "Fare un check-in a metà anno per capire quali progetti completare.",
+    "completed": true
+  }
+]
