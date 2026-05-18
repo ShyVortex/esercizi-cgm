@@ -18,24 +18,26 @@ import './App.css';
 import type { Task } from './types/Task';
 import TaskList from './components/TaskList';
 import PaginationComponent from "./components/Pagination.tsx";
-import { StorageService } from "./services/StorageService.tsx";
+import { StorageService } from "./services/StorageService.ts";
 import SizeSelector from "./components/SizeSelector.tsx";
 import StatusFilter from './components/StatusFilter.tsx';
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(StorageService.loadTasks());
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(10);
-  const [filter, setFilter] = useState<string>('');
+  const [pageSize, setPageSize] = useState<number>(StorageService.loadPreferences().pageSize);
+  const [filter, setFilter] = useState<string>(StorageService.loadPreferences().filter);
 
   const style: React.CSSProperties = {
     marginTop: '40px'
   }
 
-  // Quando le attività vengono aggiornate, le salviamo in LocalStorage
+  // Quando le attività o le preferenze vengono aggiornate, le salviamo in LocalStorage
   useEffect(() => {
     StorageService.saveTasks(tasks);
-  }, [tasks]);
+    StorageService.savePageSize(pageSize);
+    StorageService.saveFilter(filter);
+  }, [tasks, pageSize, filter]);
 
   const filteredTasks = tasks.filter(task => {
     if (filter === 'true') return task.completed === true;

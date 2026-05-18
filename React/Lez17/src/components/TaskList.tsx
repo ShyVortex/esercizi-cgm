@@ -1,6 +1,6 @@
 import TaskRow from "./TaskRow";
 import type { Task } from "../types/Task.ts";
-import { StorageService } from "../services/StorageService.tsx";
+import { StorageService } from "../services/StorageService.ts";
 
 type Props = {
     tasks: Task[];
