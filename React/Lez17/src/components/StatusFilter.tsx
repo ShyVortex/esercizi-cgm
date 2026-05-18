@@ -13,9 +13,9 @@ export default function StatusFilter({ choice, onChange }: Props): React.ReactEl
                 value={choice}
                 onChange={(e: ChangeEvent<HTMLSelectElement>): void => onChange(e.target.value)}
                 className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                <option value="">Seleziona stato...</option>
-                <option value="true">Completato</option>
-                <option value="false">Non completato</option>
+                <option value="">Tutte</option>
+                <option value="true">Completate</option>
+                <option value="false">Non completate</option>
             </select>
         </div>
     )
