@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type ChangeEvent } from "react";
+import React, { type ChangeEvent } from "react";
 
 type Props = {
     choice: string
@@ -6,13 +6,6 @@ type Props = {
 }
 
 export default function StatusFilter({ choice, onChange }: Props): React.ReactElement {
-    const [inputChoice, setChoice] = useState<string>(choice)
-
-    // Sincronizza il cambio filtro dall'esterno
-    useEffect(() => {
-        setChoice(choice.toString());
-    }, [choice]);
-
     return (
         <div className="mt-4">
             <label className="block text-sm font-medium text-gray-600">Filtra per stato:</label>
