@@ -17,7 +17,9 @@ export default function PaginationComponent({
 
     // Sincronizza l'input se currentPage cambia dall'esterno
     useEffect(() => {
-        setInputValue(currentPage.toString());
+        (async () => {
+            setInputValue(currentPage.toString());
+        })();
     }, [currentPage]);
 
     // Logica di navigazione
