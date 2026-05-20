@@ -69,6 +69,10 @@ function App() {
      perché non osserva il cambiamento di stato di nessuna variabile */
   useEffect(() => {
     (async () => {
+      if (UserService.isCacheExpired()) {
+        PreferencesService.savePreference('skipLoading', false);
+      }
+
       const skipLoading: boolean = PreferencesService.loadPreferences().skipLoading;
       if (skipLoading)
         fetchUsers();
