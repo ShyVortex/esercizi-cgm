@@ -1,5 +1,5 @@
 /*
-  Costruisci un form di iscrizione con email e password, con stato iniziale, tocuhed, messaggi di errrori,
+  Costruisci un form di iscrizione con email e password, con stato iniziale, tocuhed, messaggi di errori,
   validazione campi e handle su onChange. Valida l'indirizzo email e password che deve essere di almeno 8 caratteri
   e con un lettera minuscola, maiuscola, un numero e un simbolo. Il pulsante invia deve essere attivato se l'utente
   è entrato almeno una volta su tutti i campi obbligatori e questi ultimi sono stati compilati. Non aggiungere chiamate API,

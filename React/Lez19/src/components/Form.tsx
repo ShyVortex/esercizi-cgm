@@ -1,62 +1,9 @@
 import { useState } from "react";
+import { Validator } from "../utilities/Validator";
 
 type Props = {
     title: string;
     fields: string[];
-}
-
-// Funzione di validazione dei singoli campi
-function validate(fieldName: string, value: string, allValues: Record<string, string>): string {
-    const trimmed = value.trim();
-    if (!trimmed) {
-        return "Questo campo è obbligatorio.";
-    }
-
-    const lowerName = fieldName.toLowerCase();
-
-    // Validazione Email
-    if (lowerName.includes("email")) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(trimmed)) {
-            return "Inserisci un indirizzo email valido (es. nome@esempio.com).";
-        }
-    }
-
-    // Validazione Password
-    if (lowerName === "password") {
-        if (trimmed.length < 8) {
-            return "La password deve contenere almeno 8 caratteri.";
-        }
-        if (!/[a-z]/.test(trimmed)) {
-            return "La password deve contenere almeno una lettera minuscola.";
-        }
-        if (!/[A-Z]/.test(trimmed)) {
-            return "La password deve contenere almeno una lettera maiuscola.";
-        }
-        if (!/\d/.test(trimmed)) {
-            return "La password deve contenere almeno un numero.";
-        }
-        if (!/[!@#$%^&*(),.?":{}|<>+]/.test(trimmed)) {
-            return "La password deve contenere almeno un simbolo speciale (es. !, @, #, +, etc.).";
-        }
-    }
-
-    // Validazione Conferma Password
-    if (lowerName.includes("conferma") || lowerName.includes("confirm")) {
-        const pwdKey = Object.keys(allValues).find(k => k.toLowerCase() === "password");
-        if (pwdKey && trimmed !== allValues[pwdKey]) {
-            return "Le password non coincidono.";
-        }
-    }
-
-    // Validazione Termini d'uso
-    if (lowerName.includes("termini") || lowerName.includes("privacy") || lowerName.includes("accetto")) {
-        if (trimmed !== "accetto") {
-            return "Devi accettare i Termini e Condizioni per continuare.";
-        }
-    }
-
-    return "";
 }
 
 export default function Form({ title, fields }: Props): React.ReactElement {
@@ -96,14 +43,14 @@ export default function Form({ title, fields }: Props): React.ReactElement {
         setTouched(prev => ({ ...prev, [field]: true }));
 
         // Aggiorna l'errore in tempo reale
-        const err = validate(field, val, nextValues);
+        const err = Validator.validateFields(field, val, nextValues);
         setErrors(prev => ({ ...prev, [field]: err }));
     };
 
     // Gestione del focus out (onBlur)
     const handleBlur = (field: string) => {
         setTouched(prev => ({ ...prev, [field]: true }));
-        const err = validate(field, values[field], values);
+        const err = Validator.validateFields(field, values[field], values);
         setErrors(prev => ({ ...prev, [field]: err }));
     };
 
@@ -113,7 +60,7 @@ export default function Form({ title, fields }: Props): React.ReactElement {
         const val = values[field];
         const isTouched = touched[field];
         const isNotEmpty = val.trim() !== "";
-        const hasNoError = errors[field] === "" && validate(field, val, values) === "";
+        const hasNoError = errors[field] === "" && Validator.validateFields(field, val, values) === "";
         return isTouched && isNotEmpty && hasNoError;
     });
 
