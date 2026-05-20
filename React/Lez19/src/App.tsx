@@ -15,16 +15,68 @@
 
 import './App.css'
 import Form from './components/Form'
+import type { FieldConfig } from './components/Form'
 
 function App() {
+  const formFields: FieldConfig[] = [
+    {
+      name: 'Email',
+      label: 'Email',
+      type: 'email',
+      placeholder: 'Inserisci la tua email'
+    },
+    {
+      name: 'Password',
+      label: 'Password',
+      type: 'password',
+      placeholder: 'Crea una password sicura'
+    },
+    {
+      name: 'Conferma password',
+      label: 'Conferma password',
+      type: 'password',
+      placeholder: 'Ripeti la password'
+    },
+    {
+      name: 'Termini e Condizioni',
+      label: 'Termini e Condizioni',
+      type: 'radio',
+      options: [
+        { label: 'Accetto', value: 'accetto' },
+        { label: 'Non accetto', value: 'non accetto' }
+      ]
+    }
+  ];
+
+  const handleSubmit = (values: Record<string, string>) => {
+    alert("Registrazione completata con successo!");
+    console.log("Submit del form avvenuto con successo! Dati ricevuti nel parent:", values);
+  };
+
+  const handleChange = (field: string, value: string, allValues: Record<string, string>) => {
+    console.log(`[Parent onChange] Il campo ${field} è cambiato a: "${value}"`, allValues);
+  };
+
+  const handleBlur = (field: string, value: string, allValues: Record<string, string>) => {
+    console.log(`[Parent onBlur] Focus perso sul campo ${field} con valore: "${value}"`, allValues);
+  };
+
+  const handleFocus = (field: string, value: string, allValues: Record<string, string>) => {
+    console.log(`[Parent onFocus] Focus ottenuto sul campo ${field} con valore corrente: "${value}"`, allValues);
+  };
+
   return (
-    <>
+    <div className="min-h-screen bg-gray-900 text-gray-100 flex items-center justify-center">
       <Form
-        title='Registrazione'
-        fields={['Email', 'Password', 'Conferma password', 'Termini e Condizioni']}
+        title="Registrazione"
+        fields={formFields}
+        onSubmit={handleSubmit}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
       />
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
