@@ -140,7 +140,7 @@ export default function Form({ title, fields }: Props): React.ReactElement {
                 <button
                     type="submit"
                     disabled={!isFormValid}
-                    className="mt-6 w-full bg-blue-600 text-white py-2 px-4 rounded font-semibold transition-all hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">
+                    className="mt-6 w-full bg-blue-600 text-white py-2 px-4 rounded font-semibold transition-all cursor-pointer hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">
                     Conferma
                 </button>
             </form>
