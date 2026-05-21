@@ -1,6 +1,7 @@
 import jsonData from '../resources/users.json';
 import type { User, UsersCache } from "../types/User.ts";
-import { sleep } from '../helpers/Sleep.ts';
+import { sleep } from '../helpers/sleep.ts';
+import { isCacheExpired } from '../helpers/cache.ts';
 
 export abstract class UserService {
     private static CACHE_KEY: string = 'app_users';
@@ -52,7 +53,7 @@ export abstract class UserService {
                 const cache = JSON.parse(storedUsers) as UsersCache;
 
                 // Se la cache è scaduta, allora crea una nuova cache con la lista utenti completa
-                if (this.isCacheExpired()) {
+                if (isCacheExpired()) {
                     const resetCache: UsersCache = {
                         data: jsonData,
                         expiry: new Date().getTime() + this.CACHE_TTL_MS
@@ -76,19 +77,6 @@ export abstract class UserService {
 
         // Restituisci la cache iniziale
         return jsonData;
-    }
-
-    public static isCacheExpired(): boolean {
-        const storedUsers: string | null = localStorage.getItem(this.CACHE_KEY);
-        if (!storedUsers) return true;
-
-        try {
-            const cache = JSON.parse(storedUsers) as UsersCache;
-            const now = new Date().getTime();
-            return now > cache.expiry;
-        } catch {
-            return true;
-        }
     }
 
     public static saveUsers(users: User[]): void {
