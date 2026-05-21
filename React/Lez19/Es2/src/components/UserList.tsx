@@ -3,10 +3,10 @@ import type { User } from "../types/User.ts";
 
 type Props = {
     users: User[];
-    onChange: (deletedUser: User) => void;
+    onDelete: (deletedUser: User) => void;
 }
 
-export default function UserList({ users: users, onChange }: Props) {
+export default function UserList({ users: users, onDelete: deleteUser }: Props) {
     return (
         <div id="tableContainer" className="rounded shadow overflow-hidden">
             <table className="w-full text-left border-collapse bg-gray-800">
@@ -24,7 +24,7 @@ export default function UserList({ users: users, onChange }: Props) {
                         <UserRow
                             key={task.id}
                             user={task}
-                            onDelete={onChange}
+                            onDelete={deleteUser}
                         />
                     ))}
                 </tbody>

@@ -49,7 +49,7 @@ function App() {
     try {
       setIsLoading(true);
       setError(null);
-      const data = await UserService.loadUsers();
+      const data = await UserService.loadUsers(true);
       if (currentFetchId === fetchIdRef.current) {
         setUsers(data);
         setIsLoaded(true);
@@ -118,7 +118,7 @@ function App() {
 
   // Se viene eliminato un utente, aggiorniamo e ricarichiamo
   const handleUserDelete = (user: User): void => {
-    UserService.deleteUser(users, user);
+    UserService.deleteUser(user);
     fetchUsers();
   }
 
@@ -216,7 +216,7 @@ function App() {
           /* Caricamento avvenuto con successo */
           <UserList
             users={paginatedTasks}
-            onChange={handleUserDelete}
+            onDelete={handleUserDelete}
           />
         )}
       </div>

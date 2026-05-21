@@ -5,7 +5,7 @@ type Props = {
     onDelete: (user: User) => void;
 }
 
-export default function UserRow({ user: user, onDelete: onUpdate }: Props) {
+export default function UserRow({ user: user, onDelete: deleteUser }: Props) {
     const roleText: string = user.role === 'User' ? 'Utente'
         : user.role === 'Moderator' ? 'Moderatore'
             : user.role === 'Admin' ? 'Amministratore' : 'Null';
@@ -39,7 +39,8 @@ export default function UserRow({ user: user, onDelete: onUpdate }: Props) {
                 <button
                     className={buttonClass}
                     onClick={() => {
-                        onUpdate(user);
+                        if (!confirm("Sei sicuro di voler eliminare questo utente?")) return;
+                        else deleteUser(user);
                     }}
                 >
                     {actionText}
