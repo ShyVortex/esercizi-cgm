@@ -20,6 +20,7 @@ import UserList from './components/UserList.tsx';
 import PaginationComponent from "./components/Pagination.tsx";
 import { UserService } from "./services/UserService.ts";
 import { PreferencesService } from './services/PreferencesService.ts';
+import { isCacheExpired } from './helpers/cache.ts';
 import SizeSelector from "./components/SizeSelector.tsx";
 import RoleFilter from './components/RoleFilter.tsx';
 import type { User } from './types/User.ts';
@@ -69,7 +70,7 @@ function App() {
      perché non osserva il cambiamento di stato di nessuna variabile */
   useEffect(() => {
     (async () => {
-      if (UserService.isCacheExpired()) {
+      if (isCacheExpired()) {
         PreferencesService.savePreference('skipLoading', false);
       }
 
