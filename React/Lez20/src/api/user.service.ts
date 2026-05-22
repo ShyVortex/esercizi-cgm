@@ -1,11 +1,11 @@
-import jsonData from '../resources/db.json';
 import type { User } from "../types/User.ts";
 import { sleep } from '../helpers/sleep.ts';
+import { apiService } from './api.service.ts';
 
-export abstract class UserService {
-    private static CACHE_KEY: string = 'app_users';
+const BASE_ENDPOINT: string = '/users';
 
-    private static async runSimulations(): Promise<User[] | string> {
+export class UserService {
+    private async runSimulations(): Promise<User[] | string> {
         // Simula il caricamento
         await sleep(1000 + Math.random() * 2000);
 
@@ -23,7 +23,7 @@ export abstract class UserService {
         }
     }
 
-    public static async loadUsers(simulateCalls: boolean): Promise<User[]> {
+    public async getUsers(simulateCalls: boolean): Promise<User[]> {
         if (simulateCalls) {
             try {
                 const testResult: User[] | string = await this.runSimulations();
@@ -43,33 +43,21 @@ export abstract class UserService {
             }
         }
 
-        const storedUsers: string | null = localStorage.getItem(this.CACHE_KEY);
-
-        if (storedUsers) {
-            try {
-                return JSON.parse(storedUsers) as User[];
-            } catch (error) {
-                console.error("Errore nel parsing dei task da LocalStorage, ricarico il JSON di default:", error);
-                return jsonData.users;
-            }
-        }
-
-        // Al primo avvio (o se il storage era vuoto/corrotto):
-        // Crea una cache con il JSON iniziale
-        this.saveUsers(jsonData.users);
-
-        // Restituisci la cache iniziale
-        return jsonData.users;
+        return await apiService.get(BASE_ENDPOINT) as User[];
     }
 
-    public static saveUsers(users: User[]): void {
-        localStorage.setItem(this.CACHE_KEY, JSON.stringify(users));
+    public async createUser(user: User): Promise<User> {
+        return await apiService.post(BASE_ENDPOINT, user);
     }
 
-    public static async deleteUser(givenUser: User): Promise<void> {
-        const users = await this.loadUsers(false);
-        const usersWithout: User[] = users.filter(user => user.id != givenUser.id);
+    public async updateUser(user: User, method: 'PUT' | 'PATCH'): Promise<User> {
+        if (method == 'PUT') return await apiService.put(`${BASE_ENDPOINT}/${user.id}`, user);
+        else if (method == 'PATCH') return await apiService.patch(`${BASE_ENDPOINT}/${user.id}`, user)
+    }
 
-        this.saveUsers(usersWithout);
+    public async deleteUser(user: User): Promise<void> {
+        return await apiService.delete(`${BASE_ENDPOINT}/${user.id}`);
     }
 }
+
+export const userService = new UserService();

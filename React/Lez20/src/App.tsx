@@ -14,8 +14,8 @@ import CustomModal from './components/CustomModal.tsx';
 import './App.css';
 import UserList from './components/UserList.tsx';
 import PaginationComponent from "./components/Pagination.tsx";
-import { UserService } from "./services/UserService.ts";
-import { PreferencesService } from './services/PreferencesService.ts';
+import { userService } from "./api/user.service.ts";
+import { PreferencesService } from './services/preferences.service.ts';
 import SizeSelector from "./components/SizeSelector.tsx";
 import ActiveFilter from './components/ActiveFilter.tsx';
 import type { User } from './types/User.ts';
@@ -48,7 +48,7 @@ function App() {
     try {
       setIsLoading(true);
       setError(null);
-      const data = await UserService.loadUsers(true);
+      const data = await userService.getUsers(true);
       if (currentFetchId === fetchIdRef.current) {
         setUsers(data);
       }
@@ -71,12 +71,8 @@ function App() {
     })();
   }, []);
 
-  // Quando le attività o le preferenze vengono aggiornate, le salviamo in cache
+  // Quando le preferenze vengono aggiornate, le salviamo in cache
   useEffect(() => {
-    // Salviamo gli utenti solo se non siamo in fase di caricamento e non ci sono errori e la lista non è vuota
-    if (!isLoading && !error && users.length > 0) {
-      UserService.saveUsers(users);
-    }
     PreferencesService.savePreference('pageSize', pageSize);
     PreferencesService.savePreference('filter', filter);
   }, [users, pageSize, filter, isLoading, error]);
@@ -109,7 +105,7 @@ function App() {
 
   // Se viene eliminato un utente, aggiorniamo e ricarichiamo
   const handleUserDelete = (user: User): void => {
-    UserService.deleteUser(user);
+    userService.deleteUser(user);
     fetchUsers();
   }
 
