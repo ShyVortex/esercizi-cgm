@@ -21,7 +21,7 @@ import ActiveFilter from './components/ActiveFilter.tsx';
 import type { User } from './types/User.ts';
 import Loader from './components/Loader.tsx';
 import ErrorState from './components/ErrorState.tsx';
-import { TotalEmptyState } from './components/EmptyState.tsx';
+import { FilterEmptyState, TotalEmptyState } from './components/EmptyState.tsx';
 
 
 
@@ -203,10 +203,16 @@ function App() {
       </div>
       <div style={style}>
         {users.length === 0 ? (
-          /* Nessun utente in totale */
+          // Nessun utente in totale
           <TotalEmptyState />
+        ) : filteredUsers.length === 0 ? (
+          // Nessun utente corrispondente al filtro
+          <FilterEmptyState
+            filter={filter}
+            givenStr=''
+          />
         ) : (
-          /* Caricamento avvenuto con successo */
+          // Caricamento avvenuto con successo
           <UserList
             users={paginatedTasks}
             onUpdate={openEditModal}
