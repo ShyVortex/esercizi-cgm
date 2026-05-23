@@ -9,7 +9,7 @@ type Props = {
 
 export default function ErrorState({ title, message, btnText, onClick: fetchUsers }: Props): React.ReactElement {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-8 bg-red-950/20 rounded-xl border border-red-900/30 shadow-xl text-center">
+        <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-8 bg-red-950/20 border border-red-900/30 shadow-xl text-center">
             <div className="w-14 h-14 bg-red-500/10 border border-red-500/20 rounded-full flex items-center justify-center text-red-400 text-2xl font-bold">⚠️</div>
             <div className="space-y-2">
                 <h3 className="text-red-400 font-semibold text-lg">{title}</h3>

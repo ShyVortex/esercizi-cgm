@@ -1,5 +1,5 @@
 import UserRow from "./UserRow.tsx";
-import type { User } from "../types/User.ts";
+import type { User } from "../models/types/User.ts";
 
 type Props = {
     users: User[];

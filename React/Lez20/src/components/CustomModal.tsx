@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
-import type { User } from '../types/User';
+import type { User } from '../models/types/User';
 import React from 'react';
+import type { SaveUserRequest } from '../models/requests/user-requests';
 
 // Assicura l'accessibilità del modale
 if (typeof window !== 'undefined') {
@@ -10,12 +11,12 @@ if (typeof window !== 'undefined') {
 type Props = {
     isOpen: boolean;
     onClose: () => void;
-    onSubmit: (userData: Omit<User, 'id' | 'isActive'>) => void;
+    onSubmit: (userData: SaveUserRequest) => void;
     user?: User | null;
 }
 
 export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) {
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleFormSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
 
@@ -24,16 +25,23 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
         const firstName = formData.get('firstName') as string;
         const lastName = formData.get('lastName') as string;
         const middleName = formData.get('middleName') as string;
+        const isActiveSelect = formData.get('isActive') as FormDataEntryValue | undefined;
 
-        const userData: Omit<User, 'id' | 'isActive'> = {
-            username,
-            email,
-            firstName,
-            lastName,
-        };
+        let isActive: boolean;
+        if (isActiveSelect && isActiveSelect != '') {
+            isActive = isActiveSelect === 'true' ? true : false;
+        } else {
+            isActive = user ? user.isActive : true;
+        }
 
-        if (middleName && middleName.trim() !== '') {
-            userData.middleName = middleName.trim();
+        const userData: SaveUserRequest = {
+            id: user ? user.id : undefined,
+            username: username,
+            email: email,
+            firstName: firstName,
+            middleName: (middleName && middleName.trim() !== '') ? middleName.trim() : undefined,
+            lastName: lastName,
+            isActive: isActive
         }
 
         onSubmit(userData);
@@ -132,6 +140,22 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                         className="w-full bg-gray-900 border border-gray-700 rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                     />
                 </div>
+
+                {/* isActive -> presente solo nel form di modifica */}
+                {user ? (
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Stato</label>
+                        <select
+                            defaultValue={user.isActive.toString()}
+                            required
+                            name="isActive"
+                            className="w-full bg-gray-900 border border-gray-700 rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors">
+                            <option value='true'>Attivo</option>
+                            <option value='false'>Inattivo</option>
+                        </select>
+                    </div>
+                ) : ('')
+                }
 
                 {/* Footer con bottoni di azione */}
                 <div className="pt-4 border-t border-gray-700 flex justify-end gap-3">

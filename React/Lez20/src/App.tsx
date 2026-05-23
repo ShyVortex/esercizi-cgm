@@ -18,16 +18,16 @@ import { userService } from "./api/user.service.ts";
 import { PreferencesService } from './services/preferences.service.ts';
 import SizeSelector from "./components/SizeSelector.tsx";
 import ActiveFilter from './components/ActiveFilter.tsx';
-import type { User } from './types/User.ts';
+import type { User } from './models/types/User.ts';
 import Loader from './components/Loader.tsx';
 import ErrorState from './components/ErrorState.tsx';
 import { FilterEmptyState, TotalEmptyState } from './components/EmptyState.tsx';
-
+import type { SaveUserRequest } from './models/requests/user-requests.ts';
 
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(() => PreferencesService.loadPreferences().pageSize);
@@ -146,25 +146,16 @@ function App() {
     setModalIsOpen(true);
   };
 
-  const handleModalSubmit = (userData: Omit<User, 'id' | 'isActive'>) => {
+  const handleModalSubmit = (userData: SaveUserRequest) => {
     if (editingUser) {
       // Modifica utente esistente
-      setUsers(prevUsers => prevUsers.map(u =>
-        u.id === editingUser.id
-          ? { ...u, ...userData, middleName: userData.middleName || undefined }
-          : u
-      ));
+      userService.updateUser(userData, 'PUT');
     } else {
       // Crea nuovo utente
-      const nextId = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
-      const newUser: User = {
-        id: nextId,
-        ...userData,
-        isActive: true, // "isActive viene sempre inviato a true"
-      };
-      setUsers(prevUsers => [...prevUsers, newUser]);
+      userService.createUser(userData);
     }
     closeModal();
+    fetchUsers();
   };
 
 

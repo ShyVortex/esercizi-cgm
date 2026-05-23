@@ -1,4 +1,4 @@
-import type { Preferences } from "../types/Preferences";
+import type { Preferences } from "../models/types/Preferences";
 
 export abstract class PreferencesService {
     private static PREFERENCES_KEY: string = 'app_settings';

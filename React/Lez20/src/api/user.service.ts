@@ -1,6 +1,7 @@
-import type { User } from "../types/User.ts";
+import type { User } from "../models/types/User.ts";
 import { sleep } from '../helpers/sleep.ts';
 import { apiService } from './api.service.ts';
+import type { SaveUserRequest } from "../models/requests/user-requests.ts";
 
 const BASE_ENDPOINT: string = '/users';
 
@@ -46,13 +47,13 @@ export class UserService {
         return await apiService.get(BASE_ENDPOINT) as User[];
     }
 
-    public async createUser(user: User): Promise<User> {
-        return await apiService.post(BASE_ENDPOINT, user);
+    public async createUser(request: SaveUserRequest): Promise<User> {
+        return await apiService.post(BASE_ENDPOINT, request);
     }
 
-    public async updateUser(user: User, method: 'PUT' | 'PATCH'): Promise<User> {
-        if (method == 'PUT') return await apiService.put(`${BASE_ENDPOINT}/${user.id}`, user);
-        else if (method == 'PATCH') return await apiService.patch(`${BASE_ENDPOINT}/${user.id}`, user)
+    public async updateUser(request: SaveUserRequest, method: 'PUT' | 'PATCH'): Promise<User> {
+        if (method == 'PUT') return await apiService.put(`${BASE_ENDPOINT}/${request.id}`, request);
+        else if (method == 'PATCH') return await apiService.patch(`${BASE_ENDPOINT}/${request.id}`, request)
     }
 
     public async deleteUser(user: User): Promise<void> {
