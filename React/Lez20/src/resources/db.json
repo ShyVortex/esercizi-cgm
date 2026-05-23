@@ -1206,6 +1206,5 @@
       "firstName": "Simone",
       "lastName": "Vitali"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

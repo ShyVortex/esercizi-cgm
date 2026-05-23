@@ -22,11 +22,12 @@ import type { User } from './models/types/User.ts';
 import Loader from './components/Loader.tsx';
 import ErrorState from './components/ErrorState.tsx';
 import { FilterEmptyState, TotalEmptyState } from './components/EmptyState.tsx';
-import type { SaveUserRequest } from './models/requests/user-requests.ts';
+import type { GetFPUsersRequest, SaveUserRequest } from './models/requests/user-requests.ts';
+import type { GetUsersResponse } from './models/responses/user-responses.ts';
 
 
 function App() {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<GetUsersResponse>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -48,9 +49,16 @@ function App() {
     try {
       setIsLoading(true);
       setError(null);
-      const data = await userService.getUsers(true);
+
+      const request: GetFPUsersRequest = {
+        page: currentPage,
+        per_page: pageSize,
+        filter: filter
+      }
+
+      const response: GetUsersResponse = await userService.getFilteredPaginatedUsers(true, request);
       if (currentFetchId === fetchIdRef.current) {
-        setUsers(data);
+        setUsers(response);
       }
     } catch (err) {
       if (currentFetchId === fetchIdRef.current) {
@@ -77,18 +85,9 @@ function App() {
     PreferencesService.savePreference('filter', filter);
   }, [users, pageSize, filter, isLoading, error]);
 
-  const filteredUsers = users.filter(user => {
-    if (filter === 'active') return user.isActive === true;
-    if (filter === 'inactive') return user.isActive === false;
-
-    return true; // Se il filtro è vuoto, le teniamo tutte
-  });
-
-  const totalPages: number = Math.max(1, Math.ceil(filteredUsers.length / pageSize));
-
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-  const paginatedTasks = filteredUsers.slice(startIndex, endIndex);
+  const totalPages: number = !Array.isArray(users)
+    ? (users.pages || 1)
+    : Math.max(1, Math.ceil(users.length / pageSize));
 
   // Quando cambia il numero di elementi per pagina,
   // si resetta la pagina corrente a 1 per evitare errori di out-of-bounds
@@ -189,10 +188,10 @@ function App() {
         />
       </div>
       <div style={style}>
-        {users.length === 0 ? (
+        {Array.isArray(users) && users.length === 0 ? (
           // Nessun utente in totale
           <TotalEmptyState />
-        ) : filteredUsers.length === 0 ? (
+        ) : !Array.isArray(users) && users.pages === 0 ? (
           // Nessun utente corrispondente al filtro
           <FilterEmptyState
             filter={filter}
@@ -201,7 +200,7 @@ function App() {
         ) : (
           // Caricamento avvenuto con successo
           <UserList
-            users={paginatedTasks}
+            users={Array.isArray(users) ? users : (users.data || [])}
             onUpdate={openEditModal}
             onDelete={handleUserDelete}
           />

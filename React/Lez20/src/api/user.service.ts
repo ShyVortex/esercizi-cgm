@@ -1,7 +1,8 @@
 import type { User } from "../models/types/User.ts";
 import { sleep } from '../helpers/sleep.ts';
 import { apiService } from './api.service.ts';
-import type { SaveUserRequest } from "../models/requests/user-requests.ts";
+import type { GetFPUsersRequest, SaveUserRequest } from "../models/requests/user-requests.ts";
+import type { GetUsersResponse } from "../models/responses/user-responses.ts";
 
 const BASE_ENDPOINT: string = '/users';
 
@@ -45,6 +46,51 @@ export class UserService {
         }
 
         return await apiService.get(BASE_ENDPOINT) as User[];
+    }
+
+    public async getFilteredPaginatedUsers(simulateCalls: boolean, request: GetFPUsersRequest): Promise<GetUsersResponse> {
+        if (simulateCalls) {
+            try {
+                const testResult: User[] | string = await this.runSimulations();
+
+                if (testResult && typeof testResult === 'object'
+                    && Array.isArray(testResult) && testResult.length === 0
+                ) {
+                    return [];
+                } else if (testResult && typeof testResult === 'string' && testResult === 'Success') {
+                    console.log("--- SIMULAZIONI ESEGUITE CON SUCCESSO ---");
+                } else {
+                    throw new Error("Errore nella finalizzazione delle simulazioni");
+                }
+            } catch (error) {
+                console.error(error.message);
+                throw error;
+            }
+        }
+
+        let _page: string = '';
+        let _per_page: string = '';
+        let _isActive: string = '';
+
+        if (request.page) _page = `_page=${request.page}&`;
+        if (request.per_page) _per_page = `_per_page=${request.per_page}&`;
+        if (request.filter) {
+            switch (request.filter) {
+                case "":
+                    _isActive = '';
+                    break;
+                case "active":
+                    _isActive = `isActive=${true}`;
+                    break;
+                case "inactive":
+                    _isActive = `isActive=${false}`;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return await apiService.get(`${BASE_ENDPOINT}?${_page}${_per_page}${_isActive}`);
     }
 
     public async createUser(request: SaveUserRequest): Promise<User> {

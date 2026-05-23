@@ -21,10 +21,10 @@ export default function UserList({ users: users, onUpdate: updateUser, onDelete:
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    {users.map(task => (
+                    {users.map(user => (
                         <UserRow
-                            key={task.id}
-                            user={task}
+                            key={user.id}
+                            user={user}
                             onUpdate={updateUser}
                             onDelete={deleteUser}
                         />
