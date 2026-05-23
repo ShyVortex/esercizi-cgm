@@ -5,7 +5,7 @@
       "username": "m.rossi",
       "email": "marco.rossi@example.com",
       "firstName": "Marco",
-      "middleName": "Gialli",
+      "middleName": "Verdi",
       "lastName": "Rossi",
       "isActive": true
     },
@@ -1206,5 +1206,6 @@
       "firstName": "Simone",
       "lastName": "Vitali"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
