@@ -2,12 +2,22 @@ import type { User } from "../models/types/User.ts";
 import { sleep } from '../helpers/sleep.ts';
 import { apiService } from './api.service.ts';
 import type { GetFPUsersRequest, SaveUserRequest } from "../models/requests/user-requests.ts";
-import type { GetUsersResponse } from "../models/responses/user-responses.ts";
+import type { GetFPUsersResponse } from "../models/responses/user-responses.ts";
 
 const BASE_ENDPOINT: string = '/users';
 
 export class UserService {
-    private async runSimulations(): Promise<User[] | string> {
+    public emptyResponse: GetFPUsersResponse = {
+        first: 0,
+        prev: null,
+        next: null,
+        last: 0,
+        pages: 0,
+        items: 0,
+        data: []
+    }
+
+    private async runSimulations(): Promise<GetFPUsersResponse | string> {
         // Simula il caricamento
         await sleep(1000 + Math.random() * 2000);
 
@@ -19,44 +29,21 @@ export class UserService {
         // Simula lista vuota (5% probabilità)
         const isEmpty: boolean = Math.random() < 0.05;
         if (isEmpty) {
-            return [];
+            return this.emptyResponse;
         } else {
             return "Success";
         }
     }
 
-    public async getUsers(simulateCalls: boolean): Promise<User[]> {
+    public async getFilteredPaginatedUsers(simulateCalls: boolean, request: GetFPUsersRequest): Promise<GetFPUsersResponse> {
         if (simulateCalls) {
             try {
-                const testResult: User[] | string = await this.runSimulations();
+                const testResult: GetFPUsersResponse | string = await this.runSimulations();
 
                 if (testResult && typeof testResult === 'object'
-                    && Array.isArray(testResult) && testResult.length === 0
+                    && testResult === this.emptyResponse
                 ) {
-                    return [];
-                } else if (testResult && typeof testResult === 'string' && testResult === 'Success') {
-                    console.log("--- SIMULAZIONI ESEGUITE CON SUCCESSO ---");
-                } else {
-                    throw new Error("Errore nella finalizzazione delle simulazioni");
-                }
-            } catch (error) {
-                console.error("Errore nell'esecuzione delle simulazioni");
-                throw error;
-            }
-        }
-
-        return await apiService.get(BASE_ENDPOINT) as User[];
-    }
-
-    public async getFilteredPaginatedUsers(simulateCalls: boolean, request: GetFPUsersRequest): Promise<GetUsersResponse> {
-        if (simulateCalls) {
-            try {
-                const testResult: User[] | string = await this.runSimulations();
-
-                if (testResult && typeof testResult === 'object'
-                    && Array.isArray(testResult) && testResult.length === 0
-                ) {
-                    return [];
+                    return this.emptyResponse;
                 } else if (testResult && typeof testResult === 'string' && testResult === 'Success') {
                     console.log("--- SIMULAZIONI ESEGUITE CON SUCCESSO ---");
                 } else {

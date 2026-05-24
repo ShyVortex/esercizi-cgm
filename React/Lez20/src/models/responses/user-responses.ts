@@ -7,7 +7,5 @@ export interface GetFPUsersResponse {
     last: number;
     pages: number;
     items: number;
-    data: User[];
+    data: User[] | null;
 }
-
-export type GetUsersResponse = GetFPUsersResponse | User[];

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { GetUsersResponse } from "../models/responses/user-responses";
+import type { GetFPUsersResponse } from "../models/responses/user-responses";
 import { PreferencesService } from "../services/preferences.service";
 import type { User } from "../models/types/User";
 import type { GetFPUsersRequest, SaveUserRequest } from "../models/requests/user-requests";
@@ -14,7 +14,7 @@ import { FilterEmptyState, TotalEmptyState } from "../components/EmptyState";
 import UserList from "../components/UserList";
 
 export default function UserPage() {
-    const [users, setUsers] = useState<GetUsersResponse>([]);
+    const [users, setUsers] = useState<GetFPUsersResponse>(userService.emptyResponse);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -45,7 +45,7 @@ export default function UserPage() {
                 filter: filter
             }
 
-            const response: GetUsersResponse = await userService.getFilteredPaginatedUsers(isLoading, request);
+            const response: GetFPUsersResponse = await userService.getFilteredPaginatedUsers(isLoading, request);
             if (currentFetchId === fetchIdRef.current) {
                 setUsers(response);
             }
@@ -72,9 +72,7 @@ export default function UserPage() {
         PreferencesService.savePreference('filter', filter);
     }, [pageSize, filter]);
 
-    const totalPages: number = !Array.isArray(users)
-        ? (users.pages || 1)
-        : Math.max(1, Math.ceil(users.length / pageSize));
+    const totalPages: number = users.pages || 1;
 
     // Aggiorna la lista utenti con la nuova pagina
     const handleCurrentPageChange = (newPage: number): void => {
@@ -192,10 +190,10 @@ export default function UserPage() {
                 />
             </div>
             <div style={style} className={isFetching ? "opacity-50 pointer-events-none transition-opacity duration-200" : "transition-opacity duration-200"}>
-                {Array.isArray(users) && users.length === 0 ? (
+                {users.data != null && Array.isArray(users.data) && users.data.length === 0 ? (
                     // Nessun utente in totale
                     <TotalEmptyState />
-                ) : !Array.isArray(users) && users.pages === 0 ? (
+                ) : users.data === null && users.pages === 0 ? (
                     // Nessun utente corrispondente al filtro
                     <FilterEmptyState
                         filter={filter}
@@ -204,7 +202,7 @@ export default function UserPage() {
                 ) : (
                     // Caricamento avvenuto con successo
                     <UserList
-                        users={Array.isArray(users) ? users : (users.data || [])}
+                        users={users.data || []}
                         onUpdate={openEditModal}
                         onDelete={handleUserDelete}
                     />
