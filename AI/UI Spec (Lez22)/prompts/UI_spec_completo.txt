@@ -1,0 +1,30 @@
+Agisci come un Senior Product UI/UX Analyst. Analizza i mockup allegato nel file zip e redigi il Documento dettagliato
+con le UI spec dell'intero progetto. Il documento DEVE essere strutturato rigorosamente seguendo questo esatto indice:
+
+1. Sintesi e obiettivi
+2. Fonti, perimetro e assunzioni
+3. Architettura informativa e ruoli
+4. Design system
+5. Layout, griglie e responsive
+6. Component library
+7. Specifiche schermate
+8. Stati, validazione e microinterazioni
+9. Data contract UI
+10. Accessibilità, performance e QA
+11. Handoff engineering e open point
+Appendice A. Inventario file e mockup
+
+VINCOLI FONDAMENTALI DA RISPETTARE NELLE SEZIONI:
+Per i Punti 6 e 7 (Componenti e Schermate): Costruisci una Component Map. Individua massimo 6 componenti principali
+per non frammentare la schermata. Usa nomi legati al ruolo e non alla posizione visiva.
+Evita nomi generici come Box, Area o Section. Per ogni componente indica una sola responsabilità centrale
+e i suoi confini visivi. Rendi esplicito quale componente orchestra il flusso dei dati.
+
+Per il Punto 8 (Stati): Identifica almeno tre stati UI principali dell'intera schermata.
+Descrivi questi stati come esperienza utente osservabile (es. "L'utente vede uno skeleton loader", e NON "Variabile isLoading = true").
+
+Per il Punto 11 (Open point): Elenca le domande aperte emerse dall'analisi, separando esplicitamente le decisioni di prodotto
+(logica di business, UX) dai dettagli tecnici di implementazione. Compila tutte le altre sezioni dell'indice deducendo le
+informazioni in modo logico e professionale a partire dall'analisi visiva e funzionale del mockup.
+
+Il documento può includere immagini tratte dai mockup e spezzoni di codice per una maggiore chiarezza.
