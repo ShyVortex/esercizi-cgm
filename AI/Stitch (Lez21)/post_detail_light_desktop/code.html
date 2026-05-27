@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BlogSpace | Il futuro del Web Design</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d7e3f8",
+                    "outline": "#727783",
+                    "on-primary-fixed-variant": "#00468b",
+                    "background": "#fbf8fe",
+                    "tertiary-container": "#6c5975",
+                    "surface-tint": "#005db5",
+                    "on-tertiary-container": "#ebd3f4",
+                    "on-secondary-fixed": "#101c2b",
+                    "on-tertiary-fixed-variant": "#52405b",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1b1b1f",
+                    "tertiary": "#53425c",
+                    "surface-bright": "#fbf8fe",
+                    "on-surface": "#1b1b1f",
+                    "on-surface-variant": "#424752",
+                    "surface": "#fbf8fe",
+                    "secondary-fixed-dim": "#bbc7db",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#25152d",
+                    "on-primary-fixed": "#001b3d",
+                    "on-secondary-fixed-variant": "#3c4858",
+                    "surface-container-high": "#eae7ed",
+                    "tertiary-fixed-dim": "#d6bedf",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#a8c8ff",
+                    "on-secondary-container": "#596576",
+                    "primary-container": "#005fb8",
+                    "surface-dim": "#dcd9de",
+                    "secondary-fixed": "#d7e3f8",
+                    "on-primary-container": "#cadcff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e4e1e7",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-surface": "#303034",
+                    "surface-container-low": "#f6f2f8",
+                    "surface-container": "#f0edf2",
+                    "secondary": "#535f70",
+                    "inverse-on-surface": "#f3f0f5",
+                    "surface-variant": "#e4e1e7",
+                    "outline-variant": "#c2c6d4",
+                    "primary": "#00488d",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#f3dafc",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#a8c8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "sm": "8px",
+                    "xxl": "48px",
+                    "xxxl": "64px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "base": "8px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                    "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf8fe;
+            color: #1b1b1f;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-gutter h-16 max-w-container-max mx-auto bg-surface dark:bg-surface-dim shadow-sm">
+<div class="flex items-center gap-md">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold">BlogSpace</span>
+<nav class="hidden md:flex gap-lg ml-xl">
+<a class="font-label-lg text-label-lg text-primary dark:text-primary-fixed-dim border-b-2 border-primary" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Esplora</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Trend</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined p-sm hover:bg-surface-container-low transition-colors rounded-full" data-icon="dark_mode">dark_mode</button>
+<button class="material-symbols-outlined p-sm hover:bg-surface-container-low transition-colors rounded-full md:hidden">menu</button>
+</div>
+</header>
+<main class="pt-xxl mt-16 pb-xxxl">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-4 md:px-gutter mb-xl">
+<div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden shadow-md">
+<img alt="Web Design Future" class="w-full h-full object-cover" data-alt="A clean and bright high-key composition showing a modern, minimalist workspace with a sleek laptop displaying complex, vibrant UI/UX prototypes. The lighting is soft and natural, emphasizing a high-performance editorial aesthetic with accents of primary blue. The overall mood is forward-thinking and sophisticated, reflecting a corporate yet creative vision of the digital future." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDODA7v9sZENIWtsSZrCF3xMepnWQ4o5GVtWeF8XYNkK5E7ysFH0r3dTJojg79eEM_pui-j4YetPEvDaIe_tzJmgQr00KLFp9_2aatfCiaNqsMyKkZ1R5a59_AJQYtyV_juR3JAJNu5rXegZ5ScnAVfo8NHY8knRwx2XIPywsFCZJXqGsaGylVwYc2Nv_pDytTmt78S52a6NBhwJqXabrOucw0TgoIMNCIP2k7Kpru_Xhth9QZfzL5LyvMSz5rYgN_gPDCx3m2Ct0Cd"/>
+</div>
+</section>
+<div class="max-w-container-max mx-auto px-4 md:px-gutter flex flex-col lg:flex-row gap-xxl">
+<!-- Main Article Area -->
+<article class="flex-grow lg:max-w-[800px]">
+<header class="mb-lg">
+<div class="flex flex-wrap gap-sm mb-md">
+<span class="bg-primary-fixed text-on-primary-fixed px-md py-xs rounded-full font-label-md text-label-md">Web Design</span>
+<span class="bg-secondary-container text-on-secondary-container px-md py-xs rounded-full font-label-md text-label-md">2024 Trends</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-md">Il futuro del Web Design: Oltre la Superficie</h1>
+<div class="flex items-center gap-md py-md border-b border-outline-variant">
+<img alt="Author Avatar" class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="A professional headshot of a creative director in their late 30s, looking confidently at the camera in a modern architectural setting. The lighting is warm and directional, creating a polished, professional atmosphere. The color palette is composed of soft neutral tones, aligning with the clean and sophisticated corporate design of the blog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi1iBJQW0B3L96U9BGHIT8687YNU2ebFP3vVJgDeeqH3LIg7o7tofagv6Ho8EEv3vudTozhE2IV-xY6IUEPup_i6meWJfxdyOfKHEskzIX9mFdSmZ3Hr_lgqYw2CKV4BFtlinULw2p0GUB8XAErHV_3YtwoHXo1Na68gBEVctTHXMwiH4dKUOJr1DuJkYz_yafNl7nyEO3zTV4zt6fq9z7zEJa82cvFYoNKqAjHYcVe5qU81yHgiDa3tMvdk5lcQ5BEHZYMzPBdMAS"/>
+<div>
+<p class="font-title-md text-title-md text-on-surface">Marco Valeri</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Pubblicato il 14 Maggio 2024 • 8 min lettura</p>
+</div>
+<div class="ml-auto flex gap-sm">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="share">share</button>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="bookmark">bookmark</button>
+</div>
+</div>
+</header>
+<section class="article-content font-body-lg text-body-lg text-on-surface-variant">
+<p>Il web design sta attraversando un'epoca di profonda trasformazione. Non si tratta più solo di estetica, ma di come la tecnologia e la creatività si fondono per creare esperienze umane significative. Le interfacce del futuro saranno più intuitive, inclusive e adattive rispetto a quanto abbiamo mai visto prima.</p>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-xl mb-md">L'ascesa dell'AI generativa</h2>
+<p>L'intelligenza artificiale non sta solo cambiando il modo in cui scriviamo codice, ma sta rivoluzionando il processo creativo stesso. Strumenti in grado di generare layout dinamici basati sulle preferenze dell'utente diventeranno lo standard, permettendo una personalizzazione senza precedenti.</p>
+<blockquote class="border-l-4 border-primary pl-lg my-xl italic text-on-surface font-title-lg text-title-lg">
+                        "Il design non è come appare o come sembra. Il design è come funziona."
+                    </blockquote>
+<p>Mentre ci muoviamo verso un'era dominata dai dati, la chiarezza sistemica diventa fondamentale. Gli utenti non vogliono solo informazioni; vogliono narrazioni coerenti supportate da gerarchie visive solide. Questo è il motivo per cui il Material Design 3 e altri sistemi basati sui token stanno guadagnando così tanto terreno.</p>
+</section>
+<!-- Engagement Section -->
+<section class="mt-xxl pt-xl border-t border-outline-variant">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-lg">Commenti (24)</h3>
+<div class="bg-surface-container-low rounded-xl p-lg mb-xl">
+<textarea class="w-full bg-surface border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 rounded-t-lg p-md font-body-md text-body-md" placeholder="Aggiungi un commento..."></textarea>
+<div class="flex justify-end mt-sm">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-lg text-label-lg hover:shadow-md transition-shadow">Pubblica</button>
+</div>
+</div>
+<!-- Individual Comment -->
+<div class="flex gap-md mb-lg">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="person">person</span>
+</div>
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Elena Rossi</span>
+<span class="font-label-md text-label-md text-on-surface-variant">2 ore fa</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Articolo molto interessante! Credo che l'accessibilità sarà davvero il fulcro del design nei prossimi anni.</p>
+<button class="mt-sm font-label-md text-label-md text-primary">Rispondi</button>
+</div>
+</div>
+</section>
+</article>
+<!-- Sidebar -->
+<aside class="lg:w-[350px] shrink-0">
+<div class="sticky top-xxl">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-lg">Potrebbe interessarti</h3>
+<div class="space-y-lg">
+<!-- Related Post Card 1 -->
+<a class="group block bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-md transition-all" href="#">
+<img alt="Related post" class="w-full h-32 object-cover" data-alt="A macro photograph of computer code on a high-resolution screen with beautiful bokeh lighting in the background. The scene uses a palette of deep navy and electric blue accents, matching the technical and corporate identity of a modern blog. The composition is dynamic and clean, emphasizing modern development practices." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMsqo9RqrdX82OZTiP2GzgyVkuqrCDhchCZuXY-VzJkzjRqKUy1kx_d_f9bfYi6oHFW5FVAb2HWi38H64hkYwZ6bUYAU3OpNdA1Wo5mBEhvVE32zZY2pUeQyAZvO4q_sBUaSFYXSJqelav3F_SL1F8Scdjp6JpQmAcDOLRbUzkSistpMThCfzsOZQDZ0a6dKrDImKzu_D9KQzyJ36iZnl2PssQo26AH0qnGF7QX7Fugx9wBcqnk9QoXTUpQsypaNK6NNVaEkWwVUXu"/>
+<div class="p-md">
+<span class="font-label-md text-label-md text-primary uppercase mb-xs block">Development</span>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Ottimizzare il Frontend nel 2024</h4>
+</div>
+</a>
+<!-- Related Post Card 2 -->
+<a class="group block bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-md transition-all" href="#">
+<img alt="Related post" class="w-full h-32 object-cover" data-alt="An artistic top-down view of a designer's desk with a tablet, a stylus, and geometric design books. The lighting is bright and airy, with a soft morning glow. The color scheme is dominated by white, grey, and subtle primary blue accents, creating a professional and inspiring editorial visual for a design blog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvZk86oISqNkPsKNEA-rS4cAATleg58YSdPgyxo13vwnqGXn3aH6-NUz45-XOPKWuUfT1gI9mRMTXEo1WVKRdJuL80ViknWvl2d8H6Tzv3xHIrUNEnjAfeWEgcNp9jptZx3ntySyI1Xlb2Ys-AV-G8tE2ghcf1UoEd0V4qm-PNVjMcz83QUue1E6GhkMDjlyM-Zy-RvZ_LzFIjpMwQpatyAcNwd4hrxXGAcQnOCOtIZAEnWfIbOIupdC14-j8YYw0W3xM3y78BSX98"/>
+<div class="p-md">
+<span class="font-label-md text-label-md text-primary uppercase mb-xs block">UI Design</span>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Sistemi di Design per Team</h4>
+</div>
+</a>
+</div>
+<!-- Newsletter Section -->
+<div class="mt-xxl bg-primary-container text-on-primary-container p-lg rounded-xl">
+<h4 class="font-title-lg text-title-lg mb-sm">Newsletter</h4>
+<p class="font-body-md text-body-md mb-md opacity-90">Ricevi i migliori articoli sulla tecnologia direttamente nella tua inbox.</p>
+<div class="flex flex-col gap-sm">
+<input class="bg-white border-none rounded-lg p-md text-on-surface focus:ring-2 focus:ring-secondary" placeholder="La tua email" type="email"/>
+<button class="bg-inverse-surface text-inverse-on-surface py-sm rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity">Iscriviti</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col items-center md:items-start gap-sm">
+<span class="font-title-lg text-title-lg text-on-surface dark:text-inverse-on-surface font-bold">BlogSpace</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant text-center md:text-left">© 2024 BlogSpace Editorial. All rights reserved.</p>
+</div>
+<nav class="flex gap-lg flex-wrap justify-center">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</nav>
+</footer>
+<script>
+        // Micro-interactions and hover effects
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                icon.style.transform = 'scale(1.1)';
+            });
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1)';
+            });
+        });
+
+        // Dark mode toggle simulation
+        const darkModeBtn = document.querySelector('[data-icon="dark_mode"]');
+        darkModeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            darkModeBtn.innerText = isDark ? 'light_mode' : 'dark_mode';
+        });
+    </script>
+</body></html>

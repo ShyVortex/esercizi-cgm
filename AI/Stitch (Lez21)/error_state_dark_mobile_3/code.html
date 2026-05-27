@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121212;
+            color: #f3f0f5;
+        }
+        .error-glitch-effect {
+            animation: pulse-slow 4s infinite ease-in-out;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a8c8ff",
+                        "surface-dim": "#121212",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container-lowest": "#1b1b1f",
+                        "outline-variant": "#424752",
+                        "tertiary-fixed-dim": "#d6bedf",
+                        "surface-tint": "#005db5",
+                        "inverse-surface": "#f3f0f5",
+                        "secondary-fixed-dim": "#bbc7db",
+                        "surface-container-low": "#1b1b1f",
+                        "outline": "#8e9199",
+                        "on-secondary-fixed": "#101c2b",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#005db5",
+                        "surface-container-high": "#2b2b2f",
+                        "tertiary-container": "#4b3952",
+                        "error-container": "#93000a",
+                        "secondary": "#bbc7db",
+                        "on-tertiary-fixed": "#25152d",
+                        "background": "#121212",
+                        "on-tertiary-container": "#ebd3f4",
+                        "surface-variant": "#44474e",
+                        "primary-container": "#00488d",
+                        "on-primary-fixed-variant": "#00468b",
+                        "inverse-on-surface": "#1b1b1f",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#52405b",
+                        "tertiary-fixed": "#f3dafc",
+                        "tertiary": "#d6bedf",
+                        "surface-container-highest": "#33353a",
+                        "on-secondary-fixed-variant": "#3c4858",
+                        "on-secondary-container": "#d7e3f8",
+                        "on-primary-container": "#cadcff",
+                        "on-error": "#690005",
+                        "on-background": "#e4e2e6",
+                        "surface-container": "#1f1f23",
+                        "on-secondary": "#253140",
+                        "surface": "#121212",
+                        "surface-bright": "#38393e",
+                        "primary": "#a8c8ff",
+                        "on-primary-fixed": "#001b3d",
+                        "secondary-container": "#3c4858",
+                        "on-surface": "#e4e2e6",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#d7e3f8",
+                        "on-surface-variant": "#c2c6d4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xxxl": "64px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim min-h-screen flex flex-col font-body-md text-on-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-gutter h-16 max-w-container-max mx-auto bg-surface-dim shadow-sm">
+<div class="flex items-center gap-md">
+<span class="font-headline-sm text-headline-sm text-primary-fixed-dim font-bold">BlogSpace</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined p-base text-primary-fixed-dim hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:scale-95" data-icon="dark_mode">dark_mode</button>
+</div>
+</header>
+<!-- Main Content: Error State Canvas -->
+<main class="flex-grow flex items-center justify-center px-gutter pt-xxl pb-xxl mt-16">
+<div class="w-full max-w-md text-center flex flex-col items-center">
+<!-- Visual Error Anchor -->
+<div class="relative w-48 h-48 mb-xl error-glitch-effect flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="z-10 bg-surface-container-high p-xl rounded-xl border border-outline-variant shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-error" data-icon="wifi_off" style="font-variation-settings: 'FILL' 1;">wifi_off</span>
+</div>
+</div>
+<!-- Error Message Content -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-md">
+                Connessione Fallita
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xxl max-w-[280px]">
+                Impossibile raggiungere il server. Verifica la tua connessione internet o riprova più tardi.
+            </p>
+<!-- Action Area -->
+<div class="w-full space-y-md">
+<button class="w-full bg-primary-container text-on-primary-container h-[48px] rounded-full font-label-lg text-label-lg flex items-center justify-center gap-sm hover:brightness-110 active:scale-[0.98] transition-all" onclick="window.location.reload()">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+                    Riprova
+                </button>
+<button class="w-full border border-outline text-on-surface-variant h-[48px] rounded-full font-label-lg text-label-lg flex items-center justify-center hover:bg-surface-container-low active:scale-[0.98] transition-all">
+                    Segnala Problema
+                </button>
+</div>
+<!-- Accessibility Note / System Status -->
+<div class="mt-xxl pt-lg border-t border-outline-variant w-full">
+<div class="flex items-center justify-center gap-xs text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+<span class="font-label-md text-label-md">Codice Errore: ERR_CONNECTION_REFUSED</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col items-center gap-md max-w-container-max mx-auto border-t border-outline-variant bg-inverse-surface">
+<div class="flex flex-col items-center gap-md">
+<span class="font-title-lg text-title-lg text-inverse-on-surface">BlogSpace</span>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</div>
+</div>
+<p class="font-body-md text-body-md text-surface-variant mt-md text-center">
+            © 2024 BlogSpace Editorial. All rights reserved.
+        </p>
+</footer>
+<script>
+        // Micro-interaction for the "Riprova" button
+        document.querySelector('button').addEventListener('click', function(e) {
+            const btn = e.currentTarget;
+            const icon = btn.querySelector('.material-symbols-outlined');
+            
+            // Add a temporary spinning animation
+            icon.classList.add('animate-spin');
+            
+            // Simulate a brief delay before "reloading"
+            setTimeout(() => {
+                icon.classList.remove('animate-spin');
+            }, 1000);
+        });
+
+        // Atmospheric effect: Subtle cursor following glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.bg-primary\\/10');
+            if (glow) {
+                const rect = glow.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                glow.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
+            }
+        });
+    </script>
+</body></html>

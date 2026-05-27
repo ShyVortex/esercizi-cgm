@@ -1,0 +1,282 @@
+<!DOCTYPE html><html class="light" lang="it"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BlogSpace | Loading...</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .skeleton {
+            background: linear-gradient(
+                90deg,
+                rgba(228, 225, 231, 0.4) 25%,
+                rgba(228, 225, 231, 0.7) 37%,
+                rgba(228, 225, 231, 0.4) 63%
+            );
+            background-size: 400% 100%;
+            animation: skeleton-loading 1.4s ease infinite;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#303034",
+                        "surface-bright": "#fbf8fe",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0edf2",
+                        "primary": "#00488d",
+                        "on-tertiary-fixed": "#25152d",
+                        "on-secondary-fixed-variant": "#3c4858",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "inverse-primary": "#a8c8ff",
+                        "surface-tint": "#005db5",
+                        "on-surface": "#1b1b1f",
+                        "background": "#fbf8fe",
+                        "secondary-fixed-dim": "#bbc7db",
+                        "surface-container-highest": "#e4e1e7",
+                        "on-surface-variant": "#424752",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#d7e3f8",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#d7e3f8",
+                        "on-primary-fixed-variant": "#00468b",
+                        "primary-container": "#005fb8",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#d6bedf",
+                        "tertiary": "#53425c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#535f70",
+                        "surface-dim": "#dcd9de",
+                        "tertiary-container": "#6c5975",
+                        "tertiary-fixed": "#f3dafc",
+                        "surface-container-high": "#eae7ed",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#52405b",
+                        "inverse-on-surface": "#f3f0f5",
+                        "surface-container-low": "#f6f2f8",
+                        "on-background": "#1b1b1f",
+                        "primary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#596576",
+                        "on-primary-container": "#cadcff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#ebd3f4",
+                        "outline-variant": "#c2c6d4",
+                        "surface-variant": "#e4e1e7",
+                        "outline": "#727783",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#101c2b",
+                        "surface": "#fbf8fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "xxxl": "64px",
+                        "base": "8px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "container-max": "1200px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-gutter h-16 max-w-container-max mx-auto bg-surface dark:bg-surface-dim shadow-sm md:shadow-md transition-all duration-300">
+<div class="flex items-center gap-sm cursor-pointer active:scale-95 transition-transform">
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold">BlogSpace</h1>
+</div>
+<div class="flex items-center gap-md">
+<!-- Navigation Links (Desktop only) -->
+<nav class="hidden md:flex gap-lg mr-lg">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary py-1 font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary py-1 transition-colors duration-200 font-label-lg text-label-lg" href="#">Trending</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary py-1 transition-colors duration-200 font-label-lg text-label-lg" href="#">Editors Choice</a>
+</nav>
+<button aria-label="Toggle Dark Mode" class="p-base rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="pt-xxxl pb-xxxl px-4 md:px-gutter max-w-container-max mx-auto">
+<!-- Filter Area -->
+<section class="mt-lg mb-xxl flex flex-col md:flex-row gap-lg items-center justify-between">
+<div class="w-full md:w-1/2 flex flex-col gap-xs">
+<div class="h-12 w-full bg-surface-container rounded-lg skeleton relative flex items-center px-md border-b-2 border-outline-variant">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<div class="ml-sm h-4 w-32 bg-outline-variant rounded skeleton opacity-50"></div>
+</div>
+</div>
+<div class="w-full md:w-1/4 flex flex-col gap-xs">
+<div class="h-12 w-full bg-surface-container rounded-lg skeleton flex items-center justify-between px-md border-b-2 border-outline-variant">
+<div class="h-4 w-24 bg-outline-variant rounded skeleton opacity-50"></div>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+</section>
+<!-- Skeleton Content Feed -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Skeleton Card 1 (Feature Style) -->
+<div class="col-span-1 md:col-span-2 lg:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col md:flex-row gap-lg animate-pulse">
+<div class="w-full md:w-2/5 aspect-video bg-surface-container-highest rounded-lg skeleton"></div>
+<div class="w-full md:w-3/5 flex flex-col justify-center space-y-md">
+<div class="h-4 w-24 bg-secondary-container rounded-full skeleton"></div>
+<div class="h-10 w-3/4 bg-surface-container-highest rounded-md skeleton"></div>
+<div class="space-y-sm">
+<div class="h-3 w-full bg-surface-container-highest rounded skeleton opacity-70"></div>
+<div class="h-3 w-5/6 bg-surface-container-highest rounded skeleton opacity-70"></div>
+</div>
+<div class="flex items-center gap-sm pt-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest skeleton"></div>
+<div class="h-4 w-32 bg-surface-container-highest rounded skeleton"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+<div class="aspect-video w-full bg-surface-container-highest skeleton"></div>
+<div class="p-lg flex flex-col gap-md">
+<div class="h-3 w-16 bg-secondary-container rounded-full skeleton"></div>
+<div class="h-6 w-full bg-surface-container-highest rounded skeleton"></div>
+<div class="space-y-sm">
+<div class="h-3 w-full bg-surface-container-highest rounded skeleton opacity-60"></div>
+<div class="h-3 w-4/5 bg-surface-container-highest rounded skeleton opacity-60"></div>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant">
+<div class="flex items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest skeleton"></div>
+<div class="h-3 w-20 bg-surface-container-highest rounded skeleton"></div>
+</div>
+<div class="h-8 w-8 rounded bg-surface-container-highest skeleton"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="aspect-video w-full bg-surface-container-highest skeleton"></div>
+<div class="p-lg flex flex-col gap-md">
+<div class="h-3 w-16 bg-secondary-container rounded-full skeleton"></div>
+<div class="h-6 w-full bg-surface-container-highest rounded skeleton"></div>
+<div class="space-y-sm">
+<div class="h-3 w-full bg-surface-container-highest rounded skeleton opacity-60"></div>
+<div class="h-3 w-4/5 bg-surface-container-highest rounded skeleton opacity-60"></div>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant">
+<div class="flex items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest skeleton"></div>
+<div class="h-3 w-20 bg-surface-container-highest rounded skeleton"></div>
+</div>
+<div class="h-8 w-8 rounded bg-surface-container-highest skeleton"></div>
+</div>
+</div>
+</div>
+<!-- Skeleton Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="aspect-video w-full bg-surface-container-highest skeleton"></div>
+<div class="p-lg flex flex-col gap-md">
+<div class="h-3 w-16 bg-secondary-container rounded-full skeleton"></div>
+<div class="h-6 w-full bg-surface-container-highest rounded skeleton"></div>
+<div class="space-y-sm">
+<div class="h-3 w-full bg-surface-container-highest rounded skeleton opacity-60"></div>
+<div class="h-3 w-4/5 bg-surface-container-highest rounded skeleton opacity-60"></div>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant">
+<div class="flex items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest skeleton"></div>
+<div class="h-3 w-20 bg-surface-container-highest rounded skeleton"></div>
+</div>
+<div class="h-8 w-8 rounded bg-surface-container-highest skeleton"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination Skeleton -->
+<nav class="mt-xxxl flex items-center justify-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest skeleton flex items-center justify-center">
+<span class="material-symbols-outlined text-outline opacity-30" data-icon="chevron_left">chevron_left</span>
+</div>
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container opacity-20 skeleton"></div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest skeleton"></div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest skeleton"></div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest skeleton"></div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest skeleton flex items-center justify-center">
+<span class="material-symbols-outlined text-outline opacity-30" data-icon="chevron_right">chevron_right</span>
+</div>
+</nav>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<span class="font-title-lg text-title-lg text-on-surface dark:text-inverse-on-surface font-bold">BlogSpace</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">© 2024 BlogSpace Editorial. All rights reserved.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</div>
+</footer>
+<!-- FAB Suppression Check: No FAB for Loading state to reduce visual noise -->
+<script>
+        // Micro-interaction for the "Theme Toggle" button simulation
+        document.querySelector('[aria-label="Toggle Dark Mode"]').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Simulating the end of loading for a visual effect (optional purely for the aesthetic demo)
+        // In a real app, you'd replace the skeletons with actual content.
+    </script>
+</body></html>

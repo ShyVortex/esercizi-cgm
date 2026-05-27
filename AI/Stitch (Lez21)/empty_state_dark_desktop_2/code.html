@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#a8c8ff",
+                    "surface-dim": "#dcd9de",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c2c6d4",
+                    "tertiary-fixed-dim": "#d6bedf",
+                    "surface-tint": "#005db5",
+                    "inverse-surface": "#303034",
+                    "secondary-fixed-dim": "#bbc7db",
+                    "surface-container-low": "#f6f2f8",
+                    "outline": "#727783",
+                    "on-secondary-fixed": "#101c2b",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a8c8ff",
+                    "surface-container-high": "#eae7ed",
+                    "tertiary-container": "#6c5975",
+                    "error-container": "#ffdad6",
+                    "secondary": "#535f70",
+                    "on-tertiary-fixed": "#25152d",
+                    "background": "#121212",
+                    "on-tertiary-container": "#ebd3f4",
+                    "surface-variant": "#e4e1e7",
+                    "primary-container": "#005fb8",
+                    "on-primary-fixed-variant": "#00468b",
+                    "inverse-on-surface": "#f3f0f5",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#52405b",
+                    "tertiary-fixed": "#f3dafc",
+                    "tertiary": "#53425c",
+                    "surface-container-highest": "#e4e1e7",
+                    "on-secondary-fixed-variant": "#3c4858",
+                    "on-secondary-container": "#596576",
+                    "on-primary-container": "#cadcff",
+                    "on-error": "#ffffff",
+                    "on-background": "#e6e1e5",
+                    "surface-container": "#1e1e1e",
+                    "on-secondary": "#ffffff",
+                    "surface": "#121212",
+                    "surface-bright": "#36343b",
+                    "primary": "#d6e3ff",
+                    "on-primary-fixed": "#001b3d",
+                    "secondary-container": "#3c4858",
+                    "on-surface": "#e6e1e5",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#d7e3f8",
+                    "on-surface-variant": "#c4c6d0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xxxl": "64px",
+                    "md": "16px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e6e1e5;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .empty-illustration-glow {
+            background: radial-gradient(circle, rgba(168, 200, 255, 0.1) 0%, rgba(18, 18, 18, 0) 70%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-gutter h-16 max-w-container-max mx-auto bg-surface dark:bg-surface-dim shadow-sm md:shadow-md">
+<div class="flex items-center gap-md">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold">BlogSpace</span>
+</div>
+<div class="flex-1 max-w-2xl mx-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full py-2 pl-12 pr-4 text-on-surface focus:ring-2 focus:ring-primary-fixed-dim font-body-md text-body-md transition-all" readonly="" type="text" value="xjzk"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:scale-95 transition-transform text-on-surface-variant md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-xxl flex flex-col items-center justify-start max-w-container-max mx-auto w-full px-gutter">
+<!-- Filter Area -->
+<section class="w-full mt-xl mb-xxl">
+<div class="flex items-center gap-md overflow-x-auto pb-sm no-scrollbar">
+<div class="flex items-center gap-xs px-md py-2 bg-secondary-container text-on-secondary-container rounded-full cursor-pointer hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-label-md text-label-md">Tutti i filtri</span>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant mx-xs"></div>
+<button class="px-md py-2 border border-outline text-on-surface-variant rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors">Data: Recenti</button>
+<button class="px-md py-2 border border-outline text-on-surface-variant rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors">Categoria: Tecnologia</button>
+<button class="px-md py-2 border border-outline text-on-surface-variant rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors">Lingua: Italiano</button>
+</div>
+</section>
+<!-- Empty State Canvas -->
+<section class="flex flex-col items-center justify-center py-xxl w-full max-w-2xl text-center">
+<div class="relative w-64 h-64 mb-xl flex items-center justify-center">
+<div class="absolute inset-0 empty-illustration-glow animate-pulse"></div>
+<img alt="Empty results illustration" class="relative z-10 w-48 h-48 object-contain opacity-80" data-alt="A minimalist 3D isometric illustration of a floating, translucent dark-themed crystal glass ball containing a tiny, dormant galaxy. The background is a deep charcoal black with subtle geometric patterns barely visible. Soft blue and purple rim lighting highlights the contours of the sphere. The overall mood is mysterious, quiet, and sophisticated, representing a search into the vast unknown." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAFF3xSFO3mDxxCT2d1dAapbFqT0KiHFZe4rzHCqrDCpMX6hkJpWNMwZdt-ho7GrnNX3Tim-wqZpvQQ3bsYd10ivVdcwGUr5RdZjEVTvDQiemAXa9AJ9LM1TOmDXmjkHQs17O8m4Fpi71L8LfVDzce4AS3uLi1Or2M2gJyaTUzxOjT5iA04GYKEyO3tTHfAPKCJj36yd6I7ShWxOWm7WuY-I481rzLSWTGnzRCKo2EFK4Iuqxkav1k6napaQGoG2Jl-lxFaOst45rI"/>
+</div>
+<div class="space-y-md mb-xxl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Nessun risultato trovato</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+                    Non siamo riusciti a trovare nulla che corrisponda alla tua ricerca "xjzk". Prova a controllare l'ortografia o a utilizzare termini più generici.
+                </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="min-h-[48px] px-xl bg-primary-container text-on-primary-container rounded-full font-label-lg text-label-lg hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">refresh</span>
+                    Nuova Ricerca
+                </button>
+<button class="min-h-[48px] px-xl border border-outline text-primary rounded-full font-label-lg text-label-lg hover:bg-surface-container-low active:scale-95 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">home</span>
+                    Torna alla Home
+                </button>
+</div>
+</section>
+<!-- Suggested Topics (Visual filler to avoid 'dead end' feeling) -->
+<section class="w-full mt-xxl border-t border-outline-variant pt-xxl">
+<h2 class="font-title-md text-title-md text-on-surface mb-lg">Potrebbe interessarti:</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-gutter">
+<div class="p-md bg-surface-container rounded-xl border border-outline-variant hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<span class="font-label-md text-label-md text-primary mb-sm block">TUTORIAL</span>
+<h3 class="font-title-md text-title-md text-on-surface">Come ottimizzare il flusso di lavoro editoriale</h3>
+</div>
+<div class="p-md bg-surface-container rounded-xl border border-outline-variant hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<span class="font-label-md text-label-md text-primary mb-sm block">TRENDS</span>
+<h3 class="font-title-md text-title-md text-on-surface">L'impatto dell'AI nel blogging moderno</h3>
+</div>
+<div class="p-md bg-surface-container rounded-xl border border-outline-variant hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<span class="font-label-md text-label-md text-primary mb-sm block">RESOURCES</span>
+<h3 class="font-title-md text-title-md text-on-surface">Migliori template per newsletter 2024</h3>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-xxl">
+<div class="flex flex-col md:items-start items-center gap-xs">
+<span class="font-title-lg text-title-lg text-on-surface dark:text-inverse-on-surface">BlogSpace</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant text-center md:text-left">© 2024 BlogSpace Editorial. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the search input focus
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('click', () => {
+            searchInput.removeAttribute('readonly');
+            searchInput.focus();
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            if (searchInput.value === '') {
+                searchInput.value = 'xjzk';
+            }
+            searchInput.setAttribute('readonly', true);
+        });
+
+        // Hover effect for suggested cards
+        document.querySelectorAll('.bg-surface-container').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'transform 0.2s ease-out';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

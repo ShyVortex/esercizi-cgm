@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BlogSpace | Post Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d7e3f8",
+                    "outline": "#727783",
+                    "on-primary-fixed-variant": "#00468b",
+                    "background": "#121212", // Overridden per user request for dark mode
+                    "tertiary-container": "#6c5975",
+                    "surface-tint": "#005db5",
+                    "on-tertiary-container": "#ebd3f4",
+                    "on-secondary-fixed": "#101c2b",
+                    "on-tertiary-fixed-variant": "#52405b",
+                    "on-error-container": "#93000a",
+                    "on-background": "#e0e0e0", // Overridden per user request
+                    "tertiary": "#53425c",
+                    "surface-bright": "#1b1b1f",
+                    "on-surface": "#e0e0e0",
+                    "on-surface-variant": "#c2c6d4",
+                    "surface": "#1b1b1f",
+                    "secondary-fixed-dim": "#bbc7db",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#25152d",
+                    "on-primary-fixed": "#001b3d",
+                    "on-secondary-fixed-variant": "#3c4858",
+                    "surface-container-high": "#2b2b2f",
+                    "tertiary-fixed-dim": "#d6bedf",
+                    "surface-container-lowest": "#000000",
+                    "primary-fixed-dim": "#a8c8ff",
+                    "on-secondary-container": "#596576",
+                    "primary-container": "#005fb8",
+                    "surface-dim": "#121212",
+                    "secondary-fixed": "#d7e3f8",
+                    "on-primary-container": "#cadcff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#333337",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-surface": "#f3f0f5",
+                    "surface-container-low": "#1e1e22",
+                    "surface-container": "#232327",
+                    "secondary": "#535f70",
+                    "inverse-on-surface": "#1b1b1f",
+                    "surface-variant": "#424752",
+                    "outline-variant": "#424752",
+                    "primary": "#a8c8ff", // Dark mode primary
+                    "on-primary": "#003062",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#f3dafc",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#005db5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "sm": "8px",
+                    "xxl": "48px",
+                    "xxxl": "64px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "base": "8px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                    "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        /* Glassmorphism details for M3 elevated cards */
+        .glass-card {
+            background: rgba(43, 43, 47, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-surface-dim shadow-sm md:shadow-md">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary p-xs active:scale-95 transition-transform" data-icon="arrow_back">arrow_back</button>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">BlogSpace</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary p-xs active:scale-95 transition-transform" data-icon="dark_mode">dark_mode</button>
+<button class="material-symbols-outlined text-primary p-xs active:scale-95 transition-transform" data-icon="share">share</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-16 pb-xxl">
+<!-- Hero Section -->
+<header class="w-full">
+<div class="relative w-full aspect-[16/10] overflow-hidden">
+<img alt="Minimalist abstract background" class="w-full h-full object-cover" data-alt="An expansive, cinematic shot of high-end architectural curves and flowing digital gradients in shades of deep charcoal and vibrant electric blue. The scene is illuminated by atmospheric neon lighting that casts long, soft shadows, creating a sense of futuristic depth. The aesthetic is sophisticated and corporate, perfectly matching a dark-mode editorial layout. High resolution and pristine detail define the sleek, modern texture of the surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlMrCyvhTybut2ZGcPMOpngdDyQeyCsL1hlQYB2ycE2gpNqxx8hQNGc0FWOYNajgrLTKpw0mKt7HlFM310dxfYFpK7lmJ-OemtZIXOqDDJ5EGM8kGuKeOq9USTvtjCvqeS6Pw-XyDhPA-zBZ9VHQHj8CbdCHQ47KEWi5wWlTNMU9KQ4v5GsDFkrJ0RQmqfr3iQzpT7s6AwaPjuw5xdvLZPfus_Sayb7bc8G1rmUlNYQB0lB5PelzT5NNQjis-l3yHNy4ODyutTKUI0"/>
+<div class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-[#121212] to-transparent">
+<div class="flex gap-sm mb-sm">
+<span class="px-sm py-xs bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md">Technology</span>
+<span class="px-sm py-xs bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md">Design</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs leading-tight">The Future of Interface: Beyond the Screen</h1>
+</div>
+</div>
+</header>
+<section class="px-gutter py-lg">
+<!-- Author Meta -->
+<div class="flex items-center gap-md mb-xl">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img alt="Author profile" data-alt="A professional close-up portrait of a thoughtful male editor in a modern studio setting. He is wearing a dark, minimalist sweater, and the lighting is soft and directional, highlighting his features against a blurred dark grey background. The mood is intellectual and authoritative, maintaining a high-end corporate aesthetic with a neutral color palette. The image is crisp and expertly composed for a high-quality editorial blog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0dm_E9_DDOnRlKvT5Z1WimcXP15EVCD2yBK1S1NCoOBgtpNdGJwon3DYcbVrd4dD0byDAwyQK0rQoKV3Sg5E8lDgGgJwaJfLGjn0erGEv2gSUOjXj9Mc9KS597EsxEDeq76GfanZd2OxjHELNb0cCTgf6dpluhh2VOz51nP0qy12C9ojlK26tIXANV_tKZSOdwJ3MSwuFadvVzOnLsBYHSQFk4c-GSiv5ec-uWiw70kg0vGHq8r1sZXFTSuKCK4hUGrOPq5FhYbF8"/>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">Julian Thorne</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Editorial Lead • 8 min read</p>
+</div>
+<button class="ml-auto flex items-center gap-xs px-md py-sm border border-outline rounded-full text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="person_add">person_add</span>
+<span class="font-label-lg text-label-lg">Follow</span>
+</button>
+</div>
+<!-- Post Content -->
+<article class="prose prose-invert max-w-none">
+<p class="font-body-lg text-body-lg text-on-surface mb-lg leading-relaxed">
+                    The landscape of digital interaction is undergoing a seismic shift. As we move away from static grids and traditional navigation models, the emphasis is turning towards fluid, context-aware environments that respond to human intent with unprecedented precision.
+                </p>
+<div class="p-lg glass-card rounded-xl my-xl">
+<p class="font-title-lg text-title-lg italic text-primary leading-snug">
+                        "Design is not just what it looks like and feels like. Design is how it works in the quiet moments between interactions."
+                    </p>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-xl mb-md">Fluidity and Motion</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg leading-relaxed">
+                    Motion is no longer an afterthought or a decorative layer; it is the connective tissue of the modern UI. By utilizing Material Design 3 principles, we create a sense of physical presence in a digital space. Surfaces expand, collapse, and transition with a weight that feels intuitive to the user.
+                </p>
+<!-- Bento Grid Style Image Gallery -->
+<div class="grid grid-cols-2 gap-sm my-xl">
+<div class="col-span-2 h-48 rounded-xl overflow-hidden shadow-sm">
+<img alt="Technology workspace" class="w-full h-full object-cover" data-alt="A meticulously organized desktop workspace featuring a sleek laptop and high-end peripheral devices. The lighting is moody and low-key, with cool blue accents reflecting off metallic surfaces. The composition follows a professional grid layout, emphasizing order and technological advancement. Deep blacks and rich greys dominate the color palette, creating a high-performance, dark-mode atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHKdAAOGd-BgsQPMgiikNoEiGqEKU9SU9n4ZdiS0igReRKa6XY-wdDgpev46dqowmzSF8LM-aNdmNjNyRtLBx6lDTysE9uiclC4t4ckgp3H5m7-X_VZlrLUP1llmQZcp-HZDgMTUpDB7PJXR0MaEiuGA1yMw6lxY8ojQ0RQNAhfVfxn02r3ABRW1dQHLqi3LX8PwBhEtjX07qMqX_jtM3_6h2ZCYdSbNb4fqAbMk1xJrbG0AaWLsq193v06igIUJrErUMa3-QJaRsC"/>
+</div>
+<div class="h-40 rounded-xl overflow-hidden shadow-sm">
+<img alt="Abstract lines" class="w-full h-full object-cover" data-alt="An abstract visualization of digital data flowing through space. Luminous white lines intersect against a pitch-black background, creating a sense of speed and connectivity. The style is minimalist and high-tech, using a monochrome palette with subtle silver highlights. The lighting is sharp and high-contrast, perfectly suited for an editorial section about data and infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCipWAkVcfdXITCWBkFgH24qBGi-bHx7d0wiE6dAtNPj396xx2iR9lqaP6ujzu9VfybdVvBA9Un7GdataDcYZJR8Nb8Kzo6OGyIsipE7BQSCihLvDOJ2ljrA_0nQb7Fl0UxZqzw8H1qs3d7fSZHGvGevJirpRwjEx7sAtYYZoNoGjaHHXSmaKuShmkFj4BGvF49lYqwjjkT0rFB3DxY8nE19ylXv8yj0I1t72WQIrffiFt7WZ3jV0TyycREOwDaVLq4-ZjIoqP3x1xj"/>
+</div>
+<div class="h-40 rounded-xl overflow-hidden shadow-sm">
+<img alt="Global network" class="w-full h-full object-cover" data-alt="A glowing digital representation of Earth from space, surrounded by a complex web of interconnected nodes and light paths. The colors are deep indigo and vibrant cyan, popping against the dark void of the background. The mood is global and expansive, signifying the broad reach of modern technology. The image is rendered with high fidelity and atmospheric lighting effects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDouij2lY4VLKO17zS4STRe6HEt4wpKK4midQY83wmtWW2lRbEiDXUvFZmQcy9nEjunX_0SqDrPCOV5o_MJIYvokXotShg7q2zXLIUKu5p1sSxuAzf99FCUflctr9PPMyz2zflakjj_X2ZEjyRHoW4BkgEOqz7GFb_GLmHa2beF37VEL-1KvJRfoRLD3CLCujcIl6uvbgouhGIIWv09BFIKJlQ1ii_LKSrciKjEW7IlAoPnSghTedizdT_Tot97NjJiCF1SPbLUmlMl"/>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg leading-relaxed">
+                    Ultimately, the goal of these advancements is to reduce cognitive load. A well-designed system doesn't ask the user to think about the tool, but rather allows them to focus entirely on the task at hand. This editorial performance is what defines the next generation of BlogSpace.
+                </p>
+</article>
+<!-- Interaction Bar -->
+<div class="mt-xxl pt-lg border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-lg text-label-lg">2.4k</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg">128</span>
+</button>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="bookmark">bookmark</button>
+</div>
+</section>
+<!-- Recommended Posts -->
+<section class="px-gutter pt-xl">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-lg">Related Stories</h3>
+<div class="space-y-md">
+<div class="flex gap-md bg-surface-container rounded-xl overflow-hidden p-sm active:scale-[0.98] transition-transform">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Cybersecurity" class="w-full h-full object-cover" data-alt="A high-contrast digital image representing cybersecurity with glowing green and blue matrix-like code cascading down a dark screen. A central padlock icon is illuminated with a soft inner glow, suggesting safety and protection. The visual style is futuristic and technical, using deep blacks and vibrant neon accents to create a sense of high-security digital infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCaLcqHmy5WarwSiuPAD2ASqi5R4P6GwML6Q7seHn1DLHVEmWfmx8kxwwOOcYE3iPhe5YJ0hIe8--bNYM0KJigeK8ZKsewb0MwFAeveF8-Vg5X0eRR-nbaL4Ea9khcwtLKL63x-I18fN2O-ASEmpOiyHn0LzJ-_TaD-Y_KWbz_SHSxPRySXC0u1VCSrAVMVsiWpCLv5Yow3nr2BBS22EjBNpAwatg5KCcYldTC5v3hj20b4SJK_WAAdLea1fXx8WtO3_YIp3u29JAk"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-title-md text-title-md text-on-surface leading-tight mb-xs">Privacy in the Age of AI</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">5 min read • Security</p>
+</div>
+</div>
+<div class="flex gap-md bg-surface-container rounded-xl overflow-hidden p-sm active:scale-[0.98] transition-transform">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Laptop detail" class="w-full h-full object-cover" data-alt="A close-up, sharp-focus shot of a modern laptop's sleek silver hinges and keyboard edge. The background is softly blurred with warm, ambient evening light streaming through a window. The aesthetic is clean, professional, and corporate, emphasizing high-quality product design and a serene work environment. The color palette is composed of cool greys and warm amber highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUAQY7w-NWrok4phepuPeOjZ9OR6N4DJndVX9LTVgWdOJsob8mkpNc1dKbP22bxTVZGSNr0iNVMlZehawE_uWp3TuKuqzdSzX17z4U8_5EmfpihUiPtcur91h1uXUN158cJIZK7e2o-swgJxQRfcKEvd5uFgQ0Pny-cofDmeuQpZj8qjKOCbVn5fRZ6lHuak2j6JhmDq2VEKDx_Chu90r4-C6bN12X3hDLS0eQPZAKEj7RMMH6Gc2xDSZMi-BKAP7Oyms-DDVZobH"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-title-md text-title-md text-on-surface leading-tight mb-xs">The Ethics of Open Source</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">12 min read • Community</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col items-center gap-md bg-inverse-surface border-t border-outline">
+<span class="font-title-lg text-title-lg text-inverse-on-surface font-bold">BlogSpace</span>
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</nav>
+<p class="font-body-md text-body-md text-surface-variant mt-sm">© 2024 BlogSpace Editorial. All rights reserved.</p>
+</footer>
+<!-- Bottom Navigation (Mobile Requirement) -->
+<div class="fixed bottom-0 left-0 w-full h-16 bg-surface-container-low flex justify-around items-center z-50 md:hidden border-t border-outline-variant/20 backdrop-blur-md">
+<button class="flex flex-col items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Activity</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</div>
+<script>
+        // Simple micro-interaction for scroll depth reflection in TopNavBar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-opacity-90', 'backdrop-blur-lg');
+            } else {
+                nav.classList.remove('bg-opacity-90', 'backdrop-blur-lg');
+            }
+        });
+
+        // Toggle like button state
+        const likeBtn = document.querySelector('button .material-symbols-outlined[data-icon="favorite"]').parentElement;
+        likeBtn.addEventListener('click', function() {
+            const icon = this.querySelector('.material-symbols-outlined');
+            const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+            icon.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+            this.classList.toggle('text-primary');
+            this.classList.toggle('text-on-surface-variant');
+        });
+    </script>
+</body></html>

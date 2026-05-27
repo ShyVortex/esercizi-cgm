@@ -1,0 +1,241 @@
+<!DOCTYPE html><html class="dark" lang="it"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary": "#ffffff",
+                "on-error-container": "#93000a",
+                "tertiary": "#53425c",
+                "surface": "#1b1b1f",
+                "outline-variant": "#424752",
+                "on-secondary-container": "#596576",
+                "surface-container-high": "#2b2b2f",
+                "on-secondary-fixed": "#101c2b",
+                "primary": "#a8c8ff",
+                "on-secondary": "#ffffff",
+                "secondary": "#535f70",
+                "primary-container": "#00468b",
+                "surface-tint": "#a8c8ff",
+                "on-surface": "#e4e1e7",
+                "error-container": "#93000a",
+                "inverse-surface": "#f3f0f5",
+                "outline": "#8e9099",
+                "on-primary-fixed": "#001b3d",
+                "primary-fixed": "#d6e3ff",
+                "on-background": "#e4e1e7",
+                "secondary-fixed": "#d7e3f8",
+                "on-tertiary-fixed": "#25152d",
+                "secondary-container": "#3c4858",
+                "on-primary-container": "#d6e3ff",
+                "inverse-on-surface": "#1b1b1f",
+                "on-surface-variant": "#c2c6d4",
+                "surface-container-highest": "#36363a",
+                "tertiary-fixed": "#f3dafc",
+                "primary-fixed-dim": "#a8c8ff",
+                "surface-container-lowest": "#0f0f12",
+                "on-secondary-fixed-variant": "#3c4858",
+                "inverse-primary": "#005db5",
+                "surface-variant": "#424752",
+                "surface-dim": "#121215",
+                "error": "#ffb4ab",
+                "secondary-fixed-dim": "#bbc7db",
+                "on-primary-fixed-variant": "#00468b",
+                "surface-container-low": "#1b1b1f",
+                "on-tertiary": "#ffffff",
+                "background": "#121212",
+                "surface-container": "#202023",
+                "on-error": "#690005",
+                "tertiary-fixed-dim": "#d6bedf",
+                "on-tertiary-fixed-variant": "#52405b",
+                "surface-bright": "#3b3b3f",
+                "on-tertiary-container": "#f3dafc",
+                "tertiary-container": "#3c2b43"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xl": "32px",
+                "xxl": "48px",
+                "xxxl": "64px",
+                "gutter": "24px",
+                "base": "8px",
+                "lg": "24px",
+                "md": "16px",
+                "sm": "8px",
+                "xs": "4px",
+                "container-max": "1200px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "title-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-md": ["Inter"],
+                "label-lg": ["Inter"],
+                "headline-sm": ["Inter"],
+                "display-lg": ["Inter"],
+                "label-md": ["Inter"],
+                "title-md": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-gutter h-16 max-w-container-max mx-auto bg-surface dark:bg-surface-dim shadow-sm md:shadow-md">
+<div class="flex items-center gap-md">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold cursor-pointer active:scale-95 transition-transform">BlogSpace</span>
+<nav class="hidden md:flex gap-lg ml-xl">
+<a class="font-title-md text-title-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary py-2 px-1" href="#">Feed</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 py-2 px-1" href="#">Discover</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 py-2 px-1" href="#">Authors</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 text-on-surface w-64 focus:ring-2 focus:ring-primary outline-none" type="text" value="xjzk">
+</div>
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-full transition-colors duration-200">dark_mode</button>
+
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-xxxl min-h-[calc(100vh-120px)] flex flex-col items-center">
+<!-- Filter Area -->
+<section class="w-full max-w-container-max px-gutter mt-lg">
+<div class="flex flex-wrap items-center gap-md border-b border-outline-variant pb-md">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Filtra per:</span>
+<div class="flex gap-sm">
+<button class="px-md py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors">Tutti</button>
+<button class="px-md py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Tecnologia</button>
+<button class="px-md py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Cultura</button>
+<button class="px-md py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Design</button>
+</div>
+<div class="ml-auto flex items-center gap-xs cursor-pointer text-primary hover:underline">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-label-lg text-label-lg">Filtri avanzati</span>
+</div>
+</div>
+</section>
+<!-- Empty State Content -->
+<section class="flex-grow flex flex-col items-center justify-center px-gutter text-center py-xxxl">
+<div class="mb-lg relative">
+<!-- Decorative Abstract Backdrop -->
+<div class="absolute inset-0 bg-primary/10 blur-xxxl rounded-full scale-150 animate-pulse"></div>
+<div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-xl overflow-hidden shadow-2xl bg-surface-container">
+<img alt="No results found" class="w-full h-full object-cover opacity-60" data-alt="A cinematic, low-angle shot of a minimalist workspace at night with a single glowing terminal screen displaying flickering lines of code against a dark background. The lighting is cold and atmospheric, with deep blues and subtle grey tones reflecting off the metallic desk surface. The overall mood is quiet and contemplative, representing an empty search result in a sophisticated, dark-mode corporate digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGc2Qw3KNmvD79FzPaXbNeG8TS1aZrV1y6vzlUF1jLALpOGHMEY8pzGN3YI0vtlSFXVwrgnZETxeEOUXgnSW5G3si73X3vV8XOVFOjxjBIquryWKwCVcIaoYp3Dp90-64FXV1ijc3vTcPJAWhxxxd2WSj5UPXzM8rtF0rwWwKqDPNw4b8kP55TOoopCqKU3FgGFqqErLswCHBeh5e0L7EIdmHz5ihG8ZDh2K2cTk6k_jSlBL_5Jhefid5vzSFcvx-kdeJAvXxUY4us">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[120px] text-outline opacity-40">search_off</span>
+</div>
+</div>
+</div>
+<div class="max-w-2xl space-y-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Nessun post trovato per questa ricerca.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Non siamo riusciti a trovare contenuti corrispondenti a <span class="text-primary font-bold">'xjzk'</span>. Prova a utilizzare termini più generici o controlla eventuali errori di battitura.
+                </p>
+<div class="flex flex-col sm:flex-row gap-md justify-center mt-xl">
+<button class="h-12 px-xl bg-primary text-on-primary rounded-lg font-title-md text-title-md hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">search</span>
+                        Nuova Ricerca
+                    </button>
+<button class="h-12 px-xl border border-outline text-on-surface rounded-lg font-title-md text-title-md hover:bg-surface-container transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">home</span>
+                        Torna alla Home
+                    </button>
+</div>
+</div>
+<!-- Suggestions Bento-ish Layout (Subtle) -->
+<div class="mt-xxxl w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="p-lg bg-surface-container-low rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-sm">trending_up</span>
+<h3 class="font-title-md text-title-md mb-xs group-hover:text-primary transition-colors">Argomenti di tendenza</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Scopri cosa sta leggendo la community in questo momento.</p>
+</div>
+<div class="p-lg bg-surface-container-low rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-sm">history</span>
+<h3 class="font-title-md text-title-md mb-xs group-hover:text-primary transition-colors">Ricette recenti</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ritorna agli articoli che hai visualizzato di recente.</p>
+</div>
+<div class="p-lg bg-surface-container-low rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-sm">star</span>
+<h3 class="font-title-md text-title-md mb-xs group-hover:text-primary transition-colors">Scelti per te</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Articoli selezionati in base ai tuoi interessi e letture passate.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="font-title-lg text-title-lg text-on-surface dark:text-inverse-on-surface font-bold">BlogSpace</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant opacity-70">© 2024 BlogSpace Editorial. All rights reserved.</p>
+</div>
+<nav class="flex gap-lg flex-wrap justify-center">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</nav>
+</footer>
+<script>
+        // Micro-interaction for the search bar
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-105');
+            searchInput.parentElement.style.transition = 'transform 0.2s ease';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-105');
+        });
+
+        // Atmospheric shimmer effect on empty state
+        const shimmerCard = document.querySelector('.bg-surface-container');
+        shimmerCard.addEventListener('mousemove', (e) => {
+            const rect = shimmerCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            shimmerCard.style.setProperty('--x', `${x}px`);
+            shimmerCard.style.setProperty('--y', `${y}px`);
+        });
+    </script>
+
+
+</body></html>

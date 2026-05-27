@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+        .content-body p {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#d7e3f8",
+                        "outline": "#727783",
+                        "on-primary-fixed-variant": "#00468b",
+                        "background": "#fbf8fe",
+                        "tertiary-container": "#6c5975",
+                        "surface-tint": "#005db5",
+                        "on-tertiary-container": "#ebd3f4",
+                        "on-secondary-fixed": "#101c2b",
+                        "on-tertiary-fixed-variant": "#52405b",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1b1f",
+                        "tertiary": "#53425c",
+                        "surface-bright": "#fbf8fe",
+                        "on-surface": "#1b1b1f",
+                        "on-surface-variant": "#424752",
+                        "surface": "#fbf8fe",
+                        "secondary-fixed-dim": "#bbc7db",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#25152d",
+                        "on-primary-fixed": "#001b3d",
+                        "on-secondary-fixed-variant": "#3c4858",
+                        "surface-container-high": "#eae7ed",
+                        "tertiary-fixed-dim": "#d6bedf",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-secondary-container": "#596576",
+                        "primary-container": "#005fb8",
+                        "surface-dim": "#dcd9de",
+                        "secondary-fixed": "#d7e3f8",
+                        "on-primary-container": "#cadcff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e4e1e7",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#303034",
+                        "surface-container-low": "#f6f2f8",
+                        "surface-container": "#f0edf2",
+                        "secondary": "#535f70",
+                        "inverse-on-surface": "#f3f0f5",
+                        "surface-variant": "#e4e1e7",
+                        "outline-variant": "#c2c6d4",
+                        "primary": "#00488d",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#f3dafc",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#a8c8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "sm": "8px",
+                        "xxl": "48px",
+                        "xxxl": "64px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-surface-dim shadow-sm flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-md">
+<button class="p-sm cursor-pointer active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold">BlogSpace</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm cursor-pointer active:scale-95 transition-transform text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<!-- Hero Image Section -->
+<div class="w-full h-[280px] relative overflow-hidden">
+<img alt="Future of Technology" class="w-full h-full object-cover" data-alt="A high-fidelity photographic scene featuring a sleek, minimalist tech workspace with a metallic laptop and soft ambient blue light. The lighting is bright and airy, reflecting a clean corporate-modern aesthetic with soft shadows. The overall mood is professional, innovative, and focused on high-end editorial content for a technology blog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZdF42cn4U0NYQtwcqPjpEhPsyyBdanMYRfPPqrSNe9WcT88_OCqL_XDogLci3WNOkxM6mSRndNXfVLjrAgv50LbUtW4POPZbU1cDuCzmY6O2X6XAg740FB6N4iVMVN7rQHqMo2NbbKNAQttDcIKdrBr1AhkdKFogf_cnTSBlEzO1EUhr3d_Qn_B5d0iaP4LJ_fDx5n-vtIoEjSKuyPMSd0Ezn0o4TIt2uqk78bvEd-59rWOEgkhUb2jGdgdfjTeCK8BN8fzR0B8qe"/>
+</div>
+<!-- Article Content Container -->
+<article class="px-md py-lg max-w-container-max mx-auto">
+<!-- Breadcrumb / Category -->
+<div class="mb-sm">
+<span class="inline-flex items-center px-md py-xs rounded-full bg-primary-fixed text-on-primary-fixed text-label-md font-label-md">TECNOLOGIA</span>
+</div>
+<!-- Title -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-md">
+                L'Evoluzione dell'Intelligenza Artificiale nel 2024: Oltre i Chatbot
+            </h2>
+<!-- Author Info -->
+<div class="flex items-center justify-between mb-xl pb-md border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<img alt="Author Avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fo2xsTk9l9iZseEczNJsdult9JYGZP43be4mZvOx3kgISIlVrVdfoSo9WShNA2q6cYEyfXxr_9czUUEFiHiTGi48K-c_36T-3W6mBLmWiL8RmEsEpTiQSDGwxWR93SwY-zMjiTsc4v6FR1bX2yPaPBgwnnVZgkX_EaP2eGjFBxDHGYAJpVEW4C4BbhCppj3znQNlZ_Xw_DRWqqGN2yuOEJqkc1Rn9g36v-BwRB8BfX7Gz3RKrG1R2aPfTsO-yZz14UMTU0r0w4oK"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight">Marco Rossi</span>
+<span class="font-body-md text-body-md text-on-surface-variant">12 Ottobre 2024 • 6 min lettura</span>
+</div>
+</div>
+<button class="h-10 px-md rounded-full bg-secondary-container text-on-secondary-container font-label-lg text-label-lg flex items-center justify-center active:scale-95 transition-transform">
+                    Segui
+                </button>
+</div>
+<!-- Body Text -->
+<div class="content-body font-body-lg text-body-lg text-on-surface leading-relaxed">
+<p>
+                    Nel panorama tecnologico odierno, l'intelligenza artificiale non è più una semplice promessa per il futuro, ma una realtà tangibile che sta ridefinendo i confini della creatività e dell'efficienza professionale. Mentre il 2023 è stato l'anno della scoperta dei modelli linguistici di grandi dimensioni, il 2024 segna il passaggio verso sistemi agentici capaci di agire in autonomia.
+                </p>
+<!-- Inset Quote (Asymmetric layout element) -->
+<blockquote class="my-xl pl-md border-l-4 border-primary italic font-title-lg text-title-lg text-on-surface-variant">
+                    "L'AI non sostituirà l'uomo, ma l'uomo che usa l'AI sostituirà chi non la usa."
+                </blockquote>
+<p>
+                    Le aziende stanno integrando questi sistemi non solo per la generazione di testo, ma per la risoluzione di problemi complessi che richiedono un ragionamento multi-step. Dalla diagnostica medica avanzata alla progettazione di nuovi materiali ecosostenibili, l'impatto è profondo e trasversale.
+                </p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md mt-xl">Nuovi Orizzonti</h3>
+<p>
+                    Guardando avanti, la sfida principale rimane l'etica e la trasparenza. Non si tratta più solo di quanto un sistema possa essere "intelligente", ma di quanto possa essere affidabile e spiegabile. L'introduzione di nuove normative a livello europeo sottolinea la necessità di un approccio consapevole.
+                </p>
+</div>
+<!-- Mostra Commenti Button -->
+<div class="mt-xxl flex flex-col items-center gap-md">
+<button class="w-full h-12 rounded-lg bg-primary text-on-primary font-title-md text-title-md shadow-sm hover:shadow-md active:scale-95 transition-all flex items-center justify-center gap-sm" onclick="toggleComments()">
+<span class="material-symbols-outlined">forum</span>
+                    Mostra Commenti
+                </button>
+<div class="flex gap-lg text-on-surface-variant">
+<button class="flex items-center gap-xs font-label-lg text-label-lg">
+<span class="material-symbols-outlined">thumb_up</span> 1.2k
+                    </button>
+<button class="flex items-center gap-xs font-label-lg text-label-lg">
+<span class="material-symbols-outlined">bookmark</span> Salva
+                    </button>
+<button class="flex items-center gap-xs font-label-lg text-label-lg">
+<span class="material-symbols-outlined">share</span> Condividi
+                    </button>
+</div>
+</div>
+</article>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-xl px-gutter flex flex-col items-center gap-md bg-surface-container-lowest border-t border-outline-variant">
+<div class="w-full flex flex-col items-center gap-md">
+<span class="font-title-lg text-title-lg text-on-surface font-bold">BlogSpace</span>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">About</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center opacity-75 mt-md">
+                © 2024 BlogSpace Editorial. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        function toggleComments() {
+            // Logic for a micro-interaction ripple or feedback
+            const btn = event.currentTarget;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Caricamento...';
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">forum</span> 24 Commenti';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+            }, 800);
+        }
+
+        // Atmosphere interaction: Header scroll shadow
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html><html class="dark" lang="it"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BlogSpace | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121212; /* Explicit override for dark mode background as requested */
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .card-dark {
+            background-color: #1e1e1e; /* Explicit surface color as requested */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-dark:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#303034",
+                    "surface-bright": "#fbf8fe",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f0edf2",
+                    "primary": "#00488d",
+                    "on-tertiary-fixed": "#25152d",
+                    "on-secondary-fixed-variant": "#3c4858",
+                    "primary-fixed-dim": "#a8c8ff",
+                    "inverse-primary": "#a8c8ff",
+                    "surface-tint": "#005db5",
+                    "on-surface": "#1b1b1f",
+                    "background": "#fbf8fe",
+                    "secondary-fixed-dim": "#bbc7db",
+                    "surface-container-highest": "#e4e1e7",
+                    "on-surface-variant": "#424752",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#d7e3f8",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#d7e3f8",
+                    "on-primary-fixed-variant": "#00468b",
+                    "primary-container": "#005fb8",
+                    "on-primary-fixed": "#001b3d",
+                    "tertiary-fixed-dim": "#d6bedf",
+                    "tertiary": "#53425c",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#535f70",
+                    "surface-dim": "#dcd9de",
+                    "tertiary-container": "#6c5975",
+                    "tertiary-fixed": "#f3dafc",
+                    "surface-container-high": "#eae7ed",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#52405b",
+                    "inverse-on-surface": "#f3f0f5",
+                    "surface-container-low": "#f6f2f8",
+                    "on-background": "#1b1b1f",
+                    "primary-fixed": "#d6e3ff",
+                    "on-secondary-container": "#596576",
+                    "on-primary-container": "#cadcff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#ebd3f4",
+                    "outline-variant": "#c2c6d4",
+                    "surface-variant": "#e4e1e7",
+                    "outline": "#727783",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#101c2b",
+                    "surface": "#121212"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "xxxl": "64px",
+                    "base": "8px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "container-max": "1200px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                    "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-[#121212] text-[#e0e0e0] font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-gutter h-16 max-w-container-max mx-auto bg-surface-dim dark:bg-[#121212] shadow-sm md:shadow-md transition-colors duration-200">
+<div class="flex items-center gap-base">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold tracking-tight">BlogSpace</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl h-full">
+<a class="h-full flex items-center font-label-lg text-label-lg text-primary dark:text-primary-fixed-dim border-b-2 border-primary" href="#">Feed</a>
+<a class="h-full flex items-center font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Trending</a>
+<a class="h-full flex items-center font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Podcasts</a>
+<a class="h-full flex items-center font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Saved</a>
+</nav>
+<div class="flex items-center gap-md">
+<button aria-label="Toggle Light Mode" class="p-base rounded-full hover:bg-surface-container-highest transition-colors cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="light_mode">light_mode</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPfzNo4eOeJm8M7n_TXSoBvbclWywslDLlV34sttNJHTBpw2bRQY-9OZaFUKgmDZxlo5rKZXftR2t9KZZ9nzH3i02F-hlk0ouxh4an5p7B-onAK8vfhevHAym2NgR-pcKLPrvdDxG1IR6Mit_d5iknH8uzt-koTrvJPh9BzdA_jot3mtMRuh0uokIxSv5AwUJHN1KmbYS8HOXNXPMMffhOtSAtKpNc-egPlquSs4g3iDDuXDsWyyFuLzpRmM3p0QuruqzsmBT4Z_74">
+</div>
+</div>
+</header>
+<main class="pt-xxl pb-xxl px-4 md:px-gutter max-w-container-max mx-auto mt-16">
+<!-- Welcome Hero Section (Asymmetric) -->
+<section class="mb-xxl flex flex-col md:flex-row gap-lg items-center">
+<div class="flex-1 space-y-md">
+<span class="inline-block px-md py-xs bg-primary/10 text-primary-fixed-dim rounded-full font-label-md text-label-md uppercase tracking-wider">Successo</span>
+<h1 class="font-headline-lg text-headline-lg text-[#e0e0e0]">Benvenuto, Andrea. Ecco cosa c'è di nuovo oggi.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">La tua dashboard editoriale è pronta. Abbiamo selezionato i contenuti più rilevanti basati sulle tue letture recenti e sui trend della community.</p>
+<div class="flex gap-md pt-base">
+<button class="px-xl h-12 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:brightness-110 active:scale-95 transition-all">Nuovo Post</button>
+<button class="px-xl h-12 border border-outline text-[#e0e0e0] rounded-lg font-label-lg text-label-lg hover:bg-white/5 active:scale-95 transition-all">Statistiche</button>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square rounded-xl overflow-hidden relative group">
+<img alt="Editorial Photography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A moody, close-up photograph of a professional camera lens with glowing amber reflections on the glass. The background is a dark, sophisticated studio setting with subtle deep blue and charcoal tones. The lighting is low-key and dramatic, highlighting the intricate mechanical details of the lens body, creating an atmosphere of editorial precision and creative depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4cHQ4JJv0IrjQy5UcyiAdGEQB-EzEBYp4qFMpzcC61NQGiF9NtbuDsMG0_sTI9dp7ebHxzDkU5znuqK73VeFlbIew5h1hWwUXlPGZqM5Lcm2wf6yWQrXW5ndqjYxlMZOC55ArCDAn5hV3Pi8jRvBPIi2y7xaYaHatebkvPsjAQFEreGcoxOGDXR_go2dEWp9piLlFPIBpHe0JFyD_1mplGOXxIfVa64HohbKg1VfxapJhmbiUzDxWoN6Mij5-kDLc_jVeVvWLOMvO">
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212]/80 to-transparent"></div>
+</div>
+</section>
+<!-- Bento Grid Layout for Content -->
+<div class="bento-grid">
+<!-- Featured Post (Large) -->
+<article class="card-dark col-span-12 md:col-span-8 rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Digital Trends" class="w-full h-full object-cover" data-alt="A high-end abstract 3D render of flowing silk-like ribbons in deep navy and electric blue shades against a midnight black background. The lighting is soft and cinematic, casting delicate shadows that emphasize the fluid, organic movement of the shapes. This visual represents professional modern aesthetics and digital innovation, perfectly suited for a dark mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXwLcrCEID4donm_JpXMHKTCrWQ5vKm6E4gXglltLL-mzgFJYKmHru8h2kHhWWTW2HGILXZzqpTtSd9gxI72vcWrw7NjEcfmLo0d-uCb5KwNQzZFKAfjRvr5YhUFdmk9aCsjJhv8J8WCyixT6Uu5B6qDHPYZU4TgBAreQsGKFEljTPfJeC9qXpbzpRFNcVK5sWq9RcYeJ1hxz2EOACYPpOisJ80t_ynFoIV4ZzAhnPy5g5iabbJXNoi9VGZwdBnkpMrcu0C3EEy2cJ">
+</div>
+<div class="p-lg flex flex-col h-full">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-primary-fixed-dim font-label-md text-label-md">IN EVIDENZA • 5 MIN LETTURA</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary" data-icon="bookmark">bookmark</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-[#e0e0e0] mb-md">Il futuro dell'AI nel design editoriale: Collaborazione o Sostituzione?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Esploriamo come i nuovi modelli generativi stanno trasformando il workflow dei designer di interfacce e dei content creator professionisti...</p>
+<div class="mt-auto flex items-center gap-sm">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed"></div>
+<span class="font-label-md text-label-md text-[#e0e0e0]">Marco Valeri</span>
+<span class="text-on-surface-variant font-label-md text-label-md">• 2 ore fa</span>
+</div>
+</div>
+</article>
+<!-- Quick Stats Card -->
+<aside class="card-dark col-span-12 md:col-span-4 rounded-xl p-lg flex flex-col justify-between">
+<div>
+<h3 class="font-title-lg text-title-lg text-[#e0e0e0] mb-lg">Performance Settimanale</h3>
+<div class="space-y-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg" data-icon="visibility">visibility</span>
+<span class="font-label-lg text-label-lg">Visualizzazioni</span>
+</div>
+<span class="font-title-md text-title-md text-[#e0e0e0]">12.4k</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg" data-icon="favorite">favorite</span>
+<span class="font-label-lg text-label-lg">Reazioni</span>
+</div>
+<span class="font-title-md text-title-md text-[#e0e0e0]">892</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary p-sm bg-primary/10 rounded-lg" data-icon="share">share</span>
+<span class="font-label-lg text-label-lg">Condivisioni</span>
+</div>
+<span class="font-title-md text-title-md text-[#e0e0e0]">145</span>
+</div>
+</div>
+</div>
+<div class="mt-xl p-md bg-surface-container-highest rounded-lg">
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md">Target Mensile</span>
+<span class="font-label-md text-label-md">85%</span>
+</div>
+<div class="h-1 w-full bg-inverse-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed-dim w-[85%]"></div>
+</div>
+</div>
+</aside>
+<!-- Small Cards -->
+<article class="card-dark col-span-12 md:col-span-4 rounded-xl p-lg space-y-md">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-md">
+<img alt="Retro Tech" class="w-full h-full object-cover" data-alt="A clean, minimalist desk setup featuring high-end retro technology. A vintage mechanical keyboard sits next to a sleek, modern tablet displaying lines of code. The lighting is cool-toned and diffused, creating a serene, focused working environment. The overall aesthetic is dark and professional, using shades of charcoal, grey, and soft white highlights to evoke a sense of high-performance productivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7hpn88CGwzpLxfpzFvr-KaBMol7MtaJt9Q6uI23RIi0DFPz2XTVdfdEGl7lNvMJDbOwkyGW53i_axIes9GF7EfC1EO2Td4399pR0qntgy7rEEkGTcWL_tOkCml08YvlTKApMBA_l7SyhOhoA22xuwjvlgp4QBEk6zZzciEm2B4i_5TRkPN6BFfYin69ijDnmHAPVowhQWl087dn2GqDrt2RA1VpR-KGktp9d_KyE1oP8M2d3zAlQ5jMYPG9gBGMENtCexcVpeZnME">
+</div>
+<h4 class="font-title-md text-title-md text-[#e0e0e0]">Perché il Retro-Tech sta tornando di moda tra gli sviluppatori</h4>
+<div class="flex items-center justify-between">
+<div class="flex gap-xs">
+<span class="px-sm py-1 bg-surface-container text-on-surface-variant rounded font-label-md text-label-md">Hardware</span>
+<span class="px-sm py-1 bg-surface-container text-on-surface-variant rounded font-label-md text-label-md">Trend</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</div>
+</article>
+<article class="card-dark col-span-12 md:col-span-4 rounded-xl p-lg space-y-md">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-md">
+<img alt="Developer Life" class="w-full h-full object-cover" data-alt="A focused developer working in a dark room illuminated only by the glow of three large computer monitors displaying complex code and data visualizations. The lighting is a blend of neon cyan and deep violet, casting sharp highlights on a pair of glasses resting on the desk. The atmosphere is quiet, intense, and deeply technological, emphasizing a modern corporate and high-performance coding environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6vEVN6mjgHXNYALNh7TqXxWQjICHttz1BBe6-1bwW-Z_bOThcVCtu1dKKwCDkF6kbsF3aQJ5243xT0XlVrA0HnTxeWU9F_AzByCoVI4dlyfNM0oZmjWvCDuIB2jLlK74fcykE28M_8hKgb9RGtxRLzdbIbM-x6m8eY1GW-vTQCa0KKxlbOt2HtUIFJuiSW90oLKokHAq2-xVGgDplEY7Lqt8TV_W2RU1g2MZELpPHn8yoH77-jMCMf7mKfLShGNjf8s-dB00s8DVT">
+</div>
+<h4 class="font-title-md text-title-md text-[#e0e0e0]">Ottimizzare il proprio Workspace per la massima produttività</h4>
+<div class="flex items-center justify-between">
+<div class="flex gap-xs">
+<span class="px-sm py-1 bg-surface-container text-on-surface-variant rounded font-label-md text-label-md">Setup</span>
+<span class="px-sm py-1 bg-surface-container text-on-surface-variant rounded font-label-md text-label-md">Productivity</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</div>
+</article>
+<article class="card-dark col-span-12 md:col-span-4 rounded-xl p-lg space-y-md">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-md">
+<img alt="Data viz" class="w-full h-full object-cover" data-alt="A high-contrast data visualization dashboard showing vibrant glowing line graphs and bar charts in shades of emerald green and bright orange against a deep charcoal background. The image has a slight glassmorphism effect with blurred elements in the periphery, creating a sense of depth and complexity. The lighting is sharp and technical, suggesting a high-stakes financial or data-driven environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQsDeM923Q2K-QijYvo06IldtyVQ-MFpgKpINRs8aKf-SqwiS5hSgpW0UM3HyTIRlgClO4sEpiINUBlAXjjZrQzmQ1DLfIzehCU0xswH1M6pE9HtVhgdtneeOdqci5dpSZ5n0R_HyMKgsPjt6EfUPmNTeqQP3i-htcdjGFn_sT9rfijhMiiSRwARWdFyhg-8e9L2NUIbxhoH33ao9aoEYTjG0TXGOqz8Q4jJGOW3zDK6VH_w50Nt9y8jyCzmlMLxSdHCE-bBE-0D41">
+</div>
+<h4 class="font-title-md text-title-md text-[#e0e0e0]">Visualizzazione dati: Oltre il semplice grafico a torta</h4>
+<div class="flex items-center justify-between">
+<div class="flex gap-xs">
+<span class="px-sm py-1 bg-surface-container text-on-surface-variant rounded font-label-md text-label-md">Design</span>
+<span class="px-sm py-1 bg-surface-container text-on-surface-variant rounded font-label-md text-label-md">Data</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-container-max mx-auto border-t border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-[#1a1a1a]">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="font-title-lg text-title-lg text-on-surface dark:text-[#e0e0e0] font-bold">BlogSpace</span>
+<span class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant">© 2024 BlogSpace Editorial. All rights reserved.</span>
+</div>
+<div class="flex gap-xl">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Placeholder for theme toggle functionality
+            const themeBtn = document.querySelector('button[aria-label="Toggle Light Mode"]');
+            themeBtn.addEventListener('click', () => {
+                alert('Tornando alla modalità Light...');
+                // In a real app, this would toggle the .dark class on <html> and update localStorage
+            });
+
+            // Smooth appear animation for cards
+            const cards = document.querySelectorAll('.card-dark');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body></html>

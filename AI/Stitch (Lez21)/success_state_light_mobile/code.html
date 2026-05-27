@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="it"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BlogSpace - Feed Principale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#303034",
+                        "surface-bright": "#fbf8fe",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0edf2",
+                        "primary": "#00488d",
+                        "on-tertiary-fixed": "#25152d",
+                        "on-secondary-fixed-variant": "#3c4858",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "inverse-primary": "#a8c8ff",
+                        "surface-tint": "#005db5",
+                        "on-surface": "#1b1b1f",
+                        "background": "#fbf8fe",
+                        "secondary-fixed-dim": "#bbc7db",
+                        "surface-container-highest": "#e4e1e7",
+                        "on-surface-variant": "#424752",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#d7e3f8",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#d7e3f8",
+                        "on-primary-fixed-variant": "#00468b",
+                        "primary-container": "#005fb8",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#d6bedf",
+                        "tertiary": "#53425c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#535f70",
+                        "surface-dim": "#dcd9de",
+                        "tertiary-container": "#6c5975",
+                        "tertiary-fixed": "#f3dafc",
+                        "surface-container-high": "#eae7ed",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#52405b",
+                        "inverse-on-surface": "#f3f0f5",
+                        "surface-container-low": "#f6f2f8",
+                        "on-background": "#1b1b1f",
+                        "primary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#596576",
+                        "on-primary-container": "#cadcff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#ebd3f4",
+                        "outline-variant": "#c2c6d4",
+                        "surface-variant": "#e4e1e7",
+                        "outline": "#727783",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#101c2b",
+                        "surface": "#fbf8fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "xxxl": "64px",
+                        "base": "8px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "container-max": "1200px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                        "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header / TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-surface shadow-sm max-w-container-max mx-auto border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<button aria-label="Menu" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</button>
+<span class="font-headline-sm text-headline-sm-mobile text-primary font-bold">BlogSpace</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-xxl px-4 max-w-container-max mx-auto">
+<!-- Welcome Section -->
+<section class="mb-lg">
+<h1 class="font-headline-sm text-headline-sm-mobile text-on-surface mb-xs">Bentornato nel Feed</h1>
+<p class="font-body-md text-on-surface-variant">Scopri le ultime storie dalla tua community.</p>
+</section>
+<!-- Horizontal Scroll Filters -->
+<nav class="mb-lg -mx-4 px-4 overflow-x-auto hide-scrollbar flex items-center gap-2">
+<button class="px-md py-2 bg-primary text-on-primary rounded-full font-label-lg whitespace-nowrap active:scale-95 transition-transform">Tutti</button>
+<button class="px-md py-2 bg-secondary-container text-on-secondary-container rounded-full font-label-lg whitespace-nowrap active:scale-95 transition-transform">Tecnologia</button>
+<button class="px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-lg whitespace-nowrap active:scale-95 transition-transform">Design</button>
+<button class="px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-lg whitespace-nowrap active:scale-95 transition-transform">Lifestyle</button>
+<button class="px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-lg whitespace-nowrap active:scale-95 transition-transform">Economia</button>
+</nav>
+<!-- Feed List -->
+<div class="flex flex-col gap-lg">
+<!-- Post Card 1 -->
+<article class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Innovazione digitale" class="w-full h-48 object-cover" data-alt="A detailed wide-angle photograph of a modern, brightly lit collaborative workspace featuring diverse professionals engaged in high-tech digital design projects. The environment is clean and professional with a minimalist light-mode aesthetic, utilizing a palette of corporate blues and soft greys. Natural sunlight pours through large windows, creating a productive and optimistic editorial atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWKhTEYN-m6PrB20cFnWZ0Qhj_mWZriZOSSR3rVNVHbA8kOas-OLSDOOnMvbBUJG8KhLNQr4N8CWHNplcwZm0qiBLpnd_63oQXWiAPbCCOGvhtH2ilfpWdb62vEWxQO1T7g8JXUZmtX4rkANA5rPC2vX9ikouJcGib-dDSNy1mT92agsRm_WSgKzv6azonWozNcIHlYPvpqjEyTY_clre_JlfroBGIzbn1gRalEBJ_PyfBYRH3OLUrGiESk84Pw8eWUeM08Lc11eak">
+<div class="p-md">
+<div class="flex items-center gap-2 mb-sm">
+<span class="px-sm py-0.5 bg-primary-container text-on-primary-fixed-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Tecnologia</span>
+<span class="text-on-surface-variant text-[12px] font-medium">• 5 min lettura</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-2 leading-tight">Il futuro dell'Intelligenza Artificiale Generativa</h2>
+<p class="font-body-md text-on-surface-variant line-clamp-2 mb-md">Esploriamo come i nuovi modelli di linguaggio stanno ridefinendo la creatività digitale e il workflow professionale nelle agenzie moderne.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold text-xs">MA</div>
+<span class="text-on-surface font-label-md">Marco Rossi</span>
+</div>
+<button class="flex items-center gap-1 text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post Card 2 -->
+<article class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Minimalismo Desktop" class="w-full h-48 object-cover" data-alt="A high-end editorial close-up of a minimalist desktop setup featuring a sleek laptop, a journal, and a ceramic cup of coffee. The lighting is soft and diffused, highlighting clean lines and a professional corporate aesthetic in a bright light-mode setting. The color palette consists of neutral tones and subtle blue accents, conveying a sense of focus, productivity, and modern lifestyle elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTTtlrjCSJCarJaNLLckQfRXWGrOLi6Xbnu2olJAqZy-LNFRSUhrVTkFPEvt9aE_HaCjf-Ljj9RJLX31fxeIzwNqFmrU-hrt4t-QaOqMmHxJyv8Y31ELvZhh241YQNLlA5JNQSoiwUXQ3axid6fBxlE9JUrSNoTj-95ngmBO9R7uHmSWMIh6PYYdc7WM7x2xCCPvk3CkkwgPsXKH0Kbh2hm2oR5aN3R-RefAd6PSKfZDRelmvQ2cCEEF0K8jBl0nau1JpVBos-nLou">
+<div class="p-md">
+<div class="flex items-center gap-2 mb-sm">
+<span class="px-sm py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Lifestyle</span>
+<span class="text-on-surface-variant text-[12px] font-medium">• 8 min lettura</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-2 leading-tight">L'arte del minimalismo nel lavoro remoto</h2>
+<p class="font-body-md text-on-surface-variant line-clamp-2 mb-md">Consigli pratici per organizzare il proprio spazio digitale e fisico per massimizzare la concentrazione e il benessere quotidiano.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary font-bold text-xs">SV</div>
+<span class="text-on-surface font-label-md">Sofia Verdi</span>
+</div>
+<button class="flex items-center gap-1 text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post Card 3 (No Image Variant) -->
+<article class="bg-surface-container-low border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex items-center gap-2 mb-sm">
+<span class="px-sm py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Opinioni</span>
+<span class="text-on-surface-variant text-[12px] font-medium">• 3 min lettura</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface mb-2 leading-tight">Perché il design etico è la chiave per il 2024</h2>
+<p class="font-body-md text-on-surface-variant mb-md">Una riflessione sulla responsabilità dei designer nel creare interfacce che rispettino l'attenzione dell'utente e la privacy dei dati.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xs">LB</div>
+<span class="text-on-surface font-label-md">Luca Bianchi</span>
+</div>
+<button class="flex items-center gap-1 text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Mobile Pagination -->
+<div class="mt-xxl flex flex-col gap-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-title-md flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                Carica altri post
+                <span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="flex justify-between items-center px-2">
+<button class="flex items-center gap-1 text-on-surface-variant font-label-lg opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined">chevron_left</span>
+                    Precedente
+                </button>
+<span class="text-on-surface-variant font-label-md">Pagina 1 di 12</span>
+<button class="flex items-center gap-1 text-primary font-label-lg active:opacity-70">
+                    Successivo
+                    <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col gap-md bg-surface-container-lowest border-t border-outline-variant max-w-container-max mx-auto">
+<div class="flex flex-col items-center gap-md">
+<span class="font-title-lg text-title-lg text-on-surface font-bold">BlogSpace</span>
+<div class="flex flex-wrap justify-center gap-4 text-on-surface-variant font-body-md">
+<a class="hover:text-primary transition-colors underline" href="#">About</a>
+<a class="hover:text-primary transition-colors underline" href="#">Contact Us</a>
+<a class="hover:text-primary transition-colors underline" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors underline" href="#">Privacy Policy</a>
+</div>
+<p class="text-on-surface-variant font-body-md text-center opacity-70">
+                © 2024 BlogSpace Editorial. All rights reserved.
+            </p>
+</div>
+</footer>
+<!-- Floating Action Button (FAB) -->
+<button aria-label="Nuovo Post" class="fixed bottom-6 right-6 w-14 h-14 bg-primary-container text-on-primary-fixed shadow-xl rounded-2xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-[28px]">edit</span>
+</button>
+<script>
+        // Micro-interaction for filter buttons
+        const filterBtns = document.querySelectorAll('nav button');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                btn.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+
+        // Dark mode toggle simulation
+        const darkModeBtn = document.querySelector('header button:last-child');
+        darkModeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const icon = darkModeBtn.querySelector('span');
+            icon.innerText = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+        });
+    </script>
+
+</body></html>

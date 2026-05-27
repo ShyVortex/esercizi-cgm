@@ -1,0 +1,260 @@
+<!DOCTYPE html><html class="dark" lang="it"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#303034",
+                    "surface-bright": "#fbf8fe",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f0edf2",
+                    "primary": "#00488d",
+                    "on-tertiary-fixed": "#25152d",
+                    "on-secondary-fixed-variant": "#3c4858",
+                    "primary-fixed-dim": "#a8c8ff",
+                    "inverse-primary": "#a8c8ff",
+                    "surface-tint": "#005db5",
+                    "on-surface": "#1b1b1f",
+                    "background": "#fbf8fe",
+                    "secondary-fixed-dim": "#bbc7db",
+                    "surface-container-highest": "#e4e1e7",
+                    "on-surface-variant": "#424752",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#d7e3f8",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#d7e3f8",
+                    "on-primary-fixed-variant": "#00468b",
+                    "primary-container": "#005fb8",
+                    "on-primary-fixed": "#001b3d",
+                    "tertiary-fixed-dim": "#d6bedf",
+                    "tertiary": "#53425c",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#535f70",
+                    "surface-dim": "#dcd9de",
+                    "tertiary-container": "#6c5975",
+                    "tertiary-fixed": "#f3dafc",
+                    "surface-container-high": "#eae7ed",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#52405b",
+                    "inverse-on-surface": "#f3f0f5",
+                    "surface-container-low": "#f6f2f8",
+                    "on-background": "#1b1b1f",
+                    "primary-fixed": "#d6e3ff",
+                    "on-secondary-container": "#596576",
+                    "on-primary-container": "#cadcff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#ebd3f4",
+                    "outline-variant": "#c2c6d4",
+                    "surface-variant": "#e4e1e7",
+                    "outline": "#727783",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#101c2b",
+                    "surface": "#121212" /* Forced Dark Mode Override */
+            },
+            "borderRadius": {
+                    "DEFAULT": "4px",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "xxxl": "64px",
+                    "base": "8px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "container-max": "1200px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "600"}],
+                    "title-lg": ["22px", {"lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500"}],
+                    "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .surface-card {
+            background-color: #1e1e1e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#1e1e1e] shadow-md">
+<div class="font-headline-sm text-headline-sm-mobile text-primary-fixed-dim font-bold">BlogSpace</div>
+<div class="flex items-center gap-4">
+<button class="cursor-pointer active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="cursor-pointer active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Success Feedback Overlay/Section -->
+<main class="flex-grow pt-16 pb-xxl px-4">
+<section class="mt-lg mb-xxl text-center py-xl bg-[#1e1e1e] rounded-xl border border-outline-variant/10 shadow-lg">
+<div class="flex justify-center mb-md">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[#ffffff] text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-[#e0e0e0] mb-xs">Azione Completata</h1>
+<p class="font-body-md text-body-md text-on-surface-variant px-lg">Il tuo post è stato pubblicato con successo nella community di BlogSpace.</p>
+</section>
+<!-- Single List Layout for PostCards -->
+<div class="space-y-md max-w-md mx-auto">
+<h2 class="font-title-lg text-title-lg text-[#e0e0e0] mb-md px-1">I tuoi ultimi post</h2>
+<!-- Post Card 1 -->
+<article class="surface-card rounded-lg overflow-hidden border border-outline-variant/10 transition-transform active:scale-[0.98]">
+<img alt="Blog Post" class="w-full h-48 object-cover" data-alt="A moody, high-contrast photograph of a sleek silver laptop on a minimalist dark wood desk. Warm ambient orange light glows from a nearby designer lamp, casting soft shadows. The scene is set in a modern, sophisticated dark-mode workspace with deep charcoal walls and subtle metallic textures. The overall atmosphere is professional, quiet, and creatively inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrBRqZ9EIOpyHKD6ij79GXdr7C6iZB9ZTOKJr4SezCPEH4NEnPhpfcvakGJyaRPJH-zrnqQFrvrejP8t1Mw_KgKffls8LIv1NR0EVp1LUoFDeUZaBzaRJ9YJTCoZXaoSIe0HmQjimx6tkSLmp-0PBTn4Cy6W4X4OIss6TDXXX2wjJ07ZDUIN1YHsGLC3oWQaaalgHo7QfDYl0ZBVUdjKa6_KMRDX3uxZyiQ84G_JkzfsdBluKIl80N4I0yqfwRHX9KASNuGUsy8r1V">
+<div class="p-md">
+<div class="flex items-center gap-2 mb-sm">
+<span class="px-2 py-1 bg-primary/20 text-primary-fixed-dim rounded-pill font-label-md text-label-md">Tecnologia</span>
+<span class="font-label-md text-label-md text-on-surface-variant">5 min lettura</span>
+</div>
+<h3 class="font-title-md text-title-md text-[#e0e0e0] mb-xs">Il Futuro dello Sviluppo Web nel 2024</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Esploriamo come l'intelligenza artificiale sta cambiando il modo in cui scriviamo codice e progettiamo interfacce utente...</p>
+<div class="mt-md flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-[#e0e0e0]">Marco Rossi</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span>
+</div>
+</div>
+</article>
+<!-- Post Card 2 -->
+<article class="surface-card rounded-lg overflow-hidden border border-outline-variant/10 transition-transform active:scale-[0.98]">
+<img alt="Blog Post" class="w-full h-48 object-cover" data-alt="Close-up shot of lines of vibrant neon-colored code on a high-resolution dark screen. The lighting is low-key, emphasizing the brilliant blues and purples of the syntax highlighting. The environment is a sleek, futuristic home office with minimal distractions. The composition suggests deep focus and technical expertise in a modern corporate setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkKW7oRYvOIm5Iqi65wOdg5Ymc5P_TaquR6jgqZwcL_yIQ4Vg_dUp3O2_lVw1CdG6R0VF-A79hRJgbfRbbAFEzuQZDUEtlsgb0QB68XYph4cBROA46PhVH5jjQLzjl0Vwuvuqhqt4CvyjZd9TSw-fUiTgAzpOLQTs75roEJh1WWQKtCRfm19G12rTexYsGq5Tx-P5kdKNewgGKBulsEs3QvzOKDxM5RM03AgqV1gFHvz-X5J90V2pEp_zgmqHEbvSykhN7dAlEBt1x">
+<div class="p-md">
+<div class="flex items-center gap-2 mb-sm">
+<span class="px-2 py-1 bg-primary/20 text-primary-fixed-dim rounded-pill font-label-md text-label-md">Coding</span>
+<span class="font-label-md text-label-md text-on-surface-variant">8 min lettura</span>
+</div>
+<h3 class="font-title-md text-title-md text-[#e0e0e0] mb-xs">Mastering Tailwind CSS Grid</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Una guida completa per creare layout complessi e responsivi utilizzando solo utility classes...</p>
+<div class="mt-md flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-[#e0e0e0]">Giulia Bianchi</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span>
+</div>
+</div>
+</article>
+<!-- Post Card 3 -->
+<article class="surface-card rounded-lg overflow-hidden border border-outline-variant/10 transition-transform active:scale-[0.98]">
+<img alt="Blog Post" class="w-full h-48 object-cover" data-alt="An artistic top-down view of a minimalist designer's workspace featuring a clean white notebook, a premium black ink pen, and a single green leaf in a glass vase. The background is a smooth, dark slate surface providing a professional corporate contrast. Soft, diffused natural light enters from the side, creating elegant highlights and a calm, meditative editorial mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh4188Qb4-hzoGRyXQlUy6T8YI35pZRCYJ8rBeIxsqCHXsCecXMMZ9K2pzNTmya5nqvHK8iUOrvhUCIhz5vypLfM6GljeDIvgYf9pgh9g1JclMY4hKWt_ZbCE-9MKj-HRxfDIU6odJIRzQ6dZs71pXPReMYh79gVfZF9bwNrFQLXIJtSBTVhqSusfhfZWQJXLrfsE9fCvDr8h0qBI87hpxEo_ep4v5LJc6zbtlxg3oDRzmrRPcjX1k6xW5hZZgG9BuUh7dcMB1uTou">
+<div class="p-md">
+<div class="flex items-center gap-2 mb-sm">
+<span class="px-2 py-1 bg-primary/20 text-primary-fixed-dim rounded-pill font-label-md text-label-md">Design</span>
+<span class="font-label-md text-label-md text-on-surface-variant">12 min lettura</span>
+</div>
+<h3 class="font-title-md text-title-md text-[#e0e0e0] mb-xs">L'Importanza dello Spazio Bianco</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Perché meno è meglio quando si tratta di design editoriale e User Experience moderna...</p>
+<div class="mt-md flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-[#e0e0e0]">Luca Verdi</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-xl flex justify-center">
+<button class="h-12 px-lg bg-primary text-[#ffffff] font-label-lg text-label-lg rounded-full active:scale-95 transition-transform flex items-center gap-2">
+                Esplora Altri Post
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter flex flex-col items-center gap-md bg-[#1e1e1e] border-t border-outline-variant/10">
+<div class="font-title-lg text-title-lg text-[#e0e0e0] font-bold">BlogSpace</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">© 2024 BlogSpace Editorial. All rights reserved.</p>
+</footer>
+<!-- Bottom Navigation (Mobile Specific) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#1e1e1e] shadow-[0_-2px_10px_rgba(0,0,0,0.5)] flex justify-around items-center h-16 z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-[10px] font-medium">Esplora</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary-fixed-dim border-t-2 border-primary pt-1">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-medium">Success</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-medium">Profilo</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('article').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
