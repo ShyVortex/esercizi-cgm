@@ -1,0 +1,4 @@
+Ottimo lavoro. Ora passa alla fase di handoff per lo sviluppo. Basandoti esclusivamente sulla Component Map
+appena creata, seleziona il componente che rappresenta il dettaglio del singolo articolo e, seguendo la struttura
+e l'indice del lavoro precedente, producimi un mini UI spec sul singolo componente.
+Come già detto, puoi anche includere immagini del mockup e spezzoni di codice.
