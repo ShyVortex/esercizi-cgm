@@ -1,0 +1,1216 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "marco.rossi@example.com",
+      "username": "marcorossi",
+      "firstName": "Marco",
+      "lastName": "Rossi",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "email": "giulia.bianchi@example.com",
+      "username": "giuliab",
+      "firstName": "Giulia",
+      "middleName": "Maria",
+      "lastName": "Bianchi",
+      "role": "editor"
+    },
+    {
+      "id": "3",
+      "email": "luca.verdi@example.com",
+      "username": "lucaverdi",
+      "firstName": "Luca",
+      "lastName": "Verdi",
+      "role": "editor"
+    },
+    {
+      "id": "4",
+      "email": "francesca.neri@example.com",
+      "username": "fran_neri",
+      "firstName": "Francesca",
+      "lastName": "Neri",
+      "role": "editor"
+    },
+    {
+      "id": "5",
+      "email": "alessandro.gallo@example.com",
+      "username": "alegallo",
+      "firstName": "Alessandro",
+      "lastName": "Gallo",
+      "role": "editor"
+    },
+    {
+      "id": "6",
+      "email": "sofia.conte@example.com",
+      "username": "sofiaconte",
+      "firstName": "Sofia",
+      "middleName": "Elena",
+      "lastName": "Conte",
+      "role": "editor"
+    },
+    {
+      "id": "7",
+      "email": "matteo.marini@example.com",
+      "username": "matmarini",
+      "firstName": "Matteo",
+      "lastName": "Marini",
+      "role": "editor"
+    },
+    {
+      "id": "8",
+      "email": "elena.ricci@example.com",
+      "username": "elenaricci",
+      "firstName": "Elena",
+      "lastName": "Ricci",
+      "role": "editor"
+    },
+    {
+      "id": "9",
+      "email": "davide.bruno@example.com",
+      "username": "davebruno",
+      "firstName": "Davide",
+      "lastName": "Bruno",
+      "role": "editor"
+    },
+    {
+      "id": "10",
+      "email": "chiara.gatti@example.com",
+      "username": "chiaragatti",
+      "firstName": "Chiara",
+      "lastName": "Gatti",
+      "role": "editor"
+    },
+    {
+      "id": "11",
+      "email": "simone.longo@example.com",
+      "username": "simolongo",
+      "firstName": "Simone",
+      "lastName": "Longo",
+      "role": "editor"
+    },
+    {
+      "id": "12",
+      "email": "alice.moretti@example.com",
+      "username": "alicem",
+      "firstName": "Alice",
+      "lastName": "Moretti",
+      "role": "reader"
+    },
+    {
+      "id": "13",
+      "email": "federico.barbieri@example.com",
+      "username": "fedebarbieri",
+      "firstName": "Federico",
+      "lastName": "Barbieri",
+      "role": "reader"
+    },
+    {
+      "id": "14",
+      "email": "beatrice.fontana@example.com",
+      "username": "bea_fontana",
+      "firstName": "Beatrice",
+      "lastName": "Fontana",
+      "role": "reader"
+    },
+    {
+      "id": "15",
+      "email": "riccardo.serra@example.com",
+      "username": "riccoserra",
+      "firstName": "Riccardo",
+      "lastName": "Serra",
+      "role": "reader"
+    },
+    {
+      "id": "16",
+      "email": "martina.caruso@example.com",
+      "username": "marticaruso",
+      "firstName": "Martina",
+      "lastName": "Caruso",
+      "role": "reader"
+    },
+    {
+      "id": "17",
+      "email": "andrea.rizzo@example.com",
+      "username": "andrearizzo",
+      "firstName": "Andrea",
+      "lastName": "Rizzo",
+      "role": "reader"
+    },
+    {
+      "id": "18",
+      "email": "giorgia.ferrari@example.com",
+      "username": "giorgiaf",
+      "firstName": "Giorgia",
+      "middleName": "Rosa",
+      "lastName": "Ferrari",
+      "role": "reader"
+    },
+    {
+      "id": "19",
+      "email": "stefano.esposito@example.com",
+      "username": "stefano_e",
+      "firstName": "Stefano",
+      "lastName": "Esposito",
+      "role": "reader"
+    },
+    {
+      "id": "20",
+      "email": "sara.romano@example.com",
+      "username": "sararomano",
+      "firstName": "Sara",
+      "lastName": "Romano",
+      "role": "reader"
+    },
+    {
+      "id": "21",
+      "email": "filippo.colombo@example.com",
+      "username": "filicolombo",
+      "firstName": "Filippo",
+      "lastName": "Colombo",
+      "role": "reader"
+    },
+    {
+      "id": "22",
+      "email": "anna.ricci@example.com",
+      "username": "annaricci",
+      "firstName": "Anna",
+      "lastName": "Ricci",
+      "role": "reader"
+    },
+    {
+      "id": "23",
+      "email": "christian.greco@example.com",
+      "username": "chrisgreco",
+      "firstName": "Christian",
+      "lastName": "Greco",
+      "role": "reader"
+    },
+    {
+      "id": "24",
+      "email": "aurora.marino@example.com",
+      "username": "auroramarino",
+      "firstName": "Aurora",
+      "lastName": "Marino",
+      "role": "reader"
+    },
+    {
+      "id": "25",
+      "email": "gabriele.villa@example.com",
+      "username": "gabri_villa",
+      "firstName": "Gabriele",
+      "lastName": "Villa",
+      "role": "reader"
+    },
+    {
+      "id": "26",
+      "email": "noemi.farina@example.com",
+      "username": "noemifarina",
+      "firstName": "Noemi",
+      "lastName": "Farina",
+      "role": "reader"
+    },
+    {
+      "id": "27",
+      "email": "lorenzo.rivas@example.com",
+      "username": "lorenzorivas",
+      "firstName": "Lorenzo",
+      "lastName": "Rivas",
+      "role": "reader"
+    },
+    {
+      "id": "28",
+      "email": "elisa.guerra@example.com",
+      "username": "elisaguerra",
+      "firstName": "Elisa",
+      "lastName": "Guerra",
+      "role": "reader"
+    },
+    {
+      "id": "29",
+      "email": "claudio.pellegrini@example.com",
+      "username": "claudiop",
+      "firstName": "Claudio",
+      "lastName": "Pellegrini",
+      "role": "reader"
+    },
+    {
+      "id": "30",
+      "email": "silvia.costa@example.com",
+      "username": "silviacosta",
+      "firstName": "Silvia",
+      "lastName": "Costa",
+      "role": "reader"
+    },
+    {
+      "id": "31",
+      "email": "valerio.pagano@example.com",
+      "username": "valeriopagano",
+      "firstName": "Valerio",
+      "lastName": "Pagano",
+      "role": "reader"
+    },
+    {
+      "id": "32",
+      "email": "camilla.martini@example.com",
+      "username": "camillam",
+      "firstName": "Camilla",
+      "lastName": "Martini",
+      "role": "reader"
+    },
+    {
+      "id": "33",
+      "email": "emanuele.galli@example.com",
+      "username": "emanuelegalli",
+      "firstName": "Emanuele",
+      "lastName": "Galli",
+      "role": "reader"
+    },
+    {
+      "id": "34",
+      "email": "irene.bini@example.com",
+      "username": "irenebini",
+      "firstName": "Irene",
+      "lastName": "Bini",
+      "role": "reader"
+    },
+    {
+      "id": "35",
+      "email": "tommaso.valli@example.com",
+      "username": "tommasov",
+      "firstName": "Tommaso",
+      "lastName": "Valli",
+      "role": "reader"
+    },
+    {
+      "id": "36",
+      "email": "elena.mazza@example.com",
+      "username": "elenamazza",
+      "firstName": "Elena",
+      "lastName": "Mazza",
+      "role": "reader"
+    },
+    {
+      "id": "37",
+      "email": "fabio.donati@example.com",
+      "username": "fabiodonati",
+      "firstName": "Fabio",
+      "lastName": "Donati",
+      "role": "reader"
+    },
+    {
+      "id": "38",
+      "email": "serena.orsini@example.com",
+      "username": "serenaorsini",
+      "firstName": "Serena",
+      "lastName": "Orsini",
+      "role": "reader"
+    },
+    {
+      "id": "39",
+      "email": "giovanni.pari@example.com",
+      "username": "giovannipari",
+      "firstName": "Giovanni",
+      "lastName": "Pari",
+      "role": "reader"
+    },
+    {
+      "id": "40",
+      "email": "marta.vitali@example.com",
+      "username": "martavitali",
+      "firstName": "Marta",
+      "lastName": "Vitali",
+      "role": "reader"
+    },
+    {
+      "id": "41",
+      "email": "alberto.sala@example.com",
+      "username": "albertosala",
+      "firstName": "Alberto",
+      "lastName": "Sala",
+      "role": "reader"
+    },
+    {
+      "id": "42",
+      "email": "roberta.rossi@example.com",
+      "username": "robertarossi",
+      "firstName": "Roberta",
+      "lastName": "Rossi",
+      "role": "reader"
+    },
+    {
+      "id": "43",
+      "email": "daniele.fabbri@example.com",
+      "username": "danielefabbri",
+      "firstName": "Daniele",
+      "lastName": "Fabbri",
+      "role": "reader"
+    },
+    {
+      "id": "44",
+      "email": "giada.monti@example.com",
+      "username": "giadamonti",
+      "firstName": "Giada",
+      "lastName": "Monti",
+      "role": "reader"
+    },
+    {
+      "id": "45",
+      "email": "giacomo.testa@example.com",
+      "username": "giacomotesta",
+      "firstName": "Giacomo",
+      "lastName": "Testa",
+      "role": "reader"
+    },
+    {
+      "id": "46",
+      "email": "federica.rinaldi@example.com",
+      "username": "fedevrinaldi",
+      "firstName": "Federica",
+      "lastName": "Rinaldi",
+      "role": "reader"
+    },
+    {
+      "id": "47",
+      "email": "marco.sala@example.com",
+      "username": "marcosala2",
+      "firstName": "Marco",
+      "lastName": "Sala",
+      "role": "reader"
+    },
+    {
+      "id": "48",
+      "email": "lisa.giuliani@example.com",
+      "username": "lisagiuliani",
+      "firstName": "Lisa",
+      "lastName": "Giuliani",
+      "role": "reader"
+    },
+    {
+      "id": "49",
+      "email": "manuel.marchetti@example.com",
+      "username": "manuelm",
+      "firstName": "Manuel",
+      "lastName": "Marchetti",
+      "role": "reader"
+    },
+    {
+      "id": "50",
+      "email": "valentina.reale@example.com",
+      "username": "valereale",
+      "firstName": "Valentina",
+      "lastName": "Reale",
+      "role": "reader"
+    },
+    {
+      "id": "51",
+      "email": "edoardo.ferri@example.com",
+      "username": "edoferri",
+      "firstName": "Edoardo",
+      "lastName": "Ferri",
+      "role": "reader"
+    },
+    {
+      "id": "52",
+      "email": "michela.palumbo@example.com",
+      "username": "michelap",
+      "firstName": "Michela",
+      "lastName": "Palumbo",
+      "role": "reader"
+    },
+    {
+      "id": "53",
+      "email": "stefano.amato@example.com",
+      "username": "stefanoamato",
+      "firstName": "Stefano",
+      "lastName": "Amato",
+      "role": "reader"
+    },
+    {
+      "id": "54",
+      "email": "eleonora.gallo@example.com",
+      "username": "eleonoragallo",
+      "firstName": "Eleonora",
+      "lastName": "Gallo",
+      "role": "reader"
+    },
+    {
+      "id": "55",
+      "email": "samuele.conte@example.com",
+      "username": "samu_conte",
+      "firstName": "Samuele",
+      "lastName": "Conte",
+      "role": "reader"
+    },
+    {
+      "id": "56",
+      "email": "veronica.greco@example.com",
+      "username": "veronicagreco",
+      "firstName": "Veronica",
+      "lastName": "Greco",
+      "role": "reader"
+    },
+    {
+      "id": "57",
+      "email": "nicola.rinaldi@example.com",
+      "username": "nicolarinaldi",
+      "firstName": "Nicola",
+      "lastName": "Rinaldi",
+      "role": "reader"
+    },
+    {
+      "id": "58",
+      "email": "silvia.pellegrino@example.com",
+      "username": "silviapell",
+      "firstName": "Silvia",
+      "lastName": "Pellegrino",
+      "role": "reader"
+    },
+    {
+      "id": "59",
+      "email": "mattia.mazza@example.com",
+      "username": "mattiamazza",
+      "firstName": "Mattia",
+      "lastName": "Mazza",
+      "role": "reader"
+    },
+    {
+      "id": "60",
+      "email": "ilaria.carbone@example.com",
+      "username": "ilariacarbone",
+      "firstName": "Ilaria",
+      "lastName": "Carbone",
+      "role": "reader"
+    },
+    {
+      "id": "61",
+      "email": "paolo.giordano@example.com",
+      "username": "paologiordano",
+      "firstName": "Paolo",
+      "lastName": "Giordano",
+      "role": "reader"
+    },
+    {
+      "id": "62",
+      "email": "giorgia.moretti@example.com",
+      "username": "giorgiamoretti",
+      "firstName": "Giorgia",
+      "lastName": "Moretti",
+      "role": "reader"
+    },
+    {
+      "id": "63",
+      "email": "leonardo.marini@example.com",
+      "username": "leomarini",
+      "firstName": "Leonardo",
+      "lastName": "Marini",
+      "role": "reader"
+    },
+    {
+      "id": "64",
+      "email": "lorenza.rizzo@example.com",
+      "username": "lorenzarizzo",
+      "firstName": "Lorenza",
+      "lastName": "Rizzo",
+      "role": "reader"
+    },
+    {
+      "id": "65",
+      "email": "pasquale.lombardi@example.com",
+      "username": "pasqualel",
+      "firstName": "Pasquale",
+      "lastName": "Lombardi",
+      "role": "reader"
+    },
+    {
+      "id": "66",
+      "email": "clara.guerra@example.com",
+      "username": "claraguerra",
+      "firstName": "Clara",
+      "lastName": "Guerra",
+      "role": "reader"
+    },
+    {
+      "id": "67",
+      "email": "salvatore.barbieri@example.com",
+      "username": "salvatoreb",
+      "firstName": "Salvatore",
+      "lastName": "Barbieri",
+      "role": "reader"
+    },
+    {
+      "id": "68",
+      "email": "miriam.fontana@example.com",
+      "username": "miriamfontana",
+      "firstName": "Miriam",
+      "lastName": "Fontana",
+      "role": "reader"
+    },
+    {
+      "id": "69",
+      "email": "antonio.santoro@example.com",
+      "username": "antoniosantoro",
+      "firstName": "Antonio",
+      "lastName": "Santoro",
+      "role": "reader"
+    },
+    {
+      "id": "70",
+      "email": "francesco.casadei@example.com",
+      "username": "cesco_casa",
+      "firstName": "Francesco",
+      "lastName": "Casadei",
+      "role": "reader"
+    },
+    {
+      "id": "71",
+      "email": "luisa.piras@example.com",
+      "username": "luisapiras",
+      "firstName": "Luisa",
+      "lastName": "Piras",
+      "role": "reader"
+    },
+    {
+      "id": "72",
+      "email": "vincenzo.neri@example.com",
+      "username": "vincenzoneri",
+      "firstName": "Vincenzo",
+      "lastName": "Neri",
+      "role": "reader"
+    },
+    {
+      "id": "73",
+      "email": "giuseppina.costa@example.com",
+      "username": "giuseppinac",
+      "firstName": "Giuseppina",
+      "lastName": "Costa",
+      "role": "reader"
+    },
+    {
+      "id": "74",
+      "email": "angelo.pagano@example.com",
+      "username": "angelopagano",
+      "firstName": "Angelo",
+      "lastName": "Pagano",
+      "role": "reader"
+    },
+    {
+      "id": "75",
+      "email": "rossella.reale@example.com",
+      "username": "rossellareale",
+      "firstName": "Rossella",
+      "lastName": "Reale",
+      "role": "reader"
+    },
+    {
+      "id": "76",
+      "email": "michele.bini@example.com",
+      "username": "michelebini",
+      "firstName": "Michele",
+      "lastName": "Bini",
+      "role": "reader"
+    },
+    {
+      "id": "77",
+      "email": "luana.sala@example.com",
+      "username": "luanasala",
+      "firstName": "Luana",
+      "lastName": "Sala",
+      "role": "reader"
+    },
+    {
+      "id": "78",
+      "email": "roberto.valli@example.com",
+      "username": "robertovalli",
+      "firstName": "Roberto",
+      "lastName": "Valli",
+      "role": "reader"
+    },
+    {
+      "id": "79",
+      "email": "cinzia.marchetti@example.com",
+      "username": "cinziamarch",
+      "firstName": "Cinzia",
+      "lastName": "Marchetti",
+      "role": "reader"
+    },
+    {
+      "id": "80",
+      "email": "diego.ricci@example.com",
+      "username": "diegoricci",
+      "firstName": "Diego",
+      "lastName": "Ricci",
+      "role": "reader"
+    },
+    {
+      "id": "81",
+      "email": "manuela.ferri@example.com",
+      "username": "manuelaferri",
+      "firstName": "Manuela",
+      "lastName": "Ferri",
+      "role": "reader"
+    },
+    {
+      "id": "82",
+      "email": "filippo.galli@example.com",
+      "username": "filippogalli",
+      "firstName": "Filippo",
+      "lastName": "Galli",
+      "role": "reader"
+    },
+    {
+      "id": "83",
+      "email": "barbara.donati@example.com",
+      "username": "barbaradonati",
+      "firstName": "Barbara",
+      "lastName": "Donati",
+      "role": "reader"
+    },
+    {
+      "id": "84",
+      "email": "giovanni.vitali@example.com",
+      "username": "giovannivitali",
+      "firstName": "Giovanni",
+      "lastName": "Vitali",
+      "role": "reader"
+    },
+    {
+      "id": "85",
+      "email": "cristina.orsini@example.com",
+      "username": "cristinaorsini",
+      "firstName": "Cristina",
+      "lastName": "Orsini",
+      "role": "reader"
+    },
+    {
+      "id": "86",
+      "email": "alessio.fabbri@example.com",
+      "username": "alessiofabbri",
+      "firstName": "Alessio",
+      "lastName": "Fabbri",
+      "role": "reader"
+    },
+    {
+      "id": "87",
+      "email": "nadia.monti@example.com",
+      "username": "nadiamonti",
+      "firstName": "Nadia",
+      "lastName": "Monti",
+      "role": "reader"
+    },
+    {
+      "id": "88",
+      "email": "christian.testa@example.com",
+      "username": "christiantesta",
+      "firstName": "Christian",
+      "lastName": "Testa",
+      "role": "reader"
+    },
+    {
+      "id": "89",
+      "email": "silvia.giuliani@example.com",
+      "username": "silviagiuliani",
+      "firstName": "Silvia",
+      "lastName": "Giuliani",
+      "role": "reader"
+    },
+    {
+      "id": "90",
+      "email": "gianluca.amato@example.com",
+      "username": "gianlucaamato",
+      "firstName": "Gianluca",
+      "lastName": "Amato",
+      "role": "reader"
+    },
+    {
+      "id": "91",
+      "email": "deborah.palumbo@example.com",
+      "username": "deborahpalumbo",
+      "firstName": "Deborah",
+      "lastName": "Palumbo",
+      "role": "reader"
+    },
+    {
+      "id": "92",
+      "email": "raffaele.carbone@example.com",
+      "username": "raffaelecarbone",
+      "firstName": "Raffaele",
+      "lastName": "Carbone",
+      "role": "reader"
+    },
+    {
+      "id": "93",
+      "email": "patrizia.giordano@example.com",
+      "username": "patriziagiordano",
+      "firstName": "Patrizia",
+      "lastName": "Giordano",
+      "role": "reader"
+    },
+    {
+      "id": "94",
+      "email": "marco.lombardi@example.com",
+      "username": "marcolombardi",
+      "firstName": "Marco",
+      "lastName": "Lombardi",
+      "role": "reader"
+    },
+    {
+      "id": "95",
+      "email": "stefania.pellegrino@example.com",
+      "username": "stefaniapell",
+      "firstName": "Stefania",
+      "lastName": "Pellegrino",
+      "role": "reader"
+    },
+    {
+      "id": "96",
+      "email": "domenico.santoro@example.com",
+      "username": "domenicosantoro",
+      "firstName": "Domenico",
+      "lastName": "Santoro",
+      "role": "reader"
+    },
+    {
+      "id": "97",
+      "email": "tiziana.casadei@example.com",
+      "username": "tizianacasadei",
+      "firstName": "Tiziana",
+      "lastName": "Casadei",
+      "role": "reader"
+    },
+    {
+      "id": "98",
+      "email": "salvatore.piras@example.com",
+      "username": "salvatorepiras",
+      "firstName": "Salvatore",
+      "lastName": "Piras",
+      "role": "reader"
+    },
+    {
+      "id": "99",
+      "email": "monica.longo@example.com",
+      "username": "monicalongo",
+      "firstName": "Monica",
+      "lastName": "Longo",
+      "role": "reader"
+    },
+    {
+      "id": "100",
+      "email": "walter.gatti@example.com",
+      "username": "waltergatti",
+      "firstName": "Walter",
+      "lastName": "Gatti",
+      "role": "reader"
+    },
+    {
+      "id": "101",
+      "email": "eleonora.bruno@example.com",
+      "username": "eleonorabruno",
+      "firstName": "Eleonora",
+      "lastName": "Bruno",
+      "role": "reader"
+    },
+    {
+      "id": "102",
+      "email": "andrea.marini@example.com",
+      "username": "andreamarini",
+      "firstName": "Andrea",
+      "lastName": "Marini",
+      "role": "reader"
+    },
+    {
+      "id": "103",
+      "email": "sabrina.ricci@example.com",
+      "username": "sabrinaricci",
+      "firstName": "Sabrina",
+      "lastName": "Ricci",
+      "role": "reader"
+    },
+    {
+      "id": "104",
+      "email": "alberto.conte@example.com",
+      "username": "albertoconte",
+      "firstName": "Alberto",
+      "lastName": "Conte",
+      "role": "reader"
+    },
+    {
+      "id": "105",
+      "email": "erica.gallo@example.com",
+      "username": "ericagallo",
+      "firstName": "Erica",
+      "lastName": "Gallo",
+      "role": "reader"
+    },
+    {
+      "id": "106",
+      "email": "stefano.neri@example.com",
+      "username": "stefanoneri",
+      "firstName": "Stefano",
+      "lastName": "Neri",
+      "role": "reader"
+    },
+    {
+      "id": "107",
+      "email": "giulia.verdi@example.com",
+      "username": "giuliaverdi",
+      "firstName": "Giulia",
+      "lastName": "Verdi",
+      "role": "reader"
+    },
+    {
+      "id": "108",
+      "email": "claudio.bianchi@example.com",
+      "username": "claudiobianchi",
+      "firstName": "Claudio",
+      "lastName": "Bianchi",
+      "role": "reader"
+    },
+    {
+      "id": "109",
+      "email": "martina.rossi@example.com",
+      "username": "martinarossi",
+      "firstName": "Martina",
+      "lastName": "Rossi",
+      "role": "reader"
+    },
+    {
+      "id": "110",
+      "email": "filippo.moretti@example.com",
+      "username": "filippomoretti",
+      "firstName": "Filippo",
+      "lastName": "Moretti",
+      "role": "reader"
+    },
+    {
+      "id": "111",
+      "email": "chiara.barbieri@example.com",
+      "username": "chiarabarbieri",
+      "firstName": "Chiara",
+      "lastName": "Barbieri",
+      "role": "reader"
+    },
+    {
+      "id": "112",
+      "email": "davide.fontana@example.com",
+      "username": "davidefontana",
+      "firstName": "Davide",
+      "lastName": "Fontana",
+      "role": "reader"
+    },
+    {
+      "id": "113",
+      "email": "elena.serra@example.com",
+      "username": "elenaserra",
+      "firstName": "Elena",
+      "lastName": "Serra",
+      "role": "reader"
+    },
+    {
+      "id": "114",
+      "email": "matteo.caruso@example.com",
+      "username": "matteocaruso",
+      "firstName": "Matteo",
+      "lastName": "Caruso",
+      "role": "reader"
+    },
+    {
+      "id": "115",
+      "email": "sofia.rizzo@example.com",
+      "username": "sofiarizzo",
+      "firstName": "Sofia",
+      "lastName": "Rizzo",
+      "role": "reader"
+    },
+    {
+      "id": "116",
+      "email": "alessandro.ferrari@example.com",
+      "username": "alessandroferrari",
+      "firstName": "Alessandro",
+      "lastName": "Ferrari",
+      "role": "reader"
+    },
+    {
+      "id": "117",
+      "email": "francesca.esposito@example.com",
+      "username": "francescaesposito",
+      "firstName": "Francesca",
+      "lastName": "Esposito",
+      "role": "reader"
+    },
+    {
+      "id": "118",
+      "email": "luca.romano@example.com",
+      "username": "lucaromano",
+      "firstName": "Luca",
+      "lastName": "Romano",
+      "role": "reader"
+    },
+    {
+      "id": "119",
+      "email": "giulia.colombo@example.com",
+      "username": "giuliacolombo",
+      "firstName": "Giulia",
+      "lastName": "Colombo",
+      "role": "reader"
+    },
+    {
+      "id": "120",
+      "email": "marco.marino@example.com",
+      "username": "marcomarino",
+      "firstName": "Marco",
+      "lastName": "Marino",
+      "role": "reader"
+    },
+    {
+      "id": "121",
+      "email": "sara.villa@example.com",
+      "username": "saravilla",
+      "firstName": "Sara",
+      "lastName": "Villa",
+      "role": "reader"
+    },
+    {
+      "id": "122",
+      "email": "gabriele.farina@example.com",
+      "username": "gabrielefarina",
+      "firstName": "Gabriele",
+      "lastName": "Farina",
+      "role": "reader"
+    },
+    {
+      "id": "123",
+      "email": "aurora.rivas@example.com",
+      "username": "aurorarivas",
+      "firstName": "Aurora",
+      "lastName": "Rivas",
+      "role": "reader"
+    },
+    {
+      "id": "124",
+      "email": "christian.guerra@example.com",
+      "username": "christianguerra",
+      "firstName": "Christian",
+      "lastName": "Guerra",
+      "role": "reader"
+    },
+    {
+      "id": "125",
+      "email": "anna.pellegrini@example.com",
+      "username": "annapellegrini",
+      "firstName": "Anna",
+      "lastName": "Pellegrini",
+      "role": "reader"
+    },
+    {
+      "id": "126",
+      "email": "filippo.costa@example.com",
+      "username": "filippocosta",
+      "firstName": "Filippo",
+      "lastName": "Costa",
+      "role": "reader"
+    },
+    {
+      "id": "127",
+      "email": "giorgia.pagano@example.com",
+      "username": "giorgiapagano",
+      "firstName": "Giorgia",
+      "lastName": "Pagano",
+      "role": "reader"
+    },
+    {
+      "id": "128",
+      "email": "stefano.martini@example.com",
+      "username": "stefanomartini",
+      "firstName": "Stefano",
+      "lastName": "Martini",
+      "role": "reader"
+    },
+    {
+      "id": "129",
+      "email": "camilla.galli@example.com",
+      "username": "camillagalli",
+      "firstName": "Camilla",
+      "lastName": "Galli",
+      "role": "reader"
+    },
+    {
+      "id": "130",
+      "email": "valerio.bini@example.com",
+      "username": "valeriobini",
+      "firstName": "Valerio",
+      "lastName": "Bini",
+      "role": "reader"
+    },
+    {
+      "id": "131",
+      "email": "silvia.valli@example.com",
+      "username": "silviavalli",
+      "firstName": "Silvia",
+      "lastName": "Valli",
+      "role": "reader"
+    },
+    {
+      "id": "132",
+      "email": "claudio.mazza@example.com",
+      "username": "claudiomazza",
+      "firstName": "Claudio",
+      "lastName": "Mazza",
+      "role": "reader"
+    },
+    {
+      "id": "133",
+      "email": "elisa.donati@example.com",
+      "username": "elisadonati",
+      "firstName": "Elisa",
+      "lastName": "Donati",
+      "role": "reader"
+    },
+    {
+      "id": "134",
+      "email": "lorenzo.vitali@example.com",
+      "username": "lorenzovitali",
+      "firstName": "Lorenzo",
+      "lastName": "Vitali",
+      "role": "reader"
+    },
+    {
+      "id": "135",
+      "email": "noemi.orsini@example.com",
+      "username": "noemiorsini",
+      "firstName": "Noemi",
+      "lastName": "Orsini",
+      "role": "reader"
+    },
+    {
+      "id": "136",
+      "email": "emanuele.fabbri@example.com",
+      "username": "emanuelefabbri",
+      "firstName": "Emanuele",
+      "lastName": "Fabbri",
+      "role": "reader"
+    },
+    {
+      "id": "137",
+      "email": "irene.monti@example.com",
+      "username": "irenemonti",
+      "firstName": "Irene",
+      "lastName": "Monti",
+      "role": "reader"
+    },
+    {
+      "id": "138",
+      "email": "tommaso.testa@example.com",
+      "username": "tommasotesta",
+      "firstName": "Tommaso",
+      "lastName": "Testa",
+      "role": "reader"
+    },
+    {
+      "id": "139",
+      "email": "serena.giuliani@example.com",
+      "username": "serenagiuliani",
+      "firstName": "Serena",
+      "lastName": "Giuliani",
+      "role": "reader"
+    },
+    {
+      "id": "140",
+      "email": "fabio.amato@example.com",
+      "username": "fabioamato",
+      "firstName": "Fabio",
+      "lastName": "Amato",
+      "role": "reader"
+    },
+    {
+      "id": "141",
+      "email": "marta.palumbo@example.com",
+      "username": "martapalumbo",
+      "firstName": "Marta",
+      "lastName": "Palumbo",
+      "role": "reader"
+    },
+    {
+      "id": "142",
+      "email": "giovanni.carbone@example.com",
+      "username": "giovannicarbone",
+      "firstName": "Giovanni",
+      "lastName": "Carbone",
+      "role": "reader"
+    },
+    {
+      "id": "143",
+      "email": "roberta.giordano@example.com",
+      "username": "robertagiordano",
+      "firstName": "Roberta",
+      "lastName": "Giordano",
+      "role": "reader"
+    },
+    {
+      "id": "144",
+      "email": "alberto.lombardi@example.com",
+      "username": "albertolombardi",
+      "firstName": "Alberto",
+      "lastName": "Lombardi",
+      "role": "reader"
+    },
+    {
+      "id": "145",
+      "email": "giada.pellegrino@example.com",
+      "username": "giadapellegrino",
+      "firstName": "Giada",
+      "lastName": "Pellegrino",
+      "role": "reader"
+    },
+    {
+      "id": "146",
+      "email": "daniele.santoro@example.com",
+      "username": "danielesantoro",
+      "firstName": "Daniele",
+      "lastName": "Santoro",
+      "role": "reader"
+    },
+    {
+      "id": "147",
+      "email": "federica.casadei@example.com",
+      "username": "federicacasadei",
+      "firstName": "Federica",
+      "lastName": "Casadei",
+      "role": "reader"
+    },
+    {
+      "id": "148",
+      "email": "giacomo.piras@example.com",
+      "username": "giacomopiras",
+      "firstName": "Giacomo",
+      "lastName": "Piras",
+      "role": "reader"
+    },
+    {
+      "id": "149",
+      "email": "lisa.longo@example.com",
+      "username": "lisalongo",
+      "firstName": "Lisa",
+      "lastName": "Longo",
+      "role": "reader"
+    },
+    {
+      "id": "150",
+      "email": "manuel.gatti@example.com",
+      "username": "manuelgatti",
+      "firstName": "Manuel",
+      "lastName": "Gatti",
+      "role": "reader"
+    },
+    {
+      "email": "angelo@example.com",
+      "password": "$2a$10$UDh7i7y5BgFprk0spn9Xlun10JKCy36QSRFmJpPf.a8Oe1ojDhSz6",
+      "username": "ShyVortex",
+      "firstName": "Angelo",
+      "lastName": "Trotta",
+      "role": "reader",
+      "id": "3KBvxKI"
+    }
+  ]
+}

@@ -7,6 +7,14 @@
       "firstName": "Angelo",
       "lastName": "Trotta",
       "id": 1
+    },
+    {
+      "email": "michele@esempio.it",
+      "password": "$2a$10$EKlxWpgHnstMsc5fNVNg4ucW2HraNYuLt7xdds0Lx5akc3gvC6wE.",
+      "username": "Miky2i2e",
+      "firstName": "Michele",
+      "lastName": "Vitale",
+      "id": 2
     }
   ]
 }
