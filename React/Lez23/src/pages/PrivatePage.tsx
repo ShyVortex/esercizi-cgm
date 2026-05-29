@@ -16,6 +16,13 @@ export default function PrivatePage(): React.ReactElement {
                     <p className="pb-3 text-gray-300 font-sm text-base">Ciao, {user.firstName}!</p>
                     <p className="text-gray-300 font-sm text-base">Questa pagina è accessibile solo agli utenti registrati.</p>
                 </div>
+
+                <div className="mt-10 text-4xl mb-4">
+                    <p className="pb-3 text-gray-300 font-medium text-lg">Dettagli Utente</p>
+                    <p className="pb-3 text-gray-300 font-sm text-base">{user.firstName} {user.middleName} {user.lastName}</p>
+                    <p className="pb-3 text-gray-300 font-sm text-base">{user.username}</p>
+                    <p className="pb-3 text-gray-300 font-sm text-base">{user.email}</p>
+                </div>
             </div>
         </div>
     );
