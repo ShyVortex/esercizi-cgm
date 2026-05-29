@@ -1,3 +1,12 @@
 {
-    "users": []
+  "users": [
+    {
+      "email": "angelo@esempio.it",
+      "password": "$2a$10$FE8bOw5ALH3MDSp6le4/VeRHmmE24sPUPUrUEZtEZ5ZLzeyixCMX.",
+      "username": "ShyVortex",
+      "firstName": "Angelo",
+      "lastName": "Trotta",
+      "id": 1
+    }
+  ]
 }

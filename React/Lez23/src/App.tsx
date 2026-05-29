@@ -14,12 +14,23 @@
   cosa fanno senza dover leggere tutto il codice.
 */
 
+import { Navigate } from "react-router-dom";
+import type { User } from "./models/types/User";
+import { AuthStorageService } from "./services/auth-storage.service"
+
 
 function App() {
+  const user: User | undefined = AuthStorageService.getUser();
+
   return (
     <>
+      {user ? (
+        <Navigate to="/private" replace />
+      ) : (
+        <Navigate to="/public" replace />
+      )}
     </>
-  )
+  );
 }
 
 export default App

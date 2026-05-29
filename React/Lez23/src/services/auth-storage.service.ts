@@ -14,8 +14,18 @@ export abstract class AuthStorageService {
 
             if (!storageData ||
                 !Object.hasOwn(storageData, "accessToken") ||
-                !Object.hasOwn(storageData, "user")
+                !Object.hasOwn(storageData, "user") ||
+                !Object.hasOwn(storageData, "storedAt")
             ) {
+                localStorage.removeItem(this.AUTH_STORAGE_KEY);
+                return undefined;
+            }
+
+            // In json-server-auth, il token scade dopo un'ora (3600 secondi)
+            const oneHourInMs = 3600 * 1000;
+            const hasExpired = (new Date().getTime() - storageData.storedAt) > oneHourInMs;
+
+            if (hasExpired) {
                 localStorage.removeItem(this.AUTH_STORAGE_KEY);
                 return undefined;
             }
@@ -34,6 +44,10 @@ export abstract class AuthStorageService {
         return this.getAuthData()?.user;
     }
 
+    public static getStoredAt(): number | undefined {
+        return this.getAuthData()?.storedAt;
+    }
+
     public static setAuthData(data: AuthStorageData): void {
         localStorage.setItem(this.AUTH_STORAGE_KEY, JSON.stringify(data));
     }
@@ -43,6 +57,17 @@ export abstract class AuthStorageService {
     }
 
     public static hasToken(): boolean {
-        return this.getToken() !== null;
+        return !!this.getToken();
+    }
+
+    public static hasTokenExpired(): boolean {
+        const timeStored = this.getStoredAt();
+
+        if (timeStored === undefined) {
+            return true;
+        }
+
+        const oneHourInMs = 3600 * 1000;
+        return (new Date().getTime() - timeStored) > oneHourInMs;
     }
 }
