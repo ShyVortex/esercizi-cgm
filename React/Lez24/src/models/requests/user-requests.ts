@@ -1,6 +1,8 @@
+import type { Role } from "../types/User";
+
 export interface GetFPUsersRequest {
     page?: number;
-    per_page?: number;
+    limit?: number;
     filter?: string;
 }
 
@@ -8,8 +10,10 @@ export interface SaveUserRequest {
     id?: string;
     username: string;
     email: string;
+    password?: string;
     firstName: string;
     middleName?: string;
     lastName: string;
-    isActive: boolean
+    role?: Role;
+    permissions?: string[];
 }

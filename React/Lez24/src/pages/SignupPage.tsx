@@ -7,6 +7,7 @@ import RouteComponent from "../components/RouteComponent";
 import type { SignupRequest } from "../models/requests/auth-requests";
 import { Role } from "../models/types/User";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export default function SignupPage(): React.ReactElement {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -43,7 +44,8 @@ export default function SignupPage(): React.ReactElement {
                 firstName: firstName,
                 middleName: middleName.trim() || undefined,
                 lastName: lastName,
-                role: Role.READER
+                role: Role.READER,
+                permissions: ['users-view', 'user-details']
             }
 
             await authService.AuthSignUp(request);
@@ -72,7 +74,7 @@ export default function SignupPage(): React.ReactElement {
             navigate("/private");
         } catch (error: any) {
             console.error("Signup error:", error);
-            setErrorMessage(error?.message || "Credenziali non valide o errore del server.");
+            setErrorMessage((error as Error)?.message || "Credenziali non valide o errore del server.");
         } finally {
             setIsLoading(false);
         }

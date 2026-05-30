@@ -2,1215 +2,1993 @@
   "users": [
     {
       "id": "1",
-      "email": "marco.rossi@example.com",
-      "username": "marcorossi",
+      "email": "marco.rossi1@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "marcorossi1",
       "firstName": "Marco",
       "lastName": "Rossi",
-      "role": "admin"
+      "role": "admin",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit",
+        "user-create",
+        "user-delete"
+      ],
+      "middleName": "Verdi"
     },
     {
       "id": "2",
-      "email": "giulia.bianchi@example.com",
-      "username": "giuliab",
+      "email": "giulia.bianchi2@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giuliabianchi2",
       "firstName": "Giulia",
-      "middleName": "Maria",
       "lastName": "Bianchi",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "3",
-      "email": "luca.verdi@example.com",
-      "username": "lucaverdi",
+      "email": "luca.verdi3@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lucaverdi3",
       "firstName": "Luca",
       "lastName": "Verdi",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "4",
-      "email": "francesca.neri@example.com",
-      "username": "fran_neri",
+      "email": "francesca.neri4@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "francescaneri4",
       "firstName": "Francesca",
       "lastName": "Neri",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "5",
-      "email": "alessandro.gallo@example.com",
-      "username": "alegallo",
+      "email": "alessandro.gallo5@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "alessandrogallo5",
       "firstName": "Alessandro",
       "lastName": "Gallo",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "6",
-      "email": "sofia.conte@example.com",
-      "username": "sofiaconte",
+      "email": "sofia.conte6@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "sofiaconte6",
       "firstName": "Sofia",
-      "middleName": "Elena",
       "lastName": "Conte",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "7",
-      "email": "matteo.marini@example.com",
-      "username": "matmarini",
+      "email": "matteo.marini7@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "matteomarini7",
       "firstName": "Matteo",
       "lastName": "Marini",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "8",
-      "email": "elena.ricci@example.com",
-      "username": "elenaricci",
+      "email": "elena.ricci8@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "elenaricci8",
       "firstName": "Elena",
       "lastName": "Ricci",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "9",
-      "email": "davide.bruno@example.com",
-      "username": "davebruno",
+      "email": "davide.bruno9@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "davidebruno9",
       "firstName": "Davide",
       "lastName": "Bruno",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "10",
-      "email": "chiara.gatti@example.com",
-      "username": "chiaragatti",
+      "email": "chiara.gatti10@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "chiaragatti10",
       "firstName": "Chiara",
       "lastName": "Gatti",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "11",
-      "email": "simone.longo@example.com",
-      "username": "simolongo",
+      "email": "simone.longo11@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "simonelongo11",
       "firstName": "Simone",
       "lastName": "Longo",
-      "role": "editor"
+      "role": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
     },
     {
       "id": "12",
-      "email": "alice.moretti@example.com",
-      "username": "alicem",
+      "email": "alice.moretti12@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "alicemoretti12",
       "firstName": "Alice",
       "lastName": "Moretti",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "13",
-      "email": "federico.barbieri@example.com",
-      "username": "fedebarbieri",
+      "email": "federico.barbieri13@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "federicobarbieri13",
       "firstName": "Federico",
       "lastName": "Barbieri",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "14",
-      "email": "beatrice.fontana@example.com",
-      "username": "bea_fontana",
+      "email": "beatrice.fontana14@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "beatricefontana14",
       "firstName": "Beatrice",
       "lastName": "Fontana",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "15",
-      "email": "riccardo.serra@example.com",
-      "username": "riccoserra",
+      "email": "riccardo.serra15@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "riccardoserra15",
       "firstName": "Riccardo",
       "lastName": "Serra",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "16",
-      "email": "martina.caruso@example.com",
-      "username": "marticaruso",
+      "email": "martina.caruso16@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "martinacaruso16",
       "firstName": "Martina",
       "lastName": "Caruso",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "17",
-      "email": "andrea.rizzo@example.com",
-      "username": "andrearizzo",
+      "email": "andrea.rizzo17@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "andrearizzo17",
       "firstName": "Andrea",
       "lastName": "Rizzo",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "18",
-      "email": "giorgia.ferrari@example.com",
-      "username": "giorgiaf",
+      "email": "giorgia.ferrari18@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giorgiaferrari18",
       "firstName": "Giorgia",
-      "middleName": "Rosa",
       "lastName": "Ferrari",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "19",
-      "email": "stefano.esposito@example.com",
-      "username": "stefano_e",
+      "email": "stefano.esposito19@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "stefanoesposito19",
       "firstName": "Stefano",
       "lastName": "Esposito",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "20",
-      "email": "sara.romano@example.com",
-      "username": "sararomano",
+      "email": "sara.romano20@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "sararomano20",
       "firstName": "Sara",
       "lastName": "Romano",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "21",
-      "email": "filippo.colombo@example.com",
-      "username": "filicolombo",
+      "email": "filippo.colombo21@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "filippocolombo21",
       "firstName": "Filippo",
       "lastName": "Colombo",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "22",
-      "email": "anna.ricci@example.com",
-      "username": "annaricci",
+      "email": "anna.greco22@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "annagreco22",
       "firstName": "Anna",
-      "lastName": "Ricci",
-      "role": "reader"
+      "lastName": "Greco",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "23",
-      "email": "christian.greco@example.com",
-      "username": "chrisgreco",
+      "email": "christian.marino23@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "christianmarino23",
       "firstName": "Christian",
-      "lastName": "Greco",
-      "role": "reader"
+      "lastName": "Marino",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "24",
-      "email": "aurora.marino@example.com",
-      "username": "auroramarino",
+      "email": "aurora.villa24@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "auroravilla24",
       "firstName": "Aurora",
-      "lastName": "Marino",
-      "role": "reader"
+      "lastName": "Villa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "25",
-      "email": "gabriele.villa@example.com",
-      "username": "gabri_villa",
+      "email": "gabriele.farina25@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "gabrielefarina25",
       "firstName": "Gabriele",
-      "lastName": "Villa",
-      "role": "reader"
+      "lastName": "Farina",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "26",
-      "email": "noemi.farina@example.com",
-      "username": "noemifarina",
+      "email": "noemi.rivas26@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "noemirivas26",
       "firstName": "Noemi",
-      "lastName": "Farina",
-      "role": "reader"
+      "lastName": "Rivas",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "27",
-      "email": "lorenzo.rivas@example.com",
-      "username": "lorenzorivas",
+      "email": "lorenzo.guerra27@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lorenzoguerra27",
       "firstName": "Lorenzo",
-      "lastName": "Rivas",
-      "role": "reader"
+      "lastName": "Guerra",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "28",
-      "email": "elisa.guerra@example.com",
-      "username": "elisaguerra",
+      "email": "elisa.pellegrini28@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "elisapellegrini28",
       "firstName": "Elisa",
-      "lastName": "Guerra",
-      "role": "reader"
+      "lastName": "Pellegrini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "29",
-      "email": "claudio.pellegrini@example.com",
-      "username": "claudiop",
+      "email": "claudio.costa29@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "claudiocosta29",
       "firstName": "Claudio",
-      "lastName": "Pellegrini",
-      "role": "reader"
+      "lastName": "Costa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "30",
-      "email": "silvia.costa@example.com",
-      "username": "silviacosta",
+      "email": "silvia.pagano30@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "silviapagano30",
       "firstName": "Silvia",
-      "lastName": "Costa",
-      "role": "reader"
+      "lastName": "Pagano",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "31",
-      "email": "valerio.pagano@example.com",
-      "username": "valeriopagano",
+      "email": "valerio.martini31@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "valeriomartini31",
       "firstName": "Valerio",
-      "lastName": "Pagano",
-      "role": "reader"
+      "lastName": "Martini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "32",
-      "email": "camilla.martini@example.com",
-      "username": "camillam",
+      "email": "camilla.galli32@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "camillagalli32",
       "firstName": "Camilla",
-      "lastName": "Martini",
-      "role": "reader"
+      "lastName": "Galli",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "33",
-      "email": "emanuele.galli@example.com",
-      "username": "emanuelegalli",
+      "email": "emanuele.bini33@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "emanuelebini33",
       "firstName": "Emanuele",
-      "lastName": "Galli",
-      "role": "reader"
+      "lastName": "Bini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "34",
-      "email": "irene.bini@example.com",
-      "username": "irenebini",
+      "email": "irene.valli34@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "irenevalli34",
       "firstName": "Irene",
-      "lastName": "Bini",
-      "role": "reader"
+      "lastName": "Valli",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "35",
-      "email": "tommaso.valli@example.com",
-      "username": "tommasov",
+      "email": "tommaso.mazza35@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "tommasomazza35",
       "firstName": "Tommaso",
-      "lastName": "Valli",
-      "role": "reader"
+      "lastName": "Mazza",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "36",
-      "email": "elena.mazza@example.com",
-      "username": "elenamazza",
-      "firstName": "Elena",
-      "lastName": "Mazza",
-      "role": "reader"
+      "email": "fabio.donati36@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "fabiodonati36",
+      "firstName": "Fabio",
+      "lastName": "Donati",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "37",
-      "email": "fabio.donati@example.com",
-      "username": "fabiodonati",
-      "firstName": "Fabio",
-      "lastName": "Donati",
-      "role": "reader"
+      "email": "serena.orsini37@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "serenaorsini37",
+      "firstName": "Serena",
+      "lastName": "Orsini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "38",
-      "email": "serena.orsini@example.com",
-      "username": "serenaorsini",
-      "firstName": "Serena",
-      "lastName": "Orsini",
-      "role": "reader"
+      "email": "giovanni.pari38@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giovannipari38",
+      "firstName": "Giovanni",
+      "lastName": "Pari",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "39",
-      "email": "giovanni.pari@example.com",
-      "username": "giovannipari",
-      "firstName": "Giovanni",
-      "lastName": "Pari",
-      "role": "reader"
+      "email": "marta.vitali39@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "martavitali39",
+      "firstName": "Marta",
+      "lastName": "Vitali",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "40",
-      "email": "marta.vitali@example.com",
-      "username": "martavitali",
-      "firstName": "Marta",
-      "lastName": "Vitali",
-      "role": "reader"
+      "email": "alberto.sala40@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "albertosala40",
+      "firstName": "Alberto",
+      "lastName": "Sala",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "41",
-      "email": "alberto.sala@example.com",
-      "username": "albertosala",
-      "firstName": "Alberto",
-      "lastName": "Sala",
-      "role": "reader"
+      "email": "roberta.fabbri41@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "robertafabbri41",
+      "firstName": "Roberta",
+      "lastName": "Fabbri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "42",
-      "email": "roberta.rossi@example.com",
-      "username": "robertarossi",
-      "firstName": "Roberta",
-      "lastName": "Rossi",
-      "role": "reader"
+      "email": "daniele.monti42@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "danielemonti42",
+      "firstName": "Daniele",
+      "lastName": "Monti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "43",
-      "email": "daniele.fabbri@example.com",
-      "username": "danielefabbri",
-      "firstName": "Daniele",
-      "lastName": "Fabbri",
-      "role": "reader"
+      "email": "giada.testa43@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giadatesta43",
+      "firstName": "Giada",
+      "lastName": "Testa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "44",
-      "email": "giada.monti@example.com",
-      "username": "giadamonti",
-      "firstName": "Giada",
-      "lastName": "Monti",
-      "role": "reader"
+      "email": "giacomo.rinaldi44@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giacomorinaldi44",
+      "firstName": "Giacomo",
+      "lastName": "Rinaldi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "45",
-      "email": "giacomo.testa@example.com",
-      "username": "giacomotesta",
-      "firstName": "Giacomo",
-      "lastName": "Testa",
-      "role": "reader"
+      "email": "federica.giuliani45@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "federicagiuliani45",
+      "firstName": "Federica",
+      "lastName": "Giuliani",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "46",
-      "email": "federica.rinaldi@example.com",
-      "username": "fedevrinaldi",
-      "firstName": "Federica",
-      "lastName": "Rinaldi",
-      "role": "reader"
+      "email": "lisa.marchetti46@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lisamarchetti46",
+      "firstName": "Lisa",
+      "lastName": "Marchetti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "47",
-      "email": "marco.sala@example.com",
-      "username": "marcosala2",
-      "firstName": "Marco",
-      "lastName": "Sala",
-      "role": "reader"
+      "email": "manuel.reale47@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "manuelreale47",
+      "firstName": "Manuel",
+      "lastName": "Reale",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "48",
-      "email": "lisa.giuliani@example.com",
-      "username": "lisagiuliani",
-      "firstName": "Lisa",
-      "lastName": "Giuliani",
-      "role": "reader"
+      "email": "valentina.ferri48@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "valentinaferri48",
+      "firstName": "Valentina",
+      "lastName": "Ferri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "49",
-      "email": "manuel.marchetti@example.com",
-      "username": "manuelm",
-      "firstName": "Manuel",
-      "lastName": "Marchetti",
-      "role": "reader"
+      "email": "edoardo.palumbo49@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "edoardopalumbo49",
+      "firstName": "Edoardo",
+      "lastName": "Palumbo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "50",
-      "email": "valentina.reale@example.com",
-      "username": "valereale",
-      "firstName": "Valentina",
-      "lastName": "Reale",
-      "role": "reader"
+      "email": "michela.amato50@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "michelaamato50",
+      "firstName": "Michela",
+      "lastName": "Amato",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "51",
-      "email": "edoardo.ferri@example.com",
-      "username": "edoferri",
-      "firstName": "Edoardo",
-      "lastName": "Ferri",
-      "role": "reader"
+      "email": "samuele.rossi51@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "samuelerossi51",
+      "firstName": "Samuele",
+      "lastName": "Rossi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "52",
-      "email": "michela.palumbo@example.com",
-      "username": "michelap",
-      "firstName": "Michela",
-      "lastName": "Palumbo",
-      "role": "reader"
+      "email": "veronica.bianchi52@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "veronicabianchi52",
+      "firstName": "Veronica",
+      "lastName": "Bianchi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "53",
-      "email": "stefano.amato@example.com",
-      "username": "stefanoamato",
-      "firstName": "Stefano",
-      "lastName": "Amato",
-      "role": "reader"
+      "email": "nicola.verdi53@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "nicolaverdi53",
+      "firstName": "Nicola",
+      "lastName": "Verdi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "54",
-      "email": "eleonora.gallo@example.com",
-      "username": "eleonoragallo",
-      "firstName": "Eleonora",
-      "lastName": "Gallo",
-      "role": "reader"
+      "email": "mattia.neri54@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "mattianeri54",
+      "firstName": "Mattia",
+      "lastName": "Neri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "55",
-      "email": "samuele.conte@example.com",
-      "username": "samu_conte",
-      "firstName": "Samuele",
-      "lastName": "Conte",
-      "role": "reader"
+      "email": "ilaria.gallo55@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "ilariagallo55",
+      "firstName": "Ilaria",
+      "lastName": "Gallo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "56",
-      "email": "veronica.greco@example.com",
-      "username": "veronicagreco",
-      "firstName": "Veronica",
-      "lastName": "Greco",
-      "role": "reader"
+      "email": "paolo.conte56@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "paoloconte56",
+      "firstName": "Paolo",
+      "lastName": "Conte",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "57",
-      "email": "nicola.rinaldi@example.com",
-      "username": "nicolarinaldi",
-      "firstName": "Nicola",
-      "lastName": "Rinaldi",
-      "role": "reader"
+      "email": "leonardo.marini57@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "leonardomarini57",
+      "firstName": "Leonardo",
+      "lastName": "Marini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "58",
-      "email": "silvia.pellegrino@example.com",
-      "username": "silviapell",
-      "firstName": "Silvia",
-      "lastName": "Pellegrino",
-      "role": "reader"
+      "email": "lorenza.ricci58@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lorenzaricci58",
+      "firstName": "Lorenza",
+      "lastName": "Ricci",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "59",
-      "email": "mattia.mazza@example.com",
-      "username": "mattiamazza",
-      "firstName": "Mattia",
-      "lastName": "Mazza",
-      "role": "reader"
+      "email": "pasquale.bruno59@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "pasqualebruno59",
+      "firstName": "Pasquale",
+      "lastName": "Bruno",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "60",
-      "email": "ilaria.carbone@example.com",
-      "username": "ilariacarbone",
-      "firstName": "Ilaria",
-      "lastName": "Carbone",
-      "role": "reader"
+      "email": "clara.gatti60@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "claragatti60",
+      "firstName": "Clara",
+      "lastName": "Gatti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "61",
-      "email": "paolo.giordano@example.com",
-      "username": "paologiordano",
-      "firstName": "Paolo",
-      "lastName": "Giordano",
-      "role": "reader"
+      "email": "salvatore.longo61@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "salvatorelongo61",
+      "firstName": "Salvatore",
+      "lastName": "Longo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "62",
-      "email": "giorgia.moretti@example.com",
-      "username": "giorgiamoretti",
-      "firstName": "Giorgia",
+      "email": "miriam.moretti62@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "miriammoretti62",
+      "firstName": "Miriam",
       "lastName": "Moretti",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "63",
-      "email": "leonardo.marini@example.com",
-      "username": "leomarini",
-      "firstName": "Leonardo",
-      "lastName": "Marini",
-      "role": "reader"
+      "email": "antonio.barbieri63@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "antoniobarbieri63",
+      "firstName": "Antonio",
+      "lastName": "Barbieri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "64",
-      "email": "lorenza.rizzo@example.com",
-      "username": "lorenzarizzo",
-      "firstName": "Lorenza",
-      "lastName": "Rizzo",
-      "role": "reader"
+      "email": "francesco.fontana64@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "francescofontana64",
+      "firstName": "Francesco",
+      "lastName": "Fontana",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "65",
-      "email": "pasquale.lombardi@example.com",
-      "username": "pasqualel",
-      "firstName": "Pasquale",
-      "lastName": "Lombardi",
-      "role": "reader"
+      "email": "luisa.serra65@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "luisaserra65",
+      "firstName": "Luisa",
+      "lastName": "Serra",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "66",
-      "email": "clara.guerra@example.com",
-      "username": "claraguerra",
-      "firstName": "Clara",
-      "lastName": "Guerra",
-      "role": "reader"
+      "email": "vincenzo.caruso66@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "vincenzocaruso66",
+      "firstName": "Vincenzo",
+      "lastName": "Caruso",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "67",
-      "email": "salvatore.barbieri@example.com",
-      "username": "salvatoreb",
-      "firstName": "Salvatore",
-      "lastName": "Barbieri",
-      "role": "reader"
+      "email": "giuseppina.rizzo67@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giuseppinarizzo67",
+      "firstName": "Giuseppina",
+      "lastName": "Rizzo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "68",
-      "email": "miriam.fontana@example.com",
-      "username": "miriamfontana",
-      "firstName": "Miriam",
-      "lastName": "Fontana",
-      "role": "reader"
+      "email": "angelo.ferrari68@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "angeloferrari68",
+      "firstName": "Angelo",
+      "lastName": "Ferrari",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "69",
-      "email": "antonio.santoro@example.com",
-      "username": "antoniosantoro",
-      "firstName": "Antonio",
-      "lastName": "Santoro",
-      "role": "reader"
+      "email": "rossella.esposito69@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "rossellaesposito69",
+      "firstName": "Rossella",
+      "lastName": "Esposito",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "70",
-      "email": "francesco.casadei@example.com",
-      "username": "cesco_casa",
-      "firstName": "Francesco",
-      "lastName": "Casadei",
-      "role": "reader"
+      "email": "michele.romano70@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "micheleromano70",
+      "firstName": "Michele",
+      "lastName": "Romano",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "71",
-      "email": "luisa.piras@example.com",
-      "username": "luisapiras",
-      "firstName": "Luisa",
-      "lastName": "Piras",
-      "role": "reader"
+      "email": "luana.colombo71@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "luanacolombo71",
+      "firstName": "Luana",
+      "lastName": "Colombo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "72",
-      "email": "vincenzo.neri@example.com",
-      "username": "vincenzoneri",
-      "firstName": "Vincenzo",
-      "lastName": "Neri",
-      "role": "reader"
+      "email": "roberto.greco72@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "robertogreco72",
+      "firstName": "Roberto",
+      "lastName": "Greco",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "73",
-      "email": "giuseppina.costa@example.com",
-      "username": "giuseppinac",
-      "firstName": "Giuseppina",
-      "lastName": "Costa",
-      "role": "reader"
+      "email": "cinzia.marino73@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "cinziamarino73",
+      "firstName": "Cinzia",
+      "lastName": "Marino",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "74",
-      "email": "angelo.pagano@example.com",
-      "username": "angelopagano",
-      "firstName": "Angelo",
-      "lastName": "Pagano",
-      "role": "reader"
+      "email": "diego.villa74@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "diegovilla74",
+      "firstName": "Diego",
+      "lastName": "Villa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "75",
-      "email": "rossella.reale@example.com",
-      "username": "rossellareale",
-      "firstName": "Rossella",
-      "lastName": "Reale",
-      "role": "reader"
+      "email": "manuela.farina75@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "manuelafarina75",
+      "firstName": "Manuela",
+      "lastName": "Farina",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "76",
-      "email": "michele.bini@example.com",
-      "username": "michelebini",
-      "firstName": "Michele",
-      "lastName": "Bini",
-      "role": "reader"
+      "email": "barbara.rivas76@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "barbararivas76",
+      "firstName": "Barbara",
+      "lastName": "Rivas",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "77",
-      "email": "luana.sala@example.com",
-      "username": "luanasala",
-      "firstName": "Luana",
-      "lastName": "Sala",
-      "role": "reader"
+      "email": "cristina.guerra77@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "cristinaguerra77",
+      "firstName": "Cristina",
+      "lastName": "Guerra",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "78",
-      "email": "roberto.valli@example.com",
-      "username": "robertovalli",
-      "firstName": "Roberto",
-      "lastName": "Valli",
-      "role": "reader"
+      "email": "alessio.pellegrini78@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "alessiopellegrini78",
+      "firstName": "Alessio",
+      "lastName": "Pellegrini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "79",
-      "email": "cinzia.marchetti@example.com",
-      "username": "cinziamarch",
-      "firstName": "Cinzia",
-      "lastName": "Marchetti",
-      "role": "reader"
+      "email": "nadia.costa79@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "nadiacosta79",
+      "firstName": "Nadia",
+      "lastName": "Costa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "80",
-      "email": "diego.ricci@example.com",
-      "username": "diegoricci",
-      "firstName": "Diego",
-      "lastName": "Ricci",
-      "role": "reader"
+      "email": "gianluca.pagano80@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "gianlucapagano80",
+      "firstName": "Gianluca",
+      "lastName": "Pagano",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "81",
-      "email": "manuela.ferri@example.com",
-      "username": "manuelaferri",
-      "firstName": "Manuela",
-      "lastName": "Ferri",
-      "role": "reader"
+      "email": "marco.martini81@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "marcomartini81",
+      "firstName": "Marco",
+      "lastName": "Martini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "82",
-      "email": "filippo.galli@example.com",
-      "username": "filippogalli",
-      "firstName": "Filippo",
+      "email": "giulia.galli82@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giuliagalli82",
+      "firstName": "Giulia",
       "lastName": "Galli",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "83",
-      "email": "barbara.donati@example.com",
-      "username": "barbaradonati",
-      "firstName": "Barbara",
-      "lastName": "Donati",
-      "role": "reader"
+      "email": "luca.bini83@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lucabini83",
+      "firstName": "Luca",
+      "lastName": "Bini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "84",
-      "email": "giovanni.vitali@example.com",
-      "username": "giovannivitali",
-      "firstName": "Giovanni",
-      "lastName": "Vitali",
-      "role": "reader"
+      "email": "francesca.valli84@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "francescavalli84",
+      "firstName": "Francesca",
+      "lastName": "Valli",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "85",
-      "email": "cristina.orsini@example.com",
-      "username": "cristinaorsini",
-      "firstName": "Cristina",
-      "lastName": "Orsini",
-      "role": "reader"
+      "email": "alessandro.mazza85@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "alessandromazza85",
+      "firstName": "Alessandro",
+      "lastName": "Mazza",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "86",
-      "email": "alessio.fabbri@example.com",
-      "username": "alessiofabbri",
-      "firstName": "Alessio",
-      "lastName": "Fabbri",
-      "role": "reader"
+      "email": "sofia.donati86@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "sofiadonati86",
+      "firstName": "Sofia",
+      "lastName": "Donati",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "87",
-      "email": "nadia.monti@example.com",
-      "username": "nadiamonti",
-      "firstName": "Nadia",
-      "lastName": "Monti",
-      "role": "reader"
+      "email": "matteo.orsini87@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "matteoorsini87",
+      "firstName": "Matteo",
+      "lastName": "Orsini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "88",
-      "email": "christian.testa@example.com",
-      "username": "christiantesta",
-      "firstName": "Christian",
-      "lastName": "Testa",
-      "role": "reader"
+      "email": "elena.pari88@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "elenapari88",
+      "firstName": "Elena",
+      "lastName": "Pari",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "89",
-      "email": "silvia.giuliani@example.com",
-      "username": "silviagiuliani",
-      "firstName": "Silvia",
-      "lastName": "Giuliani",
-      "role": "reader"
+      "email": "davide.vitali89@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "davidevitali89",
+      "firstName": "Davide",
+      "lastName": "Vitali",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "90",
-      "email": "gianluca.amato@example.com",
-      "username": "gianlucaamato",
-      "firstName": "Gianluca",
-      "lastName": "Amato",
-      "role": "reader"
+      "email": "chiara.sala90@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "chiarasala90",
+      "firstName": "Chiara",
+      "lastName": "Sala",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "91",
-      "email": "deborah.palumbo@example.com",
-      "username": "deborahpalumbo",
-      "firstName": "Deborah",
-      "lastName": "Palumbo",
-      "role": "reader"
+      "email": "simone.fabbri91@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "simonefabbri91",
+      "firstName": "Simone",
+      "lastName": "Fabbri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "92",
-      "email": "raffaele.carbone@example.com",
-      "username": "raffaelecarbone",
-      "firstName": "Raffaele",
-      "lastName": "Carbone",
-      "role": "reader"
+      "email": "alice.monti92@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "alicemonti92",
+      "firstName": "Alice",
+      "lastName": "Monti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "93",
-      "email": "patrizia.giordano@example.com",
-      "username": "patriziagiordano",
-      "firstName": "Patrizia",
-      "lastName": "Giordano",
-      "role": "reader"
+      "email": "federico.testa93@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "federicotesta93",
+      "firstName": "Federico",
+      "lastName": "Testa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "94",
-      "email": "marco.lombardi@example.com",
-      "username": "marcolombardi",
-      "firstName": "Marco",
-      "lastName": "Lombardi",
-      "role": "reader"
+      "email": "beatrice.rinaldi94@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "beatricerinaldi94",
+      "firstName": "Beatrice",
+      "lastName": "Rinaldi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "95",
-      "email": "stefania.pellegrino@example.com",
-      "username": "stefaniapell",
-      "firstName": "Stefania",
-      "lastName": "Pellegrino",
-      "role": "reader"
+      "email": "riccardo.giuliani95@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "riccardogiuliani95",
+      "firstName": "Riccardo",
+      "lastName": "Giuliani",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "96",
-      "email": "domenico.santoro@example.com",
-      "username": "domenicosantoro",
-      "firstName": "Domenico",
-      "lastName": "Santoro",
-      "role": "reader"
+      "email": "martina.marchetti96@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "martinamarchetti96",
+      "firstName": "Martina",
+      "lastName": "Marchetti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "97",
-      "email": "tiziana.casadei@example.com",
-      "username": "tizianacasadei",
-      "firstName": "Tiziana",
-      "lastName": "Casadei",
-      "role": "reader"
+      "email": "andrea.reale97@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "andreareale97",
+      "firstName": "Andrea",
+      "lastName": "Reale",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "98",
-      "email": "salvatore.piras@example.com",
-      "username": "salvatorepiras",
-      "firstName": "Salvatore",
-      "lastName": "Piras",
-      "role": "reader"
+      "email": "giorgia.ferri98@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giorgiaferri98",
+      "firstName": "Giorgia",
+      "lastName": "Ferri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "99",
-      "email": "monica.longo@example.com",
-      "username": "monicalongo",
-      "firstName": "Monica",
-      "lastName": "Longo",
-      "role": "reader"
+      "email": "stefano.palumbo99@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "stefanopalumbo99",
+      "firstName": "Stefano",
+      "lastName": "Palumbo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "100",
-      "email": "walter.gatti@example.com",
-      "username": "waltergatti",
-      "firstName": "Walter",
-      "lastName": "Gatti",
-      "role": "reader"
+      "email": "sara.amato100@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "saraamato100",
+      "firstName": "Sara",
+      "lastName": "Amato",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "101",
-      "email": "eleonora.bruno@example.com",
-      "username": "eleonorabruno",
-      "firstName": "Eleonora",
-      "lastName": "Bruno",
-      "role": "reader"
+      "email": "filippo.rossi101@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "filipporossi101",
+      "firstName": "Filippo",
+      "lastName": "Rossi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "102",
-      "email": "andrea.marini@example.com",
-      "username": "andreamarini",
-      "firstName": "Andrea",
-      "lastName": "Marini",
-      "role": "reader"
+      "email": "anna.bianchi102@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "annabianchi102",
+      "firstName": "Anna",
+      "lastName": "Bianchi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "103",
-      "email": "sabrina.ricci@example.com",
-      "username": "sabrinaricci",
-      "firstName": "Sabrina",
-      "lastName": "Ricci",
-      "role": "reader"
+      "email": "christian.verdi103@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "christianverdi103",
+      "firstName": "Christian",
+      "lastName": "Verdi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "104",
-      "email": "alberto.conte@example.com",
-      "username": "albertoconte",
-      "firstName": "Alberto",
-      "lastName": "Conte",
-      "role": "reader"
+      "email": "aurora.neri104@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "auroraneri104",
+      "firstName": "Aurora",
+      "lastName": "Neri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "105",
-      "email": "erica.gallo@example.com",
-      "username": "ericagallo",
-      "firstName": "Erica",
+      "email": "gabriele.gallo105@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "gabrielegallo105",
+      "firstName": "Gabriele",
       "lastName": "Gallo",
-      "role": "reader"
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "106",
-      "email": "stefano.neri@example.com",
-      "username": "stefanoneri",
-      "firstName": "Stefano",
-      "lastName": "Neri",
-      "role": "reader"
+      "email": "noemi.conte106@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "noemiconte106",
+      "firstName": "Noemi",
+      "lastName": "Conte",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "107",
-      "email": "giulia.verdi@example.com",
-      "username": "giuliaverdi",
-      "firstName": "Giulia",
-      "lastName": "Verdi",
-      "role": "reader"
+      "email": "lorenzo.marini107@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lorenzomarini107",
+      "firstName": "Lorenzo",
+      "lastName": "Marini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "108",
-      "email": "claudio.bianchi@example.com",
-      "username": "claudiobianchi",
-      "firstName": "Claudio",
-      "lastName": "Bianchi",
-      "role": "reader"
+      "email": "elisa.ricci108@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "elisaricci108",
+      "firstName": "Elisa",
+      "lastName": "Ricci",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "109",
-      "email": "martina.rossi@example.com",
-      "username": "martinarossi",
-      "firstName": "Martina",
-      "lastName": "Rossi",
-      "role": "reader"
+      "email": "claudio.bruno109@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "claudiobruno109",
+      "firstName": "Claudio",
+      "lastName": "Bruno",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "110",
-      "email": "filippo.moretti@example.com",
-      "username": "filippomoretti",
-      "firstName": "Filippo",
-      "lastName": "Moretti",
-      "role": "reader"
+      "email": "silvia.gatti110@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "silviagatti110",
+      "firstName": "Silvia",
+      "lastName": "Gatti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "111",
-      "email": "chiara.barbieri@example.com",
-      "username": "chiarabarbieri",
-      "firstName": "Chiara",
-      "lastName": "Barbieri",
-      "role": "reader"
+      "email": "valerio.longo111@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "valeriolongo111",
+      "firstName": "Valerio",
+      "lastName": "Longo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "112",
-      "email": "davide.fontana@example.com",
-      "username": "davidefontana",
-      "firstName": "Davide",
-      "lastName": "Fontana",
-      "role": "reader"
+      "email": "camilla.moretti112@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "camillamoretti112",
+      "firstName": "Camilla",
+      "lastName": "Moretti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "113",
-      "email": "elena.serra@example.com",
-      "username": "elenaserra",
-      "firstName": "Elena",
-      "lastName": "Serra",
-      "role": "reader"
+      "email": "emanuele.barbieri113@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "emanuelebarbieri113",
+      "firstName": "Emanuele",
+      "lastName": "Barbieri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "114",
-      "email": "matteo.caruso@example.com",
-      "username": "matteocaruso",
-      "firstName": "Matteo",
-      "lastName": "Caruso",
-      "role": "reader"
+      "email": "irene.fontana114@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "irenefontana114",
+      "firstName": "Irene",
+      "lastName": "Fontana",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "115",
-      "email": "sofia.rizzo@example.com",
-      "username": "sofiarizzo",
-      "firstName": "Sofia",
-      "lastName": "Rizzo",
-      "role": "reader"
+      "email": "tommaso.serra115@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "tommasoserra115",
+      "firstName": "Tommaso",
+      "lastName": "Serra",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "116",
-      "email": "alessandro.ferrari@example.com",
-      "username": "alessandroferrari",
-      "firstName": "Alessandro",
-      "lastName": "Ferrari",
-      "role": "reader"
+      "email": "fabio.caruso116@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "fabiocaruso116",
+      "firstName": "Fabio",
+      "lastName": "Caruso",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "117",
-      "email": "francesca.esposito@example.com",
-      "username": "francescaesposito",
-      "firstName": "Francesca",
-      "lastName": "Esposito",
-      "role": "reader"
+      "email": "serena.rizzo117@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "serenarizzo117",
+      "firstName": "Serena",
+      "lastName": "Rizzo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "118",
-      "email": "luca.romano@example.com",
-      "username": "lucaromano",
-      "firstName": "Luca",
-      "lastName": "Romano",
-      "role": "reader"
+      "email": "giovanni.ferrari118@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giovanniferrari118",
+      "firstName": "Giovanni",
+      "lastName": "Ferrari",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "119",
-      "email": "giulia.colombo@example.com",
-      "username": "giuliacolombo",
-      "firstName": "Giulia",
-      "lastName": "Colombo",
-      "role": "reader"
+      "email": "marta.esposito119@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "martaesposito119",
+      "firstName": "Marta",
+      "lastName": "Esposito",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "120",
-      "email": "marco.marino@example.com",
-      "username": "marcomarino",
-      "firstName": "Marco",
-      "lastName": "Marino",
-      "role": "reader"
+      "email": "alberto.romano120@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "albertoromano120",
+      "firstName": "Alberto",
+      "lastName": "Romano",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "121",
-      "email": "sara.villa@example.com",
-      "username": "saravilla",
-      "firstName": "Sara",
-      "lastName": "Villa",
-      "role": "reader"
+      "email": "roberta.colombo121@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "robertacolombo121",
+      "firstName": "Roberta",
+      "lastName": "Colombo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "122",
-      "email": "gabriele.farina@example.com",
-      "username": "gabrielefarina",
-      "firstName": "Gabriele",
-      "lastName": "Farina",
-      "role": "reader"
+      "email": "daniele.greco122@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "danielegreco122",
+      "firstName": "Daniele",
+      "lastName": "Greco",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "123",
-      "email": "aurora.rivas@example.com",
-      "username": "aurorarivas",
-      "firstName": "Aurora",
-      "lastName": "Rivas",
-      "role": "reader"
+      "email": "giada.marino123@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giadamarino123",
+      "firstName": "Giada",
+      "lastName": "Marino",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "124",
-      "email": "christian.guerra@example.com",
-      "username": "christianguerra",
-      "firstName": "Christian",
-      "lastName": "Guerra",
-      "role": "reader"
+      "email": "giacomo.villa124@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giacomovilla124",
+      "firstName": "Giacomo",
+      "lastName": "Villa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "125",
-      "email": "anna.pellegrini@example.com",
-      "username": "annapellegrini",
-      "firstName": "Anna",
-      "lastName": "Pellegrini",
-      "role": "reader"
+      "email": "federica.farina125@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "federicafarina125",
+      "firstName": "Federica",
+      "lastName": "Farina",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "126",
-      "email": "filippo.costa@example.com",
-      "username": "filippocosta",
-      "firstName": "Filippo",
-      "lastName": "Costa",
-      "role": "reader"
+      "email": "lisa.rivas126@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lisarivas126",
+      "firstName": "Lisa",
+      "lastName": "Rivas",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "127",
-      "email": "giorgia.pagano@example.com",
-      "username": "giorgiapagano",
-      "firstName": "Giorgia",
-      "lastName": "Pagano",
-      "role": "reader"
+      "email": "manuel.guerra127@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "manuelguerra127",
+      "firstName": "Manuel",
+      "lastName": "Guerra",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "128",
-      "email": "stefano.martini@example.com",
-      "username": "stefanomartini",
-      "firstName": "Stefano",
-      "lastName": "Martini",
-      "role": "reader"
+      "email": "valentina.pellegrini128@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "valentinapellegrini128",
+      "firstName": "Valentina",
+      "lastName": "Pellegrini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "129",
-      "email": "camilla.galli@example.com",
-      "username": "camillagalli",
-      "firstName": "Camilla",
-      "lastName": "Galli",
-      "role": "reader"
+      "email": "edoardo.costa129@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "edoardocosta129",
+      "firstName": "Edoardo",
+      "lastName": "Costa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "130",
-      "email": "valerio.bini@example.com",
-      "username": "valeriobini",
-      "firstName": "Valerio",
-      "lastName": "Bini",
-      "role": "reader"
+      "email": "michela.pagano130@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "michelapagano130",
+      "firstName": "Michela",
+      "lastName": "Pagano",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "131",
-      "email": "silvia.valli@example.com",
-      "username": "silviavalli",
-      "firstName": "Silvia",
-      "lastName": "Valli",
-      "role": "reader"
+      "email": "samuele.martini131@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "samuelemartini131",
+      "firstName": "Samuele",
+      "lastName": "Martini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "132",
-      "email": "claudio.mazza@example.com",
-      "username": "claudiomazza",
-      "firstName": "Claudio",
-      "lastName": "Mazza",
-      "role": "reader"
+      "email": "veronica.galli132@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "veronicagalli132",
+      "firstName": "Veronica",
+      "lastName": "Galli",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "133",
-      "email": "elisa.donati@example.com",
-      "username": "elisadonati",
-      "firstName": "Elisa",
-      "lastName": "Donati",
-      "role": "reader"
+      "email": "nicola.bini133@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "nicolabini133",
+      "firstName": "Nicola",
+      "lastName": "Bini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "134",
-      "email": "lorenzo.vitali@example.com",
-      "username": "lorenzovitali",
-      "firstName": "Lorenzo",
-      "lastName": "Vitali",
-      "role": "reader"
+      "email": "mattia.valli134@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "mattiavalli134",
+      "firstName": "Mattia",
+      "lastName": "Valli",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "135",
-      "email": "noemi.orsini@example.com",
-      "username": "noemiorsini",
-      "firstName": "Noemi",
-      "lastName": "Orsini",
-      "role": "reader"
+      "email": "ilaria.mazza135@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "ilariamazza135",
+      "firstName": "Ilaria",
+      "lastName": "Mazza",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
       "id": "136",
-      "email": "emanuele.fabbri@example.com",
-      "username": "emanuelefabbri",
-      "firstName": "Emanuele",
-      "lastName": "Fabbri",
-      "role": "reader"
+      "email": "paolo.donati136@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "paolodonati136",
+      "firstName": "Paolo",
+      "lastName": "Donati",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "137",
-      "email": "irene.monti@example.com",
-      "username": "irenemonti",
-      "firstName": "Irene",
-      "lastName": "Monti",
-      "role": "reader"
+      "email": "leonardo.orsini137@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "leonardoorsini137",
+      "firstName": "Leonardo",
+      "lastName": "Orsini",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "138",
-      "email": "tommaso.testa@example.com",
-      "username": "tommasotesta",
-      "firstName": "Tommaso",
-      "lastName": "Testa",
-      "role": "reader"
+      "email": "lorenza.pari138@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "lorenzapari138",
+      "firstName": "Lorenza",
+      "lastName": "Pari",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "139",
-      "email": "serena.giuliani@example.com",
-      "username": "serenagiuliani",
-      "firstName": "Serena",
-      "lastName": "Giuliani",
-      "role": "reader"
+      "email": "pasquale.vitali139@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "pasqualevitali139",
+      "firstName": "Pasquale",
+      "lastName": "Vitali",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "140",
-      "email": "fabio.amato@example.com",
-      "username": "fabioamato",
-      "firstName": "Fabio",
-      "lastName": "Amato",
-      "role": "reader"
+      "email": "clara.sala140@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "clarasala140",
+      "firstName": "Clara",
+      "lastName": "Sala",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "141",
-      "email": "marta.palumbo@example.com",
-      "username": "martapalumbo",
-      "firstName": "Marta",
-      "lastName": "Palumbo",
-      "role": "reader"
+      "email": "salvatore.fabbri141@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "salvatorefabbri141",
+      "firstName": "Salvatore",
+      "lastName": "Fabbri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "142",
-      "email": "giovanni.carbone@example.com",
-      "username": "giovannicarbone",
-      "firstName": "Giovanni",
-      "lastName": "Carbone",
-      "role": "reader"
+      "email": "miriam.monti142@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "miriammonti142",
+      "firstName": "Miriam",
+      "lastName": "Monti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "143",
-      "email": "roberta.giordano@example.com",
-      "username": "robertagiordano",
-      "firstName": "Roberta",
-      "lastName": "Giordano",
-      "role": "reader"
+      "email": "antonio.testa143@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "antoniotesta143",
+      "firstName": "Antonio",
+      "lastName": "Testa",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "144",
-      "email": "alberto.lombardi@example.com",
-      "username": "albertolombardi",
-      "firstName": "Alberto",
-      "lastName": "Lombardi",
-      "role": "reader"
+      "email": "francesco.rinaldi144@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "francescorinaldi144",
+      "firstName": "Francesco",
+      "lastName": "Rinaldi",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "145",
-      "email": "giada.pellegrino@example.com",
-      "username": "giadapellegrino",
-      "firstName": "Giada",
-      "lastName": "Pellegrino",
-      "role": "reader"
+      "email": "luisa.giuliani145@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "luisagiuliani145",
+      "firstName": "Luisa",
+      "lastName": "Giuliani",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "146",
-      "email": "daniele.santoro@example.com",
-      "username": "danielesantoro",
-      "firstName": "Daniele",
-      "lastName": "Santoro",
-      "role": "reader"
+      "email": "vincenzo.marchetti146@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "vincenzomarchetti146",
+      "firstName": "Vincenzo",
+      "lastName": "Marchetti",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "147",
-      "email": "federica.casadei@example.com",
-      "username": "federicacasadei",
-      "firstName": "Federica",
-      "lastName": "Casadei",
-      "role": "reader"
+      "email": "giuseppina.reale147@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "giuseppinareale147",
+      "firstName": "Giuseppina",
+      "lastName": "Reale",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "148",
-      "email": "giacomo.piras@example.com",
-      "username": "giacomopiras",
-      "firstName": "Giacomo",
-      "lastName": "Piras",
-      "role": "reader"
+      "email": "angelo.ferri148@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "angeloferri148",
+      "firstName": "Angelo",
+      "lastName": "Ferri",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "149",
-      "email": "lisa.longo@example.com",
-      "username": "lisalongo",
-      "firstName": "Lisa",
-      "lastName": "Longo",
-      "role": "reader"
+      "email": "rossella.palumbo149@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "rossellapalumbo149",
+      "firstName": "Rossella",
+      "lastName": "Palumbo",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
     },
     {
       "id": "150",
-      "email": "manuel.gatti@example.com",
-      "username": "manuelgatti",
-      "firstName": "Manuel",
-      "lastName": "Gatti",
-      "role": "reader"
+      "email": "michele.amato150@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "micheleamato150",
+      "firstName": "Michele",
+      "lastName": "Amato",
+      "role": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ],
+      "middleName": "Maria"
     },
     {
-      "email": "angelo@example.com",
-      "password": "$2a$10$UDh7i7y5BgFprk0spn9Xlun10JKCy36QSRFmJpPf.a8Oe1ojDhSz6",
-      "username": "ShyVortex",
+      "email": "a.trotta@example.com",
+      "password": "$2a$10$WjGbpmIoOQverElKLy2dKuD8Ak3.LEbRFY6r9zkjSiY/xfKK.3s0S",
+      "username": "angelotrotta1",
       "firstName": "Angelo",
       "lastName": "Trotta",
-      "role": "reader",
-      "id": "3KBvxKI"
+      "role": "admin",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit",
+        "user-create",
+        "user-delete"
+      ],
+      "id": "03hoNKj"
     }
   ]
 }

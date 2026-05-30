@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Role, type User } from "../models/types/User";
+import { AuthStorageService } from "../services/auth-storage.service";
 
 type Props = {
     user: User;
@@ -9,6 +10,7 @@ type Props = {
 
 export default function UserRow({ user, onUpdate: updateUser, onDelete: deleteUser }: Props) {
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
+    const loggedUser: User | undefined = AuthStorageService.getUser();
 
     const roleText: string = user.role === Role.READER ? 'Lettore'
         : user.role === Role.EDITOR ? 'Editore'
@@ -45,7 +47,7 @@ export default function UserRow({ user, onUpdate: updateUser, onDelete: deleteUs
                 <td className="p-4 text-sm text-gray-300">{user.username}</td>
                 <td className="p-4 text-sm text-gray-300">{user.email}</td>
                 <td className={roleClass}>{roleText}</td>
-                {user.role !== Role.READER ?
+                {loggedUser.role !== Role.READER ?
                     (<td className="p-4 text-right space-x-2" onClick={(e) => e.stopPropagation()}>
                         {/* e.stopPropagation() evita che cliccando su Elimina si espanda/comprima la riga */}
                         <button
@@ -56,7 +58,7 @@ export default function UserRow({ user, onUpdate: updateUser, onDelete: deleteUs
                         >
                             Modifica
                         </button>
-                        {user.role === Role.ADMIN ? (
+                        {loggedUser.role === Role.ADMIN ? (
                             <button
                                 className={btnDeleteStyle}
                                 onClick={() => {

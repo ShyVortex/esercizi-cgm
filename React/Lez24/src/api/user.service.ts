@@ -50,34 +50,56 @@ export class UserService {
                     throw new Error("Errore nella finalizzazione delle simulazioni");
                 }
             } catch (error) {
-                console.error(error.message);
+                console.error(error instanceof Error ? error.message : 'Errore sconosciuto');
                 throw error;
             }
         }
 
         let _page: string = '';
-        let _per_page: string = '';
-        let _isActive: string = '';
+        let _limit: string = '';
+        let _role: string = '';
 
         if (request.page) _page = `_page=${request.page}&`;
-        if (request.per_page) _per_page = `_per_page=${request.per_page}&`;
+        if (request.limit) _limit = `_limit=${request.limit}&`;
         if (request.filter) {
             switch (request.filter) {
                 case "":
-                    _isActive = '';
+                    _role = '';
                     break;
-                case "active":
-                    _isActive = `isActive=${true}`;
+                case "reader":
+                    _role = `role=reader`;
                     break;
-                case "inactive":
-                    _isActive = `isActive=${false}`;
+                case "editor":
+                    _role = `role=editor`;
+                    break;
+                case "admin":
+                    _role = `role=admin`;
                     break;
                 default:
                     break;
             }
         }
 
-        return await apiService.get(`${BASE_ENDPOINT}?${_page}${_per_page}${_isActive}`);
+        const response = await apiService.getFullResponse<User[]>(`${BASE_ENDPOINT}?${_page}${_limit}${_role}`);
+        const totalCountHeader = response.headers['x-total-count'];
+        const items = totalCountHeader ? parseInt(totalCountHeader, 10) : 0;
+
+        const limit = request.limit || 10;
+        const page = request.page || 1;
+        const pages = Math.ceil(items / limit);
+
+        const hasFilter = !!request.filter;
+        const data = (items === 0 && hasFilter) ? null : response.data;
+
+        return {
+            first: 1,
+            prev: page > 1 ? page - 1 : null,
+            next: page < pages ? page + 1 : null,
+            last: pages || 1,
+            pages: pages,
+            items: items,
+            data: data
+        };
     }
 
     public async createUser(request: SaveUserRequest): Promise<User> {
@@ -86,7 +108,7 @@ export class UserService {
 
     public async updateUser(request: SaveUserRequest, method: 'PUT' | 'PATCH'): Promise<User> {
         if (method == 'PUT') return await apiService.put(`${BASE_ENDPOINT}/${request.id}`, request);
-        else if (method == 'PATCH') return await apiService.patch(`${BASE_ENDPOINT}/${request.id}`, request)
+        return await apiService.patch(`${BASE_ENDPOINT}/${request.id}`, request);
     }
 
     public async deleteUser(user: User): Promise<void> {

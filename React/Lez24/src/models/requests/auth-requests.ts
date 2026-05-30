@@ -13,4 +13,5 @@ export interface SignupRequest {
     middleName?: string;
     lastName: string;
     role: Role;
+    permissions: string[];
 }

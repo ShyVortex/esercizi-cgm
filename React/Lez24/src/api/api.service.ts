@@ -4,6 +4,8 @@ import { AuthStorageService } from '../services/auth-storage.service';
 
 const BASE_URL: string = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-useless-assignment */
 export class ApiService {
     protected axiosInstance: AxiosInstance;
 

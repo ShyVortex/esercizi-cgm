@@ -31,6 +31,7 @@ export class AuthService {
 
     public AuthLogout(): void {
         AuthStorageService.removeAuthData();
+        window.location.href = '/public';
     }
 
     public AuthVerifyUser(): boolean {

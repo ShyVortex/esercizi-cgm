@@ -1,6 +1,6 @@
 import type React from "react";
 import RouteComponent from "../components/RouteComponent";
-import type { User } from "../models/types/User";
+import { Role, type User } from "../models/types/User";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { GetFPUsersResponse } from "../models/responses/user-responses";
 import { authService } from "../api/auth.service";
@@ -11,18 +11,20 @@ import Loader from "../components/Loader";
 import ErrorState from "../components/ErrorState";
 import PaginationComponent from "../components/Pagination";
 import SizeSelector from "../components/SizeSelector";
-import ActiveFilter from "../components/ActiveFilter";
+import RoleFilter from "../components/RoleFilter";
 import CustomModal from "../components/CustomModal";
 import { FilterEmptyState, TotalEmptyState } from "../components/EmptyState";
 import UserList from "../components/UserList";
 import { AuthStorageService } from "../services/auth-storage.service";
 import { useNavigate, type NavigateFunction } from "react-router";
 
+/* eslint-disable react-hooks/rules-of-hooks */
 export default function PrivatePage(): React.ReactElement {
     // Primo controllo per verificare che l'utente sia loggato e che il token sia valido
     const navigate: NavigateFunction = useNavigate();
+    const loggedUser: User | undefined = AuthStorageService.getUser();
 
-    if (!AuthStorageService.getUser()) {
+    if (!loggedUser) {
         return (
             <ErrorState
                 title="HTTP Error 403 (Accesso Negato)"
@@ -67,7 +69,7 @@ export default function PrivatePage(): React.ReactElement {
 
             const request: GetFPUsersRequest = {
                 page: currentPage,
-                per_page: pageSize,
+                limit: pageSize,
                 filter: filter
             }
 
@@ -85,11 +87,11 @@ export default function PrivatePage(): React.ReactElement {
                 setIsFetching(false);
             }
         }
-    }, [currentPage, pageSize, filter]);
+    }, [currentPage, pageSize, filter, isLoading]);
 
     // Effettua il fetch iniziale e ad ogni cambio di stato di paginazione/filtro
     useEffect(() => {
-        fetchUsers();
+        (async () => { fetchUsers(); })();
     }, [fetchUsers]);
 
     // Quando le preferenze vengono aggiornate, le salviamo in cache
@@ -172,7 +174,7 @@ export default function PrivatePage(): React.ReactElement {
         try {
             if (editingUser) {
                 // Modifica utente esistente
-                await userService.updateUser(userData, 'PUT');
+                await userService.updateUser(userData, 'PATCH');
             } else {
                 // Crea nuovo utente
                 await userService.createUser(userData);
@@ -199,16 +201,19 @@ export default function PrivatePage(): React.ReactElement {
                     value={pageSize}
                     onChange={handlePageSizeChange}
                 />
-                <ActiveFilter
+                <RoleFilter
                     choice={filter}
                     onChange={handleFilterChange}
                 />
-                <button
-                    className={btnCreateStyle}
-                    onClick={openCreateModal}
-                >
-                    Crea nuovo utente
-                </button>
+                {loggedUser.role === Role.ADMIN ? (
+                    <button
+                        className={btnCreateStyle}
+                        onClick={openCreateModal}
+                    >
+                        Crea nuovo utente
+                    </button>
+                )
+                    : (<></>)}
                 <CustomModal
                     isOpen={modalIsOpen}
                     onClose={closeModal}

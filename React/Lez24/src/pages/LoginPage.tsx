@@ -5,6 +5,7 @@ import RouteComponent from "../components/RouteComponent";
 import { authService } from "../api/auth.service";
 import Swal from "sweetalert2";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export default function LoginPage(): React.ReactElement {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
