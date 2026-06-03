@@ -187,9 +187,33 @@ export default function PrivatePage(): React.ReactElement {
         }
     };
 
+    const role: string = loggedUser.role === Role.READER ? 'Lettore'
+        : loggedUser.role === Role.EDITOR ? 'Editore'
+            : loggedUser.role === Role.ADMIN ? 'Amministratore'
+                : '';
+
+    let roleClass: string;
+
+    switch (loggedUser.role) {
+        case Role.READER:
+            roleClass = "mt-3 text-green-700 rounded";
+            break;
+        case Role.EDITOR:
+            roleClass = "mt-3 text-yellow-700 rounded";
+            break;
+        case Role.ADMIN:
+            roleClass = "mt-3 text-red-700 rounded";
+            break;
+        default:
+            roleClass = "mt-3 text-gray-300 rounded";
+            break;
+    }
+
 
     return (
         <>
+            <h3 className="mt-5">Il tuo ruolo è</h3>
+            <h3 className={roleClass}>{role}</h3>
             <RouteComponent />
             <PaginationComponent
                 currentPage={currentPage}
