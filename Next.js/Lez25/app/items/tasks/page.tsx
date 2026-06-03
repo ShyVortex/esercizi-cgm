@@ -5,10 +5,39 @@ import Link from "next/link";
 import data from "../../../data/data.json";
 import Pagination from "../../components/Pagination";
 import SizeSelector from "../../components/SizeSelector";
+import { PreferencesService } from "@/app/services/preferences.service";
 
 export default function ActivitiesPage() {
+  const [mounted, setMounted] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(10);
+  const [pageSize, setPageSize] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      return PreferencesService.loadPreferences().tasksSize;
+    }
+    return 10;
+  });
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="space-y-6 animate-pulse">
+        <div className="bg-md-surface-container/30 rounded-3xl border border-md-outline-variant/20 p-6 h-[400px] flex flex-col justify-between">
+          <div className="h-6 bg-zinc-200 dark:bg-zinc-800 rounded w-1/4 mb-4" />
+          <div className="space-y-4 flex-1 justify-center flex flex-col">
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded w-full" />
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded w-5/6" />
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded w-4/5" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const sortedActivities = [...data.activities].sort(
     (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
@@ -32,6 +61,7 @@ export default function ActivitiesPage() {
 
   const handlePageSizeChange = (newSize: number) => {
     setPageSize(newSize);
+    PreferencesService.savePreference('tasksSize', newSize);
     setCurrentPage(1); // Resetta alla prima pagina
   };
 
@@ -82,11 +112,10 @@ export default function ActivitiesPage() {
                     </Link>
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${
-                      activity.status === "Completato"
-                        ? "bg-emerald-55/10 text-emerald-700 dark:text-emerald-450"
-                        : "bg-red-55/10 text-red-700 dark:text-red-450"
-                    }`}>
+                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${activity.status === "Completato"
+                      ? "bg-emerald-55/10 text-emerald-700 dark:text-emerald-450"
+                      : "bg-red-55/10 text-red-700 dark:text-red-450"
+                      }`}>
                       {activity.status}
                     </span>
                   </td>

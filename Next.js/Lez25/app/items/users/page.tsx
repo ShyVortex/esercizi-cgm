@@ -5,10 +5,39 @@ import Link from "next/link";
 import data from "../../../data/data.json";
 import SizeSelector from "@/app/components/SizeSelector";
 import Pagination from "@/app/components/Pagination";
+import { PreferencesService } from "@/app/services/preferences.service";
 
 export default function UsersPage() {
+  const [mounted, setMounted] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(10);
+  const [pageSize, setPageSize] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      return PreferencesService.loadPreferences().usersSize;
+    }
+    return 10;
+  });
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="space-y-6 animate-pulse">
+        <div className="bg-md-surface-container/30 rounded-3xl border border-md-outline-variant/20 p-6 h-[400px] flex flex-col justify-between">
+          <div className="h-6 bg-zinc-200 dark:bg-zinc-800 rounded w-1/4 mb-4" />
+          <div className="space-y-4 flex-1 justify-center flex flex-col">
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded w-full" />
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded w-5/6" />
+            <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded w-4/5" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const sortedUsers = [...data.users].sort(
     (a, b) => new Date(b.joinedDate).getTime() - new Date(a.joinedDate).getTime()
@@ -32,6 +61,7 @@ export default function UsersPage() {
 
   const handlePageSizeChange = (newSize: number) => {
     setPageSize(newSize);
+    PreferencesService.savePreference('usersSize', newSize);
     setCurrentPage(1); // Resetta alla prima pagina
   };
 
@@ -79,11 +109,10 @@ export default function UsersPage() {
                     {user.role}
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${
-                      user.status === "Attivo"
-                        ? "bg-emerald-55/10 text-emerald-700 dark:text-emerald-450"
-                        : "bg-amber-55/10 text-amber-700 dark:text-amber-450"
-                    }`}>
+                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${user.status === "Attivo"
+                      ? "bg-emerald-55/10 text-emerald-700 dark:text-emerald-450"
+                      : "bg-amber-55/10 text-amber-700 dark:text-amber-450"
+                      }`}>
                       {user.status}
                     </span>
                   </td>
