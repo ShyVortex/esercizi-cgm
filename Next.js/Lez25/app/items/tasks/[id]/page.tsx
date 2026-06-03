@@ -36,11 +36,10 @@ export default async function ActivityDetailPage({ params }: PageProps) {
             <h2 className="text-xl font-bold text-md-foreground">Dettaglio Attività</h2>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">ID record: {activity.id}</p>
           </div>
-          <span className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${
-            activity.status === "Completato"
+          <span className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${activity.status === "Completato"
               ? "bg-emerald-55/10 text-emerald-700 dark:text-emerald-450"
               : "bg-red-55/10 text-red-700 dark:text-red-450"
-          }`}>
+            }`}>
             {activity.status}
           </span>
         </div>
@@ -61,7 +60,7 @@ export default async function ActivityDetailPage({ params }: PageProps) {
               <p className="text-sm font-semibold text-md-foreground">
                 {new Date(activity.timestamp).toLocaleString("it-IT", {
                   dateStyle: "full",
-                  timeStyle: "medium"
+                  timeStyle: "short"
                 })}
               </p>
             </div>
