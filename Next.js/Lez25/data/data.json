@@ -1,0 +1,4056 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Pietro Bianchi",
+      "email": "pietro.bianchi1@example.com",
+      "role": "Developer",
+      "status": "Inattivo",
+      "joinedDate": "2026-01-11",
+      "avatar": "PB"
+    },
+    {
+      "id": "u2",
+      "name": "Simone Conti",
+      "email": "simone.conti2@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-01-18",
+      "avatar": "SC"
+    },
+    {
+      "id": "u3",
+      "name": "Chiara Giordano",
+      "email": "chiara.giordano3@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-04-19",
+      "avatar": "CG"
+    },
+    {
+      "id": "u4",
+      "name": "Emma Bruno",
+      "email": "emma.bruno4@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-12",
+      "avatar": "EB"
+    },
+    {
+      "id": "u5",
+      "name": "Sofia Gallo",
+      "email": "sofia.gallo5@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-03",
+      "avatar": "SG"
+    },
+    {
+      "id": "u6",
+      "name": "Davide De Luca",
+      "email": "davide.de luca6@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-09",
+      "avatar": "DD"
+    },
+    {
+      "id": "u7",
+      "name": "Elena Giordano",
+      "email": "elena.giordano7@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-27",
+      "avatar": "EG"
+    },
+    {
+      "id": "u8",
+      "name": "Tommaso Marini",
+      "email": "tommaso.marini8@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-28",
+      "avatar": "TM"
+    },
+    {
+      "id": "u9",
+      "name": "Elena Fontana",
+      "email": "elena.fontana9@example.com",
+      "role": "Amministratore",
+      "status": "Inattivo",
+      "joinedDate": "2026-01-13",
+      "avatar": "EF"
+    },
+    {
+      "id": "u10",
+      "name": "Marco Moretti",
+      "email": "marco.moretti10@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-24",
+      "avatar": "MM"
+    },
+    {
+      "id": "u11",
+      "name": "Elisa Rossi",
+      "email": "elisa.rossi11@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2025-12-20",
+      "avatar": "ER"
+    },
+    {
+      "id": "u12",
+      "name": "Gabriele Bianchi",
+      "email": "gabriele.bianchi12@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-12",
+      "avatar": "GB"
+    },
+    {
+      "id": "u13",
+      "name": "Tommaso De Luca",
+      "email": "tommaso.de luca13@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-02-11",
+      "avatar": "TD"
+    },
+    {
+      "id": "u14",
+      "name": "Giulia Fontana",
+      "email": "giulia.fontana14@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-03",
+      "avatar": "GF"
+    },
+    {
+      "id": "u15",
+      "name": "Alice Russo",
+      "email": "alice.russo15@example.com",
+      "role": "Developer",
+      "status": "Inattivo",
+      "joinedDate": "2026-03-09",
+      "avatar": "AR"
+    },
+    {
+      "id": "u16",
+      "name": "Andrea Fontana",
+      "email": "andrea.fontana16@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-07",
+      "avatar": "AF"
+    },
+    {
+      "id": "u17",
+      "name": "Gabriele Russo",
+      "email": "gabriele.russo17@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-05",
+      "avatar": "GR"
+    },
+    {
+      "id": "u18",
+      "name": "Sofia Costa",
+      "email": "sofia.costa18@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2026-03-04",
+      "avatar": "SC"
+    },
+    {
+      "id": "u19",
+      "name": "Federica Rossi",
+      "email": "federica.rossi19@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-05-07",
+      "avatar": "FR"
+    },
+    {
+      "id": "u20",
+      "name": "Federica Rossi",
+      "email": "federica.rossi20@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-04-16",
+      "avatar": "FR"
+    },
+    {
+      "id": "u21",
+      "name": "Elisa Giordano",
+      "email": "elisa.giordano21@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-28",
+      "avatar": "EG"
+    },
+    {
+      "id": "u22",
+      "name": "Alice Romano",
+      "email": "alice.romano22@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-05",
+      "avatar": "AR"
+    },
+    {
+      "id": "u23",
+      "name": "Emma Costa",
+      "email": "emma.costa23@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-10",
+      "avatar": "EC"
+    },
+    {
+      "id": "u24",
+      "name": "Marco Conti",
+      "email": "marco.conti24@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-02",
+      "avatar": "MC"
+    },
+    {
+      "id": "u25",
+      "name": "Lorenzo Lombardi",
+      "email": "lorenzo.lombardi25@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-09",
+      "avatar": "LL"
+    },
+    {
+      "id": "u26",
+      "name": "Andrea Russo",
+      "email": "andrea.russo26@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-04-09",
+      "avatar": "AR"
+    },
+    {
+      "id": "u27",
+      "name": "Matteo Ferrari",
+      "email": "matteo.ferrari27@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-06-01",
+      "avatar": "MF"
+    },
+    {
+      "id": "u28",
+      "name": "Federica Greco",
+      "email": "federica.greco28@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2026-02-13",
+      "avatar": "FG"
+    },
+    {
+      "id": "u29",
+      "name": "Elena Bianchi",
+      "email": "elena.bianchi29@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-31",
+      "avatar": "EB"
+    },
+    {
+      "id": "u30",
+      "name": "Lorenzo Marini",
+      "email": "lorenzo.marini30@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2025-12-16",
+      "avatar": "LM"
+    },
+    {
+      "id": "u31",
+      "name": "Martina Esposito",
+      "email": "martina.esposito31@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-06-01",
+      "avatar": "ME"
+    },
+    {
+      "id": "u32",
+      "name": "Giorgia Colombo",
+      "email": "giorgia.colombo32@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-01-15",
+      "avatar": "GC"
+    },
+    {
+      "id": "u33",
+      "name": "Alessandro Rossi",
+      "email": "alessandro.rossi33@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2025-12-28",
+      "avatar": "AR"
+    },
+    {
+      "id": "u34",
+      "name": "Simone Lombardi",
+      "email": "simone.lombardi34@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2025-12-29",
+      "avatar": "SL"
+    },
+    {
+      "id": "u35",
+      "name": "Martina Colombo",
+      "email": "martina.colombo35@example.com",
+      "role": "Amministratore",
+      "status": "Inattivo",
+      "joinedDate": "2026-05-11",
+      "avatar": "MC"
+    },
+    {
+      "id": "u36",
+      "name": "Emma Verdi",
+      "email": "emma.verdi36@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-01",
+      "avatar": "EV"
+    },
+    {
+      "id": "u37",
+      "name": "Pietro Fontana",
+      "email": "pietro.fontana37@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-01-15",
+      "avatar": "PF"
+    },
+    {
+      "id": "u38",
+      "name": "Sofia Rossi",
+      "email": "sofia.rossi38@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-16",
+      "avatar": "SR"
+    },
+    {
+      "id": "u39",
+      "name": "Lorenzo Bianchi",
+      "email": "lorenzo.bianchi39@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-06-01",
+      "avatar": "LB"
+    },
+    {
+      "id": "u40",
+      "name": "Tommaso Ricci",
+      "email": "tommaso.ricci40@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2025-12-14",
+      "avatar": "TR"
+    },
+    {
+      "id": "u41",
+      "name": "Tommaso Colombo",
+      "email": "tommaso.colombo41@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-10",
+      "avatar": "TC"
+    },
+    {
+      "id": "u42",
+      "name": "Martina Giordano",
+      "email": "martina.giordano42@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-25",
+      "avatar": "MG"
+    },
+    {
+      "id": "u43",
+      "name": "Elisa Rossi",
+      "email": "elisa.rossi43@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-05-06",
+      "avatar": "ER"
+    },
+    {
+      "id": "u44",
+      "name": "Davide Greco",
+      "email": "davide.greco44@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-01-14",
+      "avatar": "DG"
+    },
+    {
+      "id": "u45",
+      "name": "Pietro Fontana",
+      "email": "pietro.fontana45@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-01-18",
+      "avatar": "PF"
+    },
+    {
+      "id": "u46",
+      "name": "Andrea Giordano",
+      "email": "andrea.giordano46@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-01",
+      "avatar": "AG"
+    },
+    {
+      "id": "u47",
+      "name": "Lorenzo Bianchi",
+      "email": "lorenzo.bianchi47@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-01-15",
+      "avatar": "LB"
+    },
+    {
+      "id": "u48",
+      "name": "Gabriele Verdi",
+      "email": "gabriele.verdi48@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-29",
+      "avatar": "GV"
+    },
+    {
+      "id": "u49",
+      "name": "Pietro Ricci",
+      "email": "pietro.ricci49@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-20",
+      "avatar": "PR"
+    },
+    {
+      "id": "u50",
+      "name": "Francesca Gallo",
+      "email": "francesca.gallo50@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-02-12",
+      "avatar": "FG"
+    },
+    {
+      "id": "u51",
+      "name": "Francesco Fontana",
+      "email": "francesco.fontana51@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-20",
+      "avatar": "FF"
+    },
+    {
+      "id": "u52",
+      "name": "Chiara Rossi",
+      "email": "chiara.rossi52@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-14",
+      "avatar": "CR"
+    },
+    {
+      "id": "u53",
+      "name": "Andrea Barbieri",
+      "email": "andrea.barbieri53@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-21",
+      "avatar": "AB"
+    },
+    {
+      "id": "u54",
+      "name": "Alice Conti",
+      "email": "alice.conti54@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-27",
+      "avatar": "AC"
+    },
+    {
+      "id": "u55",
+      "name": "Tommaso Costa",
+      "email": "tommaso.costa55@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-20",
+      "avatar": "TC"
+    },
+    {
+      "id": "u56",
+      "name": "Giorgia Russo",
+      "email": "giorgia.russo56@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-25",
+      "avatar": "GR"
+    },
+    {
+      "id": "u57",
+      "name": "Elisa Lombardo",
+      "email": "elisa.lombardo57@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-02-12",
+      "avatar": "EL"
+    },
+    {
+      "id": "u58",
+      "name": "Chiara De Luca",
+      "email": "chiara.de luca58@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-19",
+      "avatar": "CD"
+    },
+    {
+      "id": "u59",
+      "name": "Sara Colombo",
+      "email": "sara.colombo59@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-02",
+      "avatar": "SC"
+    },
+    {
+      "id": "u60",
+      "name": "Lorenzo Ricci",
+      "email": "lorenzo.ricci60@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-02-03",
+      "avatar": "LR"
+    },
+    {
+      "id": "u61",
+      "name": "Marco Russo",
+      "email": "marco.russo61@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-12",
+      "avatar": "MR"
+    },
+    {
+      "id": "u62",
+      "name": "Elisa Russo",
+      "email": "elisa.russo62@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-15",
+      "avatar": "ER"
+    },
+    {
+      "id": "u63",
+      "name": "Davide Russo",
+      "email": "davide.russo63@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-02-07",
+      "avatar": "DR"
+    },
+    {
+      "id": "u64",
+      "name": "Marco Barbieri",
+      "email": "marco.barbieri64@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-03",
+      "avatar": "MB"
+    },
+    {
+      "id": "u65",
+      "name": "Martina Gallo",
+      "email": "martina.gallo65@example.com",
+      "role": "Developer",
+      "status": "Inattivo",
+      "joinedDate": "2025-12-08",
+      "avatar": "MG"
+    },
+    {
+      "id": "u66",
+      "name": "Tommaso Rossi",
+      "email": "tommaso.rossi66@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-06",
+      "avatar": "TR"
+    },
+    {
+      "id": "u67",
+      "name": "Alessandro Bruno",
+      "email": "alessandro.bruno67@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-31",
+      "avatar": "AB"
+    },
+    {
+      "id": "u68",
+      "name": "Andrea Verdi",
+      "email": "andrea.verdi68@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-24",
+      "avatar": "AV"
+    },
+    {
+      "id": "u69",
+      "name": "Francesca Marini",
+      "email": "francesca.marini69@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-28",
+      "avatar": "FM"
+    },
+    {
+      "id": "u70",
+      "name": "Federica Russo",
+      "email": "federica.russo70@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-04-08",
+      "avatar": "FR"
+    },
+    {
+      "id": "u71",
+      "name": "Simone Greco",
+      "email": "simone.greco71@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-25",
+      "avatar": "SG"
+    },
+    {
+      "id": "u72",
+      "name": "Alice Greco",
+      "email": "alice.greco72@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-01-08",
+      "avatar": "AG"
+    },
+    {
+      "id": "u73",
+      "name": "Sofia Esposito",
+      "email": "sofia.esposito73@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-06",
+      "avatar": "SE"
+    },
+    {
+      "id": "u74",
+      "name": "Marco Ferrari",
+      "email": "marco.ferrari74@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-20",
+      "avatar": "MF"
+    },
+    {
+      "id": "u75",
+      "name": "Francesco Rizzo",
+      "email": "francesco.rizzo75@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-05-28",
+      "avatar": "FR"
+    },
+    {
+      "id": "u76",
+      "name": "Martina Fontana",
+      "email": "martina.fontana76@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2026-06-01",
+      "avatar": "MF"
+    },
+    {
+      "id": "u77",
+      "name": "Sofia Greco",
+      "email": "sofia.greco77@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-15",
+      "avatar": "SG"
+    },
+    {
+      "id": "u78",
+      "name": "Gabriele Greco",
+      "email": "gabriele.greco78@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-27",
+      "avatar": "GG"
+    },
+    {
+      "id": "u79",
+      "name": "Simone Costa",
+      "email": "simone.costa79@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-11",
+      "avatar": "SC"
+    },
+    {
+      "id": "u80",
+      "name": "Lorenzo Barbieri",
+      "email": "lorenzo.barbieri80@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-24",
+      "avatar": "LB"
+    },
+    {
+      "id": "u81",
+      "name": "Giulia Gallo",
+      "email": "giulia.gallo81@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-04-20",
+      "avatar": "GG"
+    },
+    {
+      "id": "u82",
+      "name": "Pietro Marini",
+      "email": "pietro.marini82@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2025-12-11",
+      "avatar": "PM"
+    },
+    {
+      "id": "u83",
+      "name": "Federica Ferrari",
+      "email": "federica.ferrari83@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-29",
+      "avatar": "FF"
+    },
+    {
+      "id": "u84",
+      "name": "Martina Conti",
+      "email": "martina.conti84@example.com",
+      "role": "Developer",
+      "status": "Inattivo",
+      "joinedDate": "2025-12-30",
+      "avatar": "MC"
+    },
+    {
+      "id": "u85",
+      "name": "Simone Ricci",
+      "email": "simone.ricci85@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-04-13",
+      "avatar": "SR"
+    },
+    {
+      "id": "u86",
+      "name": "Tommaso Rizzo",
+      "email": "tommaso.rizzo86@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-01-01",
+      "avatar": "TR"
+    },
+    {
+      "id": "u87",
+      "name": "Davide Bianchi",
+      "email": "davide.bianchi87@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-01-09",
+      "avatar": "DB"
+    },
+    {
+      "id": "u88",
+      "name": "Giorgia Verdi",
+      "email": "giorgia.verdi88@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-29",
+      "avatar": "GV"
+    },
+    {
+      "id": "u89",
+      "name": "Francesca Ferrari",
+      "email": "francesca.ferrari89@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-06-03",
+      "avatar": "FF"
+    },
+    {
+      "id": "u90",
+      "name": "Sara Mancini",
+      "email": "sara.mancini90@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2026-01-28",
+      "avatar": "SM"
+    },
+    {
+      "id": "u91",
+      "name": "Francesco Marini",
+      "email": "francesco.marini91@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-05-07",
+      "avatar": "FM"
+    },
+    {
+      "id": "u92",
+      "name": "Sara Conti",
+      "email": "sara.conti92@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-01-25",
+      "avatar": "SC"
+    },
+    {
+      "id": "u93",
+      "name": "Francesco Moretti",
+      "email": "francesco.moretti93@example.com",
+      "role": "Amministratore",
+      "status": "Inattivo",
+      "joinedDate": "2026-02-15",
+      "avatar": "FM"
+    },
+    {
+      "id": "u94",
+      "name": "Chiara Lombardo",
+      "email": "chiara.lombardo94@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-13",
+      "avatar": "CL"
+    },
+    {
+      "id": "u95",
+      "name": "Sara Lombardo",
+      "email": "sara.lombardo95@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-03-17",
+      "avatar": "SL"
+    },
+    {
+      "id": "u96",
+      "name": "Alessandro Fontana",
+      "email": "alessandro.fontana96@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2026-05-09",
+      "avatar": "AF"
+    },
+    {
+      "id": "u97",
+      "name": "Elena Giordano",
+      "email": "elena.giordano97@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-04-08",
+      "avatar": "EG"
+    },
+    {
+      "id": "u98",
+      "name": "Sofia Costa",
+      "email": "sofia.costa98@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-30",
+      "avatar": "SC"
+    },
+    {
+      "id": "u99",
+      "name": "Andrea Rossi",
+      "email": "andrea.rossi99@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-12",
+      "avatar": "AR"
+    },
+    {
+      "id": "u100",
+      "name": "Tommaso Mancini",
+      "email": "tommaso.mancini100@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2025-12-30",
+      "avatar": "TM"
+    },
+    {
+      "id": "u101",
+      "name": "Davide Barbieri",
+      "email": "davide.barbieri101@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-10",
+      "avatar": "DB"
+    },
+    {
+      "id": "u102",
+      "name": "Simone Conti",
+      "email": "simone.conti102@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-04-06",
+      "avatar": "SC"
+    },
+    {
+      "id": "u103",
+      "name": "Elena Ferrari",
+      "email": "elena.ferrari103@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-01-06",
+      "avatar": "EF"
+    },
+    {
+      "id": "u104",
+      "name": "Francesco Bruno",
+      "email": "francesco.bruno104@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-05-26",
+      "avatar": "FB"
+    },
+    {
+      "id": "u105",
+      "name": "Pietro Verdi",
+      "email": "pietro.verdi105@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-29",
+      "avatar": "PV"
+    },
+    {
+      "id": "u106",
+      "name": "Elena Esposito",
+      "email": "elena.esposito106@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-17",
+      "avatar": "EE"
+    },
+    {
+      "id": "u107",
+      "name": "Elena Russo",
+      "email": "elena.russo107@example.com",
+      "role": "Developer",
+      "status": "Inattivo",
+      "joinedDate": "2026-03-04",
+      "avatar": "ER"
+    },
+    {
+      "id": "u108",
+      "name": "Sofia Gallo",
+      "email": "sofia.gallo108@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-01-05",
+      "avatar": "SG"
+    },
+    {
+      "id": "u109",
+      "name": "Elisa Costa",
+      "email": "elisa.costa109@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-02-15",
+      "avatar": "EC"
+    },
+    {
+      "id": "u110",
+      "name": "Matteo Barbieri",
+      "email": "matteo.barbieri110@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-17",
+      "avatar": "MB"
+    },
+    {
+      "id": "u111",
+      "name": "Matteo Barbieri",
+      "email": "matteo.barbieri111@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-04-19",
+      "avatar": "MB"
+    },
+    {
+      "id": "u112",
+      "name": "Francesca De Luca",
+      "email": "francesca.de luca112@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2025-12-21",
+      "avatar": "FD"
+    },
+    {
+      "id": "u113",
+      "name": "Alice Marini",
+      "email": "alice.marini113@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-03-06",
+      "avatar": "AM"
+    },
+    {
+      "id": "u114",
+      "name": "Lorenzo Rossi",
+      "email": "lorenzo.rossi114@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2025-12-15",
+      "avatar": "LR"
+    },
+    {
+      "id": "u115",
+      "name": "Elisa Moretti",
+      "email": "elisa.moretti115@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-04-14",
+      "avatar": "EM"
+    },
+    {
+      "id": "u116",
+      "name": "Lorenzo Romano",
+      "email": "lorenzo.romano116@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-30",
+      "avatar": "LR"
+    },
+    {
+      "id": "u117",
+      "name": "Davide Lombardo",
+      "email": "davide.lombardo117@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-09",
+      "avatar": "DL"
+    },
+    {
+      "id": "u118",
+      "name": "Matteo Lombardi",
+      "email": "matteo.lombardi118@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2026-01-12",
+      "avatar": "ML"
+    },
+    {
+      "id": "u119",
+      "name": "Gabriele Ricci",
+      "email": "gabriele.ricci119@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-03-21",
+      "avatar": "GR"
+    },
+    {
+      "id": "u120",
+      "name": "Chiara Colombo",
+      "email": "chiara.colombo120@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-02-16",
+      "avatar": "CC"
+    },
+    {
+      "id": "u121",
+      "name": "Simone Colombo",
+      "email": "simone.colombo121@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-04-02",
+      "avatar": "SC"
+    },
+    {
+      "id": "u122",
+      "name": "Giorgia Barbieri",
+      "email": "giorgia.barbieri122@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-06",
+      "avatar": "GB"
+    },
+    {
+      "id": "u123",
+      "name": "Alice Bianchi",
+      "email": "alice.bianchi123@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-05-31",
+      "avatar": "AB"
+    },
+    {
+      "id": "u124",
+      "name": "Emma Ferrari",
+      "email": "emma.ferrari124@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-15",
+      "avatar": "EF"
+    },
+    {
+      "id": "u125",
+      "name": "Francesca Colombo",
+      "email": "francesca.colombo125@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-03-26",
+      "avatar": "FC"
+    },
+    {
+      "id": "u126",
+      "name": "Giulia Marini",
+      "email": "giulia.marini126@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-03-01",
+      "avatar": "GM"
+    },
+    {
+      "id": "u127",
+      "name": "Riccardo Fontana",
+      "email": "riccardo.fontana127@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-05",
+      "avatar": "RF"
+    },
+    {
+      "id": "u128",
+      "name": "Alessandro Rizzo",
+      "email": "alessandro.rizzo128@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-05-22",
+      "avatar": "AR"
+    },
+    {
+      "id": "u129",
+      "name": "Alice Bruno",
+      "email": "alice.bruno129@example.com",
+      "role": "Developer",
+      "status": "Inattivo",
+      "joinedDate": "2026-03-06",
+      "avatar": "AB"
+    },
+    {
+      "id": "u130",
+      "name": "Sara Rizzo",
+      "email": "sara.rizzo130@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-02-07",
+      "avatar": "SR"
+    },
+    {
+      "id": "u131",
+      "name": "Alessandro Costa",
+      "email": "alessandro.costa131@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2026-02-11",
+      "avatar": "AC"
+    },
+    {
+      "id": "u132",
+      "name": "Sara Gallo",
+      "email": "sara.gallo132@example.com",
+      "role": "Utente",
+      "status": "Inattivo",
+      "joinedDate": "2025-12-14",
+      "avatar": "SG"
+    },
+    {
+      "id": "u133",
+      "name": "Emma Esposito",
+      "email": "emma.esposito133@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-05-21",
+      "avatar": "EE"
+    },
+    {
+      "id": "u134",
+      "name": "Sara Verdi",
+      "email": "sara.verdi134@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2025-12-17",
+      "avatar": "SV"
+    },
+    {
+      "id": "u135",
+      "name": "Davide Ferrari",
+      "email": "davide.ferrari135@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-01-26",
+      "avatar": "DF"
+    },
+    {
+      "id": "u136",
+      "name": "Lorenzo Ferrari",
+      "email": "lorenzo.ferrari136@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2025-12-26",
+      "avatar": "LF"
+    },
+    {
+      "id": "u137",
+      "name": "Francesco Fontana",
+      "email": "francesco.fontana137@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-03-17",
+      "avatar": "FF"
+    },
+    {
+      "id": "u138",
+      "name": "Sofia Ricci",
+      "email": "sofia.ricci138@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-02-09",
+      "avatar": "SR"
+    },
+    {
+      "id": "u139",
+      "name": "Alessandro Esposito",
+      "email": "alessandro.esposito139@example.com",
+      "role": "Utente",
+      "status": "Attivo",
+      "joinedDate": "2026-05-15",
+      "avatar": "AE"
+    },
+    {
+      "id": "u140",
+      "name": "Alessandro Conti",
+      "email": "alessandro.conti140@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-04-01",
+      "avatar": "AC"
+    },
+    {
+      "id": "u141",
+      "name": "Andrea Greco",
+      "email": "andrea.greco141@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-03-22",
+      "avatar": "AG"
+    },
+    {
+      "id": "u142",
+      "name": "Federica Rossi",
+      "email": "federica.rossi142@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2025-12-07",
+      "avatar": "FR"
+    },
+    {
+      "id": "u143",
+      "name": "Simone Esposito",
+      "email": "simone.esposito143@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-05-16",
+      "avatar": "SE"
+    },
+    {
+      "id": "u144",
+      "name": "Federica Colombo",
+      "email": "federica.colombo144@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-07",
+      "avatar": "FC"
+    },
+    {
+      "id": "u145",
+      "name": "Lorenzo Romano",
+      "email": "lorenzo.romano145@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-03-22",
+      "avatar": "LR"
+    },
+    {
+      "id": "u146",
+      "name": "Gabriele Rizzo",
+      "email": "gabriele.rizzo146@example.com",
+      "role": "Developer",
+      "status": "Attivo",
+      "joinedDate": "2026-03-19",
+      "avatar": "GR"
+    },
+    {
+      "id": "u147",
+      "name": "Marco Russo",
+      "email": "marco.russo147@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-02-09",
+      "avatar": "MR"
+    },
+    {
+      "id": "u148",
+      "name": "Simone Moretti",
+      "email": "simone.moretti148@example.com",
+      "role": "Editor",
+      "status": "Attivo",
+      "joinedDate": "2025-12-16",
+      "avatar": "SM"
+    },
+    {
+      "id": "u149",
+      "name": "Francesco Romano",
+      "email": "francesco.romano149@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-02-26",
+      "avatar": "FR"
+    },
+    {
+      "id": "u150",
+      "name": "Matteo Bianchi",
+      "email": "matteo.bianchi150@example.com",
+      "role": "Amministratore",
+      "status": "Attivo",
+      "joinedDate": "2026-03-13",
+      "avatar": "MB"
+    }
+  ],
+  "activities": [
+    {
+      "id": "a246",
+      "userId": "u123",
+      "userName": "Alice Bianchi",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-06-03T09:36:52.492Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a182",
+      "userId": "u91",
+      "userName": "Francesco Marini",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-03T08:17:37.852Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a177",
+      "userId": "u89",
+      "userName": "Francesca Ferrari",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-03T07:12:11.752Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a38",
+      "userId": "u19",
+      "userName": "Federica Rossi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-03T07:04:47.681Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a61",
+      "userId": "u31",
+      "userName": "Martina Esposito",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-06-03T06:42:10.821Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a178",
+      "userId": "u89",
+      "userName": "Francesca Ferrari",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-06-03T05:41:08.438Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a78",
+      "userId": "u39",
+      "userName": "Lorenzo Bianchi",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-06-03T05:07:54.303Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a54",
+      "userId": "u27",
+      "userName": "Matteo Ferrari",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-03T01:23:19.781Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a37",
+      "userId": "u19",
+      "userName": "Federica Rossi",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-06-02T22:25:38.424Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a62",
+      "userId": "u31",
+      "userName": "Martina Esposito",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-02T21:55:34.403Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a278",
+      "userId": "u139",
+      "userName": "Alessandro Esposito",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-06-02T16:06:47.001Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a231",
+      "userId": "u116",
+      "userName": "Lorenzo Romano",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-06-02T13:47:31.975Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a58",
+      "userId": "u29",
+      "userName": "Elena Bianchi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-06-02T09:10:23.839Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a123",
+      "userId": "u62",
+      "userName": "Elisa Russo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-06-02T04:20:47.439Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a210",
+      "userId": "u105",
+      "userName": "Pietro Verdi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-06-02T03:20:04.949Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a166",
+      "userId": "u83",
+      "userName": "Federica Ferrari",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-02T01:57:54.026Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a148",
+      "userId": "u74",
+      "userName": "Marco Ferrari",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-06-02T01:32:05.251Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a96",
+      "userId": "u48",
+      "userName": "Gabriele Verdi",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-06-02T01:00:28.452Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a149",
+      "userId": "u75",
+      "userName": "Francesco Rizzo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-06-01T23:41:33.206Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a57",
+      "userId": "u29",
+      "userName": "Elena Bianchi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-06-01T20:05:15.699Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a230",
+      "userId": "u115",
+      "userName": "Elisa Moretti",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-06-01T18:11:05.705Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a258",
+      "userId": "u129",
+      "userName": "Alice Bruno",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-06-01T17:35:14.136Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a150",
+      "userId": "u75",
+      "userName": "Francesco Rizzo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-06-01T15:04:50.275Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a77",
+      "userId": "u39",
+      "userName": "Lorenzo Bianchi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-06-01T13:55:45.702Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a151",
+      "userId": "u76",
+      "userName": "Martina Fontana",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-06-01T10:56:18.534Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a53",
+      "userId": "u27",
+      "userName": "Matteo Ferrari",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-06-01T09:37:29.535Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a152",
+      "userId": "u76",
+      "userName": "Martina Fontana",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-06-01T09:10:54.303Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a84",
+      "userId": "u42",
+      "userName": "Martina Giordano",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-06-01T07:36:59.352Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a134",
+      "userId": "u67",
+      "userName": "Alessandro Bruno",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-06-01T07:14:07.116Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a133",
+      "userId": "u67",
+      "userName": "Alessandro Bruno",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-06-01T06:42:35.048Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a255",
+      "userId": "u128",
+      "userName": "Alessandro Rizzo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-06-01T01:16:39.061Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a245",
+      "userId": "u123",
+      "userName": "Alice Bianchi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-06-01T00:07:19.387Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a83",
+      "userId": "u42",
+      "userName": "Martina Giordano",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-31T23:07:30.070Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a265",
+      "userId": "u133",
+      "userName": "Emma Esposito",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-31T20:54:37.280Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a7",
+      "userId": "u4",
+      "userName": "Emma Bruno",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-31T14:36:38.772Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a122",
+      "userId": "u61",
+      "userName": "Marco Russo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-31T11:08:51.362Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a81",
+      "userId": "u41",
+      "userName": "Tommaso Colombo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-31T10:55:28.546Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a220",
+      "userId": "u110",
+      "userName": "Matteo Barbieri",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-31T10:23:26.287Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a175",
+      "userId": "u88",
+      "userName": "Giorgia Verdi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-31T09:56:49.789Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a116",
+      "userId": "u58",
+      "userName": "Chiara De Luca",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-31T09:19:17.667Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a48",
+      "userId": "u24",
+      "userName": "Marco Conti",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-31T04:28:19.414Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a165",
+      "userId": "u83",
+      "userName": "Federica Ferrari",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-31T01:39:06.311Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a95",
+      "userId": "u48",
+      "userName": "Gabriele Verdi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-31T00:32:20.884Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a232",
+      "userId": "u116",
+      "userName": "Lorenzo Romano",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-30T15:07:05.465Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a155",
+      "userId": "u78",
+      "userName": "Gabriele Greco",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-30T12:16:26.685Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a207",
+      "userId": "u104",
+      "userName": "Francesco Bruno",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-30T09:55:07.465Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a252",
+      "userId": "u126",
+      "userName": "Giulia Marini",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-30T09:01:42.776Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a181",
+      "userId": "u91",
+      "userName": "Francesco Marini",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-29T19:55:10.799Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a201",
+      "userId": "u101",
+      "userName": "Davide Barbieri",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-29T18:18:39.718Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a266",
+      "userId": "u133",
+      "userName": "Emma Esposito",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-29T12:59:35.956Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a285",
+      "userId": "u143",
+      "userName": "Simone Esposito",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-29T10:29:41.857Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a85",
+      "userId": "u43",
+      "userName": "Elisa Rossi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-29T09:41:13.371Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a105",
+      "userId": "u53",
+      "userName": "Andrea Barbieri",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-28T13:23:54.681Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a137",
+      "userId": "u69",
+      "userName": "Francesca Marini",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-28T05:39:31.156Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a70",
+      "userId": "u35",
+      "userName": "Martina Colombo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-28T05:17:20.404Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a32",
+      "userId": "u16",
+      "userName": "Andrea Fontana",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-28T01:14:47.089Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a256",
+      "userId": "u128",
+      "userName": "Alessandro Rizzo",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-27T20:54:30.246Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a56",
+      "userId": "u28",
+      "userName": "Federica Greco",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-27T18:42:23.972Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a189",
+      "userId": "u95",
+      "userName": "Sara Lombardo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-27T12:18:19.612Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a274",
+      "userId": "u137",
+      "userName": "Francesco Fontana",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-27T11:04:26.953Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a98",
+      "userId": "u49",
+      "userName": "Pietro Ricci",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-27T09:41:26.652Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a277",
+      "userId": "u139",
+      "userName": "Alessandro Esposito",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-27T05:58:27.606Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a31",
+      "userId": "u16",
+      "userName": "Andrea Fontana",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-27T00:00:23.048Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a183",
+      "userId": "u92",
+      "userName": "Sara Conti",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-26T14:28:01.391Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a286",
+      "userId": "u143",
+      "userName": "Simone Esposito",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-26T13:16:44.932Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a208",
+      "userId": "u104",
+      "userName": "Francesco Bruno",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-26T03:46:31.400Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a71",
+      "userId": "u36",
+      "userName": "Emma Verdi",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-26T03:02:01.762Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a20",
+      "userId": "u10",
+      "userName": "Marco Moretti",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-26T02:38:22.342Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a206",
+      "userId": "u103",
+      "userName": "Elena Ferrari",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-24T23:54:55.888Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a279",
+      "userId": "u140",
+      "userName": "Alessandro Conti",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-24T11:52:40.805Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a52",
+      "userId": "u26",
+      "userName": "Andrea Russo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-24T10:07:30.429Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a45",
+      "userId": "u23",
+      "userName": "Emma Costa",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-24T01:04:01.047Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a202",
+      "userId": "u101",
+      "userName": "Davide Barbieri",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-23T23:43:23.791Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a299",
+      "userId": "u150",
+      "userName": "Matteo Bianchi",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-23T15:43:54.093Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a86",
+      "userId": "u43",
+      "userName": "Elisa Rossi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-23T14:32:14.604Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a64",
+      "userId": "u32",
+      "userName": "Giorgia Colombo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-23T02:18:41.948Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a162",
+      "userId": "u81",
+      "userName": "Giulia Gallo",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-22T22:19:37.044Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a87",
+      "userId": "u44",
+      "userName": "Davide Greco",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-22T19:53:21.421Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a103",
+      "userId": "u52",
+      "userName": "Chiara Rossi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-22T18:41:47.329Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a223",
+      "userId": "u112",
+      "userName": "Francesca De Luca",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-22T11:58:44.127Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a296",
+      "userId": "u148",
+      "userName": "Simone Moretti",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-21T10:19:11.209Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a47",
+      "userId": "u24",
+      "userName": "Marco Conti",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-21T04:09:36.456Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a263",
+      "userId": "u132",
+      "userName": "Sara Gallo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-20T18:40:56.472Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a180",
+      "userId": "u90",
+      "userName": "Sara Mancini",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-20T11:31:11.503Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a115",
+      "userId": "u58",
+      "userName": "Chiara De Luca",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-20T09:23:13.799Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a145",
+      "userId": "u73",
+      "userName": "Sofia Esposito",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-20T01:21:28.033Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a118",
+      "userId": "u59",
+      "userName": "Sara Colombo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-19T16:38:41.875Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a221",
+      "userId": "u111",
+      "userName": "Matteo Barbieri",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-19T14:56:49.867Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a225",
+      "userId": "u113",
+      "userName": "Alice Marini",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-19T11:20:32.208Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a234",
+      "userId": "u117",
+      "userName": "Davide Lombardo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-19T06:53:51.390Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a283",
+      "userId": "u142",
+      "userName": "Federica Rossi",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-19T04:13:37.271Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a300",
+      "userId": "u150",
+      "userName": "Matteo Bianchi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-19T03:18:44.290Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a128",
+      "userId": "u64",
+      "userName": "Marco Barbieri",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-18T22:32:21.684Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a8",
+      "userId": "u4",
+      "userName": "Emma Bruno",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-18T06:03:28.458Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a233",
+      "userId": "u117",
+      "userName": "Davide Lombardo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-17T18:22:39.099Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a250",
+      "userId": "u125",
+      "userName": "Francesca Colombo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-17T16:04:45.657Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a291",
+      "userId": "u146",
+      "userName": "Gabriele Rizzo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-17T11:10:37.081Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a280",
+      "userId": "u140",
+      "userName": "Alessandro Conti",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-17T10:52:02.529Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a292",
+      "userId": "u146",
+      "userName": "Gabriele Rizzo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-17T05:48:00.671Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a191",
+      "userId": "u96",
+      "userName": "Alessandro Fontana",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-17T02:05:36.532Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a259",
+      "userId": "u130",
+      "userName": "Sara Rizzo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-17T01:16:18.977Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a192",
+      "userId": "u96",
+      "userName": "Alessandro Fontana",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-16T15:54:02.688Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a146",
+      "userId": "u73",
+      "userName": "Sofia Esposito",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-16T03:49:01.015Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a49",
+      "userId": "u25",
+      "userName": "Lorenzo Lombardi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-16T01:08:05.240Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a104",
+      "userId": "u52",
+      "userName": "Chiara Rossi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-16T00:07:56.113Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a82",
+      "userId": "u41",
+      "userName": "Tommaso Colombo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-15T16:01:14.084Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a196",
+      "userId": "u98",
+      "userName": "Sofia Costa",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-15T15:54:05.584Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a69",
+      "userId": "u35",
+      "userName": "Martina Colombo",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-15T11:13:08.458Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a67",
+      "userId": "u34",
+      "userName": "Simone Lombardi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-15T09:40:27.077Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a117",
+      "userId": "u59",
+      "userName": "Sara Colombo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-15T05:44:55.038Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a109",
+      "userId": "u55",
+      "userName": "Tommaso Costa",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-15T03:20:14.091Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a176",
+      "userId": "u88",
+      "userName": "Giorgia Verdi",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-14T22:55:47.478Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a288",
+      "userId": "u144",
+      "userName": "Federica Colombo",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-14T15:42:06.320Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a63",
+      "userId": "u32",
+      "userName": "Giorgia Colombo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-13T16:36:46.739Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a170",
+      "userId": "u85",
+      "userName": "Simone Ricci",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-13T11:58:56.625Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a132",
+      "userId": "u66",
+      "userName": "Tommaso Rossi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-13T00:45:27.549Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a44",
+      "userId": "u22",
+      "userName": "Alice Romano",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-13T00:27:19.130Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a138",
+      "userId": "u69",
+      "userName": "Francesca Marini",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-12T19:21:47.122Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a40",
+      "userId": "u20",
+      "userName": "Federica Rossi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-12T18:45:17.858Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a167",
+      "userId": "u84",
+      "userName": "Martina Conti",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-12T14:10:32.441Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a247",
+      "userId": "u124",
+      "userName": "Emma Ferrari",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-12T07:33:27.352Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a203",
+      "userId": "u102",
+      "userName": "Simone Conti",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-12T00:39:59.610Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a88",
+      "userId": "u44",
+      "userName": "Davide Greco",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-12T00:36:33.611Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a216",
+      "userId": "u108",
+      "userName": "Sofia Gallo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-11T15:17:44.906Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a50",
+      "userId": "u25",
+      "userName": "Lorenzo Lombardi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-11T11:31:24.805Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a214",
+      "userId": "u107",
+      "userName": "Elena Russo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-11T02:26:29.790Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a5",
+      "userId": "u3",
+      "userName": "Chiara Giordano",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-10T19:54:33.654Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a200",
+      "userId": "u100",
+      "userName": "Tommaso Mancini",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-10T13:51:43.603Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a143",
+      "userId": "u72",
+      "userName": "Alice Greco",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-10T06:43:57.259Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a43",
+      "userId": "u22",
+      "userName": "Alice Romano",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-09T22:59:18.472Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a188",
+      "userId": "u94",
+      "userName": "Chiara Lombardo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-09T15:36:00.874Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a110",
+      "userId": "u55",
+      "userName": "Tommaso Costa",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-09T04:12:51.070Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a276",
+      "userId": "u138",
+      "userName": "Sofia Ricci",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-07T18:40:38.747Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a131",
+      "userId": "u66",
+      "userName": "Tommaso Rossi",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-05-07T15:38:28.344Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a248",
+      "userId": "u124",
+      "userName": "Emma Ferrari",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-07T00:21:20.135Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a16",
+      "userId": "u8",
+      "userName": "Tommaso Marini",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-06T21:42:26.855Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a190",
+      "userId": "u95",
+      "userName": "Sara Lombardo",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-05-06T20:23:24.237Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a75",
+      "userId": "u38",
+      "userName": "Sofia Rossi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-06T17:06:33.089Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a140",
+      "userId": "u70",
+      "userName": "Federica Russo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-06T12:30:06.021Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a242",
+      "userId": "u121",
+      "userName": "Simone Colombo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-06T12:09:36.674Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a22",
+      "userId": "u11",
+      "userName": "Elisa Rossi",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-06T07:35:19.211Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a298",
+      "userId": "u149",
+      "userName": "Francesco Romano",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-06T06:52:57.906Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a139",
+      "userId": "u70",
+      "userName": "Federica Russo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-05-05T12:52:30.288Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a106",
+      "userId": "u53",
+      "userName": "Andrea Barbieri",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-05T11:35:34.773Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a241",
+      "userId": "u121",
+      "userName": "Simone Colombo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-05-05T04:15:03.229Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a295",
+      "userId": "u148",
+      "userName": "Simone Moretti",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-05T01:54:17.488Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a290",
+      "userId": "u145",
+      "userName": "Lorenzo Romano",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-04T13:45:34.764Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a249",
+      "userId": "u125",
+      "userName": "Francesca Colombo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-03T05:52:18.377Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a219",
+      "userId": "u110",
+      "userName": "Matteo Barbieri",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-05-02T21:55:59.269Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a159",
+      "userId": "u80",
+      "userName": "Lorenzo Barbieri",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-05-01T20:38:19.805Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a156",
+      "userId": "u78",
+      "userName": "Gabriele Greco",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-01T15:57:18.786Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a3",
+      "userId": "u2",
+      "userName": "Simone Conti",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-05-01T07:29:23.619Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a19",
+      "userId": "u10",
+      "userName": "Marco Moretti",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-05-01T07:12:49.477Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a261",
+      "userId": "u131",
+      "userName": "Alessandro Costa",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-30T23:32:00.158Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a97",
+      "userId": "u49",
+      "userName": "Pietro Ricci",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-30T03:36:55.444Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a30",
+      "userId": "u15",
+      "userName": "Alice Russo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-04-30T00:47:20.788Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a6",
+      "userId": "u3",
+      "userName": "Chiara Giordano",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-30T00:31:37.255Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a73",
+      "userId": "u37",
+      "userName": "Pietro Fontana",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-29T17:35:05.906Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a41",
+      "userId": "u21",
+      "userName": "Elisa Giordano",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-29T11:36:03.970Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a179",
+      "userId": "u90",
+      "userName": "Sara Mancini",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-04-28T21:40:28.078Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a26",
+      "userId": "u13",
+      "userName": "Tommaso De Luca",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-28T10:36:51.705Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a1",
+      "userId": "u1",
+      "userName": "Pietro Bianchi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-28T03:07:25.172Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a160",
+      "userId": "u80",
+      "userName": "Lorenzo Barbieri",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-27T22:14:26.769Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a239",
+      "userId": "u120",
+      "userName": "Chiara Colombo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-27T21:25:19.751Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a185",
+      "userId": "u93",
+      "userName": "Francesco Moretti",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-27T18:15:38.621Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a39",
+      "userId": "u20",
+      "userName": "Federica Rossi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-27T00:16:50.465Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a268",
+      "userId": "u134",
+      "userName": "Sara Verdi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-04-26T20:12:26.497Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a174",
+      "userId": "u87",
+      "userName": "Davide Bianchi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-26T18:25:51.931Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a240",
+      "userId": "u120",
+      "userName": "Chiara Colombo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-25T17:49:39.401Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a42",
+      "userId": "u21",
+      "userName": "Elisa Giordano",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-23T23:28:40.210Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a222",
+      "userId": "u111",
+      "userName": "Matteo Barbieri",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-23T21:03:33.906Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a46",
+      "userId": "u23",
+      "userName": "Emma Costa",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-23T16:02:54.997Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a161",
+      "userId": "u81",
+      "userName": "Giulia Gallo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-04-22T22:04:47.719Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a212",
+      "userId": "u106",
+      "userName": "Elena Esposito",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-21T15:36:15.239Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a76",
+      "userId": "u38",
+      "userName": "Sofia Rossi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-20T15:29:31.995Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a121",
+      "userId": "u61",
+      "userName": "Marco Russo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-19T19:25:32.984Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a25",
+      "userId": "u13",
+      "userName": "Tommaso De Luca",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-19T11:31:29.323Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a125",
+      "userId": "u63",
+      "userName": "Davide Russo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-19T04:40:31.736Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a229",
+      "userId": "u115",
+      "userName": "Elisa Moretti",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-18T02:05:28.964Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a169",
+      "userId": "u85",
+      "userName": "Simone Ricci",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-18T01:08:15.356Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a193",
+      "userId": "u97",
+      "userName": "Elena Giordano",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-17T21:36:28.234Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a272",
+      "userId": "u136",
+      "userName": "Lorenzo Ferrari",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-17T18:43:28.197Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a282",
+      "userId": "u141",
+      "userName": "Andrea Greco",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-17T12:31:06.535Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a12",
+      "userId": "u6",
+      "userName": "Davide De Luca",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-04-17T07:14:02.513Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a107",
+      "userId": "u54",
+      "userName": "Alice Conti",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-17T07:05:47.948Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a89",
+      "userId": "u45",
+      "userName": "Pietro Fontana",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-17T02:17:05.224Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a51",
+      "userId": "u26",
+      "userName": "Andrea Russo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-17T01:42:57.092Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a91",
+      "userId": "u46",
+      "userName": "Andrea Giordano",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-16T15:28:56.236Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a114",
+      "userId": "u57",
+      "userName": "Elisa Lombardo",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-15T20:48:42.718Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a254",
+      "userId": "u127",
+      "userName": "Riccardo Fontana",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-04-15T20:07:49.123Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a113",
+      "userId": "u57",
+      "userName": "Elisa Lombardo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-15T19:11:56.798Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a15",
+      "userId": "u8",
+      "userName": "Tommaso Marini",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-15T07:43:41.030Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a205",
+      "userId": "u103",
+      "userName": "Elena Ferrari",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-04-14T22:11:35.692Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a204",
+      "userId": "u102",
+      "userName": "Simone Conti",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-13T19:02:30.397Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a275",
+      "userId": "u138",
+      "userName": "Sofia Ricci",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-13T13:33:39.918Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a34",
+      "userId": "u17",
+      "userName": "Gabriele Russo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-13T02:10:53.966Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a194",
+      "userId": "u97",
+      "userName": "Elena Giordano",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-13T01:33:48.333Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a287",
+      "userId": "u144",
+      "userName": "Federica Colombo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-04-12T22:54:31.729Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a257",
+      "userId": "u129",
+      "userName": "Alice Bruno",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-12T20:06:55.873Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a14",
+      "userId": "u7",
+      "userName": "Elena Giordano",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-12T01:08:26.629Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a141",
+      "userId": "u71",
+      "userName": "Simone Greco",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-11T01:35:27.138Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a11",
+      "userId": "u6",
+      "userName": "Davide De Luca",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-10T13:42:11.462Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a24",
+      "userId": "u12",
+      "userName": "Gabriele Bianchi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-09T05:22:00.684Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a93",
+      "userId": "u47",
+      "userName": "Lorenzo Bianchi",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-08T05:14:45.339Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a23",
+      "userId": "u12",
+      "userName": "Gabriele Bianchi",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-06T20:06:22.865Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a100",
+      "userId": "u50",
+      "userName": "Francesca Gallo",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-04-04T23:43:58.861Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a108",
+      "userId": "u54",
+      "userName": "Alice Conti",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-04T22:51:22.000Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a158",
+      "userId": "u79",
+      "userName": "Simone Costa",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-04-04T19:36:03.202Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a215",
+      "userId": "u108",
+      "userName": "Sofia Gallo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-04-04T07:28:00.817Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a9",
+      "userId": "u5",
+      "userName": "Sofia Gallo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-04-03T06:52:11.746Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a211",
+      "userId": "u106",
+      "userName": "Elena Esposito",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-04-01T09:00:00.256Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a21",
+      "userId": "u11",
+      "userName": "Elisa Rossi",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-04-01T04:48:17.026Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a273",
+      "userId": "u137",
+      "userName": "Francesco Fontana",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-04-01T00:13:02.355Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a238",
+      "userId": "u119",
+      "userName": "Gabriele Ricci",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-31T08:34:43.851Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a72",
+      "userId": "u36",
+      "userName": "Emma Verdi",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-30T18:43:24.105Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a124",
+      "userId": "u62",
+      "userName": "Elisa Russo",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-30T18:19:17.508Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a209",
+      "userId": "u105",
+      "userName": "Pietro Verdi",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-03-30T12:38:19.595Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a264",
+      "userId": "u132",
+      "userName": "Sara Gallo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-03-30T10:33:26.985Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a253",
+      "userId": "u127",
+      "userName": "Riccardo Fontana",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-03-30T01:49:38.543Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a33",
+      "userId": "u17",
+      "userName": "Gabriele Russo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-03-29T20:39:55.757Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a127",
+      "userId": "u64",
+      "userName": "Marco Barbieri",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-03-29T17:09:50.795Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a218",
+      "userId": "u109",
+      "userName": "Elisa Costa",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-03-29T04:44:32.204Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a13",
+      "userId": "u7",
+      "userName": "Elena Giordano",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-03-28T20:17:23.185Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a157",
+      "userId": "u79",
+      "userName": "Simone Costa",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-03-28T19:21:10.790Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a35",
+      "userId": "u18",
+      "userName": "Sofia Costa",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-28T00:08:58.756Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a17",
+      "userId": "u9",
+      "userName": "Elena Fontana",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-27T06:11:50.274Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a171",
+      "userId": "u86",
+      "userName": "Tommaso Rizzo",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-03-26T16:34:03.113Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a213",
+      "userId": "u107",
+      "userName": "Elena Russo",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-03-25T11:23:16.814Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a142",
+      "userId": "u71",
+      "userName": "Simone Greco",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-03-25T08:14:36.857Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a289",
+      "userId": "u145",
+      "userName": "Lorenzo Romano",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-03-25T06:00:08.120Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a36",
+      "userId": "u18",
+      "userName": "Sofia Costa",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-25T02:10:01.523Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a281",
+      "userId": "u141",
+      "userName": "Andrea Greco",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-03-24T17:46:37.411Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a28",
+      "userId": "u14",
+      "userName": "Giulia Fontana",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-24T13:41:10.905Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a29",
+      "userId": "u15",
+      "userName": "Alice Russo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-23T11:22:27.760Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a59",
+      "userId": "u30",
+      "userName": "Lorenzo Marini",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-03-22T10:31:45.921Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a187",
+      "userId": "u94",
+      "userName": "Chiara Lombardo",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-03-21T23:08:07.373Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a74",
+      "userId": "u37",
+      "userName": "Pietro Fontana",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-03-21T21:10:55.424Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a237",
+      "userId": "u119",
+      "userName": "Gabriele Ricci",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-03-21T15:32:50.709Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a217",
+      "userId": "u109",
+      "userName": "Elisa Costa",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-03-21T13:37:37.236Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a101",
+      "userId": "u51",
+      "userName": "Francesco Fontana",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-03-21T07:37:18.863Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a168",
+      "userId": "u84",
+      "userName": "Martina Conti",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-03-20T16:34:28.290Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a92",
+      "userId": "u46",
+      "userName": "Andrea Giordano",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-03-20T09:19:01.906Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a293",
+      "userId": "u147",
+      "userName": "Marco Russo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-03-20T00:18:43.112Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a199",
+      "userId": "u100",
+      "userName": "Tommaso Mancini",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-03-19T22:07:39.134Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a262",
+      "userId": "u131",
+      "userName": "Alessandro Costa",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-03-19T05:35:33.887Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a284",
+      "userId": "u142",
+      "userName": "Federica Rossi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-19T01:45:55.896Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a94",
+      "userId": "u47",
+      "userName": "Lorenzo Bianchi",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-18T01:17:41.922Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a226",
+      "userId": "u113",
+      "userName": "Alice Marini",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-17T19:08:37.852Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a184",
+      "userId": "u92",
+      "userName": "Sara Conti",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-16T19:27:47.013Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a68",
+      "userId": "u34",
+      "userName": "Simone Lombardi",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-15T09:18:39.021Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a147",
+      "userId": "u74",
+      "userName": "Marco Ferrari",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-03-14T23:17:53.480Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a18",
+      "userId": "u9",
+      "userName": "Elena Fontana",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-03-14T18:37:32.175Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a4",
+      "userId": "u2",
+      "userName": "Simone Conti",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-03-12T23:57:43.036Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a154",
+      "userId": "u77",
+      "userName": "Sofia Greco",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-10T19:46:08.797Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a260",
+      "userId": "u130",
+      "userName": "Sara Rizzo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-03-08T04:13:11.709Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a90",
+      "userId": "u45",
+      "userName": "Pietro Fontana",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-03-05T22:11:47.048Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a251",
+      "userId": "u126",
+      "userName": "Giulia Marini",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-05T16:39:07.475Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a297",
+      "userId": "u149",
+      "userName": "Francesco Romano",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-03-02T11:36:12.427Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a120",
+      "userId": "u60",
+      "userName": "Lorenzo Ricci",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-03-02T10:39:56.360Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a270",
+      "userId": "u135",
+      "userName": "Davide Ferrari",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-03-01T12:22:21.839Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a55",
+      "userId": "u28",
+      "userName": "Federica Greco",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-03-01T04:42:48.506Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a186",
+      "userId": "u93",
+      "userName": "Francesco Moretti",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-02-28T17:53:35.831Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a102",
+      "userId": "u51",
+      "userName": "Francesco Fontana",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-02-26T18:45:43.757Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a198",
+      "userId": "u99",
+      "userName": "Andrea Rossi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-02-26T16:43:22.203Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a126",
+      "userId": "u63",
+      "userName": "Davide Russo",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-02-22T11:00:58.685Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a119",
+      "userId": "u60",
+      "userName": "Lorenzo Ricci",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-02-22T06:57:04.429Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a269",
+      "userId": "u135",
+      "userName": "Davide Ferrari",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-02-21T18:41:26.318Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a65",
+      "userId": "u33",
+      "userName": "Alessandro Rossi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-02-20T04:22:52.720Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a236",
+      "userId": "u118",
+      "userName": "Matteo Lombardi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-02-20T02:46:33.828Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a135",
+      "userId": "u68",
+      "userName": "Andrea Verdi",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-02-18T17:26:35.310Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a99",
+      "userId": "u50",
+      "userName": "Francesca Gallo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-02-18T05:46:52.579Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a144",
+      "userId": "u72",
+      "userName": "Alice Greco",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-02-16T11:46:37.459Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a111",
+      "userId": "u56",
+      "userName": "Giorgia Russo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-02-15T21:46:38.158Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a228",
+      "userId": "u114",
+      "userName": "Lorenzo Rossi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-02-14T15:31:45.168Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a244",
+      "userId": "u122",
+      "userName": "Giorgia Barbieri",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-02-13T21:04:23.955Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a197",
+      "userId": "u99",
+      "userName": "Andrea Rossi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-02-12T19:57:33.423Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a27",
+      "userId": "u14",
+      "userName": "Giulia Fontana",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-02-12T12:47:03.186Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a224",
+      "userId": "u112",
+      "userName": "Francesca De Luca",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-02-09T14:40:44.845Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a112",
+      "userId": "u56",
+      "userName": "Giorgia Russo",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-02-09T11:00:04.710Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a294",
+      "userId": "u147",
+      "userName": "Marco Russo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-02-09T07:29:20.481Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a80",
+      "userId": "u40",
+      "userName": "Tommaso Ricci",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-02-06T05:42:57.950Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a2",
+      "userId": "u1",
+      "userName": "Pietro Bianchi",
+      "type": "Accesso",
+      "description": "Accesso effettuato al sistema",
+      "timestamp": "2026-02-05T19:59:23.152Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a195",
+      "userId": "u98",
+      "userName": "Sofia Costa",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-01-30T05:33:26.665Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a271",
+      "userId": "u136",
+      "userName": "Lorenzo Ferrari",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-01-29T15:36:45.954Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a66",
+      "userId": "u33",
+      "userName": "Alessandro Rossi",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-01-27T03:02:37.566Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a235",
+      "userId": "u118",
+      "userName": "Matteo Lombardi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-01-25T18:28:27.432Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a153",
+      "userId": "u77",
+      "userName": "Sofia Greco",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-01-24T19:10:01.282Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a173",
+      "userId": "u87",
+      "userName": "Davide Bianchi",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-01-23T14:24:41.044Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a227",
+      "userId": "u114",
+      "userName": "Lorenzo Rossi",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2026-01-22T21:40:50.924Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a164",
+      "userId": "u82",
+      "userName": "Pietro Marini",
+      "type": "Accesso",
+      "description": "Nuova registrazione completata con successo",
+      "timestamp": "2026-01-21T15:49:07.599Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a163",
+      "userId": "u82",
+      "userName": "Pietro Marini",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-01-19T21:39:11.038Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a10",
+      "userId": "u5",
+      "userName": "Sofia Gallo",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2026-01-18T11:18:00.316Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a267",
+      "userId": "u134",
+      "userName": "Sara Verdi",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-01-13T07:07:33.958Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a130",
+      "userId": "u65",
+      "userName": "Martina Gallo",
+      "type": "Deploy",
+      "description": "Rilascio in produzione della nuova navbar",
+      "timestamp": "2026-01-11T19:34:57.303Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a129",
+      "userId": "u65",
+      "userName": "Martina Gallo",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-01-06T02:20:10.469Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a60",
+      "userId": "u30",
+      "userName": "Lorenzo Marini",
+      "type": "Eliminazione",
+      "description": "Cancellato utente di test inattivo",
+      "timestamp": "2026-01-05T00:14:04.579Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a172",
+      "userId": "u86",
+      "userName": "Tommaso Rizzo",
+      "type": "Accesso",
+      "description": "Tentativo di accesso fallito (password errata)",
+      "timestamp": "2026-01-02T00:27:24.879Z",
+      "status": "Fallito"
+    },
+    {
+      "id": "a79",
+      "userId": "u40",
+      "userName": "Tommaso Ricci",
+      "type": "Modifica",
+      "description": "Aggiornato articolo sul blog aziendale",
+      "timestamp": "2026-01-01T13:24:16.671Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a136",
+      "userId": "u68",
+      "userName": "Andrea Verdi",
+      "type": "Bugfix",
+      "description": "Risolto errore di compilazione TypeScript nel modulo utenti",
+      "timestamp": "2025-12-27T13:13:37.673Z",
+      "status": "Completato"
+    },
+    {
+      "id": "a243",
+      "userId": "u122",
+      "userName": "Giorgia Barbieri",
+      "type": "Sicurezza",
+      "description": "Modificati i permessi del ruolo Editor",
+      "timestamp": "2025-12-11T17:53:56.126Z",
+      "status": "Completato"
+    }
+  ]
+}

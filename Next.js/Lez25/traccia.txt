@@ -1,0 +1,7 @@
+Crea un progetto in Next.JS che abbia sei rotte (Dashboard con ultimi cinque utenti e ultime cinque attività,
+utenti lista e dettaglio e attività lista e dettaglio e impostazioni) che prenda i dati da JSON statici (no chiamate remote).
+Crea un layout di base comune a tutti con una barra di navigazione per spostarsi da una rotta all'altra
+(Dashboard, risorse e impostazioni, usa "Link" di next per collegare le pagine) e uno specifico per la gestione
+delle risorse (utenti e attività) con un sottomenù che permetta di passare da una all'altra.
+Usa URL leggibili e coerenti e una distinzione chiara tra pagina e layout mantenendo nomi semplice e parlanti.
+Non introdurre autenticazione, dati remoti o routing avanzato. Ogni pagina e layout deve fare solo il suo compito senza duplicazioni.
