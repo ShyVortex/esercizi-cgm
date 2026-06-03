@@ -1,5 +1,5 @@
 import UserRow from "./UserRow.tsx";
-import { Role, type User } from "../models/types/User.ts";
+import type { User } from "../models/types/User.ts";
 import { AuthStorageService } from "../services/auth-storage.service.ts";
 
 type Props = {
@@ -20,7 +20,7 @@ export default function UserList({ users: users, onUpdate: updateUser, onDelete:
                         <th className="p-4 border-b uppercase text-xs text-gray-900 font-bold">Username</th>
                         <th className="p-4 border-b uppercase text-xs text-gray-900 font-bold">Email</th>
                         <th className="p-4 border-b uppercase text-xs text-gray-900 font-bold">Ruolo</th>
-                        {user.role !== Role.READER ?
+                        {user.role !== 1 ?
                             (< th className="p-4 border-b uppercase text-right text-xs text-gray-900 font-bold">Azioni</th>)
                             : (<></>)}
                     </tr>

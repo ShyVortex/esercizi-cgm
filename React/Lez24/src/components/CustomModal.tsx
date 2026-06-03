@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import { Role, type User } from '../models/types/User';
+import type { User } from '../models/types/User';
 import React, { useState } from 'react';
 import type { SaveUserRequest } from '../models/requests/user-requests';
 import { AuthStorageService } from '../services/auth-storage.service';
@@ -33,28 +33,9 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
         const middleName = formData.get('middleName') as string;
         const roleSelect = formData.get('role') as FormDataEntryValue | undefined;
 
-        let role: Role | undefined;
+        let role: number | undefined;
         if (roleSelect && roleSelect != '') {
-            role = roleSelect as Role;
-        }
-
-        let permissions: string[] | undefined;
-        if (role) {
-            switch (role) {
-                case Role.READER:
-                    permissions = ['users-view', 'user-details'];
-                    break;
-                case Role.EDITOR:
-                    permissions = ['users-view', 'user-details', 'user-edit'];
-                    break;
-                case Role.ADMIN:
-                    permissions = ['users-view', 'user-details', 'user-edit', 'user-create', 'user-delete'];
-                    break;
-                default:
-                    break;
-            }
-        } else {
-            permissions = undefined;
+            role = Number(roleSelect);
         }
 
         const userData: SaveUserRequest = {
@@ -64,8 +45,7 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
             firstName: firstName,
             middleName: (middleName && middleName.trim() !== '') ? middleName.trim() : undefined,
             lastName: lastName,
-            role: role,
-            permissions: permissions
+            role: role
         }
 
         if (!user) {
@@ -137,7 +117,7 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                 </div>
 
                 {/* Password (visibile solo se l'utente loggato è amministratore) */}
-                {loggedUser?.role === Role.ADMIN ? (
+                {loggedUser?.role === 3 && (
                     <div className="flex flex-col gap-1">
                         <label htmlFor='password' className="text-xs font-bold text-gray-400 uppercase tracking-wider">Password</label>
                         <div className="relative">
@@ -166,7 +146,7 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                             </button>
                         </div>
                     </div>
-                ) : (<></>)}
+                )}
 
                 {/* Grid per Nome e Cognome */}
                 <div className="grid grid-cols-2 gap-4">
@@ -210,17 +190,17 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                 </div>
 
                 {/* Ruolo (visibile solo se l'utente loggato è admin e l'utente selezionato non è quello loggato) */}
-                {loggedUser?.role === Role.ADMIN && (user ? user.id !== loggedUser?.id : true) ? (
+                {loggedUser?.role === 3 && (user ? user.id !== loggedUser?.id : true) ? (
                     <div className="flex flex-col gap-1">
                         <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Ruolo</label>
                         <select
-                            defaultValue={user?.role || Role.READER}
+                            defaultValue={user?.role || 1}
                             required
                             name="role"
                             className="w-full bg-gray-900 border border-gray-700 rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors">
-                            <option value='reader'>Lettore</option>
-                            <option value='editor'>Editore</option>
-                            <option value='admin'>Amministratore</option>
+                            <option value='1'>Lettore</option>
+                            <option value='2'>Editore</option>
+                            <option value='3'>Amministratore</option>
                         </select>
                     </div>
                 ) : (<></>)}

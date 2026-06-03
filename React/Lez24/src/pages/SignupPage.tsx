@@ -3,9 +3,8 @@ import { authService } from "../api/auth.service";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import RouteComponent from "../components/RouteComponent";
+import NavBar from "../components/NavBar";
 import type { SignupRequest } from "../models/requests/auth-requests";
-import { Role } from "../models/types/User";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function SignupPage(): React.ReactElement {
@@ -44,8 +43,7 @@ export default function SignupPage(): React.ReactElement {
                 firstName: firstName,
                 middleName: middleName.trim() || undefined,
                 lastName: lastName,
-                role: Role.READER,
-                permissions: ['users-view', 'user-details']
+                role: 1
             }
 
             await authService.AuthSignUp(request);
@@ -82,7 +80,7 @@ export default function SignupPage(): React.ReactElement {
 
     return (
         <div className="min-h-screen text-gray-100 flex flex-col items-center">
-            <RouteComponent />
+            <NavBar />
 
             <div className="mt-16 mb-10 w-full max-w-md p-8 bg-gray-800/40 backdrop-blur-md rounded-2xl border border-gray-700/50 shadow-2xl transition-all duration-300">
                 <div className="text-center mb-8">

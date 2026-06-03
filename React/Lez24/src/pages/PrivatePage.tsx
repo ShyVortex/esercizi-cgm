@@ -1,6 +1,6 @@
 import type React from "react";
-import RouteComponent from "../components/RouteComponent";
-import { Role, type User } from "../models/types/User";
+import NavBar from "../components/NavBar";
+import type { User } from "../models/types/User";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { GetFPUsersResponse } from "../models/responses/user-responses";
 import { authService } from "../api/auth.service";
@@ -187,24 +187,24 @@ export default function PrivatePage(): React.ReactElement {
         }
     };
 
-    const role: string = loggedUser.role === Role.READER ? 'Lettore'
-        : loggedUser.role === Role.EDITOR ? 'Editore'
-            : loggedUser.role === Role.ADMIN ? 'Amministratore'
-                : '';
-
+    let role: string;
     let roleClass: string;
 
     switch (loggedUser.role) {
-        case Role.READER:
+        case 1:
+            role = 'Lettore';
             roleClass = "mt-3 text-green-700 rounded";
             break;
-        case Role.EDITOR:
+        case 2:
+            role = 'Editore';
             roleClass = "mt-3 text-yellow-700 rounded";
             break;
-        case Role.ADMIN:
+        case 3:
+            role = 'Amministratore';
             roleClass = "mt-3 text-red-700 rounded";
             break;
         default:
+            role = '';
             roleClass = "mt-3 text-gray-300 rounded";
             break;
     }
@@ -214,7 +214,7 @@ export default function PrivatePage(): React.ReactElement {
         <>
             <h3 className="mt-5">Il tuo ruolo è</h3>
             <h3 className={roleClass}>{role}</h3>
-            <RouteComponent />
+            <NavBar />
             <PaginationComponent
                 currentPage={currentPage}
                 totalPages={totalPages}
@@ -229,7 +229,7 @@ export default function PrivatePage(): React.ReactElement {
                     choice={filter}
                     onChange={handleFilterChange}
                 />
-                {loggedUser.role === Role.ADMIN ? (
+                {loggedUser.role === 3 ? (
                     <button
                         className={btnCreateStyle}
                         onClick={openCreateModal}

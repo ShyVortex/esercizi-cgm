@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import RouteComponent from "../components/RouteComponent";
+import NavBar from "../components/NavBar";
 import { authService } from "../api/auth.service";
 import Swal from "sweetalert2";
 
@@ -60,7 +60,7 @@ export default function LoginPage(): React.ReactElement {
 
     return (
         <div className="min-h-screen text-gray-100 flex flex-col items-center">
-            <RouteComponent />
+            <NavBar />
 
             <div className="mt-16 mb-5 w-full max-w-md p-8 bg-gray-800/40 backdrop-blur-md rounded-2xl border border-gray-700/50 shadow-2xl transition-all duration-300">
                 <div className="text-center mb-8">

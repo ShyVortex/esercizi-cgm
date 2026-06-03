@@ -1,10 +1,10 @@
 import type React from "react";
-import RouteComponent from "../components/RouteComponent";
+import NavBar from "../components/NavBar";
 
 export default function PublicPage(): React.ReactElement {
     return (
         <div>
-            <RouteComponent />
+            <NavBar />
             <div className="mt-30 flex flex-col items-center justify-center p-12 bg-gray-800/40 rounded-xl border border-gray-700/50 shadow-md text-center">
                 <div className="text-4xl mb-4">🌎</div>
                 <p className="text-gray-300 font-medium text-lg">Pagina Pubblica</p>

@@ -1,10 +1,8 @@
-export const Role = {
-    READER: 'reader',
-    EDITOR: 'editor',
-    ADMIN: 'admin'
-} as const;
-
-export type Role = typeof Role[keyof typeof Role];
+export type Role = {
+    id: number;
+    name: string;
+    permissions: string[];
+}
 
 export type User = {
     id: string;
@@ -14,6 +12,5 @@ export type User = {
     firstName: string;
     middleName?: string;
     lastName: string;
-    role: Role;
-    permissions: string[];
+    role: number;
 }

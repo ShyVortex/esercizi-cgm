@@ -1,4 +1,34 @@
 {
+  "roles": [
+    {
+      "id": 1,
+      "name": "reader",
+      "permissions": [
+        "users-view",
+        "user-details"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "editor",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "admin",
+      "permissions": [
+        "users-view",
+        "user-details",
+        "user-edit",
+        "user-create",
+        "user-delete"
+      ]
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -7,15 +37,7 @@
       "username": "marcorossi1",
       "firstName": "Marco",
       "lastName": "Rossi",
-      "role": "admin",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit",
-        "user-create",
-        "user-delete"
-      ],
-      "middleName": "Verdi"
+      "role": 3
     },
     {
       "id": "2",
@@ -24,12 +46,7 @@
       "username": "giuliabianchi2",
       "firstName": "Giulia",
       "lastName": "Bianchi",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "3",
@@ -38,12 +55,7 @@
       "username": "lucaverdi3",
       "firstName": "Luca",
       "lastName": "Verdi",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "4",
@@ -52,12 +64,7 @@
       "username": "francescaneri4",
       "firstName": "Francesca",
       "lastName": "Neri",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "5",
@@ -66,12 +73,7 @@
       "username": "alessandrogallo5",
       "firstName": "Alessandro",
       "lastName": "Gallo",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "6",
@@ -80,12 +82,7 @@
       "username": "sofiaconte6",
       "firstName": "Sofia",
       "lastName": "Conte",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "7",
@@ -94,12 +91,7 @@
       "username": "matteomarini7",
       "firstName": "Matteo",
       "lastName": "Marini",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "8",
@@ -108,12 +100,7 @@
       "username": "elenaricci8",
       "firstName": "Elena",
       "lastName": "Ricci",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "9",
@@ -122,12 +109,7 @@
       "username": "davidebruno9",
       "firstName": "Davide",
       "lastName": "Bruno",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "10",
@@ -136,12 +118,7 @@
       "username": "chiaragatti10",
       "firstName": "Chiara",
       "lastName": "Gatti",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "11",
@@ -150,12 +127,7 @@
       "username": "simonelongo11",
       "firstName": "Simone",
       "lastName": "Longo",
-      "role": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
+      "role": 2
     },
     {
       "id": "12",
@@ -164,11 +136,7 @@
       "username": "alicemoretti12",
       "firstName": "Alice",
       "lastName": "Moretti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "13",
@@ -177,11 +145,7 @@
       "username": "federicobarbieri13",
       "firstName": "Federico",
       "lastName": "Barbieri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "14",
@@ -190,11 +154,7 @@
       "username": "beatricefontana14",
       "firstName": "Beatrice",
       "lastName": "Fontana",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "15",
@@ -203,11 +163,7 @@
       "username": "riccardoserra15",
       "firstName": "Riccardo",
       "lastName": "Serra",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -217,11 +173,7 @@
       "username": "martinacaruso16",
       "firstName": "Martina",
       "lastName": "Caruso",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "17",
@@ -230,11 +182,7 @@
       "username": "andrearizzo17",
       "firstName": "Andrea",
       "lastName": "Rizzo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "18",
@@ -243,11 +191,7 @@
       "username": "giorgiaferrari18",
       "firstName": "Giorgia",
       "lastName": "Ferrari",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "19",
@@ -256,11 +200,7 @@
       "username": "stefanoesposito19",
       "firstName": "Stefano",
       "lastName": "Esposito",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "20",
@@ -269,11 +209,7 @@
       "username": "sararomano20",
       "firstName": "Sara",
       "lastName": "Romano",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "21",
@@ -282,11 +218,7 @@
       "username": "filippocolombo21",
       "firstName": "Filippo",
       "lastName": "Colombo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "22",
@@ -295,11 +227,7 @@
       "username": "annagreco22",
       "firstName": "Anna",
       "lastName": "Greco",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "23",
@@ -308,11 +236,7 @@
       "username": "christianmarino23",
       "firstName": "Christian",
       "lastName": "Marino",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "24",
@@ -321,11 +245,7 @@
       "username": "auroravilla24",
       "firstName": "Aurora",
       "lastName": "Villa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "25",
@@ -334,11 +254,7 @@
       "username": "gabrielefarina25",
       "firstName": "Gabriele",
       "lastName": "Farina",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "26",
@@ -347,11 +263,7 @@
       "username": "noemirivas26",
       "firstName": "Noemi",
       "lastName": "Rivas",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "27",
@@ -360,11 +272,7 @@
       "username": "lorenzoguerra27",
       "firstName": "Lorenzo",
       "lastName": "Guerra",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "28",
@@ -373,11 +281,7 @@
       "username": "elisapellegrini28",
       "firstName": "Elisa",
       "lastName": "Pellegrini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "29",
@@ -386,11 +290,7 @@
       "username": "claudiocosta29",
       "firstName": "Claudio",
       "lastName": "Costa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "30",
@@ -399,11 +299,7 @@
       "username": "silviapagano30",
       "firstName": "Silvia",
       "lastName": "Pagano",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -413,11 +309,7 @@
       "username": "valeriomartini31",
       "firstName": "Valerio",
       "lastName": "Martini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "32",
@@ -426,11 +318,7 @@
       "username": "camillagalli32",
       "firstName": "Camilla",
       "lastName": "Galli",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "33",
@@ -439,11 +327,7 @@
       "username": "emanuelebini33",
       "firstName": "Emanuele",
       "lastName": "Bini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "34",
@@ -452,11 +336,7 @@
       "username": "irenevalli34",
       "firstName": "Irene",
       "lastName": "Valli",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "35",
@@ -465,11 +345,7 @@
       "username": "tommasomazza35",
       "firstName": "Tommaso",
       "lastName": "Mazza",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "36",
@@ -478,11 +354,7 @@
       "username": "fabiodonati36",
       "firstName": "Fabio",
       "lastName": "Donati",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "37",
@@ -491,11 +363,7 @@
       "username": "serenaorsini37",
       "firstName": "Serena",
       "lastName": "Orsini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "38",
@@ -504,11 +372,7 @@
       "username": "giovannipari38",
       "firstName": "Giovanni",
       "lastName": "Pari",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "39",
@@ -517,11 +381,7 @@
       "username": "martavitali39",
       "firstName": "Marta",
       "lastName": "Vitali",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "40",
@@ -530,11 +390,7 @@
       "username": "albertosala40",
       "firstName": "Alberto",
       "lastName": "Sala",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "41",
@@ -543,11 +399,7 @@
       "username": "robertafabbri41",
       "firstName": "Roberta",
       "lastName": "Fabbri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "42",
@@ -556,11 +408,7 @@
       "username": "danielemonti42",
       "firstName": "Daniele",
       "lastName": "Monti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "43",
@@ -569,11 +417,7 @@
       "username": "giadatesta43",
       "firstName": "Giada",
       "lastName": "Testa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "44",
@@ -582,11 +426,7 @@
       "username": "giacomorinaldi44",
       "firstName": "Giacomo",
       "lastName": "Rinaldi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "45",
@@ -595,11 +435,7 @@
       "username": "federicagiuliani45",
       "firstName": "Federica",
       "lastName": "Giuliani",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -609,11 +445,7 @@
       "username": "lisamarchetti46",
       "firstName": "Lisa",
       "lastName": "Marchetti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "47",
@@ -622,11 +454,7 @@
       "username": "manuelreale47",
       "firstName": "Manuel",
       "lastName": "Reale",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "48",
@@ -635,11 +463,7 @@
       "username": "valentinaferri48",
       "firstName": "Valentina",
       "lastName": "Ferri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "49",
@@ -648,11 +472,7 @@
       "username": "edoardopalumbo49",
       "firstName": "Edoardo",
       "lastName": "Palumbo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "50",
@@ -661,11 +481,7 @@
       "username": "michelaamato50",
       "firstName": "Michela",
       "lastName": "Amato",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "51",
@@ -674,11 +490,7 @@
       "username": "samuelerossi51",
       "firstName": "Samuele",
       "lastName": "Rossi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "52",
@@ -687,11 +499,7 @@
       "username": "veronicabianchi52",
       "firstName": "Veronica",
       "lastName": "Bianchi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "53",
@@ -700,11 +508,7 @@
       "username": "nicolaverdi53",
       "firstName": "Nicola",
       "lastName": "Verdi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "54",
@@ -713,11 +517,7 @@
       "username": "mattianeri54",
       "firstName": "Mattia",
       "lastName": "Neri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "55",
@@ -726,11 +526,7 @@
       "username": "ilariagallo55",
       "firstName": "Ilaria",
       "lastName": "Gallo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "56",
@@ -739,11 +535,7 @@
       "username": "paoloconte56",
       "firstName": "Paolo",
       "lastName": "Conte",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "57",
@@ -752,11 +544,7 @@
       "username": "leonardomarini57",
       "firstName": "Leonardo",
       "lastName": "Marini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "58",
@@ -765,11 +553,7 @@
       "username": "lorenzaricci58",
       "firstName": "Lorenza",
       "lastName": "Ricci",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "59",
@@ -778,11 +562,7 @@
       "username": "pasqualebruno59",
       "firstName": "Pasquale",
       "lastName": "Bruno",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "60",
@@ -791,11 +571,7 @@
       "username": "claragatti60",
       "firstName": "Clara",
       "lastName": "Gatti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -805,11 +581,7 @@
       "username": "salvatorelongo61",
       "firstName": "Salvatore",
       "lastName": "Longo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "62",
@@ -818,11 +590,7 @@
       "username": "miriammoretti62",
       "firstName": "Miriam",
       "lastName": "Moretti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "63",
@@ -831,11 +599,7 @@
       "username": "antoniobarbieri63",
       "firstName": "Antonio",
       "lastName": "Barbieri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "64",
@@ -844,11 +608,7 @@
       "username": "francescofontana64",
       "firstName": "Francesco",
       "lastName": "Fontana",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "65",
@@ -857,11 +617,7 @@
       "username": "luisaserra65",
       "firstName": "Luisa",
       "lastName": "Serra",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "66",
@@ -870,11 +626,7 @@
       "username": "vincenzocaruso66",
       "firstName": "Vincenzo",
       "lastName": "Caruso",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "67",
@@ -883,11 +635,7 @@
       "username": "giuseppinarizzo67",
       "firstName": "Giuseppina",
       "lastName": "Rizzo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "68",
@@ -896,11 +644,7 @@
       "username": "angeloferrari68",
       "firstName": "Angelo",
       "lastName": "Ferrari",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "69",
@@ -909,11 +653,7 @@
       "username": "rossellaesposito69",
       "firstName": "Rossella",
       "lastName": "Esposito",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "70",
@@ -922,11 +662,7 @@
       "username": "micheleromano70",
       "firstName": "Michele",
       "lastName": "Romano",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "71",
@@ -935,11 +671,7 @@
       "username": "luanacolombo71",
       "firstName": "Luana",
       "lastName": "Colombo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "72",
@@ -948,11 +680,7 @@
       "username": "robertogreco72",
       "firstName": "Roberto",
       "lastName": "Greco",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "73",
@@ -961,11 +689,7 @@
       "username": "cinziamarino73",
       "firstName": "Cinzia",
       "lastName": "Marino",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "74",
@@ -974,11 +698,7 @@
       "username": "diegovilla74",
       "firstName": "Diego",
       "lastName": "Villa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "75",
@@ -987,11 +707,7 @@
       "username": "manuelafarina75",
       "firstName": "Manuela",
       "lastName": "Farina",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -1001,11 +717,7 @@
       "username": "barbararivas76",
       "firstName": "Barbara",
       "lastName": "Rivas",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "77",
@@ -1014,11 +726,7 @@
       "username": "cristinaguerra77",
       "firstName": "Cristina",
       "lastName": "Guerra",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "78",
@@ -1027,11 +735,7 @@
       "username": "alessiopellegrini78",
       "firstName": "Alessio",
       "lastName": "Pellegrini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "79",
@@ -1040,11 +744,7 @@
       "username": "nadiacosta79",
       "firstName": "Nadia",
       "lastName": "Costa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "80",
@@ -1053,11 +753,7 @@
       "username": "gianlucapagano80",
       "firstName": "Gianluca",
       "lastName": "Pagano",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "81",
@@ -1066,11 +762,7 @@
       "username": "marcomartini81",
       "firstName": "Marco",
       "lastName": "Martini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "82",
@@ -1079,11 +771,7 @@
       "username": "giuliagalli82",
       "firstName": "Giulia",
       "lastName": "Galli",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "83",
@@ -1092,11 +780,7 @@
       "username": "lucabini83",
       "firstName": "Luca",
       "lastName": "Bini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "84",
@@ -1105,11 +789,7 @@
       "username": "francescavalli84",
       "firstName": "Francesca",
       "lastName": "Valli",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "85",
@@ -1118,11 +798,7 @@
       "username": "alessandromazza85",
       "firstName": "Alessandro",
       "lastName": "Mazza",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "86",
@@ -1131,11 +807,7 @@
       "username": "sofiadonati86",
       "firstName": "Sofia",
       "lastName": "Donati",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "87",
@@ -1144,11 +816,7 @@
       "username": "matteoorsini87",
       "firstName": "Matteo",
       "lastName": "Orsini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "88",
@@ -1157,11 +825,7 @@
       "username": "elenapari88",
       "firstName": "Elena",
       "lastName": "Pari",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "89",
@@ -1170,11 +834,7 @@
       "username": "davidevitali89",
       "firstName": "Davide",
       "lastName": "Vitali",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "90",
@@ -1183,11 +843,7 @@
       "username": "chiarasala90",
       "firstName": "Chiara",
       "lastName": "Sala",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -1197,11 +853,7 @@
       "username": "simonefabbri91",
       "firstName": "Simone",
       "lastName": "Fabbri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "92",
@@ -1210,11 +862,7 @@
       "username": "alicemonti92",
       "firstName": "Alice",
       "lastName": "Monti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "93",
@@ -1223,11 +871,7 @@
       "username": "federicotesta93",
       "firstName": "Federico",
       "lastName": "Testa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "94",
@@ -1236,11 +880,7 @@
       "username": "beatricerinaldi94",
       "firstName": "Beatrice",
       "lastName": "Rinaldi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "95",
@@ -1249,11 +889,7 @@
       "username": "riccardogiuliani95",
       "firstName": "Riccardo",
       "lastName": "Giuliani",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "96",
@@ -1262,11 +898,7 @@
       "username": "martinamarchetti96",
       "firstName": "Martina",
       "lastName": "Marchetti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "97",
@@ -1275,11 +907,7 @@
       "username": "andreareale97",
       "firstName": "Andrea",
       "lastName": "Reale",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "98",
@@ -1288,11 +916,7 @@
       "username": "giorgiaferri98",
       "firstName": "Giorgia",
       "lastName": "Ferri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "99",
@@ -1301,11 +925,7 @@
       "username": "stefanopalumbo99",
       "firstName": "Stefano",
       "lastName": "Palumbo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "100",
@@ -1314,11 +934,7 @@
       "username": "saraamato100",
       "firstName": "Sara",
       "lastName": "Amato",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "101",
@@ -1327,11 +943,7 @@
       "username": "filipporossi101",
       "firstName": "Filippo",
       "lastName": "Rossi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "102",
@@ -1340,11 +952,7 @@
       "username": "annabianchi102",
       "firstName": "Anna",
       "lastName": "Bianchi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "103",
@@ -1353,11 +961,7 @@
       "username": "christianverdi103",
       "firstName": "Christian",
       "lastName": "Verdi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "104",
@@ -1366,11 +970,7 @@
       "username": "auroraneri104",
       "firstName": "Aurora",
       "lastName": "Neri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "105",
@@ -1379,11 +979,7 @@
       "username": "gabrielegallo105",
       "firstName": "Gabriele",
       "lastName": "Gallo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -1393,11 +989,7 @@
       "username": "noemiconte106",
       "firstName": "Noemi",
       "lastName": "Conte",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "107",
@@ -1406,11 +998,7 @@
       "username": "lorenzomarini107",
       "firstName": "Lorenzo",
       "lastName": "Marini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "108",
@@ -1419,11 +1007,7 @@
       "username": "elisaricci108",
       "firstName": "Elisa",
       "lastName": "Ricci",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "109",
@@ -1432,11 +1016,7 @@
       "username": "claudiobruno109",
       "firstName": "Claudio",
       "lastName": "Bruno",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "110",
@@ -1445,11 +1025,7 @@
       "username": "silviagatti110",
       "firstName": "Silvia",
       "lastName": "Gatti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "111",
@@ -1458,11 +1034,7 @@
       "username": "valeriolongo111",
       "firstName": "Valerio",
       "lastName": "Longo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "112",
@@ -1471,11 +1043,7 @@
       "username": "camillamoretti112",
       "firstName": "Camilla",
       "lastName": "Moretti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "113",
@@ -1484,11 +1052,7 @@
       "username": "emanuelebarbieri113",
       "firstName": "Emanuele",
       "lastName": "Barbieri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "114",
@@ -1497,11 +1061,7 @@
       "username": "irenefontana114",
       "firstName": "Irene",
       "lastName": "Fontana",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "115",
@@ -1510,11 +1070,7 @@
       "username": "tommasoserra115",
       "firstName": "Tommaso",
       "lastName": "Serra",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "116",
@@ -1523,11 +1079,7 @@
       "username": "fabiocaruso116",
       "firstName": "Fabio",
       "lastName": "Caruso",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "117",
@@ -1536,11 +1088,7 @@
       "username": "serenarizzo117",
       "firstName": "Serena",
       "lastName": "Rizzo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "118",
@@ -1549,11 +1097,7 @@
       "username": "giovanniferrari118",
       "firstName": "Giovanni",
       "lastName": "Ferrari",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "119",
@@ -1562,11 +1106,7 @@
       "username": "martaesposito119",
       "firstName": "Marta",
       "lastName": "Esposito",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "120",
@@ -1575,11 +1115,7 @@
       "username": "albertoromano120",
       "firstName": "Alberto",
       "lastName": "Romano",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -1589,11 +1125,7 @@
       "username": "robertacolombo121",
       "firstName": "Roberta",
       "lastName": "Colombo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "122",
@@ -1602,11 +1134,7 @@
       "username": "danielegreco122",
       "firstName": "Daniele",
       "lastName": "Greco",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "123",
@@ -1615,11 +1143,7 @@
       "username": "giadamarino123",
       "firstName": "Giada",
       "lastName": "Marino",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "124",
@@ -1628,11 +1152,7 @@
       "username": "giacomovilla124",
       "firstName": "Giacomo",
       "lastName": "Villa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "125",
@@ -1641,11 +1161,7 @@
       "username": "federicafarina125",
       "firstName": "Federica",
       "lastName": "Farina",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "126",
@@ -1654,11 +1170,7 @@
       "username": "lisarivas126",
       "firstName": "Lisa",
       "lastName": "Rivas",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "127",
@@ -1667,11 +1179,7 @@
       "username": "manuelguerra127",
       "firstName": "Manuel",
       "lastName": "Guerra",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "128",
@@ -1680,11 +1188,7 @@
       "username": "valentinapellegrini128",
       "firstName": "Valentina",
       "lastName": "Pellegrini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "129",
@@ -1693,11 +1197,7 @@
       "username": "edoardocosta129",
       "firstName": "Edoardo",
       "lastName": "Costa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "130",
@@ -1706,11 +1206,7 @@
       "username": "michelapagano130",
       "firstName": "Michela",
       "lastName": "Pagano",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "131",
@@ -1719,11 +1215,7 @@
       "username": "samuelemartini131",
       "firstName": "Samuele",
       "lastName": "Martini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "132",
@@ -1732,11 +1224,7 @@
       "username": "veronicagalli132",
       "firstName": "Veronica",
       "lastName": "Galli",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "133",
@@ -1745,11 +1233,7 @@
       "username": "nicolabini133",
       "firstName": "Nicola",
       "lastName": "Bini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "134",
@@ -1758,11 +1242,7 @@
       "username": "mattiavalli134",
       "firstName": "Mattia",
       "lastName": "Valli",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "135",
@@ -1771,11 +1251,7 @@
       "username": "ilariamazza135",
       "firstName": "Ilaria",
       "lastName": "Mazza",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
@@ -1785,11 +1261,7 @@
       "username": "paolodonati136",
       "firstName": "Paolo",
       "lastName": "Donati",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "137",
@@ -1798,11 +1270,7 @@
       "username": "leonardoorsini137",
       "firstName": "Leonardo",
       "lastName": "Orsini",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "138",
@@ -1811,11 +1279,7 @@
       "username": "lorenzapari138",
       "firstName": "Lorenza",
       "lastName": "Pari",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "139",
@@ -1824,11 +1288,7 @@
       "username": "pasqualevitali139",
       "firstName": "Pasquale",
       "lastName": "Vitali",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "140",
@@ -1837,11 +1297,7 @@
       "username": "clarasala140",
       "firstName": "Clara",
       "lastName": "Sala",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "141",
@@ -1850,11 +1306,7 @@
       "username": "salvatorefabbri141",
       "firstName": "Salvatore",
       "lastName": "Fabbri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "142",
@@ -1863,11 +1315,7 @@
       "username": "miriammonti142",
       "firstName": "Miriam",
       "lastName": "Monti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "143",
@@ -1876,11 +1324,7 @@
       "username": "antoniotesta143",
       "firstName": "Antonio",
       "lastName": "Testa",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "144",
@@ -1889,11 +1333,7 @@
       "username": "francescorinaldi144",
       "firstName": "Francesco",
       "lastName": "Rinaldi",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "145",
@@ -1902,11 +1342,7 @@
       "username": "luisagiuliani145",
       "firstName": "Luisa",
       "lastName": "Giuliani",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "146",
@@ -1915,11 +1351,7 @@
       "username": "vincenzomarchetti146",
       "firstName": "Vincenzo",
       "lastName": "Marchetti",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "147",
@@ -1928,11 +1360,7 @@
       "username": "giuseppinareale147",
       "firstName": "Giuseppina",
       "lastName": "Reale",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "148",
@@ -1941,11 +1369,7 @@
       "username": "angeloferri148",
       "firstName": "Angelo",
       "lastName": "Ferri",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "149",
@@ -1954,11 +1378,7 @@
       "username": "rossellapalumbo149",
       "firstName": "Rossella",
       "lastName": "Palumbo",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ]
+      "role": 1
     },
     {
       "id": "150",
@@ -1967,28 +1387,17 @@
       "username": "micheleamato150",
       "firstName": "Michele",
       "lastName": "Amato",
-      "role": "reader",
-      "permissions": [
-        "users-view",
-        "user-details"
-      ],
+      "role": 1,
       "middleName": "Maria"
     },
     {
-      "email": "a.trotta@example.com",
-      "password": "$2a$10$WjGbpmIoOQverElKLy2dKuD8Ak3.LEbRFY6r9zkjSiY/xfKK.3s0S",
-      "username": "angelotrotta1",
+      "email": "angelo@example.com",
+      "password": "$2a$10$6in.s36l76ZjxLYENh5CxuhkSCLBUoRxBQHKXkpzJOyFuSeDES9L6",
+      "username": "a.trotta1",
       "firstName": "Angelo",
       "lastName": "Trotta",
-      "role": "admin",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit",
-        "user-create",
-        "user-delete"
-      ],
-      "id": "03hoNKj"
+      "role": 3,
+      "id": "5J4Hp9Y"
     }
   ]
 }

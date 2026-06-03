@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Role, type User } from "../models/types/User";
+import type { User } from "../models/types/User";
 import { AuthStorageService } from "../services/auth-storage.service";
 
 type Props = {
@@ -12,23 +12,24 @@ export default function UserRow({ user, onUpdate: updateUser, onDelete: deleteUs
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
     const loggedUser: User | undefined = AuthStorageService.getUser();
 
-    const roleText: string = user.role === Role.READER ? 'Lettore'
-        : user.role === Role.EDITOR ? 'Editore'
-            : user.role === Role.ADMIN ? 'Amministratore' : 'Null';
-
+    let roleText: string;
     let roleClass: string;
 
     switch (user.role) {
-        case Role.READER:
+        case 1:
+            roleText = 'Lettore';
             roleClass = "p-2 text-sm text-green-700 rounded";
             break;
-        case Role.EDITOR:
+        case 2:
+            roleText = 'Editore';
             roleClass = "p-2 text-sm text-yellow-700 rounded";
             break;
-        case Role.ADMIN:
+        case 3:
+            roleText = 'Amministratore';
             roleClass = "p-2 text-sm text-red-700 rounded";
             break;
         default:
+            roleText = 'Null';
             roleClass = "p-2 text-sm text-gray-300 rounded";
             break;
     }
@@ -47,7 +48,7 @@ export default function UserRow({ user, onUpdate: updateUser, onDelete: deleteUs
                 <td className="p-4 text-sm text-gray-300">{user.username}</td>
                 <td className="p-4 text-sm text-gray-300">{user.email}</td>
                 <td className={roleClass}>{roleText}</td>
-                {loggedUser.role !== Role.READER ?
+                {loggedUser.role !== 1 ?
                     (<td className="p-4 text-right space-x-2" onClick={(e) => e.stopPropagation()}>
                         {/* e.stopPropagation() evita che cliccando su Elimina si espanda/comprima la riga */}
                         <button
@@ -58,7 +59,7 @@ export default function UserRow({ user, onUpdate: updateUser, onDelete: deleteUs
                         >
                             Modifica
                         </button>
-                        {loggedUser.role === Role.ADMIN ? (
+                        {loggedUser.role === 3 ? (
                             <button
                                 className={btnDeleteStyle}
                                 onClick={() => {

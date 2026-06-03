@@ -1,5 +1,3 @@
-import type { Role } from "../types/User";
-
 export interface LoginRequest {
     email: string;
     password: string;
@@ -12,6 +10,5 @@ export interface SignupRequest {
     firstName: string;
     middleName?: string;
     lastName: string;
-    role: Role;
-    permissions: string[];
+    role: number;
 }
