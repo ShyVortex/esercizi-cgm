@@ -58,7 +58,7 @@ export default function Pagination({
     if (isActiveButton) {
       return (
         baseClasses +
-        "bg-md-primary border-md-primary text-white"
+        "bg-md-primary border-md-primary text-black"
       );
     }
     return (
