@@ -10,15 +10,15 @@ type Props = {
 
 export default function SizeSelector({ value, onChange, label = "Elementi per pagina:" }: Props) {
   return (
-    <div className="flex items-center gap-2 text-sm">
-      <label className="font-semibold text-zinc-650 dark:text-zinc-400">
+    <div className="flex items-center gap-3 text-sm">
+      <label className="font-bold text-zinc-550 dark:text-zinc-400">
         {label}
       </label>
       <select
         id="pageSize"
         value={value}
         onChange={(e: ChangeEvent<HTMLSelectElement>): void => onChange(Number(e.target.value))}
-        className="rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm text-zinc-700 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-200"
+        className="rounded-full border border-md-outline-variant/35 bg-background px-4 py-1.5 text-xs font-bold text-md-foreground shadow-sm focus:outline-none focus:ring-1 focus:ring-md-primary"
       >
         <option value="5">5</option>
         <option value="10">10</option>

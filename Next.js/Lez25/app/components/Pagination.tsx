@@ -46,18 +46,24 @@ export default function Pagination({
     if (e.key === "Enter") handleInputBlur();
   };
 
-  const getButtonClasses = (isDisabled: boolean) => {
+  const getButtonClasses = (isDisabled: boolean, isActiveButton: boolean = false) => {
     const baseClasses =
-      "px-3 py-1.5 border rounded-lg text-sm font-semibold transition-colors shadow-sm ";
+      "px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 shadow-sm border ";
     if (isDisabled) {
       return (
         baseClasses +
-        "opacity-40 cursor-not-allowed bg-zinc-100 border-zinc-200 text-zinc-400 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-650"
+        "opacity-35 cursor-not-allowed bg-md-surface-container/40 border-md-outline-variant/20 text-zinc-400 dark:text-zinc-650"
+      );
+    }
+    if (isActiveButton) {
+      return (
+        baseClasses +
+        "bg-md-primary border-md-primary text-white"
       );
     }
     return (
       baseClasses +
-      "border-zinc-200 bg-white text-indigo-600 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-indigo-400 dark:hover:bg-zinc-900"
+      "border-md-outline-variant/30 bg-background text-md-primary hover:bg-md-primary-container hover:text-md-on-primary-container"
     );
   };
 
@@ -66,7 +72,7 @@ export default function Pagination({
       <button
         onClick={() => goToPage(1)}
         disabled={currentPage === 1}
-        className={getButtonClasses(currentPage === 1)}
+        className={getButtonClasses(currentPage === 1, true)}
       >
         1
       </button>
@@ -87,7 +93,7 @@ export default function Pagination({
         Prev
       </button>
 
-      <div className="flex items-center gap-2 px-2 text-sm">
+      <div className="flex items-center gap-2 px-3 py-1 bg-md-surface-container/30 border border-md-outline-variant/25 rounded-full text-xs font-semibold">
         <input
           type="number"
           min={1}
@@ -96,7 +102,7 @@ export default function Pagination({
           onChange={(e) => setInputValue(e.target.value)}
           onBlur={handleInputBlur}
           onKeyDown={handleKeyDown}
-          className="w-16 text-center border border-zinc-200 rounded-lg py-1.5 bg-white text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
+          className="w-12 text-center border-b border-md-primary bg-transparent py-0.5 text-md-foreground font-bold focus:outline-none focus:border-b-2"
         />
         <span className="text-zinc-500 dark:text-zinc-400">di {totalPages}</span>
       </div>

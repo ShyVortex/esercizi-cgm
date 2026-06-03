@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: "Dashboard" },
-    { href: "/items/users", label: "Risorse", activePattern: /^\/risorse/ },
+    { href: "/items/users", label: "Risorse", activePattern: /^\/items/ },
     { href: "/settings", label: "Impostazioni" },
   ];
 
@@ -20,26 +20,27 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-md-outline-variant/30">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-8">
           <Link
             href="/"
-            className="flex items-center gap-2 font-semibold text-zinc-950 dark:text-white"
+            className="flex items-center gap-2 font-bold text-xl tracking-tight text-md-foreground"
           >
             <span>AdminPortal</span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-3">
             {links.map((link) => {
               const active = isActive(link);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-zinc-900 dark:hover:text-zinc-50 ${active
-                      ? "text-indigo-600 dark:text-indigo-400"
-                      : "text-zinc-500 dark:text-zinc-400"
-                    }`}
+                  className={`text-sm transition-all duration-200 px-4 py-2 rounded-full ${
+                    active
+                      ? "bg-md-primary-container text-md-on-primary-container font-semibold shadow-sm"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 font-medium"
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -49,17 +50,18 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile nav */}
-      <div className="md:hidden border-t border-zinc-100 dark:border-zinc-900 flex justify-around py-3 bg-white dark:bg-zinc-950">
+      <div className="md:hidden border-t border-md-outline-variant/20 flex justify-around py-2.5 bg-background">
         {links.map((link) => {
           const active = isActive(link);
           return (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-xs font-medium transition-colors ${active
-                  ? "text-indigo-600 dark:text-indigo-400"
-                  : "text-zinc-500 dark:text-zinc-400"
-                }`}
+              className={`text-xs px-3 py-1.5 rounded-full transition-all duration-200 ${
+                active
+                  ? "bg-md-primary-container text-md-on-primary-container font-semibold"
+                  : "text-zinc-500 dark:text-zinc-400 font-medium"
+              }`}
             >
               {link.label}
             </Link>

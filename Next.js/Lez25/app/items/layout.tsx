@@ -14,32 +14,35 @@ export default function ResourcesLayout({
   const isAttivitaActive = pathname.startsWith("/items/tasks");
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="border-b border-zinc-200 dark:border-zinc-800 pb-4 mb-6">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
-          Gestione Risorse
-        </h1>
-        <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-          Visualizza e gestisci gli utenti del portale e le loro attività recenti.
-        </p>
+    <div className="mx-auto max-w-7xl px-6 py-8">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-md-outline-variant/20 pb-6 mb-6">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight text-md-foreground">
+            Gestione Risorse
+          </h1>
+          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+            Visualizza e gestisci gli utenti del portale e le loro attività recenti.
+          </p>
+        </div>
 
-        {/* Sottomenu di navigazione */}
-        <div className="mt-6 flex gap-4 border-b border-zinc-100 dark:border-zinc-900 pb-px">
+        <div className="inline-flex rounded-full border border-md-outline-variant/35 p-1 bg-md-surface-container/30 self-start md:self-center">
           <Link
             href="/items/users"
-            className={`border-b-2 px-1 pb-3 text-sm font-medium transition-colors ${isUtentiActive
-              ? "border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400"
-              : "border-transparent text-zinc-500 hover:border-zinc-300 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200"
-              }`}
+            className={`transition-all duration-200 px-5 py-2 text-sm font-semibold rounded-full ${
+              isUtentiActive
+                ? "bg-md-primary text-white dark:text-zinc-950 shadow-sm"
+                : "text-zinc-650 dark:text-zinc-350 hover:bg-zinc-150 dark:hover:bg-zinc-800/40"
+            }`}
           >
             Utenti
           </Link>
           <Link
             href="/items/tasks"
-            className={`border-b-2 px-1 pb-3 text-sm font-medium transition-colors ${isAttivitaActive
-              ? "border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400"
-              : "border-transparent text-zinc-500 hover:border-zinc-300 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200"
-              }`}
+            className={`transition-all duration-200 px-5 py-2 text-sm font-semibold rounded-full ${
+              isAttivitaActive
+                ? "bg-md-primary text-white dark:text-zinc-950 shadow-sm"
+                : "text-zinc-650 dark:text-zinc-350 hover:bg-zinc-150 dark:hover:bg-zinc-800/40"
+            }`}
           >
             Attività
           </Link>

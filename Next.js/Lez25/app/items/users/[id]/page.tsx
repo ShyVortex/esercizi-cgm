@@ -26,7 +26,7 @@ export default async function UserDetailPage({ params }: PageProps) {
       <div>
         <Link
           href="/items/users"
-          className="inline-flex items-center text-sm font-medium text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200"
+          className="inline-flex items-center text-sm font-bold text-md-primary hover:underline gap-1"
         >
           &larr; Torna alla lista utenti
         </Link>
@@ -34,34 +34,35 @@ export default async function UserDetailPage({ params }: PageProps) {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Card Dettaglio Profilo */}
-        <div className="lg:col-span-1 bg-white rounded-xl border border-zinc-200 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 p-6 flex flex-col items-center text-center">
-          <span className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-indigo-50 font-bold text-3xl text-indigo-600 dark:bg-indigo-950/40 dark:text-indigo-400 mb-4">
+        <div className="lg:col-span-1 bg-background rounded-3xl border border-md-outline-variant/30 p-6 flex flex-col items-center text-center shadow-sm">
+          <span className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-md-primary-container font-bold text-3xl text-md-on-primary-container mb-4">
             {user.avatar}
           </span>
-          <h2 className="text-xl font-bold text-zinc-950 dark:text-white">{user.name}</h2>
+          <h2 className="text-xl font-bold text-md-foreground">{user.name}</h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">{user.email}</p>
 
-          <div className="w-full border-t border-zinc-100 dark:border-zinc-900 pt-4 mt-2 space-y-3 text-left">
+          <div className="w-full border-t border-md-outline-variant/20 pt-4 mt-2 space-y-3 text-left">
             <div className="flex justify-between text-sm">
               <span className="text-zinc-500 dark:text-zinc-400">ID Utente:</span>
-              <span className="font-semibold text-zinc-900 dark:text-zinc-200">{user.id}</span>
+              <span className="font-semibold text-md-foreground">{user.id}</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-zinc-500 dark:text-zinc-400">Ruolo:</span>
-              <span className="font-semibold text-zinc-900 dark:text-zinc-200">{user.role}</span>
+              <span className="font-semibold text-md-foreground">{user.role}</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-zinc-500 dark:text-zinc-400">Stato:</span>
-              <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${user.status === "Attivo"
-                ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400"
-                : "bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-400"
-                }`}>
+              <span className={`inline-flex items-center rounded-full px-3 py-0.5 text-sm font-semibold ${
+                user.status === "Attivo"
+                  ? "bg-emerald-55/10 text-emerald-700 dark:text-emerald-450"
+                  : "bg-amber-55/10 text-amber-700 dark:text-amber-450"
+              }`}>
                 {user.status}
               </span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-zinc-500 dark:text-zinc-400">Registrato il:</span>
-              <span className="font-semibold text-zinc-900 dark:text-zinc-200">
+              <span className="font-semibold text-md-foreground">
                 {new Date(user.joinedDate).toLocaleDateString("it-IT", {
                   year: "numeric",
                   month: "2-digit",
@@ -73,8 +74,8 @@ export default async function UserDetailPage({ params }: PageProps) {
         </div>
 
         {/* Timeline Attività dell'Utente */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-zinc-200 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 p-6">
-          <h3 className="text-lg font-semibold text-zinc-950 dark:text-white border-b border-zinc-100 dark:border-zinc-900 pb-3 mb-4">
+        <div className="lg:col-span-2 bg-background rounded-3xl border border-md-outline-variant/30 p-6 shadow-sm">
+          <h3 className="text-lg font-bold text-md-foreground border-b border-md-outline-variant/20 pb-3 mb-4">
             Cronologia Attività Utente
           </h3>
 
@@ -89,14 +90,15 @@ export default async function UserDetailPage({ params }: PageProps) {
                   <li key={activity.id}>
                     <div className="relative pb-8">
                       {activityIdx !== userActivities.length - 1 ? (
-                        <span className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-zinc-200 dark:bg-zinc-800" aria-hidden="true" />
+                        <span className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-md-outline-variant/20" aria-hidden="true" />
                       ) : null}
                       <div className="relative flex space-x-3">
                         <div>
-                          <span className={`h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-white dark:ring-zinc-950 ${activity.status === "Completato"
-                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400"
-                            : "bg-red-50 text-red-600 dark:bg-red-950/40 dark:text-red-400"
-                            }`}>
+                          <span className={`h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-background ${
+                            activity.status === "Completato"
+                              ? "bg-emerald-55/10 text-emerald-600"
+                              : "bg-red-55/10 text-red-650"
+                          }`}>
                             <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
                             </svg>
@@ -104,7 +106,7 @@ export default async function UserDetailPage({ params }: PageProps) {
                         </div>
                         <div className="flex-1 min-w-0 pt-1.5 flex justify-between space-x-4">
                           <div>
-                            <p className="text-sm font-semibold text-zinc-950 dark:text-white">
+                            <p className="text-sm font-bold text-md-foreground">
                               <Link href={`/items/tasks/${activity.id}`} className="hover:underline">
                                 {activity.type}
                               </Link>
