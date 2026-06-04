@@ -1,4 +1,4 @@
-import React, {type ChangeEvent} from "react";
+import React, { type ChangeEvent } from "react";
 
 type Props = {
     value: number
@@ -17,11 +17,11 @@ export default function SizeSelector(props: Props): React.ReactElement {
                 onChange={(e: ChangeEvent<HTMLSelectElement>): void => props.onChange(Number(e.target.value))}
                 className="mt-1 block w-full p-2 border rounded-md shadow-sm"
             >
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-                <option value="25">25</option>
+                <option className="text-black" value="5">5</option>
+                <option className="text-black" value="10">10</option>
+                <option className="text-black" value="15">15</option>
+                <option className="text-black" value="20">20</option>
+                <option className="text-black" value="25">25</option>
             </select>
         </div>
     )

@@ -4,9 +4,11 @@ import ProductRow from "./ProductRow";
 type Props = {
     products: Product[];
     onCartAdd: (productSet: ProductSet) => void;
+    onCartEdit: (productSet: ProductSet) => void;
+    onCartRemove: (product: Product) => void;
 }
 
-export default function ProductList({ products: users, onCartAdd: addToCart }: Props) {
+export default function ProductList({ products: users, onCartAdd: addToCart, onCartEdit: editInCart, onCartRemove: removeFromCart }: Props) {
     return (
         <div id="tableContainer" className="rounded shadow overflow-hidden">
             <table className="w-full text-left border-collapse bg-gray-800">
@@ -25,6 +27,8 @@ export default function ProductList({ products: users, onCartAdd: addToCart }: P
                             key={user.id}
                             product={user}
                             onCartAdd={addToCart}
+                            onCartEdit={editInCart}
+                            onCartRemove={removeFromCart}
                         />
                     ))}
                 </tbody>

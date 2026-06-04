@@ -12,6 +12,7 @@ import CategoryFilter from "../components/CategoryFilter";
 import { Cart } from "../models/types/Cart";
 import { CartStorageService } from "../services/cart-storage.service";
 import { Product, ProductSet } from "../models/types/Product";
+import { CartHelper } from "../helpers/CartHelper";
 
 export default function ProductsPage() {
     const [products, setProducts] = useState<GetFPProductsResponse>(productsService.emptyResponse);
@@ -27,7 +28,7 @@ export default function ProductsPage() {
         marginTop: '40px'
     }
 
-    // Caricamento asincrono degli utenti
+    // Caricamento asincrono dei prodotti
     // useCallback() riesegue la funzione quando vengono modificate le variabili osservate
     const fetchProducts = useCallback(async () => {
         const currentFetchId = ++fetchIdRef.current;
@@ -43,8 +44,10 @@ export default function ProductsPage() {
                 setProducts(response);
             }
         } catch (err) {
+            console.error(err);
+
             if (currentFetchId === fetchIdRef.current) {
-                alert("Errore durante il caricamento degli utenti");
+                alert("Errore durante il caricamento dei prodotti");
             }
         }
     }, [currentPage, pageSize, filter]);
@@ -82,15 +85,15 @@ export default function ProductsPage() {
 
     const btnCartStyle: string = "mt-10 pt-2 pb-2 pl-3 pr-3 w-45 bg-yellow-600 hover:bg-yellow-500 text-white hover:text-black font-medium rounded cursor-pointer transition-colors duration-150";
 
-    // Gestisce l'aggiunta al carrello di un prodotto
-    const handleCartAdd = (prodSet: ProductSet): void => {
+    // Gestisce l'aggiunta al carrello di un prodotto o la modifica della sua quantità
+    const handleCartUpdate = (prodSet: ProductSet): void => {
         const storedCart: Cart | undefined = CartStorageService.getCartData();
 
         let updatedItems: ProductSet[] = [];
 
         if (storedCart) {
             // Controlla se il prodotto esiste già nel carrello
-            const existingItemIndex = storedCart.items.findIndex(item => item.productId === prodSet.productId);
+            const existingItemIndex: number = storedCart.items.findIndex(item => item.productId === prodSet.productId);
 
             // Crea una copia dell'array degli elementi per rispettare l'immutabilità
             updatedItems = [...storedCart.items];
@@ -116,6 +119,13 @@ export default function ProductsPage() {
         };
 
         CartStorageService.setCartData(newCart);
+        setCart(newCart);
+    }
+
+    // Gestisce la rimozione dal carrello di un prodotto
+    const handleCartRemove = (product: Product): void => {
+        CartHelper.removefromCart(product.id);
+        const newCart = CartStorageService.getCartData();
         setCart(newCart);
     }
 
@@ -146,7 +156,9 @@ export default function ProductsPage() {
             <div style={style} className="transition-opacity duration-200">
                 <ProductList
                     products={products.data || []}
-                    onCartAdd={handleCartAdd}
+                    onCartAdd={handleCartUpdate}
+                    onCartEdit={handleCartUpdate}
+                    onCartRemove={handleCartRemove}
                 />
             </div>
         </>

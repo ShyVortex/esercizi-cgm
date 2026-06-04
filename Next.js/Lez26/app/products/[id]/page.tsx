@@ -3,8 +3,11 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { productsService } from "../../api/products.service";
-import { Product } from "../../models/types/Product";
+import { Product, ProductSet } from "../../models/types/Product";
 import Link from "next/link";
+import { CartHelper } from "@/app/helpers/CartHelper";
+import { Cart } from "@/app/models/types/Cart";
+import { CartStorageService } from "@/app/services/cart-storage.service";
 
 export default function ProductDetailPage() {
     const params = useParams();
@@ -13,6 +16,10 @@ export default function ProductDetailPage() {
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [cart, setCart] = useState<Cart | undefined>(() => CartStorageService.getCartData());
+
+    const btnEditStyle: string = "w-40 p-2 text-sm bg-gray-400 hover:bg-gray-300 text-black font-semibold rounded cursor-pointer";
+    const btnDeleteStyle: string = "w-40 p-2 text-sm bg-red-500 hover:bg-red-500 text-white font-semibold rounded cursor-pointer transition-colors duration-150";
 
     useEffect(() => {
         if (!id) return;
@@ -31,6 +38,68 @@ export default function ProductDetailPage() {
 
         fetchProduct();
     }, [id]);
+
+
+    const updateCart = (prodSet: ProductSet): void => {
+        const storedCart: Cart | undefined = CartStorageService.getCartData();
+        let updatedItems: ProductSet[] = [];
+        if (storedCart) {
+            const existingItemIndex: number = storedCart.items.findIndex(item => item.productId === prodSet.productId);
+            updatedItems = [...storedCart.items];
+            if (existingItemIndex !== -1) {
+                updatedItems[existingItemIndex] = {
+                    ...updatedItems[existingItemIndex],
+                    quantity: prodSet.quantity
+                };
+            } else {
+                updatedItems.push(prodSet);
+            }
+        } else {
+            updatedItems = [prodSet];
+        }
+        const newCart: Cart = {
+            items: updatedItems,
+            storedAt: new Date().getTime()
+        };
+        CartStorageService.setCartData(newCart);
+        setCart(newCart); // Aggiorna lo stato per re-renderizzare
+    };
+
+    const handleCartAddOrEdit = () => {
+        if (product) {
+            const result: string | null = prompt("Seleziona una quantità");
+
+            if (result === null) {
+                return;
+            }
+
+            if (result.trim() === "" || isNaN(Number(result))) {
+                alert("Non hai inserito un numero valido.");
+                return;
+            }
+
+            const quantity: number = Number(result);
+
+            if (quantity > product.stock) {
+                alert(`Hai inserito un numero maggiore della quantità disponibile (${product.stock}).`);
+                return;
+            }
+
+            const set: ProductSet = {
+                productId: product.id,
+                quantity: quantity
+            };
+
+            updateCart(set);
+        }
+    }
+
+    const handleCartRemove = (product: Product): void => {
+        CartHelper.removefromCart(product.id);
+        const newCart = CartStorageService.getCartData();
+        setCart(newCart);
+    };
+
 
     if (loading) {
         return (
@@ -88,7 +157,7 @@ export default function ProductDetailPage() {
                         </span>
                         <h1 className="text-3xl font-bold mt-3 text-gray-100">{product.name}</h1>
                         <p className="text-2xl font-semibold text-green-400 mt-2">{product.price}€</p>
-                        
+
                         <div className="mt-6">
                             <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Descrizione</h4>
                             <p className="text-gray-300 mt-2 leading-relaxed text-sm">
@@ -109,16 +178,34 @@ export default function ProductDetailPage() {
                             </span>
                         </div>
 
-                        <button
-                            onClick={() => {
-                                // TODO: logica carrello
-                                alert(`${product.name} aggiunto al carrello! (Logica da implementare)`);
-                            }}
-                            disabled={product.stock <= 0}
-                            className="w-full mt-4 py-3 bg-blue-700 hover:bg-blue-600 disabled:bg-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed text-white font-bold rounded-lg cursor-pointer transition-colors duration-150 shadow"
-                        >
-                            {product.stock > 0 ? "Aggiungi al carrello" : "Prodotto esaurito"}
-                        </button>
+                        {!CartHelper.existsInCart(product.id) ? (
+                            <button
+                                onClick={handleCartAddOrEdit}
+                                disabled={product.stock <= 0}
+                                className="w-full mt-4 py-3 bg-blue-700 hover:bg-blue-600 disabled:bg-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed text-white font-bold rounded-lg cursor-pointer transition-colors duration-150 shadow"
+                            >
+                                {product.stock > 0 ? "Aggiungi al carrello" : "Prodotto esaurito"}
+                            </button>
+                        ) : (
+                            <div className="flex gap-6">
+                                <button
+                                    className={btnEditStyle}
+                                    onClick={handleCartAddOrEdit}
+                                >
+                                    Modifica quantità
+                                </button>
+                                <button
+                                    className={btnDeleteStyle}
+                                    onClick={() => {
+                                        if (confirm("Sei sicuro di voler rimuovere questo prodotto dal carrello?")) {
+                                            handleCartRemove(product);
+                                        }
+                                    }}
+                                >
+                                    Rimuovi dal carrello
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
