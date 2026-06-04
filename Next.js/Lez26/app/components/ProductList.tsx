@@ -1,9 +1,9 @@
-import { Product } from "../models/types/Product";
+import { Product, ProductSet } from "../models/types/Product";
 import ProductRow from "./ProductRow";
 
 type Props = {
     products: Product[];
-    onCartAdd: (product: Product) => void;
+    onCartAdd: (productSet: ProductSet) => void;
 }
 
 export default function ProductList({ products: users, onCartAdd: addToCart }: Props) {

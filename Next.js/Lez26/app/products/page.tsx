@@ -9,12 +9,16 @@ import { GetFPProductsResponse } from "../models/responses/product-responses";
 import { PreferencesService } from "../services/preferences.service";
 import ProductList from "../components/ProductList";
 import CategoryFilter from "../components/CategoryFilter";
+import { Cart } from "../models/types/Cart";
+import { CartStorageService } from "../services/cart-storage.service";
+import { Product, ProductSet } from "../models/types/Product";
 
 export default function ProductsPage() {
     const [products, setProducts] = useState<GetFPProductsResponse>(productsService.emptyResponse);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [pageSize, setPageSize] = useState<number>(() => PreferencesService.loadPreferences().pageSize);
     const [filter, setFilter] = useState<string>(() => PreferencesService.loadPreferences().filter);
+    const [cart, setCart] = useState<Cart | undefined>(() => CartStorageService.getCartData());
 
     // Risolve la race condition con React.StrictMode
     const fetchIdRef = useRef<number>(0);
@@ -78,6 +82,42 @@ export default function ProductsPage() {
 
     const btnCartStyle: string = "mt-10 pt-2 pb-2 pl-3 pr-3 w-45 bg-yellow-600 hover:bg-yellow-500 text-white hover:text-black font-medium rounded cursor-pointer transition-colors duration-150";
 
+    // Gestisce l'aggiunta al carrello di un prodotto
+    const handleCartAdd = (prodSet: ProductSet): void => {
+        const storedCart: Cart | undefined = CartStorageService.getCartData();
+
+        let updatedItems: ProductSet[] = [];
+
+        if (storedCart) {
+            // Controlla se il prodotto esiste già nel carrello
+            const existingItemIndex = storedCart.items.findIndex(item => item.productId === prodSet.productId);
+
+            // Crea una copia dell'array degli elementi per rispettare l'immutabilità
+            updatedItems = [...storedCart.items];
+
+            if (existingItemIndex !== -1) {
+                // Se esiste già, aggiorna la quantità
+                updatedItems[existingItemIndex] = {
+                    ...updatedItems[existingItemIndex],
+                    quantity: prodSet.quantity
+                };
+            } else {
+                // Altrimenti, aggiungi il nuovo elemento
+                updatedItems.push(prodSet);
+            }
+        } else {
+            // Carrello vuoto, inserisci il primo elemento
+            updatedItems = [prodSet];
+        }
+
+        const newCart: Cart = {
+            items: updatedItems,
+            storedAt: new Date().getTime()
+        };
+
+        CartStorageService.setCartData(newCart);
+        setCart(newCart);
+    }
 
     return (
         <>
@@ -95,16 +135,18 @@ export default function ProductsPage() {
                     choice={filter}
                     onChange={handleFilterChange}
                 />
-                <button
-                    className={btnCartStyle}
-                >
-                    Vai al carrello
-                </button>
+                {cart ? (
+                    <button
+                        className={btnCartStyle}
+                    >
+                        Vai al carrello
+                    </button>
+                ) : (<></>)}
             </div>
             <div style={style} className="transition-opacity duration-200">
                 <ProductList
                     products={products.data || []}
-                    onCartAdd={() => { }}
+                    onCartAdd={handleCartAdd}
                 />
             </div>
         </>

@@ -1,9 +1,9 @@
-import { Product } from "../models/types/Product";
+import { Product, ProductSet } from "../models/types/Product";
 import Link from "next/link";
 
 type Props = {
     product: Product;
-    onCartAdd: (product: Product) => void;
+    onCartAdd: (productSet: ProductSet) => void;
 }
 
 export default function ProductRow({ product, onCartAdd: addToCart }: Props) {
@@ -34,7 +34,20 @@ export default function ProductRow({ product, onCartAdd: addToCart }: Props) {
             <td className="p-4 text-right space-x-2">
                 <button
                     className={btnEditStyle}
-                    onClick={() => { }} /*TODO logica carrello*/
+                    onClick={() => {
+                        const result: string | null = prompt("Seleziona una quantità");
+                        if (result && !Number(result)) alert("Non hai inserito un numero.");
+                        else if (result && Number(result) > product.stock) alert(`Hai inserito un numero maggiore della quantità disponibile (${product.stock}).`)
+                        else {
+                            const quantity: number = Number(result);
+                            const set: ProductSet = {
+                                productId: product.id,
+                                quantity: quantity
+                            };
+
+                            addToCart(set);
+                        }
+                    }}
                 >
                     Aggiungi al carrello
                 </button>

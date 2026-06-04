@@ -8,3 +8,8 @@ export type Product = {
     rating: number;
     stock: number;
 }
+
+export type ProductSet = {
+    productId: string;
+    quantity: number;
+}
