@@ -1,0 +1,8 @@
+Crea un'applicazione e-commerce dove l'utente può vedere la lista dei prodotti acquistabili,
+il dettaglio di un singolo prodotto e la pagina del carrello, con i prodotti selezionati
+salvati nel local storage del browser, in quest'ultimo l'utente deve poter diminuire o
+aumentare le quantità o rimuoverlo dal carrello vedendo in tempo reale il totale, compresa
+la spedizione, che deve essere gratuita con almeno 29 euro di spesi, altrimenti metti 3.99
+euro di spedizione ogni 4 prodotti. Per quest'ultimo usa un component client. Per
+l'elenco dei prodotti utilizza JSON-Server. Utilizza URL leggibili e coerenti con il
+dominio scelto e params usati per identificare la risorsa.
