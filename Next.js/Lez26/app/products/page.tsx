@@ -13,6 +13,7 @@ import { Cart } from "../models/types/Cart";
 import { CartStorageService } from "../services/cart-storage.service";
 import { Product, ProductSet } from "../models/types/Product";
 import { CartHelper } from "../helpers/CartHelper";
+import Link from "next/link";
 
 export default function ProductsPage() {
     const [products, setProducts] = useState<GetFPProductsResponse>(productsService.emptyResponse);
@@ -83,7 +84,7 @@ export default function ProductsPage() {
         setCurrentPage(1);
     }
 
-    const btnCartStyle: string = "mt-10 pt-2 pb-2 pl-3 pr-3 w-45 bg-yellow-600 hover:bg-yellow-500 text-white hover:text-black font-medium rounded cursor-pointer transition-colors duration-150";
+    const btnCartStyle: string = "mt-10 pt-2 pb-2 pl-3 pr-3 w-45 bg-yellow-600 hover:bg-yellow-500 text-white text-center hover:text-black font-medium rounded cursor-pointer transition-colors duration-150";
 
     // Gestisce l'aggiunta al carrello di un prodotto o la modifica della sua quantità
     const handleCartUpdate = (prodSet: ProductSet): void => {
@@ -146,11 +147,12 @@ export default function ProductsPage() {
                     onChange={handleFilterChange}
                 />
                 {cart ? (
-                    <button
+                    <Link
                         className={btnCartStyle}
+                        href={"cart"}
                     >
                         Vai al carrello
-                    </button>
+                    </Link>
                 ) : (<></>)}
             </div>
             <div style={style} className="transition-opacity duration-200">

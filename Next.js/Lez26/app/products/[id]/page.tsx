@@ -16,6 +16,8 @@ export default function ProductDetailPage() {
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cart, setCart] = useState<Cart | undefined>(() => CartStorageService.getCartData());
 
     const btnEditStyle: string = "w-40 p-2 text-sm bg-gray-400 hover:bg-gray-300 text-black font-semibold rounded cursor-pointer";

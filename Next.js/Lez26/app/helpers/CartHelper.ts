@@ -1,10 +1,12 @@
+import { productsService } from "../api/products.service";
 import { Cart } from "../models/types/Cart";
-import { ProductSet } from "../models/types/Product";
+import { Product, ProductSet } from "../models/types/Product";
 import { CartStorageService } from "../services/cart-storage.service";
 
 export abstract class CartHelper {
     public static existsInCart(productId: string): boolean {
         const storedCart = CartStorageService.getCartData();
+
         if (!storedCart) return false;
 
         const existingIndex: number = storedCart.items.findIndex(item => item.productId === productId);
@@ -16,6 +18,7 @@ export abstract class CartHelper {
 
     public static removefromCart(productId: string): void {
         const storedCart = CartStorageService.getCartData();
+
         if (storedCart && this.existsInCart(productId)) {
             const filteredProductSets: ProductSet[] = storedCart.items.filter(item => item.productId !== productId);
             const filteredCart: Cart = {
@@ -31,5 +34,23 @@ export abstract class CartHelper {
         } else {
             throw new Error("Given product not in cart");
         }
+    }
+
+    public static async getCartProducts(): Promise<Product[] | undefined> {
+        const storedCart = CartStorageService.getCartData();
+
+        if (storedCart) {
+            // Avvia le chiamate in parallelo
+            const productPromises = storedCart.items.map(item =>
+                productsService.getProduct(item.productId)
+            );
+
+            // Attende che tutte le Promise siano risolte
+            const products: Product[] = await Promise.all(productPromises);
+
+            return products;
+        }
+
+        return undefined;
     }
 }
