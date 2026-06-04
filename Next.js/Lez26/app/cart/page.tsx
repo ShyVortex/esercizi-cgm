@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Cart } from "../models/types/Cart";
 import { CartStorageService } from "../services/cart-storage.service";
 import Link from "next/link";
-import { Product } from "../models/types/Product";
+import { Product, ProductSet } from "../models/types/Product";
 import { CartHelper } from "../helpers/CartHelper";
 
 export default function CartPage() {
@@ -48,6 +48,65 @@ export default function CartPage() {
     const shipping: number = total > 29 ? 0 : (Math.max(Math.floor((products.length / 4)), 1) * 3.99);
 
     const shippingStyle: string = shipping > 0 ? 'text-xl text-orange-400' : 'text-xl text-green-400';
+
+    const updateCart = (prodSet: ProductSet): void => {
+        const storedCart: Cart | undefined = CartStorageService.getCartData();
+        let updatedItems: ProductSet[] = [];
+        if (storedCart) {
+            const existingItemIndex: number = storedCart.items.findIndex(item => item.productId === prodSet.productId);
+            updatedItems = [...storedCart.items];
+            if (existingItemIndex !== -1) {
+                updatedItems[existingItemIndex] = {
+                    ...updatedItems[existingItemIndex],
+                    quantity: prodSet.quantity
+                };
+            } else {
+                updatedItems.push(prodSet);
+            }
+        } else {
+            updatedItems = [prodSet];
+        }
+        const newCart: Cart = {
+            items: updatedItems,
+            storedAt: new Date().getTime()
+        };
+        CartStorageService.setCartData(newCart);
+        setCart(newCart); // Aggiorna lo stato per re-renderizzare
+    };
+
+    const handleCartAddOrEdit = (product: Product) => {
+        const result: string | null = prompt("Seleziona una quantità");
+
+        if (result === null) {
+            return;
+        }
+
+        if (result.trim() === "" || isNaN(Number(result))) {
+            alert("Non hai inserito un numero valido.");
+            return;
+        }
+
+        const quantity: number = Number(result);
+
+        if (quantity > product.stock) {
+            alert(`Hai inserito un numero maggiore della quantità disponibile (${product.stock}).`);
+            return;
+        }
+
+        const set: ProductSet = {
+            productId: product.id,
+            quantity: quantity
+        };
+
+        updateCart(set);
+    }
+
+    const handleCartRemove = (product: Product): void => {
+        CartHelper.removefromCart(product.id);
+        const newCart = CartStorageService.getCartData();
+        setCart(newCart);
+        setProducts(prevProducts => prevProducts.filter(p => p.id !== product.id));
+    };
 
     if (loading) {
         return (
@@ -94,6 +153,22 @@ export default function CartPage() {
                                             {(product.price * quantity).toFixed(2)}€
                                         </p>
                                     </div>
+                                    <button
+                                        className="cursor-pointer"
+                                        onClick={() => handleCartAddOrEdit(product)}
+                                    >
+                                        ✏️
+                                    </button>
+                                    <button
+                                        className="cursor-pointer"
+                                        onClick={() => {
+                                            if (confirm("Sei sicuro di voler rimuovere questo prodotto dal carrello?")) {
+                                                handleCartRemove(product);
+                                            }
+                                        }}
+                                    >
+                                        🗑️
+                                    </button>
                                 </div>
                             );
                         })}
