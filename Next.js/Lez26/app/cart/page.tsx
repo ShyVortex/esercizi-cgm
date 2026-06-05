@@ -139,7 +139,7 @@ export default function CartPage() {
                             return (
                                 <div
                                     key={product.id}
-                                    className="flex gap-8 justify-between items-center p-4 bg-gray-800 rounded border border-gray-700"
+                                    className="grid grid-cols-[1fr_150px_40px_40px] gap-6 items-center p-4 bg-gray-800 rounded border border-gray-700"
                                 >
                                     <div>
                                         <h3 className="font-semibold text-lg">{product.name}</h3>
@@ -154,13 +154,13 @@ export default function CartPage() {
                                         </p>
                                     </div>
                                     <button
-                                        className="cursor-pointer"
+                                        className="cursor-pointer justify-self-center hover:scale-110 transition-transform"
                                         onClick={() => handleCartAddOrEdit(product)}
                                     >
                                         ✏️
                                     </button>
                                     <button
-                                        className="cursor-pointer"
+                                        className="cursor-pointer justify-self-center hover:scale-110 transition-transform"
                                         onClick={() => {
                                             if (confirm("Sei sicuro di voler rimuovere questo prodotto dal carrello?")) {
                                                 handleCartRemove(product);

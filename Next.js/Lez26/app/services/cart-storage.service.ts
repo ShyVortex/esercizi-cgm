@@ -18,14 +18,6 @@ export abstract class CartStorageService {
                 return undefined;
             }
 
-            if (cartCache) {
-                try {
-                    return JSON.parse(cartCache) as Cart;
-                } catch (error) {
-                    console.error("Errore nel parsing dei task da LocalStorage, ricarico il JSON di default:", error);
-                }
-            }
-
             const oneHourInMs = 3600 * 1000;
             const hasExpired = (new Date().getTime() - cartData.storedAt) > oneHourInMs;
 
