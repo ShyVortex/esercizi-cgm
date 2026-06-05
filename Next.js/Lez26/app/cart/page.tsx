@@ -37,7 +37,7 @@ export default function CartPage() {
     };
 
     // Calcola il totale rispetto alla quantità
-    const total: number = products.reduce((currentPrice, currentProduct) => {
+    const totalPrice: number = products.reduce((currentPrice, currentProduct) => {
         const quantity = getProductQuantity(currentProduct.id);
         return currentPrice + (currentProduct.price * quantity);
     },
@@ -45,7 +45,10 @@ export default function CartPage() {
     );
 
     // Verifica se c'è bisogno di pagare la spedizione ed eventualmente quanto verrebbe
-    const shipping: number = total > 29 ? 0 : (Math.max(Math.floor((products.length / 4)), 1) * 3.99);
+    const totalItems = cart?.items.reduce((currentNumber, currentItem) =>
+        currentNumber + currentItem.quantity, 0
+    ) || 0;
+    const shipping: number = totalPrice > 29 || totalItems === 0 ? 0 : Math.ceil(totalItems / 4) * 3.99;
 
     const shippingStyle: string = shipping > 0 ? 'text-xl text-orange-400' : 'text-xl text-green-400';
 
@@ -180,7 +183,7 @@ export default function CartPage() {
 
                         <div className="text-right">
                             <span className="text-gray-400 mr-2 text-lg">Totale:</span>
-                            <span className="text-2xl font-bold text-green-400">{(total + shipping).toFixed(2)}€</span>
+                            <span className="text-2xl font-bold text-green-400">{(totalPrice + shipping).toFixed(2)}€</span>
                         </div>
                     </div>
                 )}
