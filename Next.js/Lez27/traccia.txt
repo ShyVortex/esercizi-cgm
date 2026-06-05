@@ -1,0 +1,7 @@
+Partendo dall'ultimo esercito assegnato, nella pagina del dettaglio del prodotto recuperabile per id
+implementa gli stati di Next.JS per caricamento (loading.tsx), elemento non disponibile (not-found.tsx) ed
+errore temporaneo (error.tsx) incapsultati dentro un layout (layout.tsx) che permetta all'utente in qualsiasi caso di
+tornare alla pagina della lista dei prodotti (products). Non aggiungere autenticazione, filtri o mutazioni. Il messaggio
+di errore deve essere chiaro e spiegare all'utente che cosa è successo. Rendi l'errore recuperabile tramite pulsante "riprova"
+mentenendo invariati rotta, layout, loading e messaggi di not-found. La variante deve restare dentro error boundary e fallback di pagina.
+Non introdurre uno stato globale per risolvere un problema locale.

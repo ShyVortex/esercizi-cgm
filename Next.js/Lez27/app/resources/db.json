@@ -1,0 +1,504 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Cuffie Wireless Noise Cancelling Pro",
+      "description": "Cuffie over-ear con cancellazione attiva del rumore di livello professionale. Fino a 40 ore di autonomia, suono ad alta definizione e design ergonomico ultra-comfort per sessioni di ascolto prolungate.",
+      "price": 149.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.8,
+      "stock": 15
+    },
+    {
+      "id": "2",
+      "name": "Smartwatch Sport Active 4G",
+      "description": "Monitora i tuoi allenamenti, il battito cardiaco e il sonno con precisione estrema. Dotato di connettività LTE, GPS integrato e impermeabilità fino a 50 metri. Ideale per uno stile di vita attivo.",
+      "price": 199.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 8
+    },
+    {
+      "id": "3",
+      "name": "Zaino Tech Anti-furto",
+      "description": "Zaino dal design moderno e minimale con porta USB esterna per la ricarica. Tessuto impermeabile e resistente ai tagli, tasca nascosta sul retro e scomparto imbottito per laptop fino a 15.6 pollici.",
+      "price": 45.00,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 25
+    },
+    {
+      "id": "4",
+      "name": "Tastiera Meccanica RGB Compact",
+      "description": "Tastiera meccanica layout 65% con switch rossi lineari e silenziosi. Retroilluminazione RGB personalizzabile tasto per tasto e connettività dual mode (Bluetooth e cavo USB-C scollegabile).",
+      "price": 89.90,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.7,
+      "stock": 12
+    },
+    {
+      "id": "5",
+      "name": "Borraccia Termica in Acciaio 750ml",
+      "description": "Borraccia in acciaio inossidabile a doppia parete isolata sottovuoto. Mantiene le bevande fredde per 24 ore e calde per 12 ore. 100% BPA free e a prova di perdite.",
+      "price": 24.50,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 50
+    },
+    {
+      "id": "6",
+      "name": "Mouse Gaming Ottico Wireless",
+      "description": "Mouse ergonomico da gaming ultra-leggero. Sensore ottico avanzato da 20.000 DPI, 8 pulsanti programmabili, switch ottici a risposta immediata e batteria ricaricabile a lunga durata.",
+      "price": 69.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.9,
+      "stock": 20
+    },
+    {
+      "id": "7",
+      "name": "Felpa Hoodie Minimalist Unisex",
+      "description": "Felpa con cappuccio realizzata in morbido cotone biologico felpato. Taglio moderno leggermente oversize, tasca a marsupio frontale e finiture a costine resistenti ai lavaggi.",
+      "price": 39.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.3,
+      "stock": 30
+    },
+    {
+      "id": "8",
+      "name": "Occhiali da Sole polarized Classic",
+      "description": "Occhiali da sole unisex con lenti polarizzate e protezione UV400 al 100%. Montatura leggera in policarbonato con cerniere in metallo rinforzate per la massima durabilità.",
+      "price": 29.90,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.2,
+      "stock": 40
+    },
+    {
+      "id": "9",
+      "name": "Monitor UltraWide Gaming 34\"",
+      "description": "Monitor curvo da 34 pollici con risoluzione WQHD (3440 x 1440), frequenza di aggiornamento di 144Hz e tempo di risposta di 1ms. Supporta HDR10 e AMD FreeSync Premium.",
+      "price": 349.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.7,
+      "stock": 6
+    },
+    {
+      "id": "10",
+      "name": "Sneakers Minimalist Canvas",
+      "description": "Scarpe stringate realizzate in tela traspirante e suola in gomma vulcanizzata antiscivolo. Sottopiede ammortizzato per un comfort che dura tutto il giorno.",
+      "price": 49.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 18
+    },
+    {
+      "id": "11",
+      "name": "Power Bank Solare 26800mAh",
+      "description": "Caricabatterie solare portatile ad altissima capacità con 4 uscite USB e torcia LED integrata. Ideale per escursioni, campeggio e situazioni di emergenza.",
+      "price": 35.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1609592424085-f5da13426e85?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 35
+    },
+    {
+      "id": "12",
+      "name": "Macchina del Caffè Espresso Automatica",
+      "description": "Prepara deliziosi caffè espresso e cappuccini schiumosi come al bar. Pressione a 15 bar, serbatoio dell'acqua rimovibile da 1.2 litri e lancia vapore orientabile.",
+      "price": 119.00,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 10
+    },
+    {
+      "id": "13",
+      "name": "Tappetino per Yoga Antiscivolo TPE",
+      "description": "Tappetino ecologico in TPE a doppio strato con texture antiscivolo. Spessore di 6mm per proteggere le articolazioni durante le asana. Tracolla di trasporto inclusa.",
+      "price": 27.99,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 42
+    },
+    {
+      "id": "14",
+      "name": "Lampada da Scrivania LED Intelligente",
+      "description": "Lampada dimmerabile con 5 modalità di colore e 10 livelli di luminosità. Controllo touch, porta USB per ricarica smartphone e timer di autospegnimento.",
+      "price": 29.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.7,
+      "stock": 28
+    },
+    {
+      "id": "15",
+      "name": "Giacca a Vento Impermeabile Outdoor",
+      "description": "Giacca tecnica traspirante, antivento e completamente impermeabile. Cappuccio regolabile, tasche con zip termosaldate e polsini regolabili con velcro.",
+      "price": 79.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 15
+    },
+    {
+      "id": "16",
+      "name": "Auricolari Bluetooth In-Ear Sport",
+      "description": "Auricolari wireless impermeabili IPX7 con ganci flessibili per una stabilità assoluta durante la corsa. Suono dinamico e custodia di ricarica con display LED.",
+      "price": 32.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.3,
+      "stock": 60
+    },
+    {
+      "id": "17",
+      "name": "Set Coltelli da Cucina Professionali",
+      "description": "Set da 5 pezzi in acciaio inossidabile ad alto tenore di carbonio con ceppo in legno. Include coltello da chef, per pane, multiuso, per sfilettare e spelucchino.",
+      "price": 59.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.8,
+      "stock": 14
+    },
+    {
+      "id": "18",
+      "name": "Diffusore di Aromi a Ultrasuoni",
+      "description": "Diffusore di oli essenziali da 500ml con lampada LED a 7 colori selezionabili. Funzione timer e spegnimento automatico di sicurezza quando l'acqua si esaurisce.",
+      "price": 21.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 38
+    },
+    {
+      "id": "19",
+      "name": "Mini Proiettore Portatile Full HD",
+      "description": "Proiettore compatto LED con supporto 1080P Full HD. Molteplici ingressi tra cui HDMI, USB e MicroSD. Altoparlante integrato per serate cinema ovunque tu sia.",
+      "price": 85.50,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1535016120720-40c646be5580?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.2,
+      "stock": 9
+    },
+    {
+      "id": "20",
+      "name": "Portafoglio Uomo in Pelle Sottile",
+      "description": "Portafoglio classico in vera pelle con protezione RFID anti-clonazione. Design compatto ma spazioso con 8 scomparti per carte di credito e fermasoldi.",
+      "price": 28.00,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1627124765135-56f70db47400?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 45
+    },
+    {
+      "id": "21",
+      "name": "Friggitrice ad Aria Smart 5.5L",
+      "description": "Cucina i tuoi piatti preferiti con l'85% di olio in meno. Cestello antiaderente capiente da 5.5 litri, display touch LED con 11 programmi preimpostati e ricettario incluso.",
+      "price": 99.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.8,
+      "stock": 11
+    },
+    {
+      "id": "22",
+      "name": "T-Shirt Basic Cotone Fiammato (3x)",
+      "description": "Confezione da tre magliette a maniche corte in cotone fiammato di alta qualità. Colori neutri nero, grigio e bianco. Traspiranti, comode e adatte a tutti i giorni.",
+      "price": 24.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 50
+    },
+    {
+      "id": "23",
+      "name": "Bilancia Pesapersone Impedenziometrica",
+      "description": "Analizza 13 parametri corporei essenziali tra cui massa grassa, massa magra, acqua corporea e BMI. Sincronizzazione bluetooth automatica con app per smartphone.",
+      "price": 19.99,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1574269661728-79f94981cbfa?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 30
+    },
+    {
+      "id": "24",
+      "name": "Treppiede per Smartphone e Fotocamera",
+      "description": "Treppiede regolabile in alluminio leggero fino a 135cm. Include testa a 3 vie, telecomando Bluetooth per scatti a distanza e supporto universale regolabile.",
+      "price": 22.90,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.3,
+      "stock": 25
+    },
+    {
+      "id": "25",
+      "name": "Hub USB-C 8-in-1 Multiporta",
+      "description": "Espandi la connettività del tuo laptop. Include porta HDMI 4K, lettore schede SD/TF, 3 porte USB 3.0 e porta di ricarica Power Delivery da 100W.",
+      "price": 39.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 40
+    },
+    {
+      "id": "26",
+      "name": "Cuscino Cervicale Memory Foam",
+      "description": "Cuscino ergonomico ortopedico sagomato per il supporto ottimale di collo e testa. Fodera traspirante e anallergica rimovibile e lavabile in lavatrice.",
+      "price": 34.90,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 16
+    },
+    {
+      "id": "27",
+      "name": "Set Bande Elastiche di Resistenza",
+      "description": "Set di 5 bande elastiche in lattice naturale con diversi livelli di resistenza. Include 2 maniglie imbottite, 2 cinturini per caviglie, ancoraggio per porta e borsa.",
+      "price": 17.99,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.7,
+      "stock": 80
+    },
+    {
+      "id": "28",
+      "name": "Lampadina Smart LED RGB E27 (4x)",
+      "description": "Confezione da 4 lampadine intelligenti comandabili via app o assistenti vocali. 16 milioni di colori, luminosità dimmerabile e programmazione di scenari e orari.",
+      "price": 29.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1550985616-10810253b84d?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 35
+    },
+    {
+      "id": "29",
+      "name": "Organizer da Scrivania in Bamboo",
+      "description": "Elegante organizer multi-scomparto realizzato interamente in legno naturale di bamboo. Perfetto per disporre penne, block notes, smartphone e clip da ufficio.",
+      "price": 19.90,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 20
+    },
+    {
+      "id": "30",
+      "name": "Giacca di Pelle Sintetica Biker",
+      "description": "Giacca in ecopelle stile motociclista per uomo. Chiusura asimmetrica a cerniera, colletto con bottoni automatici e tasche multiple funzionali con zip.",
+      "price": 64.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.3,
+      "stock": 14
+    },
+    {
+      "id": "31",
+      "name": "Caricatore Wireless Rapido 15W",
+      "description": "Supporto di ricarica wireless rapida compatibile con tutti gli smartphone abilitati a tecnologia Qi. Design ultra-sottile e circuito integrato contro il surriscaldamento.",
+      "price": 15.99,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1622445262465-2481c4574875?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 45
+    },
+    {
+      "id": "32",
+      "name": "Sedia da Ufficio Ergonomica Desk",
+      "description": "Sedia girevole da ufficio con supporto lombare regolabile, braccioli ribaltabili e schienale in rete traspirante. Altezza regolabile con pistone a gas di classe 3.",
+      "price": 109.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1505797149-43b0069ec26b?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 10
+    },
+    {
+      "id": "33",
+      "name": "Pantaloni Sportivi Jogger Unisex",
+      "description": "Pantaloni tuta leggeri e morbidi, realizzati in misto cotone. Tasche laterali a filo, coulisse regolabile in vita e polsini elasticizzati alle caviglie.",
+      "price": 27.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1551854838-212c50b4c184?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 25
+    },
+    {
+      "id": "34",
+      "name": "Cassa Bluetooth Portatile Waterproof",
+      "description": "Speaker portatile impermeabile IPX7 con 20W di potenza audio. Bassi profondi e suono cristallino, durata della batteria fino a 12 ore e modalità accoppiamento stereo.",
+      "price": 49.90,
+      "category": "Elettronica",
+      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.8,
+      "stock": 30
+    },
+    {
+      "id": "35",
+      "name": "Kit di Pronto Soccorso da Viaggio",
+      "description": "Kit compatto contenente 90 articoli medici essenziali tra cui bende, cerotti, disinfettante, forbici e coperta termica. Perfetto per auto, trekking e campeggio.",
+      "price": 18.50,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.7,
+      "stock": 50
+    },
+    {
+      "id": "36",
+      "name": "Bollitore Elettrico in Vetro 1.7L",
+      "description": "Bollitore ad ebollizione rapida con corpo in vetro borosilicato e luce LED blu durante il funzionamento. Spegnimento automatico e protezione contro il funzionamento a secco.",
+      "price": 29.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1594222080036-7c60317e0766?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 18
+    },
+    {
+      "id": "37",
+      "name": "Guanti da Palestra e Sollevamento Pesi",
+      "description": "Guanti sportivi imbottiti antiscivolo con supporto esteso per i polsi. Ideali per sollevamento pesi, calisthenics, crossfit e allenamento a corpo libero.",
+      "price": 14.99,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 40
+    },
+    {
+      "id": "38",
+      "name": "Mini Compressore Portatile per Auto",
+      "description": "Gonfiatore elettrico digitale a batteria per pneumatici di auto, moto e biciclette. Spegnimento automatico alla pressione desiderata e luce LED integrata.",
+      "price": 39.99,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 22
+    },
+    {
+      "id": "39",
+      "name": "Porta Spezie Girevole in Acciaio",
+      "description": "Carosello portaspezie girevole a 360 gradi comprensivo di 16 barattoli in vetro vuoti con tappo spargitore. Design moderno salvaspazio per la tua cucina.",
+      "price": 24.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 15
+    },
+    {
+      "id": "40",
+      "name": "Kit Pulizia Tastiera e Schermi 7-in-1",
+      "description": "Kit compatto multifunzione contenente estrattore per tasti, spazzola densa, penna per pulizia auricolari, spruzzatore e panno in microfibra per tutti i tuoi device.",
+      "price": 12.99,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.3,
+      "stock": 100
+    },
+    {
+      "id": "41",
+      "name": "Camicia Casual in Lino a Maniche Lunghe",
+      "description": "Camicia leggera realizzata in misto lino e cotone, dal look fresco e traspirante. Perfetta per la stagione estiva e occasioni smart-casual.",
+      "price": 34.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.2,
+      "stock": 20
+    },
+    {
+      "id": "42",
+      "name": "Lente di Ingrandimento per Smartphone",
+      "description": "Amplificatore video per schermo del cellulare con lente acrilica da 12 pollici. Effetto cinema 3D senza bisogno di batteria. Design pieghevole e portatile.",
+      "price": 16.99,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.1,
+      "stock": 60
+    },
+    {
+      "id": "43",
+      "name": "Tazza Termica da Viaggio Smart 500ml",
+      "description": "Tazza termica isolata in acciaio inox con indicatore LED della temperatura touch sul coperchio. Mantiene il tè o il caffè caldo fino a 6 ore.",
+      "price": 18.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.4,
+      "stock": 35
+    },
+    {
+      "id": "44",
+      "name": "Zaino Ripiegabile Ultra-leggero 20L",
+      "description": "Zaino da trekking super leggero che si ripiega nella sua tasca interna per occupare pochissimo spazio. Tessuto in nylon antistrappo e resistente all'acqua.",
+      "price": 15.99,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 40
+    },
+    {
+      "id": "45",
+      "name": "Proiettore Stelle e Galassia LED",
+      "description": "Proiettore di luci notturne con nebulose rotanti, cielo stellato e altoparlante Bluetooth integrato. Dotato di telecomando e timer per addormentarsi sotto le stelle.",
+      "price": 32.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 18
+    },
+    {
+      "id": "46",
+      "name": "Cappello Beanie in Maglia Classico",
+      "description": "Berretto invernale in morbido acrilico elasticizzato a costine. Protegge dal freddo e dal vento garantendo massimo stile e vestibilità universale.",
+      "price": 12.99,
+      "category": "Abbigliamento",
+      "image": "https://images.unsplash.com/photo-1576871337622-98d48d4aa53e?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 50
+    },
+    {
+      "id": "47",
+      "name": "Borsa Termica Porta Pranzo Isolante",
+      "description": "Borsa termica capiente con doppio scomparto per contenitori, bottiglia e posate. Mantiene il cibo caldo o freddo per oltre 6 ore, ideale per ufficio o picnic.",
+      "price": 19.99,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.6,
+      "stock": 25
+    },
+    {
+      "id": "48",
+      "name": "Luci LED per Bici Anteriori e Posteriori",
+      "description": "Set di luci USB ricaricabili per bicicletta. Impermeabili IPX5 con diverse modalità di illuminazione ad alta visibilità per la massima sicurezza notturna.",
+      "price": 15.50,
+      "category": "Sport e tempo libero",
+      "image": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.5,
+      "stock": 30
+    },
+    {
+      "id": "49",
+      "name": "Occhiali da Lettura Anti Luce Blu",
+      "description": "Occhiali senza prescrizione progettati per proteggere gli occhi dalla luce blu emessa da computer, tablet e smartphone. Riducono l'affaticamento visivo.",
+      "price": 14.99,
+      "category": "Accessori",
+      "image": "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.3,
+      "stock": 40
+    },
+    {
+      "id": "50",
+      "name": "Set Tazze da Tè in Ceramica (4x)",
+      "description": "Set di 4 tazze in ceramica artigianale smaltata con tonalità sfumate. Manico ergonomico e design minimale ed elegante, ideali per tè, tisane o caffè lungo.",
+      "price": 26.50,
+      "category": "Casa e Cucina",
+      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60",
+      "rating": 4.7,
+      "stock": 15
+    }
+  ]
+}
