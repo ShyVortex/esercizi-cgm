@@ -1,0 +1,10 @@
+Partendo dal progetto svolto in React/Lez20, migra il progetto da React a Next.JS
+riportando solo la parte relativa alla lista delle risorse e il suo dettaglio, senza la parte di creazione, modifica o eliminazione,
+usando una struttura che sia chiara e leggibile (vedi quella mostra durante la lezione) e una suddivisione dei componenti client/server
+in base al compito che devono svolgere e l'eventuale necessità di azioni o API browser oppure semplicemente al fetch dei dati
+che può avvenire lato server. Utilizza i layout dove necessario per creare la struttura di base della pagina e gli stati
+di Next per i casi di loading, not-found ed error. Non fare semplicemente un copia e incolla di tutto il progetto React in Next,
+valuta come effettuare la migrazione in modo corretto e pulito in modo che il codice sia eventualmente leggibile da un altro sviluppatore.
+Non anticipare argomenti delle giornate successive come Auth, Form, Error 401/403 e caching.
+
+La struttura del progetto desiderata è presente nell'immagine in app/assets/structure.png.
