@@ -26,10 +26,12 @@ export default function ErrorBoundary({
     };
 
     useEffect(() => {
-        if (isRetrying && !isPending) {
-            setIsRetrying(false);
-            reset();
-        }
+        (async () => {
+            if (isRetrying && !isPending) {
+                setIsRetrying(false);
+                reset();
+            }
+        })();
     }, [isPending, isRetrying, reset]);
 
     return (
