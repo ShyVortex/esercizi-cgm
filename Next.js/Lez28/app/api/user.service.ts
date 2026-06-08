@@ -82,7 +82,20 @@ export class UserService {
         return await apiService.get(`${BASE_ENDPOINT}?${_page}${_per_page}${_isActive}`);
     }
 
-    public async getUser(id: string): Promise<User> {
+    public async getUser(id: string, simulate: boolean = false): Promise<User | undefined> {
+        if (simulate) {
+            try {
+                const result: string | GetFPUsersResponse | undefined = await this.runSimulations();
+
+                if (!result) return undefined;
+                else if (result && typeof result === 'string' && result === 'Success') {
+                    console.log("--- SIMULAZIONI ESEGUITE CON SUCCESSO ---");
+                }
+            } catch (error) {
+                throw error;
+            }
+        }
+
         try {
             return await apiService.get(`${BASE_ENDPOINT}/${id}`);
         } catch (error) {

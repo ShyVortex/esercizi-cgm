@@ -1,5 +1,7 @@
 import { userService } from "@/app/api/user.service";
 import { User } from "@/app/models/types/User";
+import ErrorTrigger from "../error-trigger";
+import { notFound } from "next/navigation";
 
 interface DetailProps {
     params: Promise<{ id: string }>;
@@ -7,7 +9,19 @@ interface DetailProps {
 
 export default async function UserDetail({ params }: DetailProps): Promise<React.ReactElement> {
     const { id } = await params;
-    const user: User = await userService.getUser(id);
+
+    let user: User | undefined;
+    try {
+        user = await userService.getUser(id, true);
+    } catch (error) {
+        const message = error instanceof Error ? error.message : "Errore durante il caricamento del prodotto";
+        return <ErrorTrigger message={message} />;
+    }
+
+    if (!user) {
+        notFound();
+    }
+
     const activeText: string = user.isActive ? 'Attivo' : 'Inattivo';
 
     return (

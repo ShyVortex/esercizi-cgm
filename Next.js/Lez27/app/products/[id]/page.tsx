@@ -20,7 +20,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
         return <ErrorTrigger message={message} />;
     }
 
-
     if (!product) {
         notFound();
     }
