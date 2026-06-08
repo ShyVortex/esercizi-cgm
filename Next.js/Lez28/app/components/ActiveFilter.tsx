@@ -22,9 +22,9 @@ export default function ActiveFilter({ value }: { value: string }) {
                 value={value}
                 onChange={handleChange}
                 className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                <option className="text-black" value={""}>Tutti</option>
-                <option className="text-black" value={"active"}>Attivi</option>
-                <option className="text-black" value={"inactive"}>Non attivi</option>
+                <option value={""}>Tutti</option>
+                <option value={"active"}>Attivi</option>
+                <option value={"inactive"}>Non attivi</option>
             </select>
         </div>
     )
