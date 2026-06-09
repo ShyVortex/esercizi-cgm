@@ -1,0 +1,20 @@
+Crea un applicazione Next con tre pagine:
+/login (pubblica)
+/profile (privata)
+/admin (riservata)
+e due ruoli:
+utente (solo area privata)
+admin (area privata e riservata)
+
+Utilizza middleware/Proxy per verificare che l'utente sia loggato e abbia le autorizzazioni necessarie per accedere
+(nel caso della pagina admin), se l'utente non è loggato rimandalo al login, se non autorizzato mostra un errore di 403
+che spieghi all'utente perché non può accedere a quell'area, mantenendo separate le due casistiche. Salva il token dell'utente
+dei cookie e simula la lettura dei dati dell'utente da quest'ultima e passali ai componenti server successivi tramite
+gli header della richiesta. Non salvare altri dati dell'utente direttamente nei cookie. Evita di risolvere tutto con un messaggio
+generico di errore. L'utente non deve vedere neanche l'anteprima di pagine di cui non ha l'accesso. Il comportamento deve restare
+uguale con refresh, link diretto o navigazione interna.
+
+
+APPUNTI MIEI: Praticamente è una semi-migrazione di React/Lez24 in Next.js, partendo dalla lezione precedente
+(Next.js/Lez28). Le differenze principali sono che: il contenuto di UsersPage può restare inviariato, e
+PrivatePage di React/Lez24 diventerebbe ProfilePage qui.
