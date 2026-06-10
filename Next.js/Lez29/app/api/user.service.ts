@@ -17,7 +17,7 @@ export class UserService {
         data: []
     }
 
-    private async runSimulations(): Promise<GetFPUsersResponse | undefined | string> {
+    public async runSimulations(): Promise<GetFPUsersResponse | undefined | string> {
         // Simula il caricamento
         await sleep(1000 + Math.random() * 2000);
 

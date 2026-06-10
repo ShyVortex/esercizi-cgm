@@ -1,8 +1,28 @@
 import type React from "react";
 import { headers } from "next/headers";
 import { ReadonlyHeaders } from "next/dist/server/web/spec-extension/adapters/headers";
+import { notFound } from "next/navigation";
+import { userService } from "../api/user.service";
+import { GetFPUsersResponse } from "@/models/responses/user-responses";
+import ErrorTrigger from "./error-trigger";
 
 export default async function ProfilePage(): Promise<React.ReactElement> {
+    let testResult: GetFPUsersResponse | undefined | string;
+    try {
+        testResult = await userService.runSimulations();
+    } catch (error) {
+        const message = error instanceof Error ? error.message : "Errore durante il caricamento dell'utente";
+        return <ErrorTrigger message={message} />;
+    }
+
+    if (!testResult) {
+        notFound();
+    } else if (testResult && typeof testResult === 'string' && testResult === 'Success') {
+        console.log("--- SIMULAZIONI ESEGUITE CON SUCCESSO ---");
+    } else {
+        return <ErrorTrigger message="Errore nella finalizzazione delle simulazioni" />;
+    }
+
     const headersList: ReadonlyHeaders = await headers();
     const userId: string = headersList.get("x-user-id") || "";
     const email: string = headersList.get("x-user-email") || "";
