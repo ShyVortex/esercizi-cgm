@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import { SignupRequest } from "@/models/requests/auth-requests";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export default function SignupPage(): React.ReactElement {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -89,7 +88,7 @@ export default function SignupPage(): React.ReactElement {
                         ✍️
                     </div>
                     <h2 className="text-3xl font-extrabold text-white tracking-tight">Registrati</h2>
-                    <p className="mt-2 text-sm text-gray-400">Crea un nuovo utente per accedere all'area riservata</p>
+                    <p className="mt-2 text-sm text-gray-400">Crea un nuovo utente per accedere all&apos;area riservata</p>
                 </div>
 
                 {errorMessage && (

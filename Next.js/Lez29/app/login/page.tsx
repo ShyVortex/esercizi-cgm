@@ -7,7 +7,6 @@ import { authService } from "../api/auth.service";
 import { AuthStorageService } from "../services/auth-storage.service";
 import Swal from "sweetalert2";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export default function LoginPage(): React.ReactElement {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -77,7 +76,7 @@ export default function LoginPage(): React.ReactElement {
                         🔐
                     </div>
                     <h2 className="text-3xl font-extrabold text-white tracking-tight">Accedi</h2>
-                    <p className="mt-2 text-sm text-gray-400">Inserisci le tue credenziali per accedere all'area riservata</p>
+                    <p className="mt-2 text-sm text-gray-400">Inserisci le tue credenziali per accedere all&apos;area riservata</p>
                 </div>
 
                 {errorMessage && (
