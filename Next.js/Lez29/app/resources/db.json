@@ -2,30 +2,18 @@
   "roles": [
     {
       "id": 1,
-      "name": "reader",
+      "name": "user",
       "permissions": [
-        "users-view",
-        "user-details"
+        "user-profile"
       ]
     },
     {
       "id": 2,
-      "name": "editor",
-      "permissions": [
-        "users-view",
-        "user-details",
-        "user-edit"
-      ]
-    },
-    {
-      "id": 3,
       "name": "admin",
       "permissions": [
+        "user-profile",
         "users-view",
-        "user-details",
-        "user-edit",
-        "user-create",
-        "user-delete"
+        "user-details"
       ]
     }
   ],
@@ -37,7 +25,7 @@
       "username": "marcorossi1",
       "firstName": "Marco",
       "lastName": "Rossi",
-      "role": 3,
+      "role": 2,
       "isActive": true
     },
     {
@@ -47,7 +35,7 @@
       "username": "giuliabianchi2",
       "firstName": "Giulia",
       "lastName": "Bianchi",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -57,7 +45,7 @@
       "username": "lucaverdi3",
       "firstName": "Luca",
       "lastName": "Verdi",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -67,7 +55,7 @@
       "username": "francescaneri4",
       "firstName": "Francesca",
       "lastName": "Neri",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -77,7 +65,7 @@
       "username": "alessandrogallo5",
       "firstName": "Alessandro",
       "lastName": "Gallo",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -87,7 +75,7 @@
       "username": "sofiaconte6",
       "firstName": "Sofia",
       "lastName": "Conte",
-      "role": 2,
+      "role": 1,
       "isActive": false
     },
     {
@@ -97,7 +85,7 @@
       "username": "matteomarini7",
       "firstName": "Matteo",
       "lastName": "Marini",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -107,7 +95,7 @@
       "username": "elenaricci8",
       "firstName": "Elena",
       "lastName": "Ricci",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -117,7 +105,7 @@
       "username": "davidebruno9",
       "firstName": "Davide",
       "lastName": "Bruno",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -127,7 +115,7 @@
       "username": "chiaragatti10",
       "firstName": "Chiara",
       "lastName": "Gatti",
-      "role": 2,
+      "role": 1,
       "isActive": true
     },
     {
@@ -137,7 +125,7 @@
       "username": "simonelongo11",
       "firstName": "Simone",
       "lastName": "Longo",
-      "role": 2,
+      "role": 1,
       "isActive": false
     },
     {
@@ -1546,7 +1534,7 @@
       "username": "a.trotta1",
       "firstName": "Angelo",
       "lastName": "Trotta",
-      "role": 3,
+      "role": 2,
       "id": "5J4Hp9Y",
       "isActive": true
     }

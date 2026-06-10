@@ -84,7 +84,7 @@ export async function proxy(request: NextRequest): Promise<NextResponse> {
             return NextResponse.redirect(new URL("/profile", request.url));
         }
 
-        if (pathname.startsWith("/admin") && user.role !== 3) {
+        if (pathname.startsWith("/admin") && user.role !== 2) {
             const url: URL = new URL("/403", request.url);
             const requestHeaders: Headers = new Headers(request.headers);
             requestHeaders.set("x-user-role", String(user.role));

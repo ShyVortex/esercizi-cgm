@@ -36,14 +36,10 @@ export default async function ProfilePage(): Promise<React.ReactElement> {
 
     switch (roleId) {
         case "1":
-            roleText = 'Lettore';
+            roleText = 'Utente';
             roleClass = "text-sm font-semibold text-green-700 rounded";
             break;
         case "2":
-            roleText = 'Editore';
-            roleClass = "text-sm font-semibold text-yellow-700 rounded";
-            break;
-        case "3":
             roleText = 'Amministratore';
             roleClass = "text-sm font-semibold text-red-700 rounded";
             break;

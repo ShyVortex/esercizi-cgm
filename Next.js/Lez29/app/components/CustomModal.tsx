@@ -117,7 +117,7 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                 </div>
 
                 {/* Password (visibile solo se l'utente loggato è amministratore) */}
-                {loggedUser?.role === 3 && (
+                {loggedUser?.role === 2 && (
                     <div className="flex flex-col gap-1">
                         <label htmlFor='password' className="text-xs font-bold text-gray-400 uppercase tracking-wider">Password</label>
                         <div className="relative">
@@ -190,7 +190,7 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                 </div>
 
                 {/* Ruolo (visibile solo se l'utente loggato è admin e l'utente selezionato non è quello loggato) */}
-                {loggedUser?.role === 3 && (user ? user.id !== loggedUser?.id : true) ? (
+                {loggedUser?.role === 2 && (user ? user.id !== loggedUser?.id : true) ? (
                     <div className="flex flex-col gap-1">
                         <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Ruolo</label>
                         <select
@@ -198,9 +198,8 @@ export default function CustomModal({ isOpen, onClose, onSubmit, user }: Props) 
                             required
                             name="role"
                             className="w-full bg-gray-900 border border-gray-700 rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors">
-                            <option value='1'>Lettore</option>
-                            <option value='2'>Editore</option>
-                            <option value='3'>Amministratore</option>
+                            <option value='1'>Utente</option>
+                            <option value='2'>Amministratore</option>
                         </select>
                     </div>
                 ) : (<></>)}

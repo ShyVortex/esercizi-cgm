@@ -34,12 +34,9 @@ export default function UserRow({ user }: Props): React.ReactElement {
 
     switch (user.role) {
         case 1:
-            roleText = "Lettore";
+            roleText = "Utente";
             break;
         case 2:
-            roleText = "Editore";
-            break;
-        case 3:
             roleText = "Amministratore";
             break;
         default:

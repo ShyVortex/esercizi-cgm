@@ -13,7 +13,7 @@ export default function NavBar(): React.ReactElement {
     const [user, setUser] = useState<User | undefined>(undefined);
 
     useEffect(() => {
-        setUser(AuthStorageService.getUser());
+        (async () => setUser(AuthStorageService.getUser()))();
     }, [pathname]);
 
     const btnRouteStyle: string = "mt-10 pt-2 pb-2 pl-3 pr-3 w-45 bg-gray-400 hover:bg-gray-300 text-black font-medium rounded cursor-pointer transition-colors duration-150 inline-block text-center";
@@ -50,7 +50,7 @@ export default function NavBar(): React.ReactElement {
                     >
                         Profile
                     </Link>
-                    {user.role === 3 && (
+                    {user.role === 2 && (
                         <Link
                             href="/admin"
                             className={pathname.startsWith("/admin") ? btnRouteSelectedStyle : btnRouteStyle}

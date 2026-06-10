@@ -24,8 +24,7 @@ export default function RoleFilter({ value }: { value: string }) {
                 onChange={handleChange}
                 className="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 <option value="">Tutti</option>
-                <option value="reader">Lettori</option>
-                <option value="editor">Editori</option>
+                <option value="user">Utenti</option>
                 <option value="admin">Amministratori</option>
             </select>
         </div>
