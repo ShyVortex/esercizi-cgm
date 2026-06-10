@@ -1,0 +1,12 @@
+Partendo dall'esercizio del giorno precedente implementa i form di creazione e aggiornamento dei dati usando
+JSON-Server per simulare il back-end. Implementa la validazione con campi obbligatori e con una lunghezza di caratteri minima.
+L'utente deve essere in grado di capire in quale stato si trova il form, un loader con la disattivazione dei campi e dei
+pulsanti durante la fase di pending, e un messaggio diverso e chiaro per errore di validazione e salvataggio riuscito quando
+riceve una risposta dal back-end. Se l'operazione è andata a buon fine, in caso il form sia di creazione reindirizza l'utente
+verso il dettaglio della risorsa creata, invece in fase di aggiornamento mostra un messaggio di successo e aggiorna i dati della
+lista con quelli ricevuti. In caso di apertura del dettaglio assicurati che vengano ricaricati i dati dal server e non mostrati
+quelli vecchi (ad esempio se avete implementato la cache). Il form di modifica deve mostrare gli ultimi dati disponibili dal back-end.
+
+MIE NOTE: Utilizza le best practices per il mutation flow di Next.js (https://nextjs.org/learn/dashboard-app/mutating-data).
+L'esercizio prevede la reimplementazione delle operazioni CRUD di React/Lez24, quindi conviene migrare quelle nei componenti esistenti
+assicurandosi che la migrazione segui le pratiche di Next.js.
