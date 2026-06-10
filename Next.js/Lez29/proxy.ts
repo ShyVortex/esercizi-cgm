@@ -38,6 +38,7 @@ export async function proxy(request: NextRequest): Promise<NextResponse> {
         return NextResponse.next();
     }
 
+    // Controllo locale per verificare che il payload esista e al suo interno ci sia l'ID dell'utente
     const payload: JwtPayload | null = decodeJwt(token);
     if (!payload || !payload.sub) {
         if (isProtectedRoute) {
@@ -48,6 +49,7 @@ export async function proxy(request: NextRequest): Promise<NextResponse> {
         return NextResponse.next();
     }
 
+    // Validazione token lato server
     try {
         const userRes: Response = await fetch(`http://localhost:3000/users/${payload.sub}`, {
             headers: {
@@ -66,6 +68,7 @@ export async function proxy(request: NextRequest): Promise<NextResponse> {
 
         const user: User = await userRes.json() as User;
 
+        // Controllo stato attività account
         if (user.isActive === false) {
             const url: URL = new URL("/403", request.url);
             const requestHeaders: Headers = new Headers(request.headers);
@@ -84,6 +87,7 @@ export async function proxy(request: NextRequest): Promise<NextResponse> {
             return NextResponse.redirect(new URL("/profile", request.url));
         }
 
+        // Controllo del ruolo per autorizzazione
         if (pathname.startsWith("/admin") && user.role !== 2) {
             const url: URL = new URL("/403", request.url);
             const requestHeaders: Headers = new Headers(request.headers);
