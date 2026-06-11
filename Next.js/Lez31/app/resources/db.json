@@ -1541,13 +1541,13 @@
     },
     {
       "email": "antonio.pozzini@example.com",
-      "password": "$2a$10$ixADMw6H4TeOy67YCf4cMeYDtc963JHw3BT3A.k0rATCnuzQlArey",
+      "password": "$2a$10$bEvuuX9iZ90S0sLgRYXVG.yfG9bAjNHYAz4PmEPlQCbb5vebc5hwe",
       "username": "a.pozzini",
       "firstName": "Antonio",
       "lastName": "Pozzini",
       "role": 1,
       "isActive": true,
-      "id": "TUuz0gD"
+      "id": "C-yYWUK"
     }
   ]
 }

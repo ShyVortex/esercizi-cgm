@@ -1,0 +1,8 @@
+Partendo dal dato precedente implementa nelle server action con delle mutation (creazione, modifica e eliminazione)
+la cache di Next.JS usando le funzioni di revalidate del path e dei tag visto nella lezione. La lista e il dettaglio
+devono mostrare il nuovo dato aggiornato e coerente senza costringere l'utente ad un refresh manuale.
+La action deve contiene salvataggio, invalidazione e risposta leggibile e il messaggio di successo deve corrispondere
+a un dato realmente aggiornato. Mantieni chiara la sequenza: leggo, salvo, invalido e mostro. Il nuovo elemento compare
+nella lista dopo il submit ed essere visibile anche nel suo dettaglio, mentre un elemento cancellato non deve più comparire
+nella lista e non essere più visibile anche nel suo dettaglio. Il dato errato che produce un errore di validazione non deve
+essere salvato e deve produrre un messaggio comprensibile all'utente che lo aiuti a correggere il problema.
