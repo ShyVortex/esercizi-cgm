@@ -6,3 +6,8 @@ a un dato realmente aggiornato. Mantieni chiara la sequenza: leggo, salvo, inval
 nella lista dopo il submit ed essere visibile anche nel suo dettaglio, mentre un elemento cancellato non deve più comparire
 nella lista e non essere più visibile anche nel suo dettaglio. Il dato errato che produce un errore di validazione non deve
 essere salvato e deve produrre un messaggio comprensibile all'utente che lo aiuti a correggere il problema.
+
+La revalidation è visibile nel codice vicino alla mutation. Valuta sempre bene se usare un path specifico, un tag o entrambi.
+Lista e dettaglio devono raccontare lo stesso titolo aggiornato. La scelta tra path e tag deve essere motivata dal modo in cui
+il dato viene letto. Il flusso resta comprensibile anche confrontando due schermate. Non usare aggiornamenti ottimistici.
+La lista non deve restare ferma su dati obsoleti.

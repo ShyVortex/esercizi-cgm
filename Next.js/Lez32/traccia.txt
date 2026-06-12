@@ -1,0 +1,30 @@
+Crea un gestionale delle attività, con home page pubblica, dashboard privata e profilo personale.
+Le attività dovranno avere i seguenti campi: id, titolo (obbligatorio), descrizione, assegnatario (utente), data inizio (Date),
+data fine (Date), stato (lista), tempo stimato in ore (numero decimale) e tempo effettivo in ore (numero decimale), ID del progetto
+e attivo (booleano). I ruoli saranno utente standard (può solo leggere attività e progetti), manager (può anche creare, modificare e
+cancellare attività e progetti) e admin (può fare tutto, ovvero gestire attività, progetti, stati e utenti).
+Per la lista delle attività metti i filtri per stato, attivo e assegnatario, mentre per i progetti, gli stati e gli utenti
+solo il filtro tutti/attivo/non attivo. Ogni schermata dovrà seguire tutti gli stati dell'UI che abbiamo visto, tutte le liste
+dovranno essere paginate e il dettaglio dovranno restituire loading durante il caricamento, non-found se la risorsa non è disponibile
+e error se andato in errore.
+
+Per le azioni mutation dovranno avere la loro action che segue tutti gli stati delle mutation mostrando lo stato di caricamento,
+il messaggio di successo oppure quello di errore con il relativo aggiornamento della cache di tutte le path o tag che usano quel dato
+tramite le apposite funzioni di revalidation. Tutti i dati inseriti nelle mutation dovranno essere validati prima di essere mandati
+al back-end per evitare chiamate non neccessarie. Gestisci dove possibile caricamento e mutation con componenti server per mostrare
+meno informazioni sensibili all'utente. Tutti le azioni che l'utente non può fare non deve neanche vederle sull'UI.
+Non usare mai l'aggiornamento ottimistico ma attendi la risposta reale del back-end. Gestisci i casi di 403 in caso l'utente sia
+tentando di accedere ad una pagina oppure un'azione di cui non hai il permesso. Se la risorsa non esiste mostra un messaggio di not-found,
+non la pagina vuota. Mostra nella navigazione solo le aree a cui l'utente può accedere.
+
+MIEI APPUNTI: Questo è il progetto finale, quindi deve essere quello fatto meglio.
+Dato che qui non è specificato, ho chiesto al professore cosa si intende per progetto, e ha detto che è un gruppo di 3 attività correlate
+tra loro e associate allo stesso utente.
+Per ora i file attualmente presenti nel progetto sono la copia dell'esercizio precedente (Next.js/Lez31).
+Per questo esercizio, quello finale, il professore vorrebbe che utilizzassimo le seguenti librerie per la creazione
+dei componenti:
+- Formik
+- Datatables
+- React-select
+- Yup
+- Sweetalert2.

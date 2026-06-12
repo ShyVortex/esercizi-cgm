@@ -1,0 +1,886 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "name": "user",
+      "permissions": [
+        "user-profile"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "manager",
+      "permissions": [
+        "user-profile",
+        "tasks-manage",
+        "projects-manage"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "admin",
+      "permissions": [
+        "user-profile",
+        "users-view",
+        "user-details",
+        "tasks-manage",
+        "projects-manage",
+        "states-manage"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "admin",
+      "firstName": "Mario",
+      "lastName": "Rossi",
+      "role": 3,
+      "isActive": true,
+      "middleName": "Verdi"
+    },
+    {
+      "id": "2",
+      "email": "manager1@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "manager1",
+      "firstName": "Luca",
+      "lastName": "Bianchi",
+      "role": 2,
+      "isActive": true,
+      "middleName": "Verdi"
+    },
+    {
+      "id": "3",
+      "email": "manager2@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "manager2",
+      "firstName": "Giulia",
+      "lastName": "Verdi",
+      "role": 2,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "email": "user1@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user1",
+      "firstName": "Marco",
+      "lastName": "Neri",
+      "role": 1,
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "email": "user2@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user2",
+      "firstName": "Sara",
+      "lastName": "Rizzo",
+      "role": 1,
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "email": "user3@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user3",
+      "firstName": "Elena",
+      "lastName": "Gallo",
+      "role": 1,
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "email": "user4@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user4",
+      "firstName": "Davide",
+      "lastName": "Conte",
+      "role": 1,
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "email": "user5@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user5",
+      "firstName": "Sofia",
+      "lastName": "Marini",
+      "role": 1,
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "email": "user6@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user6",
+      "firstName": "Andrea",
+      "lastName": "Bruno",
+      "role": 1,
+      "isActive": false
+    },
+    {
+      "id": "10",
+      "email": "user7@example.com",
+      "password": "$2a$10$FCU9TMsE95uHfvKbDoRiPe/TY9mEegtqFUXbbXoXcVvgeN99/dEsC",
+      "username": "user7",
+      "firstName": "Chiara",
+      "lastName": "Ricci",
+      "role": 1,
+      "isActive": true
+    },
+    {
+      "email": "antonio.pozzini@example.com",
+      "password": "$2a$10$USPRHArI6e73grhOA7Pcd.ZG4PhqrFvmztzzqSn1dEl1c3kLv0oSa",
+      "username": "a.pozzini",
+      "firstName": "Antonio",
+      "lastName": "Pozzini",
+      "role": 1,
+      "isActive": true,
+      "id": "o_TObBg"
+    }
+  ],
+  "states": [
+    {
+      "id": "1",
+      "name": "Da fare",
+      "priority": "low",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "In corso",
+      "priority": "medium",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "In revisione",
+      "priority": "high",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Completato",
+      "priority": "none",
+      "isActive": true
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Redesign Sito",
+      "description": "Completo rifacimento grafico e strutturale del sito web istituzionale per migliorare l'UX ed allinearsi al nuovo brand book. (Completato con successo nelle date stabilite)",
+      "stateId": "4",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "title": "E-Commerce",
+      "description": "Integrazione del modulo e-commerce per la vendita diretta di prodotti fisici, comprensivo di carrello ed ordini. (Completato con successo nelle date stabilite)",
+      "stateId": "4",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "title": "SEO Campagna",
+      "description": "Ottimizzazione del posizionamento sui motori di ricerca con analisi keyword, ottimizzazione tecnica e link building. (Completato con successo nelle date stabilite)",
+      "stateId": "4",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "title": "App Mobile UI",
+      "description": "Design della nuova interfaccia utente per l'applicazione iOS ed Android con prototipi ad alta fedeltà. (Completato con successo nelle date stabilite)",
+      "stateId": "4",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "title": "CRM Sync",
+      "description": "Integrazione del CRM aziendale con il database interno per la sincronizzazione in tempo reale dei lead. (Completato con successo nelle date stabilite)",
+      "stateId": "4",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "title": "Cloud Migr.",
+      "description": "Migrazione dei server on-premise verso Amazon Web Services (AWS) per migliorare scalabilità ed affidabilità. (Attualmente attivo e sotto monitoraggio)",
+      "stateId": "2",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "title": "DB Backups",
+      "description": "Configurazione di un sistema automatizzato di backup incrementali con disaster recovery geograficamente distribuito. (Attualmente attivo e sotto monitoraggio)",
+      "stateId": "3",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "title": "Audit Sicur.",
+      "description": "Analisi approfondita della sicurezza del codice, controllo delle dipendenze vulnerabili e penetration test completi. (Attualmente attivo e sotto monitoraggio)",
+      "stateId": "2",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "title": "API Gateway",
+      "description": "Creazione di un punto di accesso centralizzato per tutti i microservizi con rate limiting e logging integrato. (Attualmente attivo e sotto monitoraggio)",
+      "stateId": "3",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "title": "Social Camp.",
+      "description": "Pianificazione, produzione di asset grafici e lancio della campagna pubblicitaria sui principali social media. (Attualmente attivo e sotto monitoraggio)",
+      "stateId": "2",
+      "isActive": true
+    },
+    {
+      "id": "11",
+      "title": "HR Portal",
+      "description": "Aggiornamento del portale dipendenti per la gestione semplificata di ferie, permessi e visualizzazione buste paga. (Sospeso per ridefinizione delle priorità aziendali)",
+      "stateId": "2",
+      "isActive": false
+    },
+    {
+      "id": "12",
+      "title": "Dashboard An.",
+      "description": "Sviluppo di un pannello di controllo interattivo con grafici dinamici per la visualizzazione delle performance di vendita. (Sospeso per ridefinizione delle priorità aziendali)",
+      "stateId": "2",
+      "isActive": false
+    },
+    {
+      "id": "13",
+      "title": "Fatturaz. V2",
+      "description": "Rilascio del nuovo modulo di fatturazione elettronica con calcolo automatico di ritenute e tasse regionali. (Sospeso per ridefinizione delle priorità aziendali)",
+      "stateId": "2",
+      "isActive": false
+    },
+    {
+      "id": "14",
+      "title": "CI/CD Pipeline",
+      "description": "Automatizzazione del processo di build, test e deploy con GitLab CI per azzerare i tempi di rilascio manuale. (Attività di pianificazione iniziale in corso)",
+      "stateId": "1",
+      "isActive": true
+    },
+    {
+      "id": "15",
+      "title": "Test Utente",
+      "description": "Sessioni di interviste e raccolta feedback qualitativo con utenti reali sul prototipo del nuovo portale clienti. (Attività di pianificazione iniziale in corso)",
+      "stateId": "1",
+      "isActive": true
+    },
+    {
+      "title": "App medica",
+      "description": "Progettazione di un'app mobile medica",
+      "stateId": "1",
+      "isActive": true,
+      "id": "TxFTAn9"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Wireframe UX",
+      "description": "Progettazione dei mockup statici per la home page e le sezioni principali.",
+      "assignedTo": "6",
+      "start": "2026-04-03",
+      "end": "2026-05-12",
+      "stateId": "4",
+      "estimatedLength": 5,
+      "effectiveLength": 4,
+      "projectId": "1",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "title": "Sviluppo Front",
+      "description": "Scrittura dei componenti HTML/CSS/React rispettando la pixel perfection.",
+      "assignedTo": "7",
+      "start": "2026-04-04",
+      "end": "2026-05-13",
+      "stateId": "4",
+      "estimatedLength": 8,
+      "effectiveLength": 8.5,
+      "projectId": "1",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "title": "Testing & Bugfix",
+      "description": "Risoluzione dei bug cross-browser e validazione della responsività.",
+      "assignedTo": "8",
+      "start": "2026-04-05",
+      "end": "2026-05-14",
+      "stateId": "4",
+      "estimatedLength": 11,
+      "effectiveLength": 10,
+      "projectId": "1",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "title": "Catalogo Prod.",
+      "description": "Configurazione della base dati e dei filtri di ricerca prodotti.",
+      "assignedTo": "7",
+      "start": "2026-04-05",
+      "end": "2026-05-14",
+      "stateId": "4",
+      "estimatedLength": 14,
+      "effectiveLength": 13,
+      "projectId": "2",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "title": "Pagamenti Stripe",
+      "description": "Integrazione delle API di pagamento e verifica delle transazioni di test.",
+      "assignedTo": "8",
+      "start": "2026-04-06",
+      "end": "2026-05-15",
+      "stateId": "4",
+      "estimatedLength": 17,
+      "effectiveLength": 17.5,
+      "projectId": "2",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "title": "Gestione Ordini",
+      "description": "Sviluppo del pannello amministrativo per la gestione delle spedizioni.",
+      "assignedTo": "9",
+      "start": "2026-04-07",
+      "end": "2026-05-16",
+      "stateId": "4",
+      "estimatedLength": 5,
+      "effectiveLength": 4,
+      "projectId": "2",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "title": "Analisi Keyword",
+      "description": "Studio delle parole chiave dei concorrenti e stesura del piano editoriale.",
+      "assignedTo": "8",
+      "start": "2026-04-07",
+      "end": "2026-05-16",
+      "stateId": "4",
+      "estimatedLength": 8,
+      "effectiveLength": 7,
+      "projectId": "3",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "title": "Tag & Metadata",
+      "description": "Aggiornamento sistematico di tag Title, H1 e meta description delle pagine.",
+      "assignedTo": "9",
+      "start": "2026-04-08",
+      "end": "2026-05-17",
+      "stateId": "4",
+      "estimatedLength": 11,
+      "effectiveLength": 11.5,
+      "projectId": "3",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "title": "Performance Web",
+      "description": "Ottimizzazione dei Web Vitals con compressione immagini e caching.",
+      "assignedTo": "10",
+      "start": "2026-04-09",
+      "end": "2026-05-18",
+      "stateId": "4",
+      "estimatedLength": 14,
+      "effectiveLength": 13,
+      "projectId": "3",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "title": "User Flows",
+      "description": "Mappatura di tutti i possibili percorsi dell'utente all'interno dell'app.",
+      "assignedTo": "9",
+      "start": "2026-04-09",
+      "end": "2026-05-18",
+      "stateId": "4",
+      "estimatedLength": 17,
+      "effectiveLength": 16,
+      "projectId": "4",
+      "isActive": true
+    },
+    {
+      "id": "11",
+      "title": "Asset Grafici",
+      "description": "Esportazione di icone, loghi e palette colori pronti per gli sviluppatori.",
+      "assignedTo": "10",
+      "start": "2026-04-10",
+      "end": "2026-05-19",
+      "stateId": "4",
+      "estimatedLength": 5,
+      "effectiveLength": 5.5,
+      "projectId": "4",
+      "isActive": true
+    },
+    {
+      "id": "12",
+      "title": "Dark Mode UI",
+      "description": "Adattamento di tutte le schermate alla palette colori scura.",
+      "assignedTo": "4",
+      "start": "2026-04-11",
+      "end": "2026-05-20",
+      "stateId": "4",
+      "estimatedLength": 8,
+      "effectiveLength": 7,
+      "projectId": "4",
+      "isActive": true
+    },
+    {
+      "id": "13",
+      "title": "API Connector",
+      "description": "Configurazione dei webhook e delle chiavi di autorizzazione API.",
+      "assignedTo": "10",
+      "start": "2026-04-11",
+      "end": "2026-05-20",
+      "stateId": "4",
+      "estimatedLength": 11,
+      "effectiveLength": 10,
+      "projectId": "5",
+      "isActive": true
+    },
+    {
+      "id": "14",
+      "title": "Mapping Campi",
+      "description": "Corrispondenza esatta dei campi dati tra il DB interno ed il CRM.",
+      "assignedTo": "4",
+      "start": "2026-04-12",
+      "end": "2026-05-21",
+      "stateId": "4",
+      "estimatedLength": 14,
+      "effectiveLength": 14.5,
+      "projectId": "5",
+      "isActive": true
+    },
+    {
+      "id": "15",
+      "title": "Sync Test",
+      "description": "Avvio di test di sincronizzazione massiva per identificare eventuali colli di bottiglia.",
+      "assignedTo": "5",
+      "start": "2026-04-13",
+      "end": "2026-05-22",
+      "stateId": "4",
+      "estimatedLength": 17,
+      "effectiveLength": 16,
+      "projectId": "5",
+      "isActive": true
+    },
+    {
+      "id": "16",
+      "title": "Piano Migrazione",
+      "description": "Analisi preliminare dei requisiti hardware e scelta delle istanze cloud.",
+      "assignedTo": "4",
+      "start": "2026-06-13",
+      "end": "2026-07-27",
+      "stateId": "4",
+      "estimatedLength": 5,
+      "effectiveLength": 4.5,
+      "projectId": "6",
+      "isActive": true
+    },
+    {
+      "id": "17",
+      "title": "Dump DB & Copy",
+      "description": "Esportazione e trasferimento sicuro del database di produzione.",
+      "assignedTo": "5",
+      "start": "2026-06-14",
+      "end": "2026-07-28",
+      "stateId": "2",
+      "estimatedLength": 8,
+      "effectiveLength": 3.2,
+      "projectId": "6",
+      "isActive": true
+    },
+    {
+      "id": "18",
+      "title": "Routing DNS",
+      "description": "Aggiornamento dei record DNS con minimo downtime per gli utenti.",
+      "assignedTo": "6",
+      "start": "2026-06-15",
+      "end": "2026-07-29",
+      "stateId": "1",
+      "estimatedLength": 11,
+      "effectiveLength": 0,
+      "projectId": "6",
+      "isActive": true
+    },
+    {
+      "id": "19",
+      "title": "Script Backup",
+      "description": "Scrittura di script bash eseguiti periodicamente tramite cron job.",
+      "assignedTo": "5",
+      "start": "2026-06-15",
+      "end": "2026-07-29",
+      "stateId": "4",
+      "estimatedLength": 14,
+      "effectiveLength": 12.6,
+      "projectId": "7",
+      "isActive": true
+    },
+    {
+      "id": "20",
+      "title": "Storage S3 AWS",
+      "description": "Configurazione di bucket S3 ad accesso ristretto con policy di rotazione.",
+      "assignedTo": "6",
+      "start": "2026-06-16",
+      "end": "2026-07-30",
+      "stateId": "2",
+      "estimatedLength": 17,
+      "effectiveLength": 6.8,
+      "projectId": "7",
+      "isActive": true
+    },
+    {
+      "id": "21",
+      "title": "Recovery Test",
+      "description": "Simulazione periodica di ripristino per verificare l'integrità dei salvataggi.",
+      "assignedTo": "7",
+      "start": "2026-06-17",
+      "end": "2026-07-31",
+      "stateId": "1",
+      "estimatedLength": 5,
+      "effectiveLength": 0,
+      "projectId": "7",
+      "isActive": true
+    },
+    {
+      "id": "22",
+      "title": "Npm Audit Fix",
+      "description": "Aggiornamento e risoluzione dei pacchetti npm contenenti vulnerabilità note.",
+      "assignedTo": "6",
+      "start": "2026-06-17",
+      "end": "2026-07-31",
+      "stateId": "4",
+      "estimatedLength": 8,
+      "effectiveLength": 7.2,
+      "projectId": "8",
+      "isActive": true
+    },
+    {
+      "id": "23",
+      "title": "Pen-Test API",
+      "description": "Simulazione di attacchi informatici per trovare falle di autorizzazione.",
+      "assignedTo": "7",
+      "start": "2026-06-18",
+      "end": "2026-08-01",
+      "stateId": "2",
+      "estimatedLength": 11,
+      "effectiveLength": 4.4,
+      "projectId": "8",
+      "isActive": true
+    },
+    {
+      "id": "24",
+      "title": "Report Finale",
+      "description": "Documento dettagliato con le falle rilevate e le azioni correttive intraprese.",
+      "assignedTo": "8",
+      "start": "2026-06-19",
+      "end": "2026-08-02",
+      "stateId": "1",
+      "estimatedLength": 14,
+      "effectiveLength": 0,
+      "projectId": "8",
+      "isActive": true
+    },
+    {
+      "id": "25",
+      "title": "Gateway Setup",
+      "description": "Installazione e prima configurazione del proxy inverso centralizzato.",
+      "assignedTo": "7",
+      "start": "2026-06-19",
+      "end": "2026-08-02",
+      "stateId": "4",
+      "estimatedLength": 17,
+      "effectiveLength": 15.3,
+      "projectId": "9",
+      "isActive": true
+    },
+    {
+      "id": "26",
+      "title": "Rate Limiter",
+      "description": "Configurazione del blocco per chiamate ripetute dallo stesso IP.",
+      "assignedTo": "8",
+      "start": "2026-06-20",
+      "end": "2026-08-03",
+      "stateId": "2",
+      "estimatedLength": 5,
+      "effectiveLength": 2,
+      "projectId": "9",
+      "isActive": true
+    },
+    {
+      "id": "27",
+      "title": "Auth JWT Verify",
+      "description": "Verifica della validità dei token JWT prima dell'inoltro ai microservizi.",
+      "assignedTo": "9",
+      "start": "2026-06-21",
+      "end": "2026-08-04",
+      "stateId": "1",
+      "estimatedLength": 8,
+      "effectiveLength": 0,
+      "projectId": "9",
+      "isActive": true
+    },
+    {
+      "id": "28",
+      "title": "Copywriting Post",
+      "description": "Scrittura dei testi pubblicitari mirati a target specifici di pubblico.",
+      "assignedTo": "8",
+      "start": "2026-06-21",
+      "end": "2026-08-04",
+      "stateId": "4",
+      "estimatedLength": 11,
+      "effectiveLength": 9.9,
+      "projectId": "10",
+      "isActive": true
+    },
+    {
+      "id": "29",
+      "title": "Grafiche Ad",
+      "description": "Creazione di banner promozionali e video brevi per le inserzioni.",
+      "assignedTo": "9",
+      "start": "2026-06-22",
+      "end": "2026-08-05",
+      "stateId": "2",
+      "estimatedLength": 14,
+      "effectiveLength": 5.6,
+      "projectId": "10",
+      "isActive": true
+    },
+    {
+      "id": "30",
+      "title": "Launch Campaign",
+      "description": "Pianificazione del budget e attivazione delle sponsorizzazioni.",
+      "assignedTo": "10",
+      "start": "2026-06-23",
+      "end": "2026-08-06",
+      "stateId": "1",
+      "estimatedLength": 17,
+      "effectiveLength": 0,
+      "projectId": "10",
+      "isActive": true
+    },
+    {
+      "id": "31",
+      "title": "Profile Page",
+      "description": "Sviluppo della schermata contenente le informazioni personali del dipendente.",
+      "assignedTo": "9",
+      "start": "2026-05-22",
+      "end": "2026-08-29",
+      "stateId": "2",
+      "estimatedLength": 5,
+      "effectiveLength": 1,
+      "projectId": "11",
+      "isActive": false
+    },
+    {
+      "id": "32",
+      "title": "Richiesta Ferie",
+      "description": "Form interattivo con approvazione a cascata da parte del manager.",
+      "assignedTo": "10",
+      "start": "2026-05-22",
+      "end": "2026-08-29",
+      "stateId": "1",
+      "estimatedLength": 8,
+      "effectiveLength": 0,
+      "projectId": "11",
+      "isActive": false
+    },
+    {
+      "id": "33",
+      "title": "Download Cedolini",
+      "description": "Integrazione del servizio di archiviazione protetta delle buste paga.",
+      "assignedTo": "4",
+      "start": "2026-05-22",
+      "end": "2026-08-29",
+      "stateId": "1",
+      "estimatedLength": 11,
+      "effectiveLength": 0,
+      "projectId": "11",
+      "isActive": false
+    },
+    {
+      "id": "34",
+      "title": "Grafici Vendite",
+      "description": "Integrazione della libreria Chart.js per visualizzare i trend storici.",
+      "assignedTo": "10",
+      "start": "2026-05-24",
+      "end": "2026-08-29",
+      "stateId": "2",
+      "estimatedLength": 14,
+      "effectiveLength": 2.8,
+      "projectId": "12",
+      "isActive": false
+    },
+    {
+      "id": "35",
+      "title": "Aggregazione Dati",
+      "description": "Query di raggruppamento dati per calcolare fatturato e margini.",
+      "assignedTo": "4",
+      "start": "2026-05-24",
+      "end": "2026-08-29",
+      "stateId": "1",
+      "estimatedLength": 17,
+      "effectiveLength": 0,
+      "projectId": "12",
+      "isActive": false
+    },
+    {
+      "id": "36",
+      "title": "Export PDF/CSV",
+      "description": "Pulsanti per scaricare in locale i dati visualizzati a schermo.",
+      "assignedTo": "5",
+      "start": "2026-05-24",
+      "end": "2026-08-29",
+      "stateId": "1",
+      "estimatedLength": 5,
+      "effectiveLength": 0,
+      "projectId": "12",
+      "isActive": false
+    },
+    {
+      "id": "37",
+      "title": "Invio SDI API",
+      "description": "Integrazione con il sistema di interscambio dell'Agenzia delle Entrate.",
+      "assignedTo": "4",
+      "start": "2026-05-26",
+      "end": "2026-08-29",
+      "stateId": "2",
+      "estimatedLength": 8,
+      "effectiveLength": 1.6,
+      "projectId": "13",
+      "isActive": false
+    },
+    {
+      "id": "38",
+      "title": "Calcolo Ritenute",
+      "description": "Algoritmo per il conteggio preciso di tasse, cassa ed IVA ordinaria.",
+      "assignedTo": "5",
+      "start": "2026-05-26",
+      "end": "2026-08-29",
+      "stateId": "1",
+      "estimatedLength": 11,
+      "effectiveLength": 0,
+      "projectId": "13",
+      "isActive": false
+    },
+    {
+      "id": "39",
+      "title": "Notifiche Email",
+      "description": "Invio automatico della copia cortesia della fattura via mail.",
+      "assignedTo": "6",
+      "start": "2026-05-26",
+      "end": "2026-08-29",
+      "stateId": "1",
+      "estimatedLength": 14,
+      "effectiveLength": 0,
+      "projectId": "13",
+      "isActive": false
+    },
+    {
+      "id": "40",
+      "title": "File Yml Setup",
+      "description": "Scrittura delle pipeline di build e linter automatico.",
+      "assignedTo": "5",
+      "start": "2026-07-20",
+      "end": "2026-08-30",
+      "stateId": "1",
+      "estimatedLength": 17,
+      "effectiveLength": 0,
+      "projectId": "14",
+      "isActive": true
+    },
+    {
+      "id": "41",
+      "title": "Docker Build",
+      "description": "Creazione automatica del container Docker per ogni rilascio.",
+      "assignedTo": "6",
+      "start": "2026-07-21",
+      "end": "2026-08-31",
+      "stateId": "1",
+      "estimatedLength": 5,
+      "effectiveLength": 0,
+      "projectId": "14",
+      "isActive": true
+    },
+    {
+      "id": "42",
+      "title": "Auto-Deploy",
+      "description": "Configurazione dei server di stage e produzione per aggiornarsi da soli.",
+      "assignedTo": "7",
+      "start": "2026-07-22",
+      "end": "2026-09-01",
+      "stateId": "1",
+      "estimatedLength": 8,
+      "effectiveLength": 0,
+      "projectId": "14",
+      "isActive": true
+    },
+    {
+      "id": "43",
+      "title": "Draft Interviste",
+      "description": "Scrittura del questionario e selezione degli utenti per il test.",
+      "assignedTo": "6",
+      "start": "2026-07-20",
+      "end": "2026-08-30",
+      "stateId": "1",
+      "estimatedLength": 11,
+      "effectiveLength": 0,
+      "projectId": "15",
+      "isActive": true
+    },
+    {
+      "id": "44",
+      "title": "Hotjar Analytics",
+      "description": "Installazione degli script per registrare le sessioni di navigazione.",
+      "assignedTo": "7",
+      "start": "2026-07-21",
+      "end": "2026-08-31",
+      "stateId": "1",
+      "estimatedLength": 14,
+      "effectiveLength": 0,
+      "projectId": "15",
+      "isActive": true
+    },
+    {
+      "id": "45",
+      "title": "UX Report",
+      "description": "Analisi dei colli di bottiglia riscontrati e proposte di correzione.",
+      "assignedTo": "8",
+      "start": "2026-07-22",
+      "end": "2026-09-01",
+      "stateId": "1",
+      "estimatedLength": 17,
+      "effectiveLength": 0,
+      "projectId": "15",
+      "isActive": true
+    },
+    {
+      "title": "Progettare DB",
+      "description": "Progettazione database non relazionale basato su MongoDB.",
+      "assignedTo": "3",
+      "start": "2026-06-12T00:00:00.000Z",
+      "end": "2026-07-08T00:00:00.000Z",
+      "stateId": "1",
+      "estimatedLength": 5,
+      "effectiveLength": 5,
+      "projectId": "TxFTAn9",
+      "isActive": true,
+      "id": "KiPEHPM"
+    }
+  ]
+}
