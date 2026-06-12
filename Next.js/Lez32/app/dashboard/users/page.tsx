@@ -75,6 +75,7 @@ export default async function UsersDashboardPage({ searchParams }: PageProps): P
 
     const roleOptions = [
         { value: "user", label: "Utenti" },
+        { value: "manager", label: "Managers" },
         { value: "admin", label: "Amministratori" }
     ];
 

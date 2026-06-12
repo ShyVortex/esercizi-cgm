@@ -36,7 +36,7 @@ export default async function UserDetail({ params }: DetailProps): Promise<React
 
     switch (user.role) {
         case 1:
-            roleText = 'Utente Standard';
+            roleText = 'Utente';
             roleClass = "text-lg text-green-400 font-medium rounded";
             break;
         case 2:

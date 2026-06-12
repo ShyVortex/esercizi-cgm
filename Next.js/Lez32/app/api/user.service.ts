@@ -80,8 +80,11 @@ export class UserService {
                 case "user":
                     _role = `role=1&`;
                     break;
-                case "admin":
+                case "manager":
                     _role = `role=2&`;
+                    break;
+                case "admin":
+                    _role = `role=3&`;
                     break;
                 default:
                     break;
