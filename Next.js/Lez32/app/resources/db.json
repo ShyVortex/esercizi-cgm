@@ -868,19 +868,6 @@
       "effectiveLength": 0,
       "projectId": "15",
       "isActive": true
-    },
-    {
-      "title": "Progettare DB",
-      "description": "Progettazione database non relazionale basato su MongoDB.",
-      "assignedTo": "3",
-      "start": "2026-06-12T00:00:00.000Z",
-      "end": "2026-07-08T00:00:00.000Z",
-      "stateId": "1",
-      "estimatedLength": 5,
-      "effectiveLength": 5,
-      "projectId": "TxFTAn9",
-      "isActive": true,
-      "id": "KiPEHPM"
     }
   ]
 }

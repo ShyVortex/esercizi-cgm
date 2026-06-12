@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from 'react-modal';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -25,7 +25,7 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
     const isEdit = !!user;
- 
+
     // Schema di validazione Yup
     const UserValidationSchema = Yup.object().shape({
         username: Yup.string()
@@ -46,7 +46,7 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
         middleName: Yup.string().optional(),
         role: Yup.number().required("Il ruolo è obbligatorio.")
     });
- 
+
     const initialValues = {
         username: user?.username || "",
         email: user?.email || "",
@@ -56,7 +56,7 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
         middleName: user?.middleName || "",
         role: user?.role || 1
     };
- 
+
     return (
         <Modal
             isOpen={isOpen}
@@ -76,7 +76,7 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                     &times;
                 </button>
             </div>
- 
+
             <Formik
                 initialValues={initialValues}
                 validationSchema={UserValidationSchema}
@@ -96,11 +96,11 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                         formData.append("middleName", values.middleName.trim());
                     }
                     formData.append("role", String(values.role));
- 
+
                     const actionToRun = isEdit ? updateUserAction : createUserAction;
                     try {
                         const response = await actionToRun({ success: true, message: "" }, formData);
- 
+
                         if (response.success === false) {
                             if (response.errors) {
                                 setErrors(response.errors);
@@ -152,9 +152,8 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                                 name="username"
                                 disabled={isSubmitting}
                                 placeholder="es. m.rossi"
-                                className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                                    errors.username && touched.username ? "border-red-500" : "border-gray-700"
-                                }`}
+                                className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${errors.username && touched.username ? "border-red-500" : "border-gray-700"
+                                    }`}
                             />
                             <ErrorMessage name="username" component="span" className="text-red-500 text-xs mt-1 block" />
                         </div>
@@ -167,9 +166,8 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                                 name="email"
                                 disabled={isSubmitting}
                                 placeholder="es. marco.rossi@example.com"
-                                className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                                    errors.email && touched.email ? "border-red-500" : "border-gray-700"
-                                }`}
+                                className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${errors.email && touched.email ? "border-red-500" : "border-gray-700"
+                                    }`}
                             />
                             <ErrorMessage name="email" component="span" className="text-red-500 text-xs mt-1 block" />
                         </div>
@@ -184,9 +182,8 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                                         name="password"
                                         disabled={isSubmitting}
                                         placeholder="••••••••"
-                                        className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                                            errors.password && touched.password ? "border-red-500" : "border-gray-700"
-                                        }`}
+                                        className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${errors.password && touched.password ? "border-red-500" : "border-gray-700"
+                                            }`}
                                     />
                                     <button
                                         type="button"
@@ -219,9 +216,8 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                                     name="firstName"
                                     disabled={isSubmitting}
                                     placeholder="Marco"
-                                    className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                                        errors.firstName && touched.firstName ? "border-red-500" : "border-gray-700"
-                                    }`}
+                                    className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${errors.firstName && touched.firstName ? "border-red-500" : "border-gray-700"
+                                        }`}
                                 />
                                 <ErrorMessage name="firstName" component="span" className="text-red-500 text-xs mt-1 block" />
                             </div>
@@ -233,9 +229,8 @@ export default function CustomModal({ isOpen, onClose, user }: Props) {
                                     name="lastName"
                                     disabled={isSubmitting}
                                     placeholder="Rossi"
-                                    className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                                        errors.lastName && touched.lastName ? "border-red-500" : "border-gray-700"
-                                    }`}
+                                    className={`w-full bg-gray-900 border rounded p-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${errors.lastName && touched.lastName ? "border-red-500" : "border-gray-700"
+                                        }`}
                                 />
                                 <ErrorMessage name="lastName" component="span" className="text-red-500 text-xs mt-1 block" />
                             </div>
